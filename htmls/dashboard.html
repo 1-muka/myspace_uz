@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Emerald</title>
+    <link rel="icon" type="image/png" href="../logo.jpg">
+    <link rel="stylesheet" href="../csss/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body class="dashboard-shell-body">
+
+    <div class="dashboard-shell">
+
+        <aside class="dashboard-sidebar">
+            <div class="sidebar-brand">
+                <img src="../logo.jpg" alt="Emerald logo" class="sidebar-logo">
+                <div>
+                    <p class="sidebar-eyebrow">Emerald</p>
+                    <h1>Learning Centre</h1>
+                </div>
+            </div>
+
+            <p class="sidebar-section-title">Main menu</p>
+
+            <nav class="sidebar-nav">
+                <button class="sidebar-link active" type="button" data-view="overview">
+                    <i class="fa-solid fa-house"></i>
+                    <span>Overview</span>
+                </button>
+
+                <button class="sidebar-link" type="button" data-view="listening">
+                    <i class="fa-solid fa-headphones"></i>
+                    <span>Listening Practice</span>
+                </button>
+
+                <button class="sidebar-link" type="button" data-view="reading">
+                    <i class="fa-solid fa-book-open"></i>
+                    <span>Reading Practice</span>
+                </button>
+
+                <button class="sidebar-link" type="button" data-view="writing">
+                    <i class="fa-solid fa-pen"></i>
+                    <span>Writing Practice</span>
+                </button>
+
+                <button class="sidebar-link" type="button" data-view="speaking">
+                    <i class="fa-solid fa-microphone"></i>
+                    <span>Speaking Practice</span>
+                </button>
+
+                <button class="sidebar-link" type="button" data-view="mock">
+                    <i class="fa-solid fa-clipboard-list"></i>
+                    <span>Full Mock</span>
+                </button>
+
+                <button class="sidebar-link" type="button" data-view="samples">
+                    <i class="fa-solid fa-star"></i>
+                    <span>Band 9 Samples</span>
+                </button>
+            </nav>
+
+            <div class="sidebar-account">
+                <div class="account-avatar">
+                    <span data-user-initial>M</span>
+                </div>
+
+                <div class="account-text">
+                    <strong data-user-name>User</strong>
+                    <span>Student</span>
+                </div>
+            </div>
+        </aside>
+
+        <main class="dashboard-panel">
+            <header class="dashboard-topbar">
+                <div>
+                    <p class="dashboard-kicker" id="pageKicker">Dashboard</p>
+                    <h2 id="pageTitle">Welcome back, User</h2>
+                    <p class="page-subtitle" id="pageSubtitle">
+                      
+                    </p>
+                </div>
+
+                <div style="display:flex; gap:10px; align-items:center;">
+                <button class="panel-action-btn danger" id="logoutBtn" type="button">
+                    <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                    <span>Logout</span>
+                </button>
+                </div>
+            </header>
+<div id="overviewScreen" class="dashboard-view active" data-view-content="overview">
+
+
+  <div class="stats-grid" style="grid-template-columns: repeat(4, 1fr);">
+
+    <div class="card stat-card">
+      <h3 style="font-size:14px;font-weight:800;color:#0b3d2e;margin:0 0 14px;display:flex;align-items:center;gap:8px;">
+        <span style="background:rgba(13,138,94,0.1);border-radius:8px;padding:4px 8px;">🎧</span> Listening
+      </h3>
+      <div id="listeningLeaderboard"></div>
+    </div>
+
+    <div class="card stat-card">
+      <h3 style="font-size:14px;font-weight:800;color:#0b3d2e;margin:0 0 14px;display:flex;align-items:center;gap:8px;">
+        <span style="background:rgba(13,138,94,0.1);border-radius:8px;padding:4px 8px;">📖</span> Reading
+      </h3>
+      <div id="readingLeaderboard"></div>
+    </div>
+
+    <div class="card stat-card">
+      <h3 style="font-size:14px;font-weight:800;color:#0b3d2e;margin:0 0 14px;display:flex;align-items:center;gap:8px;">
+        <span style="background:rgba(13,138,94,0.1);border-radius:8px;padding:4px 8px;">✍️</span> Writing
+      </h3>
+      <div id="writingLeaderboard"></div>
+    </div>
+
+    <div class="card stat-card">
+      <h3 style="font-size:14px;font-weight:800;color:#0b3d2e;margin:0 0 14px;display:flex;align-items:center;gap:8px;">
+        <span style="background:rgba(13,138,94,0.1);border-radius:8px;padding:4px 8px;">🏆</span> Full Mock
+      </h3>
+      <div id="mockLeaderboard"></div>
+    </div>
+
+  </div>
+
+  <div class="card" style="margin-top:16px;">
+    <h3>Platform Insights</h3>
+    <div id="platformInsights"></div>
+  </div>
+
+  <!-- RECENT RESULTS -->
+  <div class="card">
+    <h3>Recent Results</h3>
+    <div id="recentResults"></div>
+  </div>
+
+  <!-- WEAK AREAS -->
+  <div class="card">
+    <h3>Weak Areas</h3>
+    <div class="strength-grid">
+      <div id="weakSection" class="strength-item"></div>
+      <div id="strongSection" class="strength-item"></div>
+    </div>
+  </div>
+
+
+ <button id="reloadDashboardBtn" style="display:inline-flex;align-items:center;gap:8px;margin-top:16px;padding:12px 24px;background:linear-gradient(135deg,#0b3d2e,#0d8a5e);color:white;border:none;border-radius:12px;font-size:14px;font-weight:700;cursor:pointer;box-shadow:0 4px 15px rgba(13,138,94,0.25);transition:0.2s" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='none'">↻ Reload Data</button>
+</div>
+            <section class="dashboard-view" data-view-content="listening">
+                <div class="section-panel">
+                    <div class="section-head">
+                        <div>
+                            <p class="section-kicker">Listening</p>
+                            <h3>Listening Exams</h3>
+                            <p></p>
+                        </div>
+                    </div>
+
+                    <div class="exam-grid">
+                        <article class="exam-card live">
+                            <span class="exam-status available">Available</span>
+                            <h4>Listening Exam 1</h4>
+                            <p></p>
+                            <button
+    class="launch-btn"
+    type="button"
+    data-secure-launch="true"
+    data-exam-type="listening"
+    data-test-id="test1"
+    data-route="listening-test1.html"
+>
+    Open Exam 1
+</button>
+
+                        </article>
+
+                        <article class="exam-card live">
+                            <span class="exam-status available">Available</span>
+                            <h4>Listening Exam 2</h4>
+                            <p></p>
+                            <button
+    class="launch-btn"
+    type="button"
+    data-secure-launch="true"
+    data-exam-type="listening"
+    data-test-id="test2"
+    data-route="listening-test2.html"
+>
+    Open Exam 2
+</button>
+                        </article>
+
+                        <article class="exam-card live">
+                            <span class="exam-status available">Available</span>
+                            <h4>Listening Exam 3</h4>
+                            <p></p>
+                            <button
+    class="launch-btn"
+    type="button"
+    data-secure-launch="true"
+    data-exam-type="listening"
+    data-test-id="test3"
+    data-route="listening-test3.html"
+>
+    Open Exam 3
+</button>
+                        </article>
+
+                        <article class="exam-card live">
+                            <span class="exam-status available">Available</span>
+                            <h4>Listening Exam 4</h4>
+                            <p></p>
+                            <button
+    class="launch-btn"
+    type="button"
+    data-secure-launch="true"
+    data-exam-type="listening"
+    data-test-id="test4"
+    data-route="listening-test4.html"
+>
+    Open Exam 4
+</button>
+                        </article>
+
+                        <article class="exam-card live">
+                            <span class="exam-status available">Available</span>
+                            <h4>Listening Exam 5</h4>
+                            <p></p>
+                            <button
+    class="launch-btn"
+    type="button"
+    data-secure-launch="true"
+    data-exam-type="listening"
+    data-test-id="test5"
+    data-route="listening-test5.html"
+>
+    Open Exam 5
+</button>
+                        </article>
+
+                        <article class="exam-card live">
+                            <span class="exam-status available">Available</span>
+                            <h4>Listening Exam 6</h4>
+                            <p></p>
+                            <button
+    class="launch-btn"
+    type="button"
+    data-secure-launch="true"
+    data-exam-type="listening"
+    data-test-id="test6"
+    data-route="listening-test6.html"
+>
+    Open Exam 6
+</button>
+                        </article>
+
+                        <article class="exam-card live">
+                            <span class="exam-status available">Available</span>
+                            <h4>Listening Exam 7</h4>
+                            <p></p>
+                            <button
+    class="launch-btn"
+    type="button"
+    data-secure-launch="true"
+    data-exam-type="listening"
+    data-test-id="test7"
+    data-route="listening-test7.html"
+>
+    Open Exam 7
+</button>
+                        </article>
+
+                        <article class="exam-card live">
+                            <span class="exam-status available">Available</span>
+                            <h4>Listening Exam 8</h4>
+                            <p></p>
+                            <button
+    class="launch-btn"
+    type="button"
+    data-secure-launch="true"
+    data-exam-type="listening"
+    data-test-id="test8"
+    data-route="listening-test8.html"
+>
+    Open Exam 8
+</button>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+            <section class="dashboard-view" data-view-content="reading">
+                <div class="section-panel">
+                    <div class="section-head">
+                        <div>
+                            <p class="section-kicker">Reading</p>
+                            <h3>Reading Exams</h3>
+                            <p></p>
+                        </div>
+                    </div>
+
+                    <div class="exam-grid">
+                        <article class="exam-card live">
+                            <span class="exam-status available">Available</span>
+                            <h4>Reading Exam 1</h4>
+                            <p></p>
+                            <button
+    class="launch-btn"
+    type="button"
+    data-secure-launch="true"
+    data-exam-type="reading"
+    data-test-id="test1"
+    data-route="reading-test1.html"
+>
+    Open Exam 1
+</button>
+
+                        </article>
+
+                        <article class="exam-card live">
+                            <span class="exam-status available">Available</span>
+                            <h4>Reading Exam 2</h4>
+                            <p></p>
+                            <button
+    class="launch-btn"
+    type="button"
+    data-secure-launch="true"
+    data-exam-type="reading"
+    data-test-id="test2"
+    data-route="reading-test2.html"
+>
+    Open Exam 2
+</button>
+                        </article>
+
+                        <article class="exam-card live">
+                            <span class="exam-status available">Available</span>
+                            <h4>Reading Exam 3</h4>
+                            <p></p>
+                            <button
+    class="launch-btn"
+    type="button"
+    data-secure-launch="true"
+    data-exam-type="reading"
+    data-test-id="test3"
+    data-route="reading-test3.html"
+>
+    Open Exam 3
+</button>
+                        </article>
+
+                        <article class="exam-card live">
+                            <span class="exam-status available">Available</span>
+                            <h4>Reading Exam 4</h4>
+                            <p></p>
+                            <button
+    class="launch-btn"
+    type="button"
+    data-secure-launch="true"
+    data-exam-type="reading"
+    data-test-id="test4"
+    data-route="reading-test4.html"
+>
+    Open Exam 4
+</button>
+                        </article>
+
+                        <article class="exam-card live">
+                            <span class="exam-status available">Available</span>
+                            <h4>Reading Exam 5</h4>
+                            <p></p>
+                            <button
+    class="launch-btn"
+    type="button"
+    data-secure-launch="true"
+    data-exam-type="reading"
+    data-test-id="test5"
+    data-route="reading-test5.html"
+>
+    Open Exam 5
+</button>
+                        </article>
+
+                          <article class="exam-card live">
+                            <span class="exam-status available">Available</span>
+                            <h4>Reading Exam 6</h4>
+                            <p></p>
+                            <button
+    class="launch-btn"
+    type="button"
+    data-secure-launch="true"
+    data-exam-type="reading"
+    data-test-id="test6"
+    data-route="reading-test6.html"
+>
+    Open Exam 6
+</button>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+        <section class="dashboard-view" data-view-content="writing">
+    <div class="section-panel">
+        <div class="section-head">
+            <div>
+                <p class="section-kicker">Writing</p>
+                <h3>Writing Dashboard</h3>
+                <p></p>
+            </div>
+        </div>
+
+        <div class="exam-grid">
+            <article class="exam-card live">
+                <span class="exam-status available">Ready</span>
+                <h4>Writing Task 1</h4>
+                <p></p>
+                <button
+    class="launch-btn"
+    type="button"
+    data-secure-launch="true"
+    data-exam-type="writing"
+    data-test-id="test1"
+    data-route="writing-mock.html"
+>
+    Open Exam 1
+</button>
+
+            </article>
+
+            <article class="exam-card live">
+                <span class="exam-status available">Ready</span>
+                <h4>Writing Task 2</h4>
+                <p></p>
+                <button class="ghost-btn" type="button" disabled>Content not added yet</button>
+            </article>
+
+            <article class="exam-card">
+                <span class="exam-status soon">Coming soon</span>
+                <h4>Model Answers</h4>
+                <p></p>
+                <button class="ghost-btn" type="button" disabled>Not added yet</button>
+            </article>
+
+            <article class="exam-card">
+                <span class="exam-status soon">Coming soon</span>
+                <h4>Writing Feedback</h4>
+                <p></p>
+                <button class="ghost-btn" type="button" disabled>Not added yet</button>
+            </article>
+        </div>
+    </div>
+</section>
+
+
+         <section class="dashboard-view" data-view-content="speaking">
+    <div class="section-panel">
+        <div class="section-head">
+            <div>
+                <p class="section-kicker">Speaking</p>
+                <h3>Speaking Dashboard</h3>
+                <p></p>
+            </div>
+        </div>
+
+        <div class="exam-grid">
+            <article class="exam-card live">
+                <span class="exam-status available">Ready</span>
+                <h4>Part 1</h4>
+                <p></p>
+                <button class="ghost-btn" type="button" disabled>Content not added yet</button>
+            </article>
+
+            <article class="exam-card live">
+                <span class="exam-status available">Ready</span>
+                <h4>Part 2 Cue Card</h4>
+                <p></p>
+                <button class="ghost-btn" type="button" disabled>Content not added yet</button>
+            </article>
+
+            <article class="exam-card">
+                <span class="exam-status soon">Coming soon</span>
+                <h4>Part 3 Discussion</h4>
+                <p></p>
+                <button class="ghost-btn" type="button" disabled>Not added yet</button>
+            </article>
+
+            <article class="exam-card">
+                <span class="exam-status soon">Coming soon</span>
+                <h4>Mock Speaking</h4>
+                <p></p>
+                <button class="ghost-btn" type="button" disabled>Not added yet</button>
+            </article>
+        </div>
+    </div>
+</section>
+
+<section class="dashboard-view" data-view-content="mock">
+    <div class="section-panel">
+        <div class="section-head">
+            <div>
+                <p class="section-kicker">Full Mock</p>
+                <h3>Mock Exam Dashboard</h3>
+                <p></p>
+            </div>
+        </div>
+
+        <div class="exam-grid">
+            <article class="exam-card live">
+                <span class="exam-status available">Ready</span>
+                <h4>Full Mock Test 1</h4>
+                <p></p>
+                <button
+                    class="launch-btn"
+                    type="button"
+                    data-secure-launch="true"
+                    data-exam-type="mock"
+                    data-test-id="test1"
+                    data-route="full-mock.html"
+                >
+                    Open Full Mock
+                </button>
+            </article>
+
+            <article class="exam-card live">
+                <span class="exam-status available"> Ready</span>
+                <h4>Full Mock Test 2</h4>
+                <p></p>
+                <button
+                    class="launch-btn"
+                    type="button"
+                    data-secure-launch="true"
+                    data-exam-type="mock"
+                    data-test-id="test2"
+                    data-route="full-mock-test2.html"
+                >
+                    Open Full Mock 2
+                </button>
+            </article>
+
+            <article class="exam-card live">
+                <span class="exam-status available">Ready</span>
+                <h4>Full Mock Test 3</h4>
+                <p></p>
+                <button
+                    class="launch-btn"
+                    type="button"
+                    data-secure-launch="true"
+                    data-exam-type="mock"
+                    data-test-id="test3"
+                    data-route="full-mock-test3.html"
+                >
+                    Open Full Mock 3
+                </button>
+            </article>
+
+            <article class="exam-card live">
+                <span class="exam-status available">Ready</span>
+                <h4>Full Mock Test 4</h4>
+                <p></p>
+                <button
+                    class="launch-btn"
+                    type="button"
+                    data-secure-launch="true"
+                    data-exam-type="mock"
+                    data-test-id="test4"
+                    data-route="full-mock-test4.html"
+                >
+                    Open Full Mock 4
+                </button>
+            </article>
+        </div>
+    </div>
+</section>
+
+
+            <section class="dashboard-view" data-view-content="samples">
+                <div class="section-panel">
+                    <div class="coming-card">
+                        <p class="section-kicker">Samples</p>
+                        <h3>Band 9 Samples</h3>
+                        <p>IMAGINE HERE BAND 9 MODELS HOPEFULLY LOL </p>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+
+    <div id="examSecurityModal" class="modal hidden">
+    <div class="modal-card">
+        <h2 id="securityModalTitle">Start Exam</h2>
+
+        <input type="text" id="securityNameInput" placeholder="Your Name">
+
+        <input type="password" id="securityCodeInput" placeholder="Access Code">
+
+        <p class="agreement-text">
+            By starting this test, I agree to take the exam honestly. I will not cheat,
+            copy, or share any materials.
+        </p>
+
+        <p class="type-instruction">Type this exactly:</p>
+
+        <div class="required-phrase" id="securityRequiredPhrase">
+            I agree to take the test honestly and will not cheat or share materials.
+        </div>
+
+        <input
+            type="text"
+            id="securityAgreementInput"
+            placeholder="Type the sentence exactly"
+        >
+
+        <p id="securityModalError" class="error"></p>
+
+        <button id="securityStartBtn" type="button">Start Exam</button>
+    </div>
+</div>
+<div id="reloadToast" class="reload-toast hidden">Ratings reloaded</div>
+<script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore-compat.js"></script>
+<script src="../jss/core.js"></script>
+<script src="../jss/firebase-init.js"></script>
+<script src="../jss/emerald-tracker.js"></script>
+<script src="../jss/emerald-firestore-store.js"></script>
+<script src="../jss/emerald-firebase-bridge.js"></script>
+<script src="../jss/dashboard.js"></script>
+    
+</body>
+</html>

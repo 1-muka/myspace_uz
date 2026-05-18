@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cambridge 18 - Test 6 - Listening</title>
+    <link rel="stylesheet" href="../csss/listening-test.css">
+    <link rel="stylesheet" href="../csss/listening-test6.css">
+</head>
+<body>
+
+<div id="rulesIntroOverlay" class="modal-overlay" style="display:flex;">
+    <div class="practice-card" style="max-width:540px;text-align:left;">
+        <div class="overlay-badge" style="
+            display:inline-flex;padding:7px 12px;border-radius:999px;
+            background:#e9faf3;color:#15543f;font-size:12px;font-weight:800;
+            letter-spacing:0.08em;text-transform:uppercase;margin-bottom:14px;">
+            Before You Start
+        </div>
+        <h2 class="practice-title" style="text-align:left;margin-bottom:6px;">Listening Test Rules</h2>
+        <p class="practice-subtitle" style="text-align:left;margin-bottom:18px;">Read the rules carefully before starting.</p>
+
+        <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px;">
+            <span style="padding:9px 14px;border-radius:999px;background:#e9faf3;color:#10342a;font-size:13px;font-weight:700;">35 minutes</span>
+            <span style="padding:9px 14px;border-radius:999px;background:#e9faf3;color:#10342a;font-size:13px;font-weight:700;">40 questions</span>
+            <span style="padding:9px 14px;border-radius:999px;background:#e9faf3;color:#10342a;font-size:13px;font-weight:700;">4 parts</span>
+        </div>
+
+        <ul style="margin:0 0 22px 18px;color:#425266;line-height:1.8;font-size:14px;">
+            <li>The test must stay in fullscreen at all times.</li>
+            <li>Do not switch tabs or leave the exam window.</li>
+            <li>You have only 3 violation warnings before the test ends.</li>
+            <li>The audio will play automatically when you start.</li>
+            <li>You can navigate between parts using the buttons.</li>
+            <li>Answers are saved automatically as you type.</li>
+        </ul>
+
+        <button id="finalStartBtn" class="btn-green-large" style="margin-top:4px;">
+            ▶ &nbsp; Start Test in Fullscreen
+        </button>
+    </div>
+</div>
+
+<header class="exam-header">
+    <div class="header-top-block">
+        <span class="test-name">Cambridge 18 - Listening Test 6</span>
+        <div class="timer-box">Time Left: <span id="timer">35:00</span></div>
+    </div>
+
+    <div class="audio-panel">
+        <div class="audio-block">
+            <span class="player-label">Audio Player</span>
+            <button id="startTestBtn" class="btn-green">Start Test</button>
+            <audio id="examAudio" class="hidden" controls>
+                <source src="../audio/listening-test6.mp3" type="audio/mpeg">
+            </audio>
+        </div>
+    </div>
+</header>
+
+<main class="exam-content" id="mainScroll">
+
+    <!-- PART 1 -->
+    <section class="part-container active" id="part-1">
+        <div class="blue-part-bar">Part 1</div>
+
+        <div class="instruction-box">
+            <p class="instruction-line"><strong>Questions 1–10</strong></p>
+            <p class="instruction-line"><em>Complete the notes below.</em></p>
+            <p class="instruction-line">Write <span class="hl-blue">ONE WORD AND/OR A NUMBER</span> for each answer.</p>
+        </div>
+
+        <div class="question-paper">
+            <h2 class="form-title">HIRING A PUBLIC ROOM</h2>
+
+            <p class="instruction-line" style="font-style:italic;">Example</p>
+            <ul class="ielts-list">
+                <li>the Main Hall – seats <span class="example-hand">200</span></li>
+            </ul>
+
+            <h3 class="sub-heading" style="color:#2a72ae;">Room and cost</h3>
+            <ul class="ielts-list">
+                <li class="q-line">the <strong>1</strong> <input type="text" id="q1" class="cd-input" aria-label="Question 1"> Room – seats 100</li>
+                <li class="q-line">Cost of Main Hall for Saturday evening: £ <strong>2</strong> <input type="text" id="q2" class="cd-input" aria-label="Question 2"></li>
+                <li class="q-line">+ £250 deposit (<strong>3</strong> <input type="text" id="q3" class="cd-input" aria-label="Question 3"> payment is required)</li>
+                <li class="q-line">Cost includes use of tables and chairs and also <strong>4</strong> <input type="text" id="q4" class="cd-input" aria-label="Question 4"></li>
+                <li>Additional charge for use of the kitchen: £25</li>
+            </ul>
+
+            <h3 class="sub-heading" style="color:#2a72ae;">Before the event</h3>
+            <ul class="ielts-list">
+                <li class="q-line">Will need a <strong>5</strong> <input type="text" id="q5" class="cd-input" aria-label="Question 5"> licence</li>
+                <li class="q-line">Need to contact caretaker (Mr Evans) in advance to arrange <strong>6</strong> <input type="text" id="q6" class="cd-input" aria-label="Question 6"></li>
+            </ul>
+
+            <h3 class="sub-heading" style="color:#2a72ae;">During the event</h3>
+            <ul class="ielts-list">
+                <li>The building is no smoking</li>
+                <li class="q-line">The band should use the <strong>7</strong> <input type="text" id="q7" class="cd-input" aria-label="Question 7"> door at the back</li>
+                <li>Don't touch the system that controls the volume</li>
+                <li>For microphones, contact the caretaker</li>
+            </ul>
+
+            <h3 class="sub-heading" style="color:#2a72ae;">After the event</h3>
+            <ul class="ielts-list">
+                <li class="q-line">Need to know the <strong>8</strong> <input type="text" id="q8" class="cd-input" aria-label="Question 8"> for the cleaning cupboard</li>
+                <li class="q-line">The <strong>9</strong> <input type="text" id="q9" class="cd-input" aria-label="Question 9"> must be washed and rubbish placed in black bags</li>
+                <li class="q-line">All <strong>10</strong> <input type="text" id="q10" class="cd-input" aria-label="Question 10"> must be taken down</li>
+                <li>Chairs and tables must be piled up</li>
+            </ul>
+        </div>
+
+        <div class="part-nav">
+            <button class="nav-btn next" onclick="goToPart(2)">Next Part →</button>
+        </div>
+    </section>
+
+    <!-- PART 2 -->
+    <section class="part-container" id="part-2">
+        <div class="blue-part-bar">Part 2</div>
+
+        <div class="instruction-box">
+            <p class="instruction-line" style="font-weight:700;color:#2a72ae;">Questions 11–20</p>
+            <p class="instruction-line"><em>Questions 11–14</em> &nbsp; Complete the notes below.</p>
+            <p class="instruction-line">Write <span class="hl-blue">ONE WORD</span> for each answer.</p>
+            <p class="instruction-line" style="margin-top:12px;"><em>Questions 15–20</em> &nbsp; Label the map below.</p>
+            <p class="instruction-line">Write the correct letter, <span class="hl-blue">A–I</span>, next to Questions 15–20.</p>
+        </div>
+
+        <div class="question-paper">
+            <h2 class="section-paper-title">Fiddy Working Heritage Farm</h2>
+
+            <p class="instruction-line" style="font-style:italic;">Advice about visiting the farm</p>
+            <p class="instruction-line" style="font-style:italic;">Visitors should</p>
+            <ul class="ielts-list">
+                <li class="q-line">take care not to harm any <strong>11</strong> <input type="text" id="q11" class="cd-input" aria-label="Question 11"></li>
+                <li class="q-line">not touch any <strong>12</strong> <input type="text" id="q12" class="cd-input" aria-label="Question 12"></li>
+                <li class="q-line">wear <strong>13</strong> <input type="text" id="q13" class="cd-input" aria-label="Question 13"></li>
+                <li class="q-line">not bring <strong>14</strong> <input type="text" id="q14" class="cd-input" aria-label="Question 14"> into the farm, with certain exceptions</li>
+            </ul>
+
+            <div class="listening-map-wrap">
+                <img src="../images/listening-test6-map.png" alt="Map for Questions 15–20" width="720" height="520">
+            </div>
+
+            <p class="instruction-line" style="font-weight:700;color:#2a72ae;margin-top:8px;">Questions 15–20</p>
+            <div class="q-line"><strong>15</strong> Scarecrow <input type="text" maxlength="1" id="q15" class="cd-input matching-input" aria-label="Question 15" title="Letter A–I"></div>
+            <div class="q-line"><strong>16</strong> Maze <input type="text" maxlength="1" id="q16" class="cd-input matching-input" aria-label="Question 16" title="Letter A–I"></div>
+            <div class="q-line"><strong>17</strong> Café <input type="text" maxlength="1" id="q17" class="cd-input matching-input" aria-label="Question 17" title="Letter A–I"></div>
+            <div class="q-line"><strong>18</strong> Black Barn <input type="text" maxlength="1" id="q18" class="cd-input matching-input" aria-label="Question 18" title="Letter A–I"></div>
+            <div class="q-line"><strong>19</strong> Covered picnic area <input type="text" maxlength="1" id="q19" class="cd-input matching-input" aria-label="Question 19" title="Letter A–I"></div>
+            <div class="q-line"><strong>20</strong> Fiddy House <input type="text" maxlength="1" id="q20" class="cd-input matching-input" aria-label="Question 20" title="Letter A–I"></div>
+        </div>
+
+        <div class="part-nav">
+            <button class="nav-btn prev" onclick="goToPart(1)">← Previous Part</button>
+            <button class="nav-btn next" onclick="goToPart(3)">Next Part →</button>
+        </div>
+    </section>
+
+    <!-- PART 3 -->
+    <section class="part-container" id="part-3">
+        <div class="blue-part-bar">Part 3</div>
+
+        <div class="instruction-box">
+            <p class="instruction-line" style="font-weight:700;color:#2a72ae;">Questions 21–30</p>
+            <p class="instruction-line">Choose the correct letter, <span class="hl-blue">A</span>, <span class="hl-blue">B</span> or <span class="hl-blue">C</span>.</p>
+        </div>
+
+        <div class="question-paper">
+            <h2 class="section-paper-title">Study on Gender in Physics</h2>
+
+            <div class="mcq-block">
+                <p><span class="q-num">21</span> The students in Akira Miyake's study were all majoring in</p>
+                <div class="vertical-options">
+                    <label class="mcq-opt"><input type="radio" name="q21"> A. physics.</label>
+                    <label class="mcq-opt"><input type="radio" name="q21"> B. psychology or physics.</label>
+                    <label class="mcq-opt"><input type="radio" name="q21"> C. science, technology, engineering or mathematics.</label>
+                </div>
+            </div>
+
+            <div class="mcq-block">
+                <p><span class="q-num">22</span> The aim of Miyake's study was to investigate</p>
+                <div class="vertical-options">
+                    <label class="mcq-opt"><input type="radio" name="q22"> A. what kind of women choose to study physics.</label>
+                    <label class="mcq-opt"><input type="radio" name="q22"> B. a way of improving women's performance in physics.</label>
+                    <label class="mcq-opt"><input type="radio" name="q22"> C. whether fewer women than men study physics at college.</label>
+                </div>
+            </div>
+
+            <div class="mcq-block">
+                <p><span class="q-num">23</span> The female physics students were wrong to believe that</p>
+                <div class="vertical-options">
+                    <label class="mcq-opt"><input type="radio" name="q23"> A. the teachers marked them in an unfair way.</label>
+                    <label class="mcq-opt"><input type="radio" name="q23"> B. the male students expected them to do badly.</label>
+                    <label class="mcq-opt"><input type="radio" name="q23"> C. their test results were lower than the male students'.</label>
+                </div>
+            </div>
+
+            <div class="mcq-block">
+                <p><span class="q-num">24</span> Miyake's team asked the students to write about</p>
+                <div class="vertical-options">
+                    <label class="mcq-opt"><input type="radio" name="q24"> A. what they enjoyed about studying physics.</label>
+                    <label class="mcq-opt"><input type="radio" name="q24"> B. the successful experiences of other people.</label>
+                    <label class="mcq-opt"><input type="radio" name="q24"> C. something that was important to them personally.</label>
+                </div>
+            </div>
+
+            <div class="mcq-block">
+                <p><span class="q-num">25</span> What was the aim of the writing exercise done by the subjects?</p>
+                <div class="vertical-options">
+                    <label class="mcq-opt"><input type="radio" name="q25"> A. to reduce stress</label>
+                    <label class="mcq-opt"><input type="radio" name="q25"> B. to strengthen verbal ability</label>
+                    <label class="mcq-opt"><input type="radio" name="q25"> C. to encourage logical thinking</label>
+                </div>
+            </div>
+
+            <div class="mcq-block">
+                <p><span class="q-num">26</span> What surprised the researchers about the study?</p>
+                <div class="vertical-options">
+                    <label class="mcq-opt"><input type="radio" name="q26"> A. how few students managed to get A grades</label>
+                    <label class="mcq-opt"><input type="radio" name="q26"> B. the positive impact it had on physics results for women</label>
+                    <label class="mcq-opt"><input type="radio" name="q26"> C. the difference between male and female performance</label>
+                </div>
+            </div>
+
+            <div class="mcq-block">
+                <p><span class="q-num">27</span> Greg and Lisa think Miyake's results could have been affected by</p>
+                <div class="vertical-options">
+                    <label class="mcq-opt"><input type="radio" name="q27"> A. the length of the writing task.</label>
+                    <label class="mcq-opt"><input type="radio" name="q27"> B. the number of students who took part.</label>
+                    <label class="mcq-opt"><input type="radio" name="q27"> C. the information the students were given.</label>
+                </div>
+            </div>
+
+            <div class="mcq-block">
+                <p><span class="q-num">28</span> Greg and Lisa decide that in their own project, they will compare the effects of</p>
+                <div class="vertical-options">
+                    <label class="mcq-opt"><input type="radio" name="q28"> A. two different writing tasks.</label>
+                    <label class="mcq-opt"><input type="radio" name="q28"> B. a writing task with an oral task.</label>
+                    <label class="mcq-opt"><input type="radio" name="q28"> C. two different oral tasks.</label>
+                </div>
+            </div>
+
+            <div class="mcq-block">
+                <p><span class="q-num">29</span> The main finding of Smolinsky's research was that class teamwork activities</p>
+                <div class="vertical-options">
+                    <label class="mcq-opt"><input type="radio" name="q29"> A. were most effective when done by all-women groups.</label>
+                    <label class="mcq-opt"><input type="radio" name="q29"> B. had no effect on the performance of men or women.</label>
+                    <label class="mcq-opt"><input type="radio" name="q29"> C. improved the results of men more than of women.</label>
+                </div>
+            </div>
+
+            <div class="mcq-block">
+                <p><span class="q-num">30</span> What will Lisa and Greg do next?</p>
+                <div class="vertical-options">
+                    <label class="mcq-opt"><input type="radio" name="q30"> A. talk to a professor</label>
+                    <label class="mcq-opt"><input type="radio" name="q30"> B. observe a science class</label>
+                    <label class="mcq-opt"><input type="radio" name="q30"> C. look at the science timetable</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="part-nav">
+            <button class="nav-btn prev" onclick="goToPart(2)">← Previous Part</button>
+            <button class="nav-btn next" onclick="goToPart(4)">Next Part →</button>
+        </div>
+    </section>
+
+    <!-- PART 4 -->
+    <section class="part-container" id="part-4">
+        <div class="blue-part-bar">Part 4</div>
+
+        <div class="instruction-box">
+            <p class="instruction-line"><strong>Questions 31–40</strong></p>
+            <p class="instruction-line"><em>Complete the notes below.</em></p>
+            <p class="instruction-line">Write <span class="hl-blue">ONE WORD ONLY</span> for each answer.</p>
+        </div>
+
+        <div class="question-paper">
+            <h2 class="form-title">Ocean Biodiversity</h2>
+
+            <h3 class="sub-heading">Biodiversity hotspots</h3>
+            <ul class="ielts-list">
+                <li>areas containing many different species</li>
+                <li class="q-line">important for locating targets for <strong>31</strong> <input type="text" id="q31" class="cd-input" aria-label="Question 31"></li>
+                <li>at first only identified on land</li>
+            </ul>
+
+            <h3 class="sub-heading" style="color:#2a72ae;">Boris Worm, 2005</h3>
+            <ul class="ielts-list">
+                <li>identified hotspots for large ocean predators, e.g. sharks</li>
+                <li>found that ocean hotspots:
+                    <ul class="ielts-sub-list">
+                        <li class="q-line">were not always rich in <strong>32</strong> <input type="text" id="q32" class="cd-input" aria-label="Question 32"></li>
+                        <li class="q-line">had higher temperatures at the <strong>33</strong> <input type="text" id="q33" class="cd-input" aria-label="Question 33"></li>
+                        <li class="q-line">had sufficient <strong>34</strong> <input type="text" id="q34" class="cd-input" aria-label="Question 34"> in the water</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <h3 class="sub-heading" style="color:#2a72ae;">Lisa Ballance, 2007</h3>
+            <ul class="ielts-list">
+                <li class="q-line">looked for hotspots for marine <strong>35</strong> <input type="text" id="q35" class="cd-input" aria-label="Question 35"></li>
+                <li>found these were all located where ocean currents meet</li>
+            </ul>
+
+            <h3 class="sub-heading" style="color:#2a72ae;">Census of Marine Life</h3>
+            <ul class="ielts-list">
+                <li>found new ocean species living:
+                    <ul class="ielts-sub-list">
+                        <li class="q-line">under the <strong>36</strong> <input type="text" id="q36" class="cd-input" aria-label="Question 36"></li>
+                        <li>near volcanoes on the ocean floor</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <h3 class="sub-heading" style="color:#2a72ae;">Global Marine Species Assessment</h3>
+            <ul class="ielts-list">
+                <li>want to list endangered ocean species, considering:
+                    <ul class="ielts-sub-list">
+                        <li>population size</li>
+                        <li>geographical distribution</li>
+                        <li class="q-line">rate of <strong>37</strong> <input type="text" id="q37" class="cd-input" aria-label="Question 37"></li>
+                    </ul>
+                </li>
+                <li class="q-line">Aim: to assess 20,000 species and make a distribution <strong>38</strong> <input type="text" id="q38" class="cd-input" aria-label="Question 38"> for each one</li>
+            </ul>
+
+            <h3 class="sub-heading" style="color:#2a72ae;">Recommendations to retain ocean biodiversity</h3>
+            <ul class="ielts-list">
+                <li>increase the number of ocean reserves</li>
+                <li class="q-line">establish <strong>39</strong> <input type="text" id="q39" class="cd-input" aria-label="Question 39"> corridors (e.g. for turtles)</li>
+                <li>reduce fishing quotas</li>
+                <li class="q-line">catch fish only for the purpose of <strong>40</strong> <input type="text" id="q40" class="cd-input" aria-label="Question 40"></li>
+            </ul>
+        </div>
+
+        <div class="part-nav">
+            <button class="nav-btn prev" onclick="goToPart(3)">← Previous Part</button>
+            <button class="nav-btn finish" onclick="finishTest()">Finish Test</button>
+        </div>
+    </section>
+
+</main>
+
+<footer class="exam-footer">
+    <div class="number-grid" id="numberGrid"></div>
+</footer>
+
+<div id="lockdownOverlay" class="lockdown-overlay hidden">
+    <div class="lockdown-card">
+        <h2>Exam Paused</h2>
+        <p id="lockdownMessage">This test must stay in fullscreen.</p>
+        <button id="resumeExamBtn" class="btn-green">Return to Exam</button>
+    </div>
+</div>
+
+<script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore-compat.js"></script>
+<script src="../jss/core.js"></script>
+<script src="../jss/firebase-init.js"></script>
+<script src="../jss/emerald-tracker.js"></script>
+<script src="../jss/emerald-firestore-store.js"></script>
+<script src="../jss/emerald-firebase-bridge.js"></script>
+<script src="../jss/listening-test6.js"></script>
+
+</body>
+</html>

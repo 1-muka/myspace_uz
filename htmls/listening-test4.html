@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cambridge 18 - Test 4 - Listening</title>
+    <link rel="stylesheet" href="../csss/listening-test.css">
+    <link rel="stylesheet" href="../csss/listening-test4.css">
+</head>
+<body>
+
+<div id="rulesIntroOverlay" class="modal-overlay" style="display:flex;">
+    <div class="practice-card" style="max-width:540px;text-align:left;">
+        <div class="overlay-badge" style="
+            display:inline-flex;padding:7px 12px;border-radius:999px;
+            background:#e9faf3;color:#15543f;font-size:12px;font-weight:800;
+            letter-spacing:0.08em;text-transform:uppercase;margin-bottom:14px;">
+            Before You Start
+        </div>
+        <h2 class="practice-title" style="text-align:left;margin-bottom:6px;">Listening Test Rules</h2>
+        <p class="practice-subtitle" style="text-align:left;margin-bottom:18px;">Read the rules carefully before starting.</p>
+
+        <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px;">
+            <span style="padding:9px 14px;border-radius:999px;background:#e9faf3;color:#10342a;font-size:13px;font-weight:700;">35 minutes</span>
+            <span style="padding:9px 14px;border-radius:999px;background:#e9faf3;color:#10342a;font-size:13px;font-weight:700;">40 questions</span>
+            <span style="padding:9px 14px;border-radius:999px;background:#e9faf3;color:#10342a;font-size:13px;font-weight:700;">4 parts</span>
+        </div>
+
+        <ul style="margin:0 0 22px 18px;color:#425266;line-height:1.8;font-size:14px;">
+            <li>The test must stay in fullscreen at all times.</li>
+            <li>Do not switch tabs or leave the exam window.</li>
+            <li>You have only 3 violation warnings before the test ends.</li>
+            <li>The audio will play automatically when you start.</li>
+            <li>You can navigate between parts using the buttons.</li>
+            <li>Answers are saved automatically as you type.</li>
+        </ul>
+
+        <button id="finalStartBtn" class="btn-green-large" style="margin-top:4px;">
+            ▶ &nbsp; Start Test in Fullscreen
+        </button>
+    </div>
+</div>
+
+<header class="exam-header">
+    <div class="header-top-block">
+        <span class="test-name">Cambridge 18 - Listening Test 4</span>
+        <div class="timer-box">Time Left: <span id="timer">35:00</span></div>
+    </div>
+
+    <div class="audio-panel">
+        <div class="audio-block">
+            <span class="player-label">Audio Player</span>
+            <button id="startTestBtn" class="btn-green">Start Test</button>
+            <audio id="examAudio" class="hidden" controls>
+                <source src="../audio/listening-test4.mp3" type="audio/mpeg">
+            </audio>
+        </div>
+    </div>
+</header>
+
+<main class="exam-content" id="mainScroll">
+
+    <!-- PART 1 -->
+    <section class="part-container active" id="part-1">
+        <div class="blue-part-bar">Part 1</div>
+
+        <div class="instruction-box">
+            <p class="instruction-line"><strong>Questions 1–10</strong></p>
+            <p class="instruction-line"><em>Complete the form below.</em></p>
+            <p class="instruction-line">Write <span class="hl-blue">ONE WORD AND/OR A NUMBER</span> for each answer.</p>
+        </div>
+
+        <div class="question-paper">
+            <h2 class="form-title">Early Learning Childcare Centre Enrolment Form</h2>
+
+            <p class="instruction-line" style="font-style:italic;">Example</p>
+            <div class="q-line"><strong>Parent or guardian:</strong> Carol <span class="example-hand">Smith</span></div>
+
+            <h3 class="sub-heading" style="color:#2a72ae;">Personal Details</h3>
+            <div class="q-line"><strong>Child's name:</strong> Kate</div>
+            <div class="q-line"><strong>Age:</strong> <strong>1</strong> <input type="text" id="q1" class="cd-input" aria-label="Question 1"></div>
+            <div class="q-line"><strong>Address:</strong> <strong>2</strong> <input type="text" id="q2" class="cd-input" aria-label="Question 2"> Road, Woodside, 4032</div>
+            <div class="q-line"><strong>Phone:</strong> 3345 9865</div>
+
+            <h3 class="sub-heading" style="color:#2a72ae;">Childcare Information</h3>
+            <div class="q-line"><strong>Days enrolled for:</strong> Monday and <strong>3</strong> <input type="text" id="q3" class="cd-input" aria-label="Question 3"></div>
+            <div class="q-line"><strong>Start time:</strong> <strong>4</strong> <input type="text" id="q4" class="cd-input" aria-label="Question 4"> am</div>
+            <div class="q-line"><strong>Childcare group:</strong> the <strong>5</strong> <input type="text" id="q5" class="cd-input" aria-label="Question 5"> group</div>
+            <div class="q-line"><strong>Which meal/s are required each day?</strong> <strong>6</strong> <input type="text" id="q6" class="cd-input" aria-label="Question 6"></div>
+            <div class="q-line"><strong>Medical conditions:</strong> needs <strong>7</strong> <input type="text" id="q7" class="cd-input" aria-label="Question 7"></div>
+            <div class="q-line"><strong>Emergency contact:</strong> Jenny <strong>8</strong> <input type="text" id="q8" class="cd-input" aria-label="Question 8"> &nbsp; <strong>Phone:</strong> 3346 7523</div>
+            <div class="q-line"><strong>Relationship to child:</strong> <strong>9</strong> <input type="text" id="q9" class="cd-input" aria-label="Question 9"></div>
+
+            <h3 class="sub-heading" style="color:#2a72ae;">Fees</h3>
+            <div class="q-line">Will pay each <strong>10</strong> <input type="text" id="q10" class="cd-input" aria-label="Question 10"></div>
+        </div>
+
+        <div class="part-nav">
+            <button class="nav-btn next" onclick="goToPart(2)">Next Part →</button>
+        </div>
+    </section>
+
+    <!-- PART 2 -->
+    <section class="part-container" id="part-2">
+        <div class="blue-part-bar">Part 2</div>
+
+        <div class="instruction-box">
+            <p class="instruction-line" style="font-weight:700;color:#2a72ae;">Questions 11–20</p>
+            <p class="instruction-line"><em>Questions 11 and 12</em> &nbsp; Choose <span class="hl-blue">TWO</span> letters, <span class="hl-blue">A–E</span>.</p>
+        </div>
+
+        <div class="question-paper">
+            <h2 class="form-title">Dolphin Conservation Trust</h2>
+
+            <div class="mcq-block">
+                <p>Which <span class="hl-blue">TWO</span> things does Alice say about the Dolphin Conservation Trust?</p>
+                <div class="multi-select-block">
+                    <label class="mcq-opt"><input type="checkbox" name="q11_12" value="A" onchange="handleMultiSelect('q11_12', 11, 12)"> A. Children make up most of the membership.</label>
+                    <label class="mcq-opt"><input type="checkbox" name="q11_12" value="B" onchange="handleMultiSelect('q11_12', 11, 12)"> B. It's the country's largest conservation organisation.</label>
+                    <label class="mcq-opt"><input type="checkbox" name="q11_12" value="C" onchange="handleMultiSelect('q11_12', 11, 12)"> C. It helps finance campaigns for changes in fishing practices.</label>
+                    <label class="mcq-opt"><input type="checkbox" name="q11_12" value="D" onchange="handleMultiSelect('q11_12', 11, 12)"> D. It employs several dolphin experts full-time.</label>
+                    <label class="mcq-opt"><input type="checkbox" name="q11_12" value="E" onchange="handleMultiSelect('q11_12', 11, 12)"> E. Volunteers help in various ways.</label>
+                </div>
+            </div>
+
+            <div class="instruction-box" style="margin:24px 0 18px;">
+                <p class="instruction-line"><em>Questions 13–15</em> &nbsp; Choose the correct letter, <span class="hl-blue">A</span>, <span class="hl-blue">B</span> or <span class="hl-blue">C</span>.</p>
+            </div>
+
+            <div class="mcq-block">
+                <p><span class="q-num">13</span> Why is Alice so pleased the Trust has won the Charity Commission award?</p>
+                <div class="vertical-options">
+                    <label class="mcq-opt"><input type="radio" name="q13"> A. It has brought in extra money.</label>
+                    <label class="mcq-opt"><input type="radio" name="q13"> B. It made the work of the trust better known.</label>
+                    <label class="mcq-opt"><input type="radio" name="q13"> C. It has attracted more members.</label>
+                </div>
+            </div>
+
+            <div class="mcq-block">
+                <p><span class="q-num">14</span> Alice says oil exploration causes problems to dolphins because of</p>
+                <div class="vertical-options">
+                    <label class="mcq-opt"><input type="radio" name="q14"> A. noise.</label>
+                    <label class="mcq-opt"><input type="radio" name="q14"> B. oil leaks.</label>
+                    <label class="mcq-opt"><input type="radio" name="q14"> C. movement of ships.</label>
+                </div>
+            </div>
+
+            <div class="mcq-block">
+                <p><span class="q-num">15</span> Alice became interested in dolphins when</p>
+                <div class="vertical-options">
+                    <label class="mcq-opt"><input type="radio" name="q15"> A. she saw one swimming near her home.</label>
+                    <label class="mcq-opt"><input type="radio" name="q15"> B. she heard a speaker at her school.</label>
+                    <label class="mcq-opt"><input type="radio" name="q15"> C. she read a book about them.</label>
+                </div>
+            </div>
+
+            <div class="instruction-box" style="margin:28px 0 18px;">
+                <p class="instruction-line"><em>Questions 16–20</em></p>
+                <p class="instruction-line">Which dolphin does Alice make each of the following comments about? Write the correct letter, <span class="hl-blue">A</span>, <span class="hl-blue">B</span>, <span class="hl-blue">C</span> or <span class="hl-blue">D</span>, next to questions 16–20.</p>
+            </div>
+
+            <div class="matching-box">
+                <h4 style="margin-bottom:10px;text-align:center;color:#2a72ae;">Dolphins</h4>
+                <div class="options-grid">
+                    <span><strong>A</strong> Moondancer</span>
+                    <span><strong>B</strong> Echo</span>
+                    <span><strong>C</strong> Kiwi</span>
+                    <span><strong>D</strong> Samson</span>
+                </div>
+            </div>
+
+            <p class="instruction-line" style="font-weight:700;color:#2a72ae;">Comments</p>
+            <div class="q-line"><strong>16</strong> It has not been seen this year. <input type="text" maxlength="1" id="q16" class="cd-input matching-input" aria-label="Question 16"></div>
+            <div class="q-line"><strong>17</strong> It is photographed more than the others. <input type="text" maxlength="1" id="q17" class="cd-input matching-input" aria-label="Question 17"></div>
+            <div class="q-line"><strong>18</strong> It is always very energetic. <input type="text" maxlength="1" id="q18" class="cd-input matching-input" aria-label="Question 18"></div>
+            <div class="q-line"><strong>19</strong> It is the newest one in the scheme. <input type="text" maxlength="1" id="q19" class="cd-input matching-input" aria-label="Question 19"></div>
+            <div class="q-line"><strong>20</strong> It has an unusual shape. <input type="text" maxlength="1" id="q20" class="cd-input matching-input" aria-label="Question 20"></div>
+        </div>
+
+        <div class="part-nav">
+            <button class="nav-btn prev" onclick="goToPart(1)">← Previous Part</button>
+            <button class="nav-btn next" onclick="goToPart(3)">Next Part →</button>
+        </div>
+    </section>
+
+    <!-- PART 3 -->
+    <section class="part-container" id="part-3">
+        <div class="blue-part-bar">Part 3</div>
+
+        <div class="instruction-box">
+            <p class="instruction-line" style="font-weight:700;color:#2a72ae;">Questions 21–30</p>
+            <p class="instruction-line"><em>Questions 21–25</em> &nbsp; Choose the correct letter, <span class="hl-blue">A</span>, <span class="hl-blue">B</span> or <span class="hl-blue">C</span>.</p>
+        </div>
+
+        <div class="question-paper">
+            <h2 class="form-title">Theatre Studies Course</h2>
+
+            <div class="mcq-block">
+                <p><span class="q-num">21</span> What helped Rob to prepare to play the character of a doctor?</p>
+                <div class="vertical-options">
+                    <label class="mcq-opt"><input type="radio" name="q21"> A. the stories his grandfather told him</label>
+                    <label class="mcq-opt"><input type="radio" name="q21"> B. the times when he watched his grandfather working</label>
+                    <label class="mcq-opt"><input type="radio" name="q21"> C. the way he imagined his grandfather at work</label>
+                </div>
+            </div>
+
+            <div class="mcq-block">
+                <p><span class="q-num">22</span> In the play's first scene, the boredom of village life was suggested by</p>
+                <div class="vertical-options">
+                    <label class="mcq-opt"><input type="radio" name="q22"> A. repetition of words and phrases.</label>
+                    <label class="mcq-opt"><input type="radio" name="q22"> B. scenery painted in dull colours.</label>
+                    <label class="mcq-opt"><input type="radio" name="q22"> C. long pauses within conversations.</label>
+                </div>
+            </div>
+
+            <div class="mcq-block">
+                <p><span class="q-num">23</span> What has Rob learned about himself through working in a group?</p>
+                <div class="vertical-options">
+                    <label class="mcq-opt"><input type="radio" name="q23"> A. He likes to have clear guidelines.</label>
+                    <label class="mcq-opt"><input type="radio" name="q23"> B. He copes well with stress.</label>
+                    <label class="mcq-opt"><input type="radio" name="q23"> C. He thinks he is a good leader.</label>
+                </div>
+            </div>
+
+            <div class="mcq-block">
+                <p><span class="q-num">24</span> To support the production, research material was used which described</p>
+                <div class="vertical-options">
+                    <label class="mcq-opt"><input type="radio" name="q24"> A. political developments.</label>
+                    <label class="mcq-opt"><input type="radio" name="q24"> B. changing social attitudes.</label>
+                    <label class="mcq-opt"><input type="radio" name="q24"> C. economic transformations.</label>
+                </div>
+            </div>
+
+            <div class="mcq-block">
+                <p><span class="q-num">25</span> What problem did the students overcome in the final rehearsal?</p>
+                <div class="vertical-options">
+                    <label class="mcq-opt"><input type="radio" name="q25"> A. one person forgetting their words</label>
+                    <label class="mcq-opt"><input type="radio" name="q25"> B. an equipment failure</label>
+                    <label class="mcq-opt"><input type="radio" name="q25"> C. the injury of one character</label>
+                </div>
+            </div>
+
+            <div class="instruction-box" style="margin:28px 0 18px;">
+                <p class="instruction-line"><em>Questions 26–30</em></p>
+                <p class="instruction-line">What action is needed for the following stages in doing the ‘year abroad’ option?</p>
+                <p class="instruction-line">Choose <span class="hl-blue">FIVE</span> answers from the box and write the correct letter, <span class="hl-blue">A–G</span>, next to questions 26–30.</p>
+            </div>
+
+            <div class="matching-box">
+                <h4 style="margin-bottom:10px;text-align:center;color:#2a72ae;">Action</h4>
+                <div class="options-grid">
+                    <span><strong>A</strong> be on time</span>
+                    <span><strong>B</strong> get a letter of recommendation</span>
+                    <span><strong>C</strong> plan for the final year</span>
+                    <span><strong>D</strong> make sure the institution's focus is relevant</span>
+                    <span><strong>E</strong> show ability in Theatre Studies</span>
+                    <span><strong>F</strong> make travel arrangements and bookings</span>
+                    <span><strong>G</strong> ask for help</span>
+                </div>
+            </div>
+
+            <p class="instruction-line" style="font-weight:700;color:#2a72ae;">Stages in doing the ‘year abroad’ option</p>
+            <div class="q-line"><strong>26</strong> in the second year of the course <input type="text" maxlength="1" id="q26" class="cd-input matching-input" aria-label="Question 26"></div>
+            <div class="q-line"><strong>27</strong> when first choosing where to go <input type="text" maxlength="1" id="q27" class="cd-input matching-input" aria-label="Question 27"></div>
+            <div class="q-line"><strong>28</strong> when sending in your choices <input type="text" maxlength="1" id="q28" class="cd-input matching-input" aria-label="Question 28"></div>
+            <div class="q-line"><strong>29</strong> when writing your personal statement <input type="text" maxlength="1" id="q29" class="cd-input matching-input" aria-label="Question 29"></div>
+            <div class="q-line"><strong>30</strong> when doing the year abroad <input type="text" maxlength="1" id="q30" class="cd-input matching-input" aria-label="Question 30"></div>
+        </div>
+
+        <div class="part-nav">
+            <button class="nav-btn prev" onclick="goToPart(2)">← Previous Part</button>
+            <button class="nav-btn next" onclick="goToPart(4)">Next Part →</button>
+        </div>
+    </section>
+
+    <!-- PART 4 -->
+    <section class="part-container" id="part-4">
+        <div class="blue-part-bar">Part 4</div>
+
+        <div class="instruction-box">
+            <p class="instruction-line"><strong>Questions 31–40</strong></p>
+            <p class="instruction-line"><em>Complete the notes below.</em></p>
+            <p class="instruction-line">Write <span class="hl-blue">ONE WORD ONLY</span> for each answer.</p>
+        </div>
+
+        <div class="question-paper">
+            <h2 class="form-title">'Self-regulatory focus theory' and leadership</h2>
+
+            <h3 class="sub-heading" style="color:#2a72ae;">Self-regulatory focus theory</h3>
+            <ul class="ielts-list">
+                <li>People’s focus is to approach pleasure or avoid pain</li>
+                <li class="q-line">Promotion goals focus on <strong>31</strong> <input type="text" id="q31" class="cd-input" aria-label="Question 31"></li>
+                <li>Prevention goals emphasise avoiding punishment</li>
+            </ul>
+
+            <h3 class="sub-heading" style="color:#2a72ae;">Factors that affect people’s focus</h3>
+            <ul class="ielts-list">
+                <li><strong>The Chronic Factor</strong>
+                    <ul class="ielts-sub-list">
+                        <li class="q-line">comes from one’s <strong>32</strong> <input type="text" id="q32" class="cd-input" aria-label="Question 32"></li>
+                    </ul>
+                </li>
+                <li class="q-line">The <strong>33</strong> <input type="text" id="q33" class="cd-input" aria-label="Question 33"> Factor
+                    <ul class="ielts-sub-list">
+                        <li class="q-line">we are more likely to focus on promotion goals when with a <strong>34</strong> <input type="text" id="q34" class="cd-input" aria-label="Question 34"></li>
+                        <li>we are more likely to focus on prevention goals with our boss</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <h3 class="sub-heading" style="color:#2a72ae;">How people’s focus affects them</h3>
+            <ul class="ielts-list">
+                <li><strong>Promotion Focus:</strong> People think about an ideal version of themselves, their <strong>35</strong> <input type="text" id="q35" class="cd-input" aria-label="Question 35"> and their gains.</li>
+                <li><strong>Prevention Focus:</strong> People think about their ‘ought’ self and their obligations</li>
+            </ul>
+
+            <h3 class="sub-heading" style="color:#2a72ae;">Leaders</h3>
+            <ul class="ielts-list">
+                <li class="q-line">Leadership behaviour and <strong>36</strong> <input type="text" id="q36" class="cd-input" aria-label="Question 36"> affects people's focus</li>
+            </ul>
+
+            <p style="font-style:italic;font-weight:600;margin:14px 0 6px;">Transformational Leaders:</p>
+            <ul class="ielts-list">
+                <li class="q-line">pay special attention to the <strong>37</strong> <input type="text" id="q37" class="cd-input" aria-label="Question 37"> of their followers</li>
+                <li class="q-line">passionately communicate a clear <strong>38</strong> <input type="text" id="q38" class="cd-input" aria-label="Question 38"></li>
+                <li>inspire promotion focus in followers</li>
+            </ul>
+
+            <p style="font-style:italic;font-weight:600;margin:14px 0 6px;">Transactional Leaders:</p>
+            <ul class="ielts-list">
+                <li class="q-line">create <strong>39</strong> <input type="text" id="q39" class="cd-input" aria-label="Question 39"> to make expectations clear</li>
+                <li>emphasise the results of a mistake</li>
+                <li>inspire prevention focus in followers</li>
+            </ul>
+
+            <h3 class="sub-heading" style="color:#2a72ae;">Conclusion</h3>
+            <ul class="ielts-list">
+                <li class="q-line">Promotion Focus is good for jobs requiring <strong>40</strong> <input type="text" id="q40" class="cd-input" aria-label="Question 40"></li>
+                <li>Prevention Focus is good for work such as a surgeon</li>
+                <li>Leaders' actions affect which focus people use</li>
+            </ul>
+        </div>
+
+        <div class="part-nav">
+            <button class="nav-btn prev" onclick="goToPart(3)">← Previous Part</button>
+            <button class="nav-btn finish" onclick="finishTest()">Finish Test</button>
+        </div>
+    </section>
+
+</main>
+
+<footer class="exam-footer">
+    <div class="number-grid" id="numberGrid"></div>
+</footer>
+
+<div id="lockdownOverlay" class="lockdown-overlay hidden">
+    <div class="lockdown-card">
+        <h2>Exam Paused</h2>
+        <p id="lockdownMessage">This test must stay in fullscreen.</p>
+        <button id="resumeExamBtn" class="btn-green">Return to Exam</button>
+    </div>
+</div>
+
+<script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore-compat.js"></script>
+<script src="../jss/core.js"></script>
+<script src="../jss/firebase-init.js"></script>
+<script src="../jss/emerald-tracker.js"></script>
+<script src="../jss/emerald-firestore-store.js"></script>
+<script src="../jss/emerald-firebase-bridge.js"></script>
+<script src="../jss/listening-test4.js"></script>
+
+</body>
+</html>

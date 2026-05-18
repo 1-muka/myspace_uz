@@ -1,0 +1,15 @@
+@import url("listening-test4.css");
+@import url("listening-test3.ccs");
+@import url("listening-test2.ccs");
+@import url("listening-test.ccs");
+
+/* Part 1 table: rowspan rows — first <td> is not always the "Area" column */
+.listening-data-table tbody tr td:first-child:not(.listening-area-cell) {
+    color: var(--ink-900);
+    font-weight: 400;
+}
+
+.listening-data-table td.listening-area-cell {
+    color: #2a72ae;
+    font-weight: 700;
+}

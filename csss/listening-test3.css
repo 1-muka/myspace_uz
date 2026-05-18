@@ -1,0 +1,8 @@
+@import url("listening-test.css");
+@import url("listening-test2.css");
+
+.example-hand {
+    font-family: "Segoe Print", "Bradley Hand ITC", cursive;
+    font-style: italic;
+    color: #1a4d8c;
+}

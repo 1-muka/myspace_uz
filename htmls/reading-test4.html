@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reading Test 4</title>
+    <link rel="stylesheet" href="../csss/reading-test.css">
+    <link rel="stylesheet" href="../csss/reading-test4.css">
+    <link rel="icon" href="../logo.jpg">
+</head>
+<body>
+
+<div class="top-bar">
+    <div>Reading Test 4</div>
+    <div class="time">Time Left: <span id="timer">60:00</span></div>
+</div>
+
+<div id="readingOverlay" class="fullscreen-overlay">
+    <div id="rulesCard" class="overlay-card" style="max-width:540px;text-align:left;padding:34px 30px;">
+        <div style="
+            display:inline-flex;padding:7px 12px;border-radius:999px;
+            background:#e9faf3;color:#15543f;font-size:12px;font-weight:800;
+            letter-spacing:0.08em;text-transform:uppercase;margin-bottom:14px;">
+            Before You Start
+        </div>
+        <h2 style="margin:0 0 6px;font-size:26px;color:#111827;">Reading Test Rules</h2>
+        <p style="margin:0 0 18px;font-size:14px;color:#6b7280;">Read the rules carefully before starting.</p>
+
+        <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px;">
+            <span style="padding:9px 14px;border-radius:999px;background:#e9faf3;color:#10342a;font-size:13px;font-weight:700;">60 minutes</span>
+            <span style="padding:9px 14px;border-radius:999px;background:#e9faf3;color:#10342a;font-size:13px;font-weight:700;">40 questions</span>
+            <span style="padding:9px 14px;border-radius:999px;background:#e9faf3;color:#10342a;font-size:13px;font-weight:700;">3 passages</span>
+        </div>
+
+        <ul style="margin:0 0 22px 18px;color:#425266;line-height:1.8;font-size:14px;">
+            <li>The test must stay in fullscreen at all times.</li>
+            <li>Do not switch tabs or leave the exam window.</li>
+            <li>You have only 3 violation warnings before the test ends.</li>
+            <li>Use the navigation buttons to move between passages.</li>
+            <li>Answers are saved automatically as you type.</li>
+            <li>Click Finish Test on the last passage when done.</li>
+        </ul>
+
+        <button id="overlayActionBtn" class="overlay-btn" style="width:100%;padding:15px;font-size:16px;">
+            Start Test in Fullscreen
+        </button>
+    </div>
+
+    <div id="lockdownCard" class="overlay-card" style="display:none;">
+        <div class="overlay-label" id="overlayTitle">Exam Paused</div>
+        <h2 style="margin:12px 0 10px;font-size:26px;color:#111827;">Return to Fullscreen</h2>
+        <p id="overlayMessage" style="margin:0 0 22px;font-size:15px;color:#4b5563;line-height:1.6;">
+            Stay in fullscreen to continue the test.
+        </p>
+        <button id="lockdownActionBtn" class="overlay-btn" style="width:100%;">Return to Test</button>
+    </div>
+</div>
+
+<main class="reading-stage">
+
+    <section class="reading-container passage-screen active" data-passage="1">
+        <div class="passage">
+            <h2>READING PASSAGE 1</h2>
+            <p><b>You should spend 20 minutes on Questions 1-13, which are based on Reading Passage 1 below.</b></p>
+
+            <h3>Gobekli Tepe: a remarkable discovery</h3>
+
+            <p>Between roughly 10,000 and 11,000 BC, in a remote corner of Mesopotamia, now in modern-day Turkey, a people who pre-dated the invention of the wheel and lacked even basic technology such as metal tools, built an enormous complex of stone pillars called Gobekli Tepe. To achieve this, they shaped blocks of limestone into pillars at a stone quarry.  They then moved each pillar, weighing between 11 and 22 tons, a 
+distance of 100 to 500 metres from the quarry to the Gobekli Tepe site. There, the 
+pillars were arranged in rings, which usually consisted of eight upright pillars. Each pillar 
+comprised two stones placed together in the form of a 'T'. Typically, six of these pillars, 
+connected by low walls, made up the circumference of each ring and two taller pillars 
+were situated in the centre. The tallest pillars reached almost five metres in height, and 
+the largest rings were almost 20 metres in diameter.  </p>
+            <p>To date, nearly 200 pillars have been found by archaeologists at the site. A menagerie of animals, including bulls, foxes, snakes, spiders, donkeys, gazelles and lions had been carved in relief on the stones.  There are also strange depictions of human-like 
+forms on the stones. Experts have noted that art from other sites around the world 
+created at roughly the same time typically depicts animals in herds, while at Gobekli 
+Tepe, the images are of individual fierce-looking beasts. </p>
+            <p>Although archaeologists had been aware since the 1960s that there were old limestone slabs at Gobekli Tepe, these were for years generally dismissed as nothing more than a jumble of broken stones of fairly recent origin and uncertain purpose. Then in 1994, German archaeologist Klaus Schmidt took a closer look and realised that the unusually rounded appearance of the hill was something that 
+'only man could have created' and archaeologists began studying the site more 
+carefully. </p>
+            <p>In addition to traditional excavation, which has uncovered a treasure trove of flint tools as well as four rings of pillars, geomagnetic surveys were also conducted. The surveys revealed 16 additional rings buried in the hill that had been left undisturbed. It appears 
+that every now and then, ancient builders filled in a ring, pillars and all, with dirt, gravel, 
+flint and old tools. They then erected a new circle over or near the old, buried one.  </p>
+            <p>There are differing opinions about the purpose of Gobekli Tepe. The stones display prominent depictions of vultures, which are birds commonly associated with the dead , 
+and it is possible that Gobekli Tepe was built as an ancient cemetery. However, some 
+people say that the great age of the stones and the lack of any writing on them make 
+interpreting the builders' motivations virtually impossible. </p>
+            <p>Of the many discoveries made at the site, perhaps the most intriguing is that the builders do not appear to have become settled before constructing the monuments. The indications are, in fact, that they were nomadic hunter-gatherers.  This is remarkable 
+because, up until this discovery, most experts believed that in order to build massive 
+structures like those found at Gobekli Tepe, a society needed to have the organisation 
+and resources that could only come about through people living in a settled agricultural 
+community. The evidence found at Gobekli Tepe, however, appears to seriously 
+challenge this conventional wisdom.</p>
+            <p>Archaeologists have been digging at the site for more than 20 years, and have yet to find evidence of a well-established ancient settlement such as houses, hearths, cooking sites, or rubbish dumps. However, they have found 100,000 fragments of the bones of wild game animals like boar, gazelle and deer, which strongly suggests the site was 
+used by hunters. And, unlike the dry landscape found around Gobekli Tepe today, 
+11,000 years ago the region was a paradise that would have provided ample natural 
+nourishment. It would have been full of fruit and nuts, all readily available to be collected 
+by gatherers without the need for farming.</p>
+            <p>All of the evidence suggests that these vast monuments at Gobekli Tepe were not built after a settled way of life had been adopted, but that the process of construction itself eventually caused the builders to abandon hunting and gathering. It seems that a large number of the enormous population required to build the complex eventually chose to remain nearby.  Only after the monuments were finished did they adopt a more permanent 
+lifestyle. They began cultivating wild grasses in order to feed themselves and in this way 
+started basic agricultural practices. In fact, the original strains of the modern wheat that 
+people farm today have been traced to an ancient village only 32 kilometres from Gobekli 
+Tepe. In addition, there are indications that the first pigs raised in domestic conditions 
+were kept at a village about 100 kilometres away.</p>
+        </div>
+
+        <div class="questions">
+            <h3>Questions 1-7</h3>
+            <p><b>Do the following statements agree with the information given in Reading Passage 1?</b></p>
+            <p>In boxes 1-7 on your answer sheet, write</p>
+            <p><b>TRUE</b> if the statement agrees with the information</p>
+            <p><b>FALSE</b> if the statement contradicts the information</p>
+            <p><b>NOT GIVEN</b> if there is no information on this</p>
+
+            <div class="question">1. The builders of Gobekli Tepe used tools made of iron. <input id="q1"></div>
+            <div class="question">2. The arrangement of the pillars in rings is thought to relate to the seasons of the year. <input id="q2"></div>
+            <div class="question">3. Specially trained workers carved the animals on the stones. <input id="q3"></div>
+            <div class="question">4. The stone carvings of creatures at Gobekli Tepe are similar to those found at other sites from the same period. <input id="q4"></div>
+            <div class="question">5. Until the 1990s, archaeologists believed that Gobekli Tepe site was of little importance. <input id="q5"></div>
+            <div class="question">6. Klaus Schmidt thought that hill at Gobekli Tepe was formed naturally. <input id="q6"></div>
+            <div class="question">7. Archaeologists had to get permission before they could start studying the Gobekli Tepe site. <input id="q7"></div>
+
+            <h3>Questions 8-13</h3>
+            <p><b>Complete the notes below.</b></p>
+            <p>Choose <b>ONE WORD ONLY</b> from the passage for each answer.</p>
+
+            <h4>Gobekli Tepe</h4>
+            <h4>Purpose of Gobekli Tepe</h4>
+            <div class="question">8. the kind of bird shown on many stone suggests the site may have been a <input id="q8"></div>
+            <div class="question">9. it is impossible to know why the site was constructed because there's no <input id="q9"> on the stones</div>
+
+            <h4>Discoveries made at the site</h4>
+            <div class="question">10. no remains of houses have been found to indicate a permanent <input id="q10"></div>
+
+            <h4>What we have learned about Gobekli Tepe and the area</h4>
+            <div class="question">11. Gobekli Tepe was in a region where <input id="q11"> as well as fruit were easy to find</div>
+            <div class="question">12. an early form of <input id="q12"> was grown near Gobekli Tepe</div>
+            <div class="question">13. domesticated <input id="q13"> were kept at a place nearby</div>
+        </div>
+    </section>
+
+    <section class="reading-container passage-screen" data-passage="2">
+        <div class="passage">
+            <h2>READING PASSAGE 2</h2>
+            <p><b>You should spend about 20 minutes on Questions 14-27, which are based on Reading Passage 2 below.</b></p>
+
+            <h3>An invention to dye for: the colour purple</h3>
+            <p><em>A 19th century research chemist was trying to make medicine when, instead, he came up with a coloured dye that has ensured the world is a brighter place.</em></p>
+
+            <p><b>A</b> Of all the colours, purple has perhaps the most powerful connotations. From the earliest cultures to the present day, people have sought to harness its visual power to mark themselves out as better than those around them.  From bishops to kings, pop 
+stars to fashion models, its wearing has been a calculated act of showing off. In ancient 
+Rome, for example, purple was such a revered colour that only the emperor was 
+allowed to wear it. Indeed, an emperor who was referred to as porphyrogenitus, ('born 
+to the purple') was especially important, since this meant that he had inherited his 
+position through family connections rather than seizing power through military force. </p>
+            <p><b>B</b> But why purple? At that time, purple dye was an expensive substance produced in a complicated, foul-smelling and time-consuming process. This involved boiling thousands of molluscs in water in order to harvest their glandular juice. The technique 
+had originally been developed by the Phoenicians over a thousand years previously, 
+and it hadn't changed since. Cheaper but poorer quality purple dyes could be made 
+from lichens using an equally messy and unpleasant procedure, but they were not as 
+bright, and the colour quickly faded. It was no surprise, therefore, that good purple dye 
+was a rare and precious thing, and clothes dyed purple were beyond the financial 
+means of most people. </p>
+            <p><b>C</b> However, times have changed. In the great consumer democracy of the 21st century, even the most humble citizen can choose it as the colour of their latest outfit. For that privilege, we must thank a young 19th century research chemist, William Perkin.  A 
+talented 15-year-old when he entered the Royal College of Chemistry in London in 
+1853, Perkin was immediately appointed as laboratory assistant to his tutor, August 
+Wilhelm von Hofmann. He became determined to prove Hofmann's claim that quinine, a 
+drug used to treat fevers such as malaria, could be synthesised in a laboratory. 
+However, rather than the cure desperately needed for people dying from malaria in 
+tropical countries, he produced little more than a black, sticky mess that turned purple 
+when dissolved in industrial alcohol. Perkin's experiments could have been a complete 
+waste of time, but to his surprise and, ultimately, financial benefit, his purple liquid 
+turned out to be a long-lasting dye that was to transform fashion. </p>
+            <p><b>D</b> Perkin repeated his experiments in an improvised laboratory in his garden shed, perfecting the process for making the substance he had called mauveine. It opened up the prospect of mass-produced artificial dyes and made Perkin one of the first scientists to 
+bridge the gap between pure chemistry and its industrial applications.' It didn't take long 
+for the chemist, still only 18, to capitalise on his creation, patenting the product, 
+convincing his father and brother to back it with savings, and finding a manufacturer 
+who could help him bring it rapidly to the market. The buying public loved it, and clothes 
+coloured with purple started appearing in shops up and down the country. </p>
+            <p>Appropriately, considering the origins of Perkin's colour, he was to receive a helping hand from the two most important women of the day. Queen Victoria caused a sensation when she stepped out at the Royal Exhibition in 1862 wearing a silk gown dyed with mauveine.  In Paris, Napoleon Il's wife, Empress Eugenie, amazed the court 
+when she was seen wearing it. To propel the scientist further on the way to a great 
+fortune, the fashion of the time was for broad skirts that, happily for him, needed a lot of 
+his revolutionary new dye.  </p>
+            <p><b>E</b> Perkin, ever the serious scientist, would have been among the first to point out that his mauve is just one of a range of colours described in everyday language as purple. Not itself a true colour of the spectrum, purple normally refers to those colours which inhabit the limits of human perception in 
+the area between red and violet. Newton excluded the colour from his colour wheel. 
+Scientists today talk about the 'line of purples' which include violet, mauve, magenta, 
+indigo and lilac. </p>
+            <p><b>F</b> In the alternative medical practice of colour therapy, which practitioners say can trace its origins back to ancient India, the 'purple range' colours of indigo and violet are vital. The colours and their 'medical qualities' were first officially listed by the Swiss scientist Dr Max Luscher, who said that appropriately coloured lights, applied to specific chakras, 
+could treat ailments from depression to grief. Julia Kubler is one of Britain's leading 
+colour therapists and has been using colours to treat patients at her clinic at 
+Manningtree, Essex, for 15 years. Purple, she says, 'is consistent with intuition and 
+higher understanding, with spirituality and meditation. It combines the coolness of blue 
+with a bit of red that makes it not just passive but active.'  </p>
+            <p>It is hardly the most outlandish of claims for this most enigmatic of colours. Purple may have had its origins in the ancient world, but thanks to a young chemist, it still has a brilliant future.</p>
+        </div>
+
+        <div class="questions">
+            <h3>Questions 14-19</h3>
+            <p><b>The reading passage has six sections, A-F.</b></p>
+            <p>Choose the correct heading for each section from the list of headings below.</p>
+
+            <p><b>i</b> From the laboratory to the High Street</p>
+            <p><b>ii</b> Seeking royal support</p>
+            <p><b>iii</b> An unexpected but fortunate side result</p>
+            <p><b>iv</b> The healing power of purple</p>
+            <p><b>v</b> An old problem</p>
+            <p><b>vi</b> Standing out from the crowd</p>
+            <p><b>vii</b> Finding an alternative cure for a common illness</p>
+            <p><b>viii</b> Part of a larger family</p>
+            <p><b>ix</b> An ancient manufacturing practice</p>
+
+            <div class="question">14. Section A <input id="q14"></div>
+            <div class="question">15. Section B <input id="q15"></div>
+            <div class="question">16. Section C <input id="q16"></div>
+            <div class="question">17. Section D <input id="q17"></div>
+            <div class="question">18. Section E <input id="q18"></div>
+            <div class="question">19. Section F <input id="q19"></div>
+
+            <h3>Questions 20-23</h3>
+            <p><b>Choose TWO letters, A-E.</b></p>
+            <p><b>Questions 20-21</b></p>
+            <p>What TWO points does the writer make about the colour purple and purple dye before William Perkin's creation?</p>
+
+            <div class="question">20. <input id="q20"> <span class="question-note">Enter one correct letter</span></div>
+            <div class="question">21. <input id="q21"> <span class="question-note">Enter one correct letter</span></div>
+
+            <p><b>A</b> It was only used to colour clothes.</p>
+            <p><b>B</b> It was originally produced for Roman emperors.</p>
+            <p><b>C</b> It was not easy to make.</p>
+            <p><b>D</b> There were many different techniques used to make it.</p>
+            <p><b>E</b> Some purple dyes were inferior to others.</p>
+
+            <p><b>Questions 22-23</b></p>
+            <p>What TWO things about William Perkin are true, according to the passage?</p>
+
+            <div class="question">22. <input id="q22"> <span class="question-note">Enter one correct letter</span></div>
+            <div class="question">23. <input id="q23"> <span class="question-note">Enter one correct letter</span></div>
+
+            <p><b>A</b> He taught Chemistry at a college in London.</p>
+            <p><b>B</b> He believed that quinine could be artificially produced.</p>
+            <p><b>C</b> He extracted the substance for his dye from a common plant.</p>
+            <p><b>D</b> He quickly realised the financial benefits of his new creation.</p>
+            <p><b>E</b> He set a new fashion trend for large skirts.</p>
+
+            <h3>Questions 24-27</h3>
+            <p><b>Complete the summary below.</b></p>
+            <p>Choose <b>NO MORE THAN TWO WORDS</b> from the passage for each answer.</p>
+
+            <div class="question">24. The purple range of colors plays an essential role in color therapy, a form of <input id="q24"></div>
+            <div class="question">25. Color therapy is said to have originated many years ago in <input id="q25"></div>
+            <div class="question">26. Julia Kubler, who uses it to <input id="q26"> people with various health issues.</div>
+            <div class="question">27. According to Kubler, purple <input id="q27"> aspects of two colors, making it both active and passive.</div>
+        </div>
+    </section>
+
+    <section class="reading-container passage-screen" data-passage="3">
+        <div class="passage">
+            <h2>READING PASSAGE 3</h2>
+            <p><b>You should spend about 20 minutes on Questions 28-40, which are based on Reading Passage 3 below.</b></p>
+
+            <h3>Scientific research reveals hidden benefits of regular exercise</h3>
+            <p><em>Exercising for up to an hour a day can improve memory and learning for both young and old, scientists have found.</em></p>
+
+            <p>Concerns that children in developed countries are leading increasingly sedentary lifestyles are growing. Recent research suggests that almost nine in ten children fail to get the 60 minutes of daily exercise which is the minimum recommended for good health, and a third completed less than an hour each week. In most cases, this is 
+because they are spending hours every day glued to televisions, the Internet and 
+games consoles. Alarmingly, there is evidence to suggest that this lack of exercise is 
+not only having a negative physiological effect on them, but is also adversely affecting 
+their academic performance at school. </p>
+            <p>Psychologist Dr Aric Sigman believes that regular exercise can significantly improve pupils' academic ability, and suggests that access to high-quality PE lessons is just as likely to have a long-term impact on children's education as time spent in conventional classrooms. He also supports the long-held conviction that vigorous physical activity is 
+much better than moderate activity. ‘Children should spend at least an hour a day doing 
+some form of vigorous exercise,’ he says. And his message to schools and parents is 
+obvious. ‘Schools and parents should devise ways of increasing physical activity in and 
+out of school time.’ This, he believes, is the key to improved academic performance.  </p>
+            <p>For those who are sceptical about this, and no doubt there are many, he quotes two pieces of research that underline the link between physical activity and brain capacity. One study compared brain capacity and test scores among two groups of nine- and ten-year olds, one with higher levels of physical fitness than the other. It revealed that fitter 
+pupils had a twelve percent larger brain capacity than their peers, which was associated 
+with better performance in cognitive tests. They were able to complete the test more 
+quickly and got more answers correct. A second study of 1.2 million male teenagers in 
+Sweden was perhaps even more revealing. It found that those who were fit were more 
+likely to have a high IQ and go on to university.</p>
+            <p>Dr Sigman says, 'Physical activity is thought to help a child's cognitive processes by increasing blood and oxygen flow to the brain. This increases levels of that suggests regular exercise can increase the size of chemicals like endorphin in the brain  which 
+decrease stress and improve mood. It also increases growth factors that help create 
+new nerve cells and support the connections between brain cell synapses that are the 
+basis of learning. </p>
+            <p>According to other researchers, there is also evidence crucial parts of the brain, and that children who are fit also tend to be better at multi-tasking and performing difficult mental tasks than their unfit friends. Professor Art Kramer , director of the Beckman 
+Institute for Advanced Science and Technology at the University of Illinois, who led the 
+research, said their findings could have important implications for improving children’s 
+performance at school. He said it could also be used to help people combat memory 
+loss and retain problem-solving skills in old age.</p>
+            <p>'It is a sad fact of ageing that our brain function decreases as we get older,' says Kramer. 'Increasingly, people are also living more sedentary lifestyles.  While we know 
+that exercise can have positive effects on cardiovascular disease and diabetes, we 
+have found it can also bring about improvements in cognition and brain function. 
+Aerobic exercise is best for this, so by starting off doing 15 minutes a day and working 
+up to 45 minutes to an hour of continuous exercising, we can see some real 
+improvements in cognition after six months to a year.’  Professor Kramer’s team did a 
+lot of neuroimaging work alongside their studies, which provided visual evidence to 
+show that brain networks and structures actually change with exercise. This, they say, is 
+the reason why their aerobically-fit test subjects were found to exhibit superior cognitive 
+control to those who were less fit, and that regular exercise helped to improve memory, 
+attention and an increased ability to multi-task. The hippocampus, that part of the brain 
+involved in memory, of elderly people who exercised regularly for more than six months 
+increased by two percent, effectively reversing brain ageing by one to two years. </p>
+            <p>Tests carried out on children also yielded some interesting results. One test involved them crossing a 'street' using a virtual reality simulation.  Fitter children were better at 
+crossing the street when distracted by music or holding a conversation on a hands-free 
+mobile phone compared to those who were less fit. While both groups tended to walk at 
+the same speed, the children who were less fit often misjudged the speed and distance 
+of the computer generated vehicles. ‘The low fitness kids were just as good at crossing 
+the street when it was the only thing they were doing,’ says Kramer. ‘If they were 
+listening to music or talking on the headset, they performed badly. They often ended up 
+with the screen going red to show they had been hit. One way to look at it is that fit 
+children think more efficiently and so are better at multi-tasking.’ </p>
+            <p>Professor Kramer presented his findings at the American Association for the Advancement of Science annual meeting in Vancouver, where other research presented showed that reducing the number of calories we consume could help to prevent brain disorders, especially in the elderly.  Dr Mark Mattson, a neuroscientist from 
+the National Institute of Ageing in Baltimore found that restricting people’s diets to just 
+500 calories every other day increased production of proteins that are known to protect 
+neurons from damage. ‘There is considerable evidence that doing this is not only good 
+for your heart, but is also good for your brain’, he said.</p>
+        </div>
+
+        <div class="questions">
+            <h3>Questions 28-32</h3>
+            <p><b>Do the following statements agree with the claims of the writer?</b></p>
+            <p>Write <b>YES</b>, <b>NO</b> or <b>NOT GIVEN</b>.</p>
+
+            <div class="question">28. The possible impact of a sedentary lifestyle on the way children perform in the classroom is very worrying. <input id="q28"></div>
+            <div class="question">29. It is only recently that people have discovered exercise is more beneficial for you when you put more effort into it. <input id="q29"></div>
+            <div class="question">30. It is unclear what Dr Aric Sigman thinks schools and parents should do. <input id="q30"></div>
+            <div class="question">31. There are probably a lot of people who disbelieve Dr Sigman's view. <input id="q31"></div>
+            <div class="question">32. Researchers were surprised to discover a link between levels of fitness in Swedish teenagers and their IQ. <input id="q32"></div>
+
+            <h3>Questions 33-37</h3>
+            <p><b>Complete the summary using the list of words, A-I, below.</b></p>
+            <p><b>A</b> ancients</p>
+            <p><b>B</b> anxiety</p>
+            <p><b>C</b> discoveries</p>
+            <p><b>D</b> elderly</p>
+            <p><b>E</b> exercises</p>
+            <p><b>F</b> anger</p>
+            <p><b>G</b> performances</p>
+            <p><b>H</b> possibility</p>
+            <p><b>I</b> proof</p>
+
+            <div class="question">33. Dr Sigman believes that when children do physical exercise, they experience less <input id="q33"> as a result of a chemical change caused by increased blood and oxygen flow to the brain.</div>
+            <div class="question">34. Other researchers, such as Professor Art Kramer, think there is <input id="q34"> that some parts of the brain become bigger.</div>
+            <div class="question">35. and fit children are better than unfit children at doing complicated <input id="q35"> that require mental thought.</div>
+            <div class="question">36. Among other things, these scientific <input id="q36"> could be used to benefit the <input id="q37"> when it comes to fighting memory loss and keeping the skills that allow them to solve problems.</div>
+
+            <h3>Questions 38-40</h3>
+            <p><b>Choose the correct letter, A, B, C or D.</b></p>
+
+            <div class="question">38. Which of the following is true, according to Professor Art Kramer? <input id="q38"></div>
+            <p><b>A</b> People become less active as they grow older.</p>
+            <p><b>B</b> Exercising is an effective way of preventing diseases like diabetes.</p>
+            <p><b>C</b> One particular type of exercise is more effective than others.</p>
+            <p><b>D</b> When exercising, you should take short breaks during the exercise period.</p>
+
+            <div class="question">39. What did Professor Kramer's neuroimaging work show? <input id="q39"></div>
+            <p><b>A</b> Exercising physically alters the brain.</p>
+            <p><b>B</b> Unfit people have poor memories.</p>
+            <p><b>C</b> A particular part of the brain becomes more active during exercise.</p>
+            <p><b>D</b> Exercise can reduce ageing of the brain for up to two years.</p>
+
+            <div class="question">40. What does doing this refer to in the final paragraph? <input id="q40"></div>
+            <p><b>A</b> changing the kinds of food we eat</p>
+            <p><b>B</b> eating no more than 500 calories a day</p>
+            <p><b>C</b> eating foods that are high in protein</p>
+            <p><b>D</b> eating less on certain days</p>
+        </div>
+    </section>
+
+</main>
+
+<div class="reading-nav-bar">
+    <button id="toggleNumbersBtn" class="nav-btn-read toggle-numbers-btn" type="button">Hide Numbers</button>
+    <div class="nav-actions">
+        <button id="prevBtn" class="nav-btn-read" type="button">Previous Passage</button>
+        <button id="nextBtn" class="nav-btn-read" type="button">Next Passage</button>
+        <button id="finishBtn" class="nav-btn-read finish" type="button" style="display:none;">Finish Test</button>
+    </div>
+</div>
+
+<footer id="numbersFooter" class="exam-footer">
+    <div class="number-grid" id="numberGrid"></div>
+</footer>
+
+<script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore-compat.js"></script>
+<script src="../jss/core.js"></script>
+<script src="../jss/firebase-init.js"></script>
+<script src="../jss/emerald-tracker.js"></script>
+<script src="../jss/emerald-firestore-store.js"></script>
+<script src="../jss/emerald-firebase-bridge.js"></script>
+<script src="../jss/reading-test4.js"></script>
+
+</body>
+</html>

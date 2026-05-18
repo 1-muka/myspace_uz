@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reading Test 3</title>
+    <link rel="stylesheet" href="../csss/reading-test.css">
+    <link rel="stylesheet" href="../csss/reading-test3.css">
+    <link rel="icon" href="../logo.jpg">
+</head>
+<body>
+
+<div class="top-bar">
+    <div>Reading Test 3</div>
+    <div class="time">Time Left: <span id="timer">60:00</span></div>
+</div>
+
+<div id="readingOverlay" class="fullscreen-overlay">
+    <div id="rulesCard" class="overlay-card" style="max-width:540px;text-align:left;padding:34px 30px;">
+        <div style="
+            display:inline-flex;padding:7px 12px;border-radius:999px;
+            background:#e9faf3;color:#15543f;font-size:12px;font-weight:800;
+            letter-spacing:0.08em;text-transform:uppercase;margin-bottom:14px;">
+            Before You Start
+        </div>
+        <h2 style="margin:0 0 6px;font-size:26px;color:#111827;">Reading Test Rules</h2>
+        <p style="margin:0 0 18px;font-size:14px;color:#6b7280;">Read the rules carefully before starting.</p>
+
+        <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px;">
+            <span style="padding:9px 14px;border-radius:999px;background:#e9faf3;color:#10342a;font-size:13px;font-weight:700;">60 minutes</span>
+            <span style="padding:9px 14px;border-radius:999px;background:#e9faf3;color:#10342a;font-size:13px;font-weight:700;">40 questions</span>
+            <span style="padding:9px 14px;border-radius:999px;background:#e9faf3;color:#10342a;font-size:13px;font-weight:700;">3 passages</span>
+        </div>
+
+        <ul style="margin:0 0 22px 18px;color:#425266;line-height:1.8;font-size:14px;">
+            <li>The test must stay in fullscreen at all times.</li>
+            <li>Do not switch tabs or leave the exam window.</li>
+            <li>You have only 3 violation warnings before the test ends.</li>
+            <li>Use the navigation buttons to move between passages.</li>
+            <li>Answers are saved automatically as you type.</li>
+            <li>Click Finish Test on the last passage when done.</li>
+        </ul>
+
+        <button id="overlayActionBtn" class="overlay-btn" style="width:100%;padding:15px;font-size:16px;">
+            Start Test in Fullscreen
+        </button>
+    </div>
+
+    <div id="lockdownCard" class="overlay-card" style="display:none;">
+        <div class="overlay-label" id="overlayTitle">Exam Paused</div>
+        <h2 style="margin:12px 0 10px;font-size:26px;color:#111827;">Return to Fullscreen</h2>
+        <p id="overlayMessage" style="margin:0 0 22px;font-size:15px;color:#4b5563;line-height:1.6;">
+            Stay in fullscreen to continue the test.
+        </p>
+        <button id="lockdownActionBtn" class="overlay-btn" style="width:100%;">Return to Test</button>
+    </div>
+</div>
+
+<main class="reading-stage">
+
+    <section class="reading-container passage-screen active" data-passage="1">
+        <div class="passage">
+            <h2>READING PASSAGE 1</h2>
+            <p><b>You should spend about 20 minutes on Questions 1-13, which are based on Reading Passage 1 below.</b></p>
+
+            <h3>The Phoenicians: an almost forgotten people</h3>
+
+            <p>The Phoenicians inhabited the region of modern Lebanon and Syria from about 3000 BC. They became the greatest traders of the pre-classical world, and were the first 
+people to establish a large colonial network. Both of these activities were based on 
+seafaring, an ability the Phoenicians developed from the example of their maritime 
+predecessors, the Minoans of Crete. </p>
+            <p>An Egyptian narrative of about 1080 BC, the Story of Wen-Amen, provides an insight into the scale of their trading activity. One of the characters is Wereket-El, a Phoenician merchant living at Tanis in Egypt's Nile delta. As many as 50 ships carry out his 
+business, plying back and forth between the Nile and the Phoenician port of Sidon. </p>
+            <p>The most prosperous period for Phoenicia was the 10th century BC, when the surrounding region was stable. Hiram, the king of the Phoenician city of Tyre, was an ally and business partner of Solomon, King of Israel. For Solomon’s temple in 
+Jerusalem, Hiram provided craftsmen with particular skills that were needed for this 
+major construction project. He also supplied materials – particularly timber, including 
+cedar from the forests of Lebanon. And the two kings went into trade in partnership. 
+They sent out Phoenician vessels on long expeditions (of up to three years for the 
+return trip) to bring back gold, sandalwood, ivory, monkeys and peacocks from Ophir. 
+This is an unidentified place, probably on the east coast of Africa or the west coast of 
+India. </p>
+            <p>Phoenicia was famous for its luxury goods. The cedar wood was not only exported as top-quality timber for architecture and shipbuilding. It was also carved by the 
+Phoenicians, and the same skill was adapted to even more precious work in ivory. The 
+rare and expensive dye for cloth, Tyrian purple, complemented another famous local 
+product, fine linen. The metalworkers of the region, particularly those working in gold, 
+were famous. Tyre and Sidon were also known for their glass.</p>
+            <p>These were the main products which the Phoenicians exported. In addition, as traders and middlemen, they took a commission on a much greater range of precious goods that they transported from elsewhere.</p>
+            <p>The extensive trade of Phoenicia required much book-keeping and correspondence, and it was in the field of writing that the Phoenicians made their most lasting contribution to world history. The scripts in use in the world up to the second millennium BC all required the writer to learn a large number of separate characters  – each of them expressing either a whole word or an element of its 
+meaning. By contrast, the Phoenicians, in about 1500 BC, developed an entirely new 
+approach to writing. The marks made (with a pointed tool called a stylus, on damp clay) 
+now attempted to capture the sound of a word. This required an alphabet of individual 
+letters.</p>
+            <p>The trading and seafaring skills of the Phoenicians resulted in a network of colonies, spreading westwards through the Mediterranean. The first was probably Citium, in Cyprus, established in the 9th century BC.  But the main expansion came from the 8th 
+century BC onwards, when pressure from Assyria to the east disrupted the patterns of 
+trade on the Phoenician coast. </p>
+            <p>Trading colonies were developed on the string of islands in the centre of the Mediterranean - Crete, Sicily, Malta, Sardinia, Ibiza - and also on the coast of north Africa. The African colonies clustered in particular around the great promontory  which, 
+with Sicily opposite, forms the narrowest channel on the main Mediterranean sea route. 
+This is the site of Carthage.</p>
+            <p>Carthage was the largest of the towns founded by the Phoenicians on the north African coast, and it rapidly assumed a leading position among the neighbouring colonies. The traditional date of its founding is 814 BC , but archaeological evidence suggests that it 
+was probably settled a little over a century later. </p>
+            <p>The subsequent spread and growth of Phoenician colonies in the western Mediterranean, and even out to the Atlantic coasts of Africa and Spain, was as much the achievement of Carthage as of the original Phoenician trading cities such as Tyre and Sidon.  But no doubt links were maintained with the homeland, and new colonists 
+continued to travel west.</p>
+            <p>From the 8th century BC, many of the coastal cities of Phoenicia came under the control of a succession of imperial powers, each of them defeated and replaced in the region by the next. In 64 BC, the area of Phoenicia became part of the Roman province of Syria. The 
+Phoenicians as an identifiable people then faded from history, merging into the 
+populations of modern Lebanon and northern Syria.</p>
+            
+        </div>
+
+        <div class="questions">
+            <h3>Questions 1-8</h3>
+            <p><b>Complete the sentences below.</b></p>
+            <p>Choose <b>ONE WORD ONLY</b> from the passage for each answer.</p>
+
+            <h4>The Phoenicians' trading activities</h4>
+            <div class="question">1. The Phoenicians' skill at <input id="q1"> helped them to trade.</div>
+            <div class="question">2. In an ancient story, a <input id="q2"> from Phoenicia, who lived in Egypt, owned 50 ships.</div>
+            <div class="question">3. A king of Israel built a <input id="q3"> using supplies from Phoenicia.</div>
+            <div class="question">4. Phoenicia supplied Solomon with skilled <input id="q4"></div>
+            <div class="question">5. The main material that Phoenicia sent to Israel was <input id="q5"></div>
+            <div class="question">6. The kings of Phoenicia and Israel formed a business <input id="q6"> in order to carry out trade.</div>
+            <div class="question">7. Phoenicians carved <input id="q7">, as well as cedar.</div>
+            <div class="question">8. The Phoenicians also earned a <input id="q8"> for shipping goods.</div>
+
+            <h3>Questions 9-13</h3>
+            <p><b>Do the following statements agree with the information given in Reading Passage 1?</b></p>
+            <p>Write <b>TRUE</b>, <b>FALSE</b> or <b>NOT GIVEN</b>.</p>
+
+            <div class="question">9. Problems with Assyria led to the establishment of a number of Phoenician colonies. <input id="q9"></div>
+            <div class="question">10. Carthage was an enemy town which the Phoenicians won in battle. <input id="q10"></div>
+            <div class="question">11. Phoenicians reached the Atlantic Ocean. <input id="q11"></div>
+            <div class="question">12. Parts of Phoenicia were conquered by a series of empires. <input id="q12"></div>
+            <div class="question">13. The Phoenicians welcomed Roman control of the area. <input id="q13"></div>
+        </div>
+    </section>
+
+    <section class="reading-container passage-screen" data-passage="2">
+        <div class="passage">
+            <h2>READING PASSAGE 2</h2>
+            <p><b>You should spend about 20 minutes on Questions 14-26, which are based on Reading Passage 2 on the following pages.</b></p>
+
+            <h3>The Hollywood Film Industry</h3>
+
+            <p><b>A</b> This chapter examines the 'Golden Age' of the Hollywood film studio system and explores how a particular kind of filmmaking developed during this period in US film history. It also focuses on the two key elements which influenced the emergence of the classical Hollywood studio system: the advent of sound and the business ideal of vertical 
+integration. In addition to its historical interest, inspecting the growth of the studio 
+system may offer clues regarding the kinds of struggles that accompany the growth of 
+any new medium. It might, in fact, be intriguing to examine which changes occurred 
+during the growth of the Hollywood studio, and compare those changes to 
+contemporary struggles in which production companies are trying to define and control 
+emerging industries, such as online film and interactive television.  </p>
+            <p><b>B</b> The shift of the industry away from 'silent' films began during the late 1920s. Warner Bros.' 1927 film The Jazz Singer was the first to feature synchronized speech, and with 
+it came a period of turmoil for the industry. Studios now had proof that ‘talkie’ films 
+would make them money, but the financial investment this kind of filmmaking would 
+require, from new camera equipment to new projection facilities, made the studios 
+hesitant to invest at first. In the end, the power of cinematic sound to both move 
+audiences and enhance the story persuaded studios that talkies were worth investing in. 
+Overall, the use of sound in film was well-received by audiences, but there were still 
+many technical factors to consider. Although full integration of sound into movies was 
+complete by 1930, it would take somewhat longer for them to regain their stylistic 
+elegance and dexterity. The camera now had to be encased in a big, clumsy, 
+unmoveable soundproof box. In addition, actors struggled, having to direct their speech 
+to awkwardly-hidden microphones in huge plants, telephones or even costumes.  </p>
+            <p><b>C</b> Vertical integration is the other key component in the rise of the Hollywood studio system. The major studios realized they could increase their profits by handling each stage of a film's life: production (making the film), distribution (getting the film out to 
+people) and exhibition (owning the theaters in major cities where films were shown first). 
+Five studios, ‘The Big Five’, worked to achieve vertical integration through the late 
+1940s, owning vast real estate on which to construct elaborate sets. In addition, these 
+studios set the exact terms of films’ release dates and patterns. Warner Bros., 
+Paramount, 20th Century Fox, MGM and RKO formed this exclusive club. ‘The Little 
+Three’ studios – Universal, Columbia and United Artists – also made pictures, but each 
+lacked one of the crucial elements of vertical integration. Together these eight 
+companies operated as a mature oligopoly, essentially running the entire market. 311 
+Reading </p>
+            <p><b>D</b> During the Golden Age, the studios were remarkably consistent and stable enterprises, due in large part to long-term management heads. The rise of the studio system also hinges on the treatment of stars, who were constructed and exploited to suit a studio’s image 
+and schedule. Actors were bound up in seven-year contracts to a single studio, and thestudio boss generally held all the options. Stars could be loaned out to other production 
+companies at any time. Studio bosses could also force bad roles on actors, and 
+manipulate every single detail of stars’ images with their mammoth in-house publicity 
+departments. Some have compared the Hollywood studio system to a factory, and it is 
+useful to remember that studios were out to make money first and art second.  </p>
+            <p><b>E</b> On the other hand, studios also had to cultivate flexibility, in addition to consistent factory output. Studio heads realized that they couldn't make virtually the same film over and over again  with the same cast of stars and still expect to keep turning a profit. They 
+also had to create product differentiation. Examining how each production company 
+tried to differentiate itself has led to loose characterizations of individual studios’ styles. 
+MGM tended to put out a lot of all-star productions while Paramount excelled in comedy 
+and Warner Bros. developed a reputation for gritty social realism. 20th Century Fox 
+forged the musical and a great deal of prestige biographies, while Universal specialized 
+in classic horror movies. </p>
+            <p><b>F</b> In 1948, struggling independent movie producers and exhibitors finally triumphed in their battle against the big studios' monopolistic behavior. In the United States versus Paramount federal decree of that year, the studios were ordered to give up their theaters  in what is commonly referred to as ‘divestiture’ – opening the market to smaller 
+producers. This, coupled with the advent of television in the 1950s, seriously 
+compromised the studio system’s influence and profits. Hence, 1930 and 1948 are 
+generally considered bookends to Hollywood’s Golden Age. </p>
+            
+        </div>
+
+        <div class="questions">
+            <h3>Questions 14-19</h3>
+            <p><b>Reading Passage 2 has six paragraphs, A-F.</b></p>
+            <p>Choose the correct heading for each paragraph from the list of headings below.</p>
+
+            <p><b>i</b> The power within each studio</p>
+            <p><b>ii</b> The movie industry adapts to innovation</p>
+            <p><b>iii</b> Contrasts between cinema and other media of the time</p>
+            <p><b>iv</b> The value of studying Hollywood's Golden Age</p>
+            <p><b>v</b> Distinguishing themselves from the rest of the market</p>
+            <p><b>vi</b> A double attack on film studios' power</p>
+            <p><b>vii</b> Gaining control of the industry</p>
+            <p><b>viii</b> The top movies of Hollywood's Golden Age</p>
+
+            <div class="question">14. Paragraph A <input id="q14"></div>
+            <div class="question">15. Paragraph B <input id="q15"></div>
+            <div class="question">16. Paragraph C <input id="q16"></div>
+            <div class="question">17. Paragraph D <input id="q17"></div>
+            <div class="question">18. Paragraph E <input id="q18"></div>
+            <div class="question">19. Paragraph F <input id="q19"></div>
+
+            <h3>Questions 20-23</h3>
+            <p><b>Do the following statements agree with the information given in Reading Passage 2?</b></p>
+            <p>Write <b>TRUE</b>, <b>FALSE</b> or <b>NOT GIVEN</b>.</p>
+
+            <div class="question">20. After The Jazz Singer came out, other studios immediately began making movies with synchronized sound. <input id="q20"></div>
+            <div class="question">21. There were some drawbacks to recording movie actors' voices in the early 1930s. <input id="q21"></div>
+            <div class="question">22. There was intense competition between actors for contracts with the leading studios. <input id="q22"></div>
+            <div class="question">23. Studios had total control over how their actors were perceived by the public. <input id="q23"></div>
+
+            <h3>Questions 24-26</h3>
+            <p><b>Complete the summary below.</b></p>
+            <p>Choose <b>NO MORE THAN TWO WORDS</b> from the passage for each answer.</p>
+
+            <h4>THE HOLLYWOOD STUDIOS</h4>
+            <div class="question">24. Using a system known as <input id="q24">, the biggest studios not only made movies, but handled their distribution and then finally showed them in their own theaters.</div>
+            <div class="question">25. These studios were often run by autocratic bosses - men known as <input id="q25">, who often remained at the head of organisations for decades.</div>
+            <div class="question">26. However, the domination of the industry by the leading studios came to an end in 1948, when they were forced to open the market to smaller producers - a process known as <input id="q26"></div>
+        </div>
+    </section>
+
+    <section class="reading-container passage-screen" data-passage="3">
+        <div class="passage">
+            <h2>READING PASSAGE 3</h2>
+            <p><b>You should spend about 20 minutes on Questions 27-40, which are based on Reading Passage 3 below.</b></p>
+
+            <h3>Left or right?</h3>
+            <p><em>An overview of some research into lateralization: the dominance of one side of the body over the other</em></p>
+
+            <p><b>A</b> Creatures across the animal kingdom have a preference for one foot, eye or even antenna. The cause of this trait, called lateralisation, is fairly simple: one side of the brain is more dominant than the other when processing certain tasks. Tis does, on some occasions, let the animal down: 
+such as when a toad fails to escape from a snake approaching from the right, just 
+because its right eye is worse at spotting danger than its left. So why would animals 
+evolve a characteristic that seems to endanger them? </p>
+            <p><b>B</b> For many years it was assumed that lateralisation was a uniquely human trait, but this notion rapidly fell apart as researchers started uncovering evidence of lateralisation in all sorts of animals. In the 1970s, Lesley Rogers was studying memory and learning in chicks.  She had been 
+injecting a chemical into chicks’ brains to stop them learning how to spot grains of food 
+among distracting pebbles, and was surprised to observe that the chemical only worked 
+when applied to the left hemisphere of the brain. That strongly suggested that the right 
+side of the chick’s brain played little or no role in the learning of such behaviours. 
+Similar evidence appeared in songbirds and rats around the same time, and since then, 
+researchers have built up an impressive catalogue of animal lateralisation. </p>
+            <p><b>C</b> In some animals, lateralisation is simply a preference for a single paw or foot, while in others it appears in more general patterns of behaviour. The left side of most vertebrate brains seems to process and control feeding. Since the left hemisphere 
+processes input from the right side of the body, that means animals as diverse as fish, 
+toads and birds are more likely to attack prey or food items viewed with their right eye. 
+Even humpback whales prefer to use the right side of their jaws to scrape sand eels 
+from the ocean floor. </p>
+            <p><b>D</b> Genetics plays a part in determining lateralisation, but environmental factors have an impact too. Rogers found that a chick's lateralisation depends on whether it is exposed to light before hatching from its egg  – if it is kept in the dark during this period, neither 
+hemisphere becomes dominant. In 2004, Rogers used this observation to test the 
+advantages of brain bias in chicks faced with the challenge of multitasking. She hatched 
+chicks with either strong or weak lateralisation, then presented the two groups with food 
+hidden among small pebbles and the threatening shape of a fake predator flying 
+overhead. As predicted, the birds incubated in the light looked for food mainly with their 
+right eye, while using the other to check out the predator. The weakly-lateralised chicks, 
+meanwhile, had difficulty performing these two activities simultaneously. </p>
+            <p><b>E</b> Similar results probably hold true for many other animals. In 2006, Angelo Bisazza set out to observe the differences in feeding behaviour between strongly-lateralised and weakly-lateralised fish. He found that strongly-lateralised 
+individuals were able to feed twice as fast as weakly-lateralised ones when there was a threat of a predator looming above them. Assigning diferent jobs to diferent brain halves 
+may be especially advantageous for animals such as birds or fsh, whose eyes are 
+placed on the sides of their heads. This enables them to process input from each side 
+separately, with diferent tasks in mind. </p>
+            <p><b>F</b> And what of those animals who favour a specific side for almost all tasks? In 2009, Maria Magat and Culum Brown wanted to see if there was general cognitive advantage in lateralisation.  To investigate, they turned to 
+parrots, which can be either strongly right- or left-footed, or ambidextrous (without 
+dominance). The parrots were given the intellectually demanding task of pulling a snack 
+on a string up to their beaks, using a co-ordinated combination of claws and beak. The 
+results showed that the parrots with the strongest foot preferences worked out the 
+puzzle far more quickly than their ambidextrous peers.  </p>
+            <p><b>G</b> A further puzzle is why are there always a few exceptions, like left-handed humans, who are wired differently from the majority of the population? Giorgio Vallortigara and Stefano Ghirlanda of Stockholm University seem to have found the answer via 
+mathematical models. Tese have shown that a group of fish is likely to survive a shark 
+attack with the fewest casualties if the majority turn together in one direction while a 
+very small proportion of the group escape in the direction that the predator is not 
+expecting. </p>
+            <p><b>H</b> This imbalance of lateralisation within populations may also have advantages for individuals. Whereas most co-operative interactions require participants to react similarly, there are some situations where it can benefit an individual to launch an attack from an unexpected quarter.  Perhaps this can 
+partly explain the existence of left-handers in human societies. It has been suggested 
+that when it comes to hand-to-hand fighting, left-handers may have the advantage over 
+the right-handed majority. Where survival depends on the element of surprise, it may 
+indeed pay to be different.</p>
+        </div>
+
+        <div class="questions">
+            <h3>Questions 27-30</h3>
+            <p><b>Complete each sentence with the correct ending, A-F, below.</b></p>
+
+            <p><b>A</b> lateralisation is more common in some species than in others.</p>
+            <p><b>B</b> it benefits a population if some members have a different lateralisation than the majority.</p>
+            <p><b>C</b> lateralisation helps animals do two things at the same time.</p>
+            <p><b>D</b> lateralisation is not confined to human beings.</p>
+            <p><b>E</b> the greater an animal's lateralisation, the better it is at problem-solving.</p>
+            <p><b>F</b> strong lateralisation may sometimes put groups of animals in danger.</p>
+
+            <div class="question">27. In the 1970s, Lesley Rogers discovered that <input id="q27"></div>
+            <div class="question">28. Angelo Bisazza's experiments revealed that <input id="q28"></div>
+            <div class="question">29. Magat and Brown's studies show that <input id="q29"></div>
+            <div class="question">30. Vallortigara and Ghirlanda's research findings suggest that <input id="q30"></div>
+
+            <h3>Questions 31-35</h3>
+            <p><b>Complete the summary below.</b></p>
+            <p>Choose <b>ONE WORD ONLY</b> from the passage for each answer.</p>
+
+            <h4>Lesley Rogers' 2004 Experiment</h4>
+            <div class="question">31. Lateralisation is determined by both genetic and <input id="q31"> influences.</div>
+            <div class="question">32. Rogers found that chicks whose eggs are given <input id="q32"> during the incubation period tend to have a stronger lateralisation.</div>
+            <div class="question">33. Her 2004 experiment set out to prove that these chicks were better at <input id="q33"> than weakly lateralised chicks.</div>
+            <div class="question">34. As expected, the strongly lateralised birds in the experiment were able to locate <input id="q34"> using their right eye.</div>
+            <div class="question">35. They used their left eye to monitor an imitation <input id="q35"> located above them.</div>
+
+            <h3>Questions 36-40</h3>
+            <p><b>Reading Passage 3 has eight paragraphs, A-H.</b></p>
+            <p>Which paragraph contains the following information?</p>
+            <p>Write the correct letter, <b>A-H</b>, in boxes 36-40 on your answer sheet.</p>
+
+            <div class="question">36. description of a study which supports another scientist's findings <input id="q36"></div>
+            <div class="question">37. the suggestion that a person could gain from having an opposing lateralisation to most of the population <input id="q37"></div>
+            <div class="question">38. reference to the large amount of knowledge of animal lateralisation that has accumulated <input id="q38"></div>
+            <div class="question">39. research findings that were among the first to contradict a previous belief <input id="q39"></div>
+            <div class="question">40. a suggestion that lateralisation would seem to disadvantage animals <input id="q40"></div>
+        </div>
+    </section>
+
+</main>
+
+<div class="reading-nav-bar">
+    <button id="toggleNumbersBtn" class="nav-btn-read toggle-numbers-btn" type="button">Hide Numbers</button>
+    <div class="nav-actions">
+        <button id="prevBtn" class="nav-btn-read" type="button">Previous Passage</button>
+        <button id="nextBtn" class="nav-btn-read" type="button">Next Passage</button>
+        <button id="finishBtn" class="nav-btn-read finish" type="button" style="display:none;">Finish Test</button>
+    </div>
+</div>
+
+<footer id="numbersFooter" class="exam-footer">
+    <div class="number-grid" id="numberGrid"></div>
+</footer>
+
+<script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore-compat.js"></script>
+<script src="../jss/core.js"></script>
+<script src="../jss/firebase-init.js"></script>
+<script src="../jss/emerald-tracker.js"></script>
+<script src="../jss/emerald-firestore-store.js"></script>
+<script src="../jss/emerald-firebase-bridge.js"></script>
+<script src="../jss/reading-test3.js"></script>
+
+</body>
+</html>

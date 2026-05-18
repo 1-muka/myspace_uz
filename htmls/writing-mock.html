@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Writing Mock - Emerald</title>
+    <link rel="icon" href="../logo.jpg">
+    <link rel="stylesheet" href="../csss/writing-mock.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+<!-- RULES INTRO OVERLAY -->
+<div id="writingRulesOverlay" style="
+    position:fixed;inset:0;z-index:9000;
+    display:flex;justify-content:center;align-items:center;padding:20px;
+    background:rgba(7,19,15,0.78);backdrop-filter:blur(8px);">
+    <div style="
+        width:min(94vw,540px);background:#fff;border-radius:24px;
+        padding:34px 30px;box-shadow:0 30px 70px rgba(0,0,0,0.22);text-align:left;">
+
+        <div style="
+            display:inline-flex;padding:7px 12px;border-radius:999px;
+            background:#e9faf3;color:#15543f;font-size:12px;font-weight:800;
+            letter-spacing:0.08em;text-transform:uppercase;margin-bottom:14px;">
+            Before You Start
+        </div>
+
+        <h2 style="margin:0 0 6px;font-size:26px;color:#111827;">Writing Mock Rules</h2>
+        <p style="margin:0 0 18px;font-size:14px;color:#6b7280;">Read carefully before starting your writing mock.</p>
+
+        <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px;">
+            <span style="padding:9px 14px;border-radius:999px;background:#e9faf3;color:#10342a;font-size:13px;font-weight:700;">60 minutes</span>
+            <span style="padding:9px 14px;border-radius:999px;background:#e9faf3;color:#10342a;font-size:13px;font-weight:700;">Task 1 — 150+ words</span>
+            <span style="padding:9px 14px;border-radius:999px;background:#e9faf3;color:#10342a;font-size:13px;font-weight:700;">Task 2 — 250+ words</span>
+        </div>
+
+        <ul style="margin:0 0 22px 18px;color:#425266;line-height:1.8;font-size:14px;">
+            <li>The timer starts as soon as you click the button below.</li>
+            <li>Switch between Task 1 and Task 2 using the footer buttons.</li>
+            <li>Your answers are saved automatically as you type.</li>
+            <li>Use the AI Check button for feedback on your writing.</li>
+            <li>Click Submit when you have finished both tasks.</li>
+        </ul>
+
+        <button id="writingRulesStartBtn" style="
+            width:100%;padding:15px;border:none;border-radius:14px;
+            background:linear-gradient(135deg,#0d8a5e,#27b77f);
+            color:white;font-size:16px;font-weight:800;cursor:pointer;
+            box-shadow:0 10px 24px rgba(13,138,94,0.22);
+            transition:transform 0.2s ease;">
+            ▶ &nbsp; Start Writing Mock
+        </button>
+    </div>
+</div>
+
+<div class="writing-shell">
+
+    <header class="writing-topbar">
+        <button id="backToDashboardBtn" class="top-btn top-btn-light" type="button">
+            <i class="fa-solid fa-arrow-left"></i>
+            <span>Back to Dashboard</span>
+        </button>
+
+        <div class="top-center">
+            <div class="top-chip">Emerald Writing Mock</div>
+            <div class="top-chip accent" id="currentDateChip">April 09, 2026</div>
+            <div class="top-timer" id="timer">60:00</div>
+            <div class="top-chip accent" id="writingViolationChip">Violations: 0 / 3</div>
+        </div>
+
+        <button id="aiCheckBtn" class="top-btn top-btn-accent" type="button">
+            <i class="fa-solid fa-wand-magic-sparkles"></i>
+            <span>AI Check</span>
+        </button>
+    </header>
+
+    <main class="writing-main">
+        <section class="prompt-column">
+
+            <article class="prompt-card active" data-task-screen="task1">
+                <div class="task-badge">Task 1</div>
+
+                <h1>Report the main features of the visual information.</h1>
+
+                <div class="instruction-box">
+                    <p>
+                        <strong>Task prompt:</strong>
+                        The graph below shows the percentage of people visiting the gym once a month or more between 1984 and 2003.
+                    </p>
+
+                    <p>
+                        <strong>Instructions:</strong>
+                        Summarise the information by selecting and reporting the main features, and make comparisons where relevant.
+                    </p>
+
+                    <p><strong>Write at least 150 words.</strong></p>
+                </div>
+
+                <div class="task-visual-card">
+                    <img
+                        src="../images/mock1.jpg"
+                        alt="Task 1 visual"
+                        class="task-visual"
+                        onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+                    >
+                    <div class="task-visual-placeholder">
+                        Put your Task 1 image at <code>Emerald Exam/writing-task1.jpg</code>
+                        or change the <code>src</code> path in this HTML file.
+                    </div>
+                </div>
+            </article>
+
+            <article class="prompt-card" data-task-screen="task2">
+                <div class="task-badge">Task 2</div>
+
+                <h1>Present a clear opinion and support it with examples.</h1>
+
+                <div class="instruction-box">
+                    <p class="essay-statement">
+                        Some people believe that the best way to make road transport safer is to require drivers to take a driving test every year.
+                    </p>
+
+                    <p class="essay-question">
+                        To what extent do you agree or disagree?
+                    </p>
+
+                    <p>
+                        <strong>Instructions:</strong>
+                        Give reasons for your answer and include any relevant examples from your own knowledge and experience.
+                    </p>
+
+                    <p><strong>Write at least 250 words.</strong></p>
+                </div>
+
+                <div class="task-note-box">
+                    <h3>Quick Structure</h3>
+                    <p>Introduction</p>
+                    <p>Body Paragraph 1</p>
+                    <p>Body Paragraph 2</p>
+                    <p>Conclusion</p>
+                </div>
+            </article>
+
+        </section>
+
+        <section class="answer-column">
+            <div class="answer-card">
+                <div class="answer-head">
+                    <div>
+                        <p class="answer-kicker" id="currentTaskLabel">Task 1 Answer</p>
+                        <h2>Writing Area</h2>
+                    </div>
+
+                    <div class="answer-target" id="minWordHint">Minimum 150 words</div>
+                </div>
+
+                <textarea id="writingAnswer" placeholder="Start writing your answer here..."></textarea>
+            </div>
+        </section>
+    </main>
+
+    <footer class="writing-footer">
+        <div class="footer-left">
+            <span class="footer-metric">Word Count: <strong id="wordCount">0</strong></span>
+            <span class="footer-metric">Characters: <strong id="charCount">0</strong></span>
+        </div>
+
+        <div class="footer-right">
+            <button class="footer-pill active" type="button" data-task-btn="task1">Task 1</button>
+            <button class="footer-pill" type="button" data-task-btn="task2">Task 2</button>
+
+            <button id="submitWritingBtn" class="submit-pill" type="button">
+                <i class="fa-solid fa-paper-plane"></i>
+                <span>Submit</span>
+            </button>
+        </div>
+    </footer>
+
+</div>
+
+<div id="writingLockdownOverlay" class="writing-overlay hidden">
+    <div class="writing-overlay-card">
+        <div class="writing-overlay-badge">Exam Paused</div>
+        <h2>Return to fullscreen</h2>
+        <p id="writingLockdownMessage">
+            This writing test must stay in fullscreen.
+        </p>
+        <button id="writingResumeBtn" class="writing-overlay-btn" type="button">Return to Test</button>
+    </div>
+</div>
+
+<script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore-compat.js"></script>
+<script src="../jss/core.js"></script>
+<script src="../jss/firebase-init.js"></script>
+<script src="../jss/emerald-tracker.js"></script>
+<script src="../jss/emerald-firestore-store.js"></script>
+<script src="../jss/emerald-firebase-bridge.js"></script>
+<script src="../jss/writing-ai.js"></script>
+<script src="../jss/writing-mock.js"></script>
+</body>
+</html>

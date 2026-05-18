@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reading Test 5</title>
+    <link rel="stylesheet" href="../csss/reading-test.css">
+    <link rel="stylesheet" href="../csss/reading-test5.css">
+    <link rel="icon" href="../logo.jpg">
+</head>
+<body>
+
+<div class="top-bar">
+    <div>Reading Test 5</div>
+    <div class="time">Time Left: <span id="timer">60:00</span></div>
+</div>
+
+<div id="readingOverlay" class="fullscreen-overlay">
+    <div id="rulesCard" class="overlay-card" style="max-width:540px;text-align:left;padding:34px 30px;">
+        <div style="
+            display:inline-flex;padding:7px 12px;border-radius:999px;
+            background:#e9faf3;color:#15543f;font-size:12px;font-weight:800;
+            letter-spacing:0.08em;text-transform:uppercase;margin-bottom:14px;">
+            Before You Start
+        </div>
+        <h2 style="margin:0 0 6px;font-size:26px;color:#111827;">Reading Test Rules</h2>
+        <p style="margin:0 0 18px;font-size:14px;color:#6b7280;">Read the rules carefully before starting.</p>
+
+        <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px;">
+            <span style="padding:9px 14px;border-radius:999px;background:#e9faf3;color:#10342a;font-size:13px;font-weight:700;">60 minutes</span>
+            <span style="padding:9px 14px;border-radius:999px;background:#e9faf3;color:#10342a;font-size:13px;font-weight:700;">39 questions</span>
+            <span style="padding:9px 14px;border-radius:999px;background:#e9faf3;color:#10342a;font-size:13px;font-weight:700;">3 passages</span>
+        </div>
+
+        <ul style="margin:0 0 22px 18px;color:#425266;line-height:1.8;font-size:14px;">
+            <li>The test must stay in fullscreen at all times.</li>
+            <li>Do not switch tabs or leave the exam window.</li>
+            <li>You have only 3 violation warnings before the test ends.</li>
+            <li>Use the navigation buttons to move between passages.</li>
+            <li>Answers are saved automatically as you type.</li>
+            <li>Click Finish Test on the last passage when done.</li>
+        </ul>
+
+        <button id="overlayActionBtn" class="overlay-btn" style="width:100%;padding:15px;font-size:16px;">
+            Start Test in Fullscreen
+        </button>
+    </div>
+
+    <div id="lockdownCard" class="overlay-card" style="display:none;">
+        <div class="overlay-label" id="overlayTitle">Exam Paused</div>
+        <h2 style="margin:12px 0 10px;font-size:26px;color:#111827;">Return to Fullscreen</h2>
+        <p id="overlayMessage" style="margin:0 0 22px;font-size:15px;color:#4b5563;line-height:1.6;">
+            Stay in fullscreen to continue the test.
+        </p>
+        <button id="lockdownActionBtn" class="overlay-btn" style="width:100%;">Return to Test</button>
+    </div>
+</div>
+
+<main class="reading-stage">
+
+    <section class="reading-container passage-screen active" data-passage="1">
+        <div class="passage">
+            <h2>READING PASSAGE 1</h2>
+            <p><b>You should spend about 20 minutes on Questions 1-13, which are based on Reading Passage 1 on the following pages.</b></p>
+
+            <h3>The domestication of horses</h3>
+
+            <p><b>A</b> Horses have been racing across the landscape for around 55 million years - much longer than our own species has existed. However, prehistoric remains show that at the end of the Ice Age, some 10,000 years ago, wild horses died out in the Americas and dwindled in western Europe, for reasons that are not clear. But they continued to thrive 
+on the steppes of eastern Europe and Central Asia, where short grasses and shrubs 
+grow on vast, dry stretches of land. Most scholars believe it was here that people 
+domesticated the horse. However, the DNA of domestic horses is very diverse. This 
+suggests they may be descended from a number of different wild horse populations, in 
+several locations. </p>
+            <p><b>B</b> Once horses and humans encountered each other, our two species became powerfully linked. Humans domesticated horses some 6,000 years ago, and over time, we have created more than 200 breeds.  The first domestic horses were likely to have 
+been kept mainly as a source of food, rather than for work or for riding. There is 
+evidence of horses being raised for meat in Kazakhstan, in Central Asia, around 5,500 
+years ago; later they began to pull chariots, and horseback riding became common in 
+Afghanistan and Iran about 4,000 years ago. As we have shaped horses to suit our 
+needs on battlefields, farms and elsewhere, these animals have shaped human history. 
+The ways we travel, trade, play, work and fight wars have all been profoundly shaped 
+by our use of horses.</p>
+            <p><b>C</b> When people domesticate animals, they control their behavior in many ways. For example, animals that are being domesticated no longer choose their own mates. Instead, people control their breeding. Individuals with traits that humans prefer are 
+more likely to produce offspring and pass on their genes. In the course of several 
+generations, both the body and behavior of the animal are transformed. In the wild, 
+animals that are well adapted to their environment live long and reproduce, while others 
+die young. In this way, nature "chooses" the traits that are passed on to the next 
+generation. This is the process of evolution by natural selection. Domestic animals also 
+evolve, but people do the selecting. Humans seek out qualities like tameness, and help 
+animals with those traits to survive and bear young. This is evolution by artificial 
+selection. Most domestic animals are naturally social. Their wild ancestors lived in 
+groups, with individuals responding to each other – some led, others followed. In 
+domestic animals, the tendency to submit to others is especially strong. Generations of 
+breeding have encouraged them to let people take the lead.</p>
+            <p><b>D</b> For more than 3,000 years, a fighter on horseback or horse-drawn chariot was the ultimate weapon. Time after time, from Asia to Europe to the Americas, the use of horses has changed the balance of power between civilizations. When people with horses clashed with those without, horses provided a huge advantage. When both sides 
+had horses, battles turned on the strength and strategy of their mounted horsemen, or 
+cavalry. Horses continued to define military tactics well into the 1900s, until they finally 
+became outmoded by machine guns, tanks, airplanes and other modern weapons. </p>
+            <p><b>E</b> Horses are built for power. Their muscular bodies are heavier in the front than in the back, making them well balanced to pull heavy loads. Yet they can also be agile and 
+quick – fit to carry out difficult tasks at top speed. So for more than a thousand years, 
+people have called on the power of horses to cultivate the land and manage livestock.</p>
+            <p><b>F</b> For most of human history, there was no faster way to travel over land than on a horse. When it comes to carrying people and their possessions, horses have two important advantages - they can run very fast and very far.  Their speed and endurance 
+are unusual for a creature so large, making them the most suitable animals to carry 
+people and goods around the world. Horses offer other advantages as well. Since they 
+eat grass, they can go almost anywhere that humans can, eating as they go. And unlike 
+cows and camels, which must sit and rest to digest food, a horse's digestive system 
+allows it to graze and walk the whole day without stopping. By carrying people, goods 
+and ideas between civilizations, horses changed history. </p>
+            <p><b>G</b> Today's horses are not used to carry soldiers into battle, and do not pull plows and stage-coaches as they once did. But horses are still part of our lives.  Today the 58 
+million horses in the world are used more for companionship, sport and recreation than 
+for work and warfare.</p>
+        </div>
+
+        <div class="questions">
+            <h3>Questions 1-7</h3>
+            <p><b>Reading Passage 1 has seven paragraphs, A-G.</b></p>
+            <p>Choose the correct heading for each paragraph from the list of headings below.</p>
+
+            <p><b>i</b> The fastest breeds of horses</p>
+            <p><b>ii</b> Developing desirable characteristics</p>
+            <p><b>iii</b> Playing a less essential role</p>
+            <p><b>iv</b> Influencing the outcome of conflicts</p>
+            <p><b>v</b> What different breeds do best</p>
+            <p><b>vi</b> A wide range of uses for domestic horses</p>
+            <p><b>vii</b> Horses in agriculture</p>
+            <p><b>viii</b> An ancient species</p>
+            <p><b>ix</b> An ideal form of transport</p>
+            <p><b>x</b> What the earliest horses looked like</p>
+
+            <div class="question">1. Section A <input id="q1"></div>
+            <div class="question">2. Section B <input id="q2"></div>
+            <div class="question">3. Section C <input id="q3"></div>
+            <div class="question">4. Section D <input id="q4"></div>
+            <div class="question">5. Section E <input id="q5"></div>
+            <div class="question">6. Section F <input id="q6"></div>
+            <div class="question">7. Section G <input id="q7"></div>
+
+            <h3>Questions 8-10</h3>
+            <p><b>Do the following statements agree with the information given in Reading Passage 1?</b></p>
+            <p>Write <b>TRUE</b>, <b>FALSE</b> or <b>NOT GIVEN</b>.</p>
+
+            <div class="question">8. The last of the wild horses lived around 10,000 years ago. <input id="q8"></div>
+            <div class="question">9. Initially people probably used domesticated horses to supplement their diet. <input id="q9"></div>
+            <div class="question">10. Methods of artificial selection have changed over the centuries. <input id="q10"></div>
+
+            <h3>Questions 11-13</h3>
+            <p><b>Complete the sentences below.</b></p>
+            <p>Choose <b>NO MORE THAN TWO WORDS</b> from the passage for each answer.</p>
+
+            <div class="question">11. Having greater weight at the <input id="q11"> helps horses to pull heavy items.</div>
+            <div class="question">12. As well as being quicker, horses have greater <input id="q12"> than most other large animals.</div>
+            <div class="question">13. Because of the way their <input id="q13"> works, horses can keep moving all day long.</div>
+        </div>
+    </section>
+
+    <section class="reading-container passage-screen" data-passage="2">
+        <div class="passage">
+            <h2>READING PASSAGE 2</h2>
+            <p><b>You should spend about 20 minutes on Questions 14-26, which are based on Reading Passage 2 below.</b></p>
+
+            <h3>The University of Life</h3>
+            <p><em>Katherine Demopoulos meets students who took a break from study to volunteer overseas and returned with a new sense of purpose</em></p>
+
+            <p>The majority of 18-year-old students entering higher education go straight from school to university. For many school leavers, however, there is the irresistible attraction of the 'gap year', a time between school and university when they decide to experience 
+something new, different or exciting. Many of these so-called ‘gappers’ go off travelling 
+around the world, often supplementing their limited funds by taking on casual work, 
+while others may do voluntary work in a village in a distant part of the world.  </p>
+            <p>For the majority of gappers, the gap year is simply a chance to enjoy life as an independent adult for the first time. Increasingly, however, they are also proving a great way of reinvigorating a lapsed or flagging interest in education, offering a chance to 
+think about why you should study, or if you need to study at all. A growing number of 
+students, having taken a break after school, are heading back into further and higher 
+education via a roundabout route of working and ‘gapping’. According to the latest data 
+from the British university admissions service, UCAS, 105,000 students aged 19, and 
+44,400 aged 20, entered higher education last year – figures that show a steady annual 
+increase in this age group over the previous three years. </p>
+            <p>19-year-old student Christine Samways is a typical example. She left school at 16 with nine good exam passes at grades A to C, but did not want to continue studying at the time. She was also worried that, despite having all the attributes of a good student, she 
+would find the challenges of higher education too great and would be forced to drop out. 
+Instead, she gained a vocational qualification in hairdressing. However, she very quickly 
+began to realise it was not quite what she wanted and that going back into some kind of 
+education could be her next step. Like many 16-year-old school leavers starting work for 
+the first time, it dawned on her that if you don’t have qualifications, or the right 
+qualifications, you have fewer work choices. ‘The things that you want to do just aren’t 
+available to you,’ she says.</p>
+            <p>Unsure of what her next step should be, Christine decided to head to Mexico to do voluntary work at a children's home. She was there for a year under the auspices of the International Cultural Youth Ex0change  (ICYE) – an organisation which has been running 
+since 1949, when it sent 50 German students to the US as peace ambassadors. She 
+never expected that working in Mexico would give her such a sense of confidence and, 
+perhaps just as importantly, direction. On returning home to the UK, she decided to 
+make a fresh start in education by enrolling on a course in Social Sciences and 
+Humanities to prepare herself for university. Her new sense of confidence helped at her 
+college interview. Previously, a formal interview would have made her very nervous, but 
+she now found it much easier to talk on an informal and formal level to people she didn’t 
+know. ‘I feel more comfortable in these situations,’ she says. ‘Mexico was the first time 
+I’d been out of my comfort zone. Now I think I can cope with things better.’  </p>
+            <p>Christine is now working towards a degree in International Development at Bath University, a choice of subject informed by her experience of working with Mexican children.And, as well as finding some direction in her career, she now speaks good 
+Spanish – a skill she says she intends to keep up, perhaps by working abroad. She 
+knows that the Mexican children’s home benefit ted from her time there, just as she did. 
+As well as being ‘an extra pair of hands’, she helped to streamline the children’s 
+timetable so they spent more structured time on homework. The children began to ‘do 
+better in school,’ she says. ‘You only move up a year if you pass a year – I got four 
+children that at the beginning of the year were told they were going to stay down, but 
+they moved up. It’s a good feeling.’</p>
+            <p>ICYE also brings students to Europe from the countries that European students traditionally visit. Agnes Eldad, from Kampala, Uganda, has just graduated with a degree in Social Work. She came to the UK in January this year, getting a voluntary 
+work placement relieving full-time carers of elderly people in Bexleyheath, Kent. With 
+her social work background, she wanted to understand how elderly people were treated 
+in Britain and to see for herself how their relationships with their children, grandchildren 
+and in-laws worked. </p>
+            <p>Agnes found the experience extremely beneficial, but says that the ICYE only really 
+works if participants have a focus for what they want to do, see and study. Ironically, for 
+her, this could be the only chance to work with elderly people before she goes back 
+home in January. In Uganda, old people live with, and are supported by, their families, 
+so she won’t have an opportunity to work with them. Instead, she now wants to set up 
+her own vocational training programme for young girls in northern Uganda. A</p>
+        </div>
+
+        <div class="questions">
+            <h3>Questions 14-18</h3>
+            <p><b>Do the following statements agree with the information in the Reading passage?</b></p>
+            <p>Write <b>TRUE</b>, <b>FALSE</b> or <b>NOT GIVEN</b>.</p>
+
+            <div class="question">14. The majority of young people who go travelling during their gap year must work in order to finance their trip. <input id="q14"></div>
+            <div class="question">15. Taking a gap year can give young people time to consider whether or not they want to continue with their studies. <input id="q15"></div>
+            <div class="question">16. The number of university students has increased in the last few years. <input id="q16"></div>
+            <div class="question">17. Christine Samways lacks the right qualities to be a good student. <input id="q17"></div>
+            <div class="question">18. Christine Samways believes that if you lack educational qualifications, your career options are reduced. <input id="q18"></div>
+
+            <h3>Questions 19-23</h3>
+            <p><b>Complete the notes below.</b></p>
+            <p>Choose <b>NO MORE THAN TWO WORDS</b> from the passage for each answer.</p>
+
+            <h4>Christine Samways: ICYE participant</h4>
+            <div class="question">19. Carried out <input id="q19"> in Mexico.</div>
+            <div class="question">20. Programme gave her more <input id="q20"> in herself.</div>
+            <div class="question">21. Returned to <input id="q21"> when she was back in the UK.</div>
+            <div class="question">22. Currently studying <input id="q22"></div>
+            <div class="question">23. Thinks that <input id="q23"> may be a good way of maintaining her Spanish.</div>
+
+            <h3>Questions 24-26</h3>
+            <p><b>Answer the questions below.</b></p>
+            <p>Choose <b>NO MORE THAN TWO WORDS</b> from the passage for each answer.</p>
+
+            <div class="question">24. According to Agnes Eldad, what do people need in order to benefit from an ICYE exchange programme? <input id="q24"></div>
+            <div class="question">25. Who does Agnes Eldad plan to work with when she finishes her ICYE programme? <input id="q25"></div>
+            <div class="question">26. What does Agnes Eldad have now that she didn't have before she came to the UK? <input id="q26"></div>
+        </div>
+    </section>
+
+    <section class="reading-container passage-screen" data-passage="3">
+        <div class="passage">
+            <h2>READING PASSAGE 3</h2>
+            <p><b>You should spend about 20 minutes on Questions 27-39, which are based on Reading Passage 3 below.</b></p>
+
+            <h3>When and why did we learn to stand on our own two feet?</h3>
+            <p><em>We may never know for exactly how long humans have walked on two legs, and the debate about why we do it continues, but evidence and research give us plenty of clues.</em></p>
+
+            <p><b>A</b> For many years, scientists and anthropologists disagreed about whether early humans started walking on two legs before or after their brain had increased. The 
+predominant view was that brain size was important, and until our brains had reached a 
+particular size and mass, bipedal movement would have been impossible. Then, in 
+1974, two scientists, Donald Johanson and Tom Gray, were mapping a remote area of 
+Ethiopia when by chance they came across some fossilised bones which appeared to 
+be from an early human, Australopithecus afarensis. Excavation of the site led to the 
+discovery of several hundred more bones and bone fragments, all from a single 
+skeleton. Scientific research of the bones later that year showed that they were 3.2 
+million years old and belonged to a young female hominid who the scientists nicknamed 
+‘Lucy’. Most remarkably, however, the research showed that while Lucy had a very 
+small brain compared with humans today, she was also bipedal.</p>
+            <p><b>B</b> How did the scientists know this? Lucy's leg bones were angled relative to the condyles, which allow bipeds to balance on one leg at a time when walking. There was also a prominent lip in the knee to prevent the patella (the knee cap) 
+from dislocating due to this angle. Evidence was also found in Lucy’s pelvis, which was 
+able to accommodate an upright stance and the need to balance on only one limb with 
+each stride. The shape of her ankle also showed that her big toes would have aligned 
+with her other toes, which would have sacrificed manipulative abilities for efficiency in 
+bipedal locomotion. Her feet, therefore, would have been used almost exclusively for 
+getting around rather than for holding things. Finally, her backbone showed evidence of 
+the spinal curvature necessitated by a permanent upright stance.</p>
+            <p><b>C</b> Lucy's discovery was exciting for two reasons. Not only was she bipedal in spite of her brain size, but she was also believed to be our oldest ancestor. However, a 
+discovery over thirty years later changed all that. In 2005, Professor Yohannes Haile
+Selassie, head of Physical Anthropology at Cleveland Museum of Natural History, led 
+an international team that discovered and analysed a 3.6-million-year-old fossilised 
+partial male skeleton. It was found in the Woranso-Mille are of Ethiopia’s Afar region, 
+and it took Professor Haile-Selassie’s team over five years to excavate. The team 
+recovered the most complete shoulder blades ever found in the human fossil record. A 
+significant portion of the rib cage was also found.</p>
+            <p><b>D</b> It was a significant find because this early hominid, also a member of Australopithecus afarensis, is 400,000 years older than Lucy, and significantly larger in size.  Research on the new specimen revealed that advanced, human-like bipedalism 
+occurred much earlier than previously thought. The specimen was nicknamed 'Kadanuumuu', which means 'big man' in the Afar language and reflects its large size. 
+The male hominid stood between 1.5 and 1.7 metres tall, while Lucy stood only 1.1 
+metres tall. This individual was fully bipedal and had the ability to walk almost exactly 
+like modern humans.</p>
+            <p><b>E</b> Kadanuumuu's discovery was important for another reason. Despite all the research, there were still some in the scientific world who felt there was insufficient proof that Lucy walked fully upright.  'AS a result of our discovery,' said Haile-Selassie, 
+'we can now confidently say that Lucy and her relatives were almost as proficient 
+walking on two legs as we are, and that the elongation of our legs came earlier in our 
+evolution than previously thought. Until now, all of our understanding of 
+Australopithecus afarensis' locomotion has been dependent on Lucy. Unfortunately, 
+because she was an exceptionally small female with very short legs, this gave some 
+researchers the impression that she was not fully adapted to upright walking. This new 
+skeleton falsifies that impression because if Lucy's frame had been as large as this 
+specimen, her legs would also have been proportionally longer.'</p>
+            <p><b>F</b> Professor Haile-Selassie's research goes a long way to explain when humans began walking upright. However, one tantalising question remains: why did we start walking upright? There are several schools of thought, but two are particularly 
+compelling. One is that bipedal activity is linked to the need to carry as much as 
+possible. 'Something as simple as carrying, an activity we engage in every day, might 
+have, under the right conditions, led to upright walking,' says Dr Brian Richmond, who 
+carried out research on bipedal movement in apes. 'Standing on two legs allowed early 
+humans to carry more at one time because it freed their hands.' It is possible to observe 
+this in apes. While many are capable of short bursts of bipedal movement, they only 
+choose to do it when they need to carry something. And, interestingly, the more 
+valuable the object is to them, the more they are prepared to walk on just two legs in 
+order to carry it.</p>
+            <p><b>G</b> However, another group of researchers working at the University of Arizona has conducted a study which suggests that walking upright is more beneficial because it saves energy.  'For decades now researchers have debated the role and evolution of 
+bipedalism,' said David Raichlen, Assistant Professor of Anthropology. 'However, the 
+big problem in the study of bipedalism was that there was little data out there.' Under his 
+guidance, a group of researchers at the University trained five chimpanzees to walk on 
+an exercise machine while wearing masks that allowed measurement of their oxygen 
+consumption. The chimps were measured both while walking upright and while moving 
+on their legs and knuckles. That measurement of the energy needed to move around 
+was analysed alongside results from similar tests on humans. Raichlen discovered that 
+humans walking on two legs use only one-quarter of the energy that chimpanzees use 
+while knuckle-walking on four limbs. And of course using less energy means you need 
+to eat less, which leaves more time for other things. </p>
+        </div>
+
+        <div class="questions">
+            <h3>Questions 27-31</h3>
+            <p><b>The Reading passage has seven paragraphs, A-G.</b></p>
+            <p>Which paragraph contains the following information?</p>
+
+            <div class="question">27. The circumstances under which some animals walk upright. <input id="q27"></div>
+            <div class="question">28. An experiment to test a theory. <input id="q28"></div>
+            <div class="question">29. A lucky find which contributed to the debate about the way humans developed. <input id="q29"></div>
+            <div class="question">30. A new discovery compels scientists to reconsider how long humans have been walking on two legs. <input id="q30"></div>
+            <div class="question">31. The combined physical evidence which indicated the existence of bipedalism in early humans. <input id="q31"></div>
+
+            <h3>Questions 32-35</h3>
+            <p><b>Complete the sentences below.</b></p>
+            <p>Choose <b>NO MORE THAN THREE WORDS</b> from the passage for each answer.</p>
+
+            <div class="question">32. Lucy was different from modern human beings because of, among other things, her <input id="q32"></div>
+            <div class="question">33. The position of her <input id="q33"> shows that Lucy would only have used her feet for walking.</div>
+            <div class="question">34. It took scientists more than <input id="q34"> after Lucy's discovery to find a bipedal hominid that predated her.</div>
+            <div class="question">35. The skeleton that Professor Haile-Selassie's team discovered was given its name because of <input id="q35"></div>
+
+            <h3>Questions 36-39</h3>
+            <p><b>Match each statement with the correct researcher.</b></p>
+            <p><b>A</b> Professor Yohannes Haile-Selassie</p>
+            <p><b>B</b> Dr Brain Richmond</p>
+            <p><b>C</b> David Raichlen</p>
+            <p><b>D</b> None of the above</p>
+
+            <div class="question">36. The need to perform a basic function that we do on a regular basis may have resulted in bipedal movement. <input id="q36"></div>
+            <div class="question">37. It's much easier to carry heavy objects when you can move on two legs. <input id="q37"></div>
+            <div class="question">38. People have been talking about why humans walk on two legs for a long time. <input id="q38"></div>
+            <div class="question">39. We have further evidence that confirms something we already knew. <input id="q39"></div>
+        </div>
+    </section>
+
+</main>
+
+<div class="reading-nav-bar">
+    <button id="toggleNumbersBtn" class="nav-btn-read toggle-numbers-btn" type="button">Hide Numbers</button>
+    <div class="nav-actions">
+        <button id="prevBtn" class="nav-btn-read" type="button">Previous Passage</button>
+        <button id="nextBtn" class="nav-btn-read" type="button">Next Passage</button>
+        <button id="finishBtn" class="nav-btn-read finish" type="button" style="display:none;">Finish Test</button>
+    </div>
+</div>
+
+<footer id="numbersFooter" class="exam-footer">
+    <div class="number-grid" id="numberGrid"></div>
+</footer>
+
+<script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore-compat.js"></script>
+<script src="../jss/core.js"></script>
+<script src="../jss/firebase-init.js"></script>
+<script src="../jss/emerald-tracker.js"></script>
+<script src="../jss/emerald-firestore-store.js"></script>
+<script src="../jss/emerald-firebase-bridge.js"></script>
+<script src="../jss/reading-test5.js"></script>
+
+</body>
+</html>

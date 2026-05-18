@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cambridge 18 - Test 8 - Listening</title>
+    <link rel="stylesheet" href="../csss/listening-test.css">
+    <link rel="stylesheet" href="../csss/listening-test8.css">
+</head>
+<body>
+
+<div id="rulesIntroOverlay" class="modal-overlay" style="display:flex;">
+    <div class="practice-card" style="max-width:540px;text-align:left;">
+        <div class="overlay-badge" style="
+            display:inline-flex;padding:7px 12px;border-radius:999px;
+            background:#e9faf3;color:#15543f;font-size:12px;font-weight:800;
+            letter-spacing:0.08em;text-transform:uppercase;margin-bottom:14px;">
+            Before You Start
+        </div>
+        <h2 class="practice-title" style="text-align:left;margin-bottom:6px;">Listening Test Rules</h2>
+        <p class="practice-subtitle" style="text-align:left;margin-bottom:18px;">Read the rules carefully before starting.</p>
+
+        <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px;">
+            <span style="padding:9px 14px;border-radius:999px;background:#e9faf3;color:#10342a;font-size:13px;font-weight:700;">35 minutes</span>
+            <span style="padding:9px 14px;border-radius:999px;background:#e9faf3;color:#10342a;font-size:13px;font-weight:700;">40 questions</span>
+            <span style="padding:9px 14px;border-radius:999px;background:#e9faf3;color:#10342a;font-size:13px;font-weight:700;">4 parts</span>
+        </div>
+
+        <ul style="margin:0 0 22px 18px;color:#425266;line-height:1.8;font-size:14px;">
+            <li>The test must stay in fullscreen at all times.</li>
+            <li>Do not switch tabs or leave the exam window.</li>
+            <li>You have only 3 violation warnings before the test ends.</li>
+            <li>The audio will play automatically when you start.</li>
+            <li>You can navigate between parts using the buttons.</li>
+            <li>Answers are saved automatically as you type.</li>
+        </ul>
+
+        <button id="finalStartBtn" class="btn-green-large" style="margin-top:4px;">
+            Start Test in Fullscreen
+        </button>
+    </div>
+</div>
+
+<header class="exam-header">
+    <div class="header-top-block">
+        <span class="test-name">Cambridge 18 - Listening Test 8</span>
+        <div class="timer-box">Time Left: <span id="timer">35:00</span></div>
+    </div>
+
+    <div class="audio-panel">
+        <div class="audio-block">
+            <span class="player-label">Audio Player</span>
+            <button id="startTestBtn" class="btn-green">Start Test</button>
+            <audio id="examAudio" class="hidden" controls>
+                <source src="../audio/listening-test8.mp3" type="audio/mpeg">
+            </audio>
+        </div>
+    </div>
+</header>
+
+<main class="exam-content" id="mainScroll">
+
+    <section class="part-container active" id="part-1">
+        <div class="blue-part-bar">Part 1</div>
+
+        <div class="instruction-box">
+            <p class="instruction-line"><strong>Questions 1-10</strong></p>
+            <p class="instruction-line"><em>Complete the notes below.</em></p>
+            <p class="instruction-line">Write <span class="hl-blue">ONE WORD AND/OR A NUMBER</span> for each answer.</p>
+        </div>
+
+        <div class="question-paper">
+            <h2 class="form-title">Transport Survey</h2>
+
+            <p class="instruction-line" style="font-style:italic;">Example</p>
+            <div class="q-line">Travelled to town today: by <span class="example-hand">bus</span></div>
+
+            <div class="q-line"><strong>Name:</strong> Luisa <strong>1</strong> <input type="text" id="q1" class="cd-input" aria-label="Question 1"></div>
+            <div class="q-line"><strong>Address:</strong> <strong>2</strong> <input type="text" id="q2" class="cd-input" aria-label="Question 2"> White Stone Rd</div>
+            <div class="q-line"><strong>Area:</strong> Bradfield</div>
+            <div class="q-line"><strong>Postcode:</strong> <strong>3</strong> <input type="text" id="q3" class="cd-input" aria-label="Question 3"></div>
+            <div class="q-line"><strong>Occupation:</strong> <strong>4</strong> <input type="text" id="q4" class="cd-input" aria-label="Question 4"></div>
+            <div class="q-line"><strong>Reason for visit to town:</strong> to go to the <strong>5</strong> <input type="text" id="q5" class="cd-input" aria-label="Question 5"></div>
+
+            <h3 class="sub-heading" style="color:#2a72ae;">Suggestions for improvement</h3>
+            <ul class="ielts-list">
+                <li class="q-line">better <strong>6</strong> <input type="text" id="q6" class="cd-input" aria-label="Question 6"></li>
+                <li>have more footpaths</li>
+                <li class="q-line">more frequent <strong>7</strong> <input type="text" id="q7" class="cd-input" aria-label="Question 7"></li>
+            </ul>
+
+            <h3 class="sub-heading" style="color:#2a72ae;">Things that would encourage cycling to work</h3>
+            <ul class="ielts-list">
+                <li class="q-line">having <strong>8</strong> <input type="text" id="q8" class="cd-input" aria-label="Question 8"> parking places for bicycles</li>
+                <li class="q-line">being able to use a <strong>9</strong> <input type="text" id="q9" class="cd-input" aria-label="Question 9"> at work</li>
+                <li class="q-line">the opportunity to have cycling <strong>10</strong> <input type="text" id="q10" class="cd-input" aria-label="Question 10"> on busy roads</li>
+            </ul>
+        </div>
+
+        <div class="part-nav">
+            <button class="nav-btn next" onclick="goToPart(2)">Next Part -&gt;</button>
+        </div>
+    </section>
+
+    <section class="part-container" id="part-2">
+        <div class="blue-part-bar">Part 2</div>
+
+        <div class="instruction-box">
+            <p class="instruction-line" style="font-weight:700;color:#2a72ae;">Questions 11-20</p>
+        </div>
+
+        <div class="question-paper">
+            <h2 class="section-paper-title">New city developments</h2>
+
+            <div class="instruction-box" style="margin:0 0 16px;">
+                <p class="instruction-line"><em>Questions 11-14</em></p>
+                <p class="instruction-line">Choose the correct letter, <span class="hl-blue">A</span>, <span class="hl-blue">B</span> or <span class="hl-blue">C</span>.</p>
+            </div>
+
+            <div class="mcq-block">
+                <p><span class="q-num">11</span> The idea for the two new developments in the city came from</p>
+                <div class="vertical-options">
+                    <label class="mcq-opt"><input type="radio" name="q11"> A. local people.</label>
+                    <label class="mcq-opt"><input type="radio" name="q11"> B. the City Council.</label>
+                    <label class="mcq-opt"><input type="radio" name="q11"> C. the SWRDC.</label>
+                </div>
+            </div>
+
+            <div class="mcq-block">
+                <p><span class="q-num">12</span> What is unusual about Brackenside pool?</p>
+                <div class="vertical-options">
+                    <label class="mcq-opt"><input type="radio" name="q12"> A. its architectural style</label>
+                    <label class="mcq-opt"><input type="radio" name="q12"> B. its heating system</label>
+                    <label class="mcq-opt"><input type="radio" name="q12"> C. its method of water treatment</label>
+                </div>
+            </div>
+
+            <div class="mcq-block">
+                <p><span class="q-num">13</span> Local newspapers have raised worries about</p>
+                <div class="vertical-options">
+                    <label class="mcq-opt"><input type="radio" name="q13"> A. the late opening date.</label>
+                    <label class="mcq-opt"><input type="radio" name="q13"> B. the cost of the project.</label>
+                    <label class="mcq-opt"><input type="radio" name="q13"> C. the size of the facilities.</label>
+                </div>
+            </div>
+
+            <div class="mcq-block">
+                <p><span class="q-num">14</span> What decision has not yet been made about the pool?</p>
+                <div class="vertical-options">
+                    <label class="mcq-opt"><input type="radio" name="q14"> A. whose statue will be at the door</label>
+                    <label class="mcq-opt"><input type="radio" name="q14"> B. the exact opening times</label>
+                    <label class="mcq-opt"><input type="radio" name="q14"> C. who will open it</label>
+                </div>
+            </div>
+
+            <div class="instruction-box" style="margin:28px 0 16px;">
+                <p class="instruction-line"><em>Questions 15-20</em></p>
+                <p class="instruction-line">Which feature is related to each of the following areas of the world represented in the playground?</p>
+                <p class="instruction-line">Choose <span class="hl-blue">SIX</span> answers from the box and write the correct letter, <span class="hl-blue">A-I</span>, next to Questions 15-20.</p>
+            </div>
+
+            <div class="matching-box">
+                <h4 style="margin-bottom:10px;text-align:center;">Features</h4>
+                <div class="options-grid options-grid-single">
+                    <span><strong>A</strong> ancient forts</span>
+                    <span><strong>B</strong> waterways</span>
+                    <span><strong>C</strong> ice and snow</span>
+                    <span><strong>D</strong> jewels</span>
+                    <span><strong>E</strong> local animals</span>
+                    <span><strong>F</strong> mountains</span>
+                    <span><strong>G</strong> music and film</span>
+                    <span><strong>H</strong> space travel</span>
+                    <span><strong>I</strong> volcanoes</span>
+                </div>
+            </div>
+
+            <div class="q-line"><strong>15</strong> Asia <input type="text" maxlength="1" id="q15" class="cd-input matching-input" aria-label="Question 15" title="Letter A-I"></div>
+            <div class="q-line"><strong>16</strong> Antarctica <input type="text" maxlength="1" id="q16" class="cd-input matching-input" aria-label="Question 16" title="Letter A-I"></div>
+            <div class="q-line"><strong>17</strong> South America <input type="text" maxlength="1" id="q17" class="cd-input matching-input" aria-label="Question 17" title="Letter A-I"></div>
+            <div class="q-line"><strong>18</strong> North America <input type="text" maxlength="1" id="q18" class="cd-input matching-input" aria-label="Question 18" title="Letter A-I"></div>
+            <div class="q-line"><strong>19</strong> Europe <input type="text" maxlength="1" id="q19" class="cd-input matching-input" aria-label="Question 19" title="Letter A-I"></div>
+            <div class="q-line"><strong>20</strong> Africa <input type="text" maxlength="1" id="q20" class="cd-input matching-input" aria-label="Question 20" title="Letter A-I"></div>
+        </div>
+
+        <div class="part-nav">
+            <button class="nav-btn prev" onclick="goToPart(1)">&lt;- Previous Part</button>
+            <button class="nav-btn next" onclick="goToPart(3)">Next Part -&gt;</button>
+        </div>
+    </section>
+
+    <section class="part-container" id="part-3">
+        <div class="blue-part-bar">Part 3</div>
+
+        <div class="instruction-box">
+            <p class="instruction-line" style="font-weight:700;color:#2a72ae;">Questions 21-30</p>
+        </div>
+
+        <div class="question-paper">
+            <h2 class="section-paper-title">The later life of Thor Heyerdahl</h2>
+
+            <div class="instruction-box" style="margin:0 0 16px;">
+                <p class="instruction-line"><em>Questions 21 and 22</em></p>
+                <p class="instruction-line">Choose <span class="hl-blue">TWO</span> letters, <span class="hl-blue">A-E</span>.</p>
+            </div>
+            <div class="mcq-block">
+                <p>Which <span class="hl-blue">TWO</span> hobbies was Thor Heyerdahl very interested in as a youth?</p>
+                <div class="multi-select-block">
+                    <label class="mcq-opt"><input type="checkbox" name="q21_22" value="A" onchange="handleMultiSelect('q21_22', 21, 22)"> A. camping</label>
+                    <label class="mcq-opt"><input type="checkbox" name="q21_22" value="B" onchange="handleMultiSelect('q21_22', 21, 22)"> B. climbing</label>
+                    <label class="mcq-opt"><input type="checkbox" name="q21_22" value="C" onchange="handleMultiSelect('q21_22', 21, 22)"> C. collecting</label>
+                    <label class="mcq-opt"><input type="checkbox" name="q21_22" value="D" onchange="handleMultiSelect('q21_22', 21, 22)"> D. hunting</label>
+                    <label class="mcq-opt"><input type="checkbox" name="q21_22" value="E" onchange="handleMultiSelect('q21_22', 21, 22)"> E. reading</label>
+                </div>
+            </div>
+
+            <div class="instruction-box" style="margin:24px 0 16px;">
+                <p class="instruction-line"><em>Questions 23 and 24</em></p>
+                <p class="instruction-line">Choose <span class="hl-blue">TWO</span> letters, <span class="hl-blue">A-E</span>.</p>
+            </div>
+            <div class="mcq-block">
+                <p>Which do the speakers say are the <span class="hl-blue">TWO</span> reasons why Heyerdahl went to live on an island?</p>
+                <div class="multi-select-block">
+                    <label class="mcq-opt"><input type="checkbox" name="q23_24" value="A" onchange="handleMultiSelect('q23_24', 23, 24)"> A. to examine ancient carvings</label>
+                    <label class="mcq-opt"><input type="checkbox" name="q23_24" value="B" onchange="handleMultiSelect('q23_24', 23, 24)"> B. to experience an isolated place</label>
+                    <label class="mcq-opt"><input type="checkbox" name="q23_24" value="C" onchange="handleMultiSelect('q23_24', 23, 24)"> C. to formulate a new theory</label>
+                    <label class="mcq-opt"><input type="checkbox" name="q23_24" value="D" onchange="handleMultiSelect('q23_24', 23, 24)"> D. to learn survival skills</label>
+                    <label class="mcq-opt"><input type="checkbox" name="q23_24" value="E" onchange="handleMultiSelect('q23_24', 23, 24)"> E. to study the impact of an extreme environment</label>
+                </div>
+            </div>
+
+            <div class="instruction-box" style="margin:28px 0 16px;">
+                <p class="instruction-line"><em>Questions 25-30</em></p>
+                <p class="instruction-line">Choose the correct letter, <span class="hl-blue">A</span>, <span class="hl-blue">B</span> or <span class="hl-blue">C</span>.</p>
+            </div>
+
+            <div class="mcq-block">
+                <p><span class="q-num">25</span> According to Victor and Olivia, academics thought that Polynesian migration from the east was impossible due to</p>
+                <div class="vertical-options">
+                    <label class="mcq-opt"><input type="radio" name="q25"> A. the fact that Eastern countries were far away.</label>
+                    <label class="mcq-opt"><input type="radio" name="q25"> B. the lack of materials for boat building.</label>
+                    <label class="mcq-opt"><input type="radio" name="q25"> C. the direction of the winds and currents.</label>
+                </div>
+            </div>
+
+            <div class="mcq-block">
+                <p><span class="q-num">26</span> Which do the speakers agree was the main reason for Heyerdahl's raft journey?</p>
+                <div class="vertical-options">
+                    <label class="mcq-opt"><input type="radio" name="q26"> A. to overcome a research setback</label>
+                    <label class="mcq-opt"><input type="radio" name="q26"> B. to demonstrate a personal quality</label>
+                    <label class="mcq-opt"><input type="radio" name="q26"> C. to test a new theory</label>
+                </div>
+            </div>
+
+            <div class="mcq-block">
+                <p><span class="q-num">27</span> What was most important to Heyerdahl about his raft journey?</p>
+                <div class="vertical-options">
+                    <label class="mcq-opt"><input type="radio" name="q27"> A. the fact that he was the first person to do it</label>
+                    <label class="mcq-opt"><input type="radio" name="q27"> B. the speed of crossing the Pacific</label>
+                    <label class="mcq-opt"><input type="radio" name="q27"> C. the use of authentic construction methods</label>
+                </div>
+            </div>
+
+            <div class="mcq-block">
+                <p><span class="q-num">28</span> Why did Heyerdahl go to Easter Island?</p>
+                <div class="vertical-options">
+                    <label class="mcq-opt"><input type="radio" name="q28"> A. to build a stone statue</label>
+                    <label class="mcq-opt"><input type="radio" name="q28"> B. to sail a reed boat</label>
+                    <label class="mcq-opt"><input type="radio" name="q28"> C. to learn the local language</label>
+                </div>
+            </div>
+
+            <div class="mcq-block">
+                <p><span class="q-num">29</span> In Olivia's opinion, Heyerdahl's greatest influence was on</p>
+                <div class="vertical-options">
+                    <label class="mcq-opt"><input type="radio" name="q29"> A. theories about Polynesian origins.</label>
+                    <label class="mcq-opt"><input type="radio" name="q29"> B. the development of archaeological methodology.</label>
+                    <label class="mcq-opt"><input type="radio" name="q29"> C. establishing archaeology as an academic subject.</label>
+                </div>
+            </div>
+
+            <div class="mcq-block">
+                <p><span class="q-num">30</span> Which criticism do the speakers make of William Oliver's textbook?</p>
+                <div class="vertical-options">
+                    <label class="mcq-opt"><input type="radio" name="q30"> A. Its style is out of date.</label>
+                    <label class="mcq-opt"><input type="radio" name="q30"> B. Its content is over-simplified.</label>
+                    <label class="mcq-opt"><input type="radio" name="q30"> C. Its methodology is flawed.</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="part-nav">
+            <button class="nav-btn prev" onclick="goToPart(2)">&lt;- Previous Part</button>
+            <button class="nav-btn next" onclick="goToPart(4)">Next Part -&gt;</button>
+        </div>
+    </section>
+
+    <section class="part-container" id="part-4">
+        <div class="blue-part-bar">Part 4</div>
+
+        <div class="instruction-box">
+            <p class="instruction-line"><strong>Questions 31-40</strong></p>
+            <p class="instruction-line"><em>Complete the notes below.</em></p>
+            <p class="instruction-line">Write <span class="hl-blue">ONE WORD ONLY</span> for each answer.</p>
+        </div>
+
+        <div class="question-paper">
+            <h2 class="form-title">THE FUTURE OF MANAGEMENT</h2>
+
+            <h3 class="sub-heading" style="color:#2a72ae;">Business markets</h3>
+            <ul class="ielts-list">
+                <li class="q-line">greater <strong>31</strong> <input type="text" id="q31" class="cd-input" aria-label="Question 31"> among companies</li>
+                <li class="q-line">increase in power of large <strong>32</strong> <input type="text" id="q32" class="cd-input" aria-label="Question 32"> companies</li>
+                <li class="q-line">rising <strong>33</strong> <input type="text" id="q33" class="cd-input" aria-label="Question 33"> in certain countries</li>
+            </ul>
+
+            <h3 class="sub-heading" style="color:#2a72ae;">External influences on businesses</h3>
+            <ul class="ielts-list">
+                <li class="q-line">more discussion with <strong>34</strong> <input type="text" id="q34" class="cd-input" aria-label="Question 34"> before making business decisions</li>
+                <li class="q-line">environmental concerns which may lead to more <strong>35</strong> <input type="text" id="q35" class="cd-input" aria-label="Question 35"></li>
+            </ul>
+
+            <h3 class="sub-heading" style="color:#2a72ae;">Business structures</h3>
+            <ul class="ielts-list">
+                <li class="q-line">more teams will be formed to work on a particular <strong>36</strong> <input type="text" id="q36" class="cd-input" aria-label="Question 36"></li>
+                <li class="q-line">businesses may need to offer hours that are <strong>37</strong> <input type="text" id="q37" class="cd-input" aria-label="Question 37">, or the chance to work remotely</li>
+            </ul>
+
+            <h3 class="sub-heading" style="color:#2a72ae;">Management styles</h3>
+            <ul class="ielts-list">
+                <li class="q-line">increasing need for managers to provide good <strong>38</strong> <input type="text" id="q38" class="cd-input" aria-label="Question 38"></li>
+                <li class="q-line">changes influenced by <strong>39</strong> <input type="text" id="q39" class="cd-input" aria-label="Question 39"> taking senior roles</li>
+            </ul>
+
+            <h3 class="sub-heading" style="color:#2a72ae;">Changes in the economy</h3>
+            <ul class="ielts-list">
+                <li>service sector continues to be important</li>
+                <li>increasing value of intellectual property</li>
+                <li class="q-line">more and more <strong>40</strong> <input type="text" id="q40" class="cd-input" aria-label="Question 40"> workers</li>
+            </ul>
+        </div>
+
+        <div class="part-nav">
+            <button class="nav-btn prev" onclick="goToPart(3)">&lt;- Previous Part</button>
+            <button class="nav-btn finish" onclick="finishTest()">Finish Test</button>
+        </div>
+    </section>
+
+</main>
+
+<footer class="exam-footer">
+    <div class="number-grid" id="numberGrid"></div>
+</footer>
+
+<div id="lockdownOverlay" class="lockdown-overlay hidden">
+    <div class="lockdown-card">
+        <h2>Exam Paused</h2>
+        <p id="lockdownMessage">This test must stay in fullscreen.</p>
+        <button id="resumeExamBtn" class="btn-green">Return to Exam</button>
+    </div>
+</div>
+
+<script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore-compat.js"></script>
+<script src="../jss/core.js"></script>
+<script src="../jss/firebase-init.js"></script>
+<script src="../jss/emerald-tracker.js"></script>
+<script src="../jss/emerald-firestore-store.js"></script>
+<script src="../jss/emerald-firebase-bridge.js"></script>
+<script src="../jss/listening-test8.js"></script>
+
+</body>
+</html>

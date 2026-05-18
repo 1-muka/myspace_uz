@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cambridge 18 - Test 7 - Listening</title>
+    <link rel="stylesheet" href="../csss/listening-test.css">
+    <link rel="stylesheet" href="../csss/listening-test7.css">
+</head>
+<body>
+
+<div id="rulesIntroOverlay" class="modal-overlay" style="display:flex;">
+    <div class="practice-card" style="max-width:540px;text-align:left;">
+        <div class="overlay-badge" style="
+            display:inline-flex;padding:7px 12px;border-radius:999px;
+            background:#e9faf3;color:#15543f;font-size:12px;font-weight:800;
+            letter-spacing:0.08em;text-transform:uppercase;margin-bottom:14px;">
+            Before You Start
+        </div>
+        <h2 class="practice-title" style="text-align:left;margin-bottom:6px;">Listening Test Rules</h2>
+        <p class="practice-subtitle" style="text-align:left;margin-bottom:18px;">Read the rules carefully before starting.</p>
+
+        <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px;">
+            <span style="padding:9px 14px;border-radius:999px;background:#e9faf3;color:#10342a;font-size:13px;font-weight:700;">35 minutes</span>
+            <span style="padding:9px 14px;border-radius:999px;background:#e9faf3;color:#10342a;font-size:13px;font-weight:700;">40 questions</span>
+            <span style="padding:9px 14px;border-radius:999px;background:#e9faf3;color:#10342a;font-size:13px;font-weight:700;">4 parts</span>
+        </div>
+
+        <ul style="margin:0 0 22px 18px;color:#425266;line-height:1.8;font-size:14px;">
+            <li>The test must stay in fullscreen at all times.</li>
+            <li>Do not switch tabs or leave the exam window.</li>
+            <li>You have only 3 violation warnings before the test ends.</li>
+            <li>The audio will play automatically when you start.</li>
+            <li>You can navigate between parts using the buttons.</li>
+            <li>Answers are saved automatically as you type.</li>
+        </ul>
+
+        <button id="finalStartBtn" class="btn-green-large" style="margin-top:4px;">
+            ▶ &nbsp; Start Test in Fullscreen
+        </button>
+    </div>
+</div>
+
+<header class="exam-header">
+    <div class="header-top-block">
+        <span class="test-name">Cambridge 18 - Listening Test 7</span>
+        <div class="timer-box">Time Left: <span id="timer">35:00</span></div>
+    </div>
+
+    <div class="audio-panel">
+        <div class="audio-block">
+            <span class="player-label">Audio Player</span>
+            <button id="startTestBtn" class="btn-green">Start Test</button>
+            <audio id="examAudio" class="hidden" controls>
+                <source src="../audio/listening-test7.mp3" type="audio/mpeg">
+            </audio>
+        </div>
+    </div>
+</header>
+
+<main class="exam-content" id="mainScroll">
+
+    <!-- PART 1 -->
+    <section class="part-container active" id="part-1">
+        <div class="blue-part-bar">Part 1</div>
+
+        <div class="instruction-box">
+            <p class="instruction-line"><strong>Questions 1–10</strong></p>
+            <p class="instruction-line"><em>Complete the notes below.</em></p>
+            <p class="instruction-line">Write <span class="hl-blue">ONE WORD AND/OR A NUMBER</span> for each answer.</p>
+        </div>
+
+        <div class="question-paper">
+            <h2 class="form-title">Enquiry about joining Youth Council</h2>
+
+            <p class="instruction-line" style="font-style:italic;">Example</p>
+            <div class="q-line"><strong>Name:</strong> Roger <span class="example-hand">Brown</span></div>
+
+            <div class="q-line"><strong>Age:</strong> 18</div>
+            <div class="q-line"><strong>Currently staying in a</strong> <strong>1</strong> <input type="text" id="q1" class="cd-input" aria-label="Question 1"> <strong>during the week</strong></div>
+            <div class="q-line"><strong>Postal address:</strong> 17, <strong>2</strong> <input type="text" id="q2" class="cd-input" aria-label="Question 2"> Street, Stamford, Lincs</div>
+            <div class="q-line"><strong>Postcode:</strong> <strong>3</strong> <input type="text" id="q3" class="cd-input" aria-label="Question 3"></div>
+            <div class="q-line"><strong>Occupation:</strong> student and part-time job as a <strong>4</strong> <input type="text" id="q4" class="cd-input" aria-label="Question 4"></div>
+            <div class="q-line"><strong>Studying:</strong> <strong>5</strong> <input type="text" id="q5" class="cd-input" aria-label="Question 5"> (major subject) and history (minor subject)</div>
+            <div class="q-line">Hobbies: does a lot of <strong>6</strong> <input type="text" id="q6" class="cd-input" aria-label="Question 6">, and is interested in the <strong>7</strong> <input type="text" id="q7" class="cd-input" aria-label="Question 7"></div>
+            <div class="q-line">On Youth Council, wants to work with young people who are <strong>8</strong> <input type="text" id="q8" class="cd-input" aria-label="Question 8"></div>
+            <div class="q-line">Will come to talk to the Elections Officer next Monday at <strong>9</strong> <input type="text" id="q9" class="cd-input" aria-label="Question 9"> pm</div>
+            <div class="q-line"><strong>Mobile number:</strong> <strong>10</strong> <input type="text" id="q10" class="cd-input" aria-label="Question 10"></div>
+        </div>
+
+        <div class="part-nav">
+            <button class="nav-btn next" onclick="goToPart(2)">Next Part →</button>
+        </div>
+    </section>
+
+    <!-- PART 2 -->
+    <section class="part-container" id="part-2">
+        <div class="blue-part-bar">Part 2</div>
+
+        <div class="instruction-box">
+            <p class="instruction-line" style="font-weight:700;color:#2a72ae;">Questions 11–20</p>
+        </div>
+
+        <div class="question-paper">
+            <h2 class="section-paper-title">New staff at theatre</h2>
+
+            <div class="instruction-box" style="margin:0 0 16px;">
+                <p class="instruction-line"><em>Questions 11 and 12</em> &nbsp; Choose <span class="hl-blue">TWO</span> letters, <span class="hl-blue">A–E</span>.</p>
+            </div>
+            <div class="mcq-block">
+                <p>Which <span class="hl-blue">TWO</span> changes have been made so far during the refurbishment of the theatre?</p>
+                <div class="multi-select-block">
+                    <label class="mcq-opt"><input type="checkbox" name="q11_12" value="A" onchange="handleMultiSelect('q11_12', 11, 12)"> A. Some rooms now have a different use.</label>
+                    <label class="mcq-opt"><input type="checkbox" name="q11_12" value="B" onchange="handleMultiSelect('q11_12', 11, 12)"> B. A different type of seating has been installed.</label>
+                    <label class="mcq-opt"><input type="checkbox" name="q11_12" value="C" onchange="handleMultiSelect('q11_12', 11, 12)"> C. An elevator has been installed.</label>
+                    <label class="mcq-opt"><input type="checkbox" name="q11_12" value="D" onchange="handleMultiSelect('q11_12', 11, 12)"> D. The outside of the building has been repaired.</label>
+                    <label class="mcq-opt"><input type="checkbox" name="q11_12" value="E" onchange="handleMultiSelect('q11_12', 11, 12)"> E. Extra seats have been added.</label>
+                </div>
+            </div>
+
+            <div class="instruction-box" style="margin:24px 0 16px;">
+                <p class="instruction-line"><em>Questions 13 and 14</em> &nbsp; Choose <span class="hl-blue">TWO</span> letters, <span class="hl-blue">A–E</span>.</p>
+            </div>
+            <div class="mcq-block">
+                <p>Which <span class="hl-blue">TWO</span> facilities does the theatre currently offer to the public?</p>
+                <div class="multi-select-block">
+                    <label class="mcq-opt"><input type="checkbox" name="q13_14" value="A" onchange="handleMultiSelect('q13_14', 13, 14)"> A. rooms for hire</label>
+                    <label class="mcq-opt"><input type="checkbox" name="q13_14" value="B" onchange="handleMultiSelect('q13_14', 13, 14)"> B. backstage tours</label>
+                    <label class="mcq-opt"><input type="checkbox" name="q13_14" value="C" onchange="handleMultiSelect('q13_14', 13, 14)"> C. hire of costumes</label>
+                    <label class="mcq-opt"><input type="checkbox" name="q13_14" value="D" onchange="handleMultiSelect('q13_14', 13, 14)"> D. a bookshop</label>
+                    <label class="mcq-opt"><input type="checkbox" name="q13_14" value="E" onchange="handleMultiSelect('q13_14', 13, 14)"> E. a café</label>
+                </div>
+            </div>
+
+            <div class="instruction-box" style="margin:24px 0 16px;">
+                <p class="instruction-line"><em>Questions 15 and 16</em> &nbsp; Choose <span class="hl-blue">TWO</span> letters, <span class="hl-blue">A–E</span>.</p>
+            </div>
+            <div class="mcq-block">
+                <p>Which <span class="hl-blue">TWO</span> workshops does the theatre currently offer?</p>
+                <div class="multi-select-block">
+                    <label class="mcq-opt"><input type="checkbox" name="q15_16" value="A" onchange="handleMultiSelect('q15_16', 15, 16)"> A. sound</label>
+                    <label class="mcq-opt"><input type="checkbox" name="q15_16" value="B" onchange="handleMultiSelect('q15_16', 15, 16)"> B. acting</label>
+                    <label class="mcq-opt"><input type="checkbox" name="q15_16" value="C" onchange="handleMultiSelect('q15_16', 15, 16)"> C. making puppets</label>
+                    <label class="mcq-opt"><input type="checkbox" name="q15_16" value="D" onchange="handleMultiSelect('q15_16', 15, 16)"> D. make-up</label>
+                    <label class="mcq-opt"><input type="checkbox" name="q15_16" value="E" onchange="handleMultiSelect('q15_16', 15, 16)"> E. lighting</label>
+                </div>
+            </div>
+
+            <div class="instruction-box" style="margin:28px 0 14px;">
+                <p class="instruction-line"><em>Questions 17–20</em> &nbsp; Label the plan below.</p>
+                <p class="instruction-line">Write the correct letter, <span class="hl-blue">A–G</span>, next to Questions 17–20.</p>
+            </div>
+
+            <div class="listening-map-wrap">
+                <img src="../images/listening-test7-map-theatre.png" alt="Ground floor plan of theatre — Questions 17–20" width="720" height="520">
+            </div>
+
+            <div class="q-line"><strong>17</strong> box office <input type="text" maxlength="1" id="q17" class="cd-input matching-input" aria-label="Question 17" title="Letter A–G"></div>
+            <div class="q-line"><strong>18</strong> theatre manager's office <input type="text" maxlength="1" id="q18" class="cd-input matching-input" aria-label="Question 18" title="Letter A–G"></div>
+            <div class="q-line"><strong>19</strong> lighting box <input type="text" maxlength="1" id="q19" class="cd-input matching-input" aria-label="Question 19" title="Letter A–G"></div>
+            <div class="q-line"><strong>20</strong> artistic director's office <input type="text" maxlength="1" id="q20" class="cd-input matching-input" aria-label="Question 20" title="Letter A–G"></div>
+        </div>
+
+        <div class="part-nav">
+            <button class="nav-btn prev" onclick="goToPart(1)">← Previous Part</button>
+            <button class="nav-btn next" onclick="goToPart(3)">Next Part →</button>
+        </div>
+    </section>
+
+    <!-- PART 3 -->
+    <section class="part-container" id="part-3">
+        <div class="blue-part-bar">Part 3</div>
+
+        <div class="instruction-box">
+            <p class="instruction-line" style="font-weight:700;color:#2a72ae;">Questions 21–30</p>
+            <p class="instruction-line"><em>Questions 21–26</em> &nbsp; Choose the correct letter, <span class="hl-blue">A</span>, <span class="hl-blue">B</span> or <span class="hl-blue">C</span>.</p>
+        </div>
+
+        <div class="question-paper">
+            <h2 class="section-paper-title">Rocky Bay field trip</h2>
+
+            <div class="mcq-block">
+                <p><span class="q-num">21</span> What do the students agree should be included in their aims?</p>
+                <div class="vertical-options">
+                    <label class="mcq-opt"><input type="radio" name="q21"> A. factors affecting where organisms live</label>
+                    <label class="mcq-opt"><input type="radio" name="q21"> B. the need to preserve endangered species</label>
+                    <label class="mcq-opt"><input type="radio" name="q21"> C. techniques for classifying different organisms</label>
+                </div>
+            </div>
+
+            <div class="mcq-block">
+                <p><span class="q-num">22</span> What equipment did they forget to take on the Field Trip?</p>
+                <div class="vertical-options">
+                    <label class="mcq-opt"><input type="radio" name="q22"> A. string</label>
+                    <label class="mcq-opt"><input type="radio" name="q22"> B. a compass</label>
+                    <label class="mcq-opt"><input type="radio" name="q22"> C. a ruler</label>
+                </div>
+            </div>
+
+            <div class="mcq-block">
+                <p><span class="q-num">23</span> In Helen's procedure section, Colin suggests a change in</p>
+                <div class="vertical-options">
+                    <label class="mcq-opt"><input type="radio" name="q23"> A. the order in which information is given.</label>
+                    <label class="mcq-opt"><input type="radio" name="q23"> B. the way the information is divided up.</label>
+                    <label class="mcq-opt"><input type="radio" name="q23"> C. the amount of information provided.</label>
+                </div>
+            </div>
+
+            <div class="mcq-block">
+                <p><span class="q-num">24</span> What do they say about the method they used to measure wave speed?</p>
+                <div class="vertical-options">
+                    <label class="mcq-opt"><input type="radio" name="q24"> A. It provided accurate results.</label>
+                    <label class="mcq-opt"><input type="radio" name="q24"> B. It was simple to carry out.</label>
+                    <label class="mcq-opt"><input type="radio" name="q24"> C. It required special equipment.</label>
+                </div>
+            </div>
+
+            <div class="mcq-block">
+                <p><span class="q-num">25</span> What mistake did Helen make when first drawing the map?</p>
+                <div class="vertical-options">
+                    <label class="mcq-opt"><input type="radio" name="q25"> A. She chose the wrong scale.</label>
+                    <label class="mcq-opt"><input type="radio" name="q25"> B. She stood in the wrong place.</label>
+                    <label class="mcq-opt"><input type="radio" name="q25"> C. She did it at the wrong time.</label>
+                </div>
+            </div>
+
+            <div class="mcq-block">
+                <p><span class="q-num">26</span> What do they decide to do next with their map?</p>
+                <div class="vertical-options">
+                    <label class="mcq-opt"><input type="radio" name="q26"> A. scan it onto a computer</label>
+                    <label class="mcq-opt"><input type="radio" name="q26"> B. check it using photographs</label>
+                    <label class="mcq-opt"><input type="radio" name="q26"> C. add information from the internet</label>
+                </div>
+            </div>
+
+            <div class="instruction-box" style="margin:28px 0 16px;">
+                <p class="instruction-line"><em>Questions 27 and 28</em> &nbsp; Choose <span class="hl-blue">TWO</span> letters, <span class="hl-blue">A–E</span>.</p>
+            </div>
+            <div class="mcq-block">
+                <p>Which <span class="hl-blue">TWO</span> problems affecting organisms in the splash zone are mentioned?</p>
+                <div class="multi-select-block">
+                    <label class="mcq-opt"><input type="checkbox" name="q27_28" value="A" onchange="handleMultiSelect('q27_28', 27, 28)"> A. lack of water</label>
+                    <label class="mcq-opt"><input type="checkbox" name="q27_28" value="B" onchange="handleMultiSelect('q27_28', 27, 28)"> B. strong winds</label>
+                    <label class="mcq-opt"><input type="checkbox" name="q27_28" value="C" onchange="handleMultiSelect('q27_28', 27, 28)"> C. lack of food</label>
+                    <label class="mcq-opt"><input type="checkbox" name="q27_28" value="D" onchange="handleMultiSelect('q27_28', 27, 28)"> D. high temperatures</label>
+                    <label class="mcq-opt"><input type="checkbox" name="q27_28" value="E" onchange="handleMultiSelect('q27_28', 27, 28)"> E. large waves</label>
+                </div>
+            </div>
+
+            <div class="instruction-box" style="margin:24px 0 16px;">
+                <p class="instruction-line"><em>Questions 29 and 30</em> &nbsp; Choose <span class="hl-blue">TWO</span> letters, <span class="hl-blue">A–E</span>.</p>
+            </div>
+            <div class="mcq-block">
+                <p>Which <span class="hl-blue">TWO</span> reasons for possible error will they include in their report?</p>
+                <div class="multi-select-block">
+                    <label class="mcq-opt"><input type="checkbox" name="q29_30" value="A" onchange="handleMultiSelect('q29_30', 29, 30)"> A. inaccurate records of the habitat of organisms</label>
+                    <label class="mcq-opt"><input type="checkbox" name="q29_30" value="B" onchange="handleMultiSelect('q29_30', 29, 30)"> B. influence on behaviour of organisms by observer</label>
+                    <label class="mcq-opt"><input type="checkbox" name="q29_30" value="C" onchange="handleMultiSelect('q29_30', 29, 30)"> C. incorrect identification of some organisms</label>
+                    <label class="mcq-opt"><input type="checkbox" name="q29_30" value="D" onchange="handleMultiSelect('q29_30', 29, 30)"> D. making generalisations from a small sample</label>
+                    <label class="mcq-opt"><input type="checkbox" name="q29_30" value="E" onchange="handleMultiSelect('q29_30', 29, 30)"> E. missing some organisms when counting</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="part-nav">
+            <button class="nav-btn prev" onclick="goToPart(2)">← Previous Part</button>
+            <button class="nav-btn next" onclick="goToPart(4)">Next Part →</button>
+        </div>
+    </section>
+
+    <!-- PART 4 -->
+    <section class="part-container" id="part-4">
+        <div class="blue-part-bar">Part 4</div>
+
+        <div class="instruction-box">
+            <p class="instruction-line"><strong>Questions 31–40</strong></p>
+            <p class="instruction-line"><em>Complete the notes below.</em></p>
+            <p class="instruction-line">Write <span class="hl-blue">ONE WORD ONLY</span> for each answer.</p>
+        </div>
+
+        <div class="question-paper">
+            <h2 class="form-title">DESIGNING A PUBLIC BUILDING: THE TAYLOR CONCERT HALL</h2>
+
+            <h3 class="sub-heading" style="color:#2a72ae;">Introduction</h3>
+            <p style="margin:0 0 10px;">The designer of a public building may need to consider the building's</p>
+            <ul class="ielts-list">
+                <li>function</li>
+                <li class="q-line">physical and <strong>31</strong> <input type="text" id="q31" class="cd-input" aria-label="Question 31"> context</li>
+                <li>symbolic meaning</li>
+            </ul>
+
+            <h3 class="sub-heading" style="color:#2a72ae;">Location and concept of the Concert Hall</h3>
+            <ul class="ielts-list">
+                <li class="q-line">On the site of a disused <strong>32</strong> <input type="text" id="q32" class="cd-input" aria-label="Question 32"></li>
+                <li class="q-line">Beside a <strong>33</strong> <input type="text" id="q33" class="cd-input" aria-label="Question 33"></li>
+                <li>The design is based on the concept of a mystery</li>
+            </ul>
+
+            <h3 class="sub-heading" style="color:#2a72ae;">Building design</h3>
+            <ul class="ielts-list">
+                <li class="q-line">It's approached by a <strong>34</strong> <input type="text" id="q34" class="cd-input" aria-label="Question 34"> for pedestrians</li>
+                <li class="q-line">The building is the shape of a <strong>35</strong> <input type="text" id="q35" class="cd-input" aria-label="Question 35"></li>
+                <li class="q-line">One exterior wall acts as a large <strong>36</strong> <input type="text" id="q36" class="cd-input" aria-label="Question 36"></li>
+            </ul>
+
+            <p style="font-style:italic;font-weight:600;margin:14px 0 6px;">In the auditorium:</p>
+            <ul class="ielts-list">
+                <li class="q-line">the floor is built on huge pads made of <strong>37</strong> <input type="text" id="q37" class="cd-input" aria-label="Question 37"></li>
+                <li class="q-line">the walls are made of local wood and are <strong>38</strong> <input type="text" id="q38" class="cd-input" aria-label="Question 38"> in shape</li>
+                <li class="q-line">ceiling panels and <strong>39</strong> <input type="text" id="q39" class="cd-input" aria-label="Question 39"> on walls allow adjustment of acoustics</li>
+            </ul>
+
+            <h3 class="sub-heading" style="color:#2a72ae;">Evaluation</h3>
+            <ul class="ielts-list">
+                <li class="q-line">Some critics say the <strong>40</strong> <input type="text" id="q40" class="cd-input" aria-label="Question 40"> style of the building is inappropriate</li>
+            </ul>
+        </div>
+
+        <div class="part-nav">
+            <button class="nav-btn prev" onclick="goToPart(3)">← Previous Part</button>
+            <button class="nav-btn finish" onclick="finishTest()">Finish Test</button>
+        </div>
+    </section>
+
+</main>
+
+<footer class="exam-footer">
+    <div class="number-grid" id="numberGrid"></div>
+</footer>
+
+<div id="lockdownOverlay" class="lockdown-overlay hidden">
+    <div class="lockdown-card">
+        <h2>Exam Paused</h2>
+        <p id="lockdownMessage">This test must stay in fullscreen.</p>
+        <button id="resumeExamBtn" class="btn-green">Return to Exam</button>
+    </div>
+</div>
+
+<script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore-compat.js"></script>
+<script src="../jss/core.js"></script>
+<script src="../jss/firebase-init.js"></script>
+<script src="../jss/emerald-tracker.js"></script>
+<script src="../jss/emerald-firestore-store.js"></script>
+<script src="../jss/emerald-firebase-bridge.js"></script>
+<script src="../jss/listening-test7.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cambridge 18 - Test 2 - Listening</title>
+    <link rel="stylesheet" href="../csss/listening-test.css">
+    <link rel="stylesheet" href="../csss/listening-test2.css">
+</head>
+<body>
+
+<div id="rulesIntroOverlay" class="modal-overlay" style="display:flex;">
+    <div class="practice-card" style="max-width:540px;text-align:left;">
+        <div class="overlay-badge" style="
+            display:inline-flex;padding:7px 12px;border-radius:999px;
+            background:#e9faf3;color:#15543f;font-size:12px;font-weight:800;
+            letter-spacing:0.08em;text-transform:uppercase;margin-bottom:14px;">
+            Before You Start
+        </div>
+        <h2 class="practice-title" style="text-align:left;margin-bottom:6px;">Listening Test Rules</h2>
+        <p class="practice-subtitle" style="text-align:left;margin-bottom:18px;">Read the rules carefully before starting.</p>
+
+        <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px;">
+            <span style="padding:9px 14px;border-radius:999px;background:#e9faf3;color:#10342a;font-size:13px;font-weight:700;">35 minutes</span>
+            <span style="padding:9px 14px;border-radius:999px;background:#e9faf3;color:#10342a;font-size:13px;font-weight:700;">40 questions</span>
+            <span style="padding:9px 14px;border-radius:999px;background:#e9faf3;color:#10342a;font-size:13px;font-weight:700;">4 parts</span>
+        </div>
+
+        <ul style="margin:0 0 22px 18px;color:#425266;line-height:1.8;font-size:14px;">
+            <li>The test must stay in fullscreen at all times.</li>
+            <li>Do not switch tabs or leave the exam window.</li>
+            <li>You have only 3 violation warnings before the test ends.</li>
+            <li>The audio will play automatically when you start.</li>
+            <li>You can navigate between parts using the buttons.</li>
+            <li>Answers are saved automatically as you type.</li>
+        </ul>
+
+        <button id="finalStartBtn" class="btn-green-large" style="margin-top:4px;">
+            ▶ &nbsp; Start Test in Fullscreen
+        </button>
+    </div>
+</div>
+
+<header class="exam-header">
+    <div class="header-top-block">
+        <span class="test-name">Cambridge 18 - Listening Test 2</span>
+        <div class="timer-box">Time Left: <span id="timer">35:00</span></div>
+    </div>
+
+    <div class="audio-panel">
+        <div class="audio-block">
+            <span class="player-label">Audio Player</span>
+            <button id="startTestBtn" class="btn-green">Start Test</button>
+            <audio id="examAudio" class="hidden" controls>
+                <source src="../audio/listening-test2.mp3" type="audio/mpeg">
+            </audio>
+        </div>
+    </div>
+</header>
+
+<main class="exam-content" id="mainScroll">
+
+    <!-- PART 1 -->
+    <section class="part-container active" id="part-1">
+        <div class="blue-part-bar">Part 1</div>
+
+        <div class="instruction-box">
+            <p class="instruction-line"><strong>Questions 1–10</strong></p>
+            <p class="instruction-line"><em>Questions 1–6</em> &nbsp; Complete the notes below.</p>
+            <p class="instruction-line">Write <span class="hl-blue">ONE WORD</span> for each answer.</p>
+            <p class="instruction-line" style="margin-top:14px;"><em>Questions 7–10</em> &nbsp; Complete the table below.</p>
+            <p class="instruction-line">Write <span class="hl-blue">ONE WORD AND/OR A NUMBER</span> for each answer.</p>
+        </div>
+
+        <div class="question-paper">
+            <h2 class="form-title">SELF-DRIVE TOURS IN THE USA</h2>
+
+            <p class="instruction-line" style="font-style:italic;">Example</p>
+            <div class="form-static-row"><strong>Name:</strong> Andrea Brown</div>
+
+            <div class="q-line"><strong>Address:</strong> 24 <strong>1</strong> <input type="text" id="q1" class="cd-input" aria-label="Question 1"> Road</div>
+            <div class="q-line"><strong>Postcode:</strong> <span style="letter-spacing:0.12em;">__________</span></div>
+            <div class="q-line"><strong>Phone:</strong> <span style="letter-spacing:0.12em;">________________</span></div>
+            <div class="q-line"><strong>Heard about company from:</strong> <strong>2</strong> <input type="text" id="q2" class="cd-input" aria-label="Question 2"></div>
+
+            <p class="label-text" style="margin-top:16px;"><strong>Possible self-drive tours</strong></p>
+            <ul class="ielts-list">
+                <li class="q-line">Trip One: Los Angeles — customer wants to visit some <strong>3</strong> <input type="text" id="q3" class="cd-input" aria-label="Question 3"> parks with her children</li>
+                <li class="q-line">Yosemite Park — customer wants to stay in a lodge, not a <strong>4</strong> <input type="text" id="q4" class="cd-input" aria-label="Question 4"></li>
+                <li class="q-line">Customer wants to see the <strong>5</strong> <input type="text" id="q5" class="cd-input" aria-label="Question 5"> on the way to Cambria</li>
+                <li class="q-line">At San Diego, wants to spend time on the <strong>6</strong> <input type="text" id="q6" class="cd-input" aria-label="Question 6"></li>
+            </ul>
+
+            <p class="instruction-line" style="margin-top:8px;"><strong>Questions 7–10</strong></p>
+            <table class="listening-data-table" aria-label="Questions 7 to 10">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th class="trip-label">Trip One</th>
+                        <th class="trip-label">Trip Two</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Number of days</td>
+                        <td>12 days</td>
+                        <td>9 days</td>
+                    </tr>
+                    <tr>
+                        <td>Total distance</td>
+                        <td><strong>7</strong> <input type="text" id="q7" class="cd-input table-input" aria-label="Question 7"> km</td>
+                        <td>980 km</td>
+                    </tr>
+                    <tr>
+                        <td>Price (per person)</td>
+                        <td>£525</td>
+                        <td><strong>9</strong> £ <input type="text" id="q9" class="cd-input table-input table-input-wide" aria-label="Question 9"></td>
+                    </tr>
+                    <tr>
+                        <td>Includes</td>
+                        <td>
+                            <ul class="includes-list">
+                                <li>accommodation</li>
+                                <li>car</li>
+                                <li>one <strong>8</strong> <input type="text" id="q8" class="cd-input table-input" aria-label="Question 8"></li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul class="includes-list">
+                                <li>accommodation</li>
+                                <li>car</li>
+                                <li><strong>10</strong> <input type="text" id="q10" class="cd-input table-input table-input-wide" aria-label="Question 10"></li>
+                            </ul>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="part-nav">
+            <button class="nav-btn next" onclick="goToPart(2)">Next Part →</button>
+        </div>
+    </section>
+
+    <!-- PART 2 -->
+    <section class="part-container" id="part-2">
+        <div class="blue-part-bar">Part 2</div>
+
+        <div class="instruction-box">
+            <p class="instruction-line"><em>Questions 11–12</em> &nbsp; Choose <span class="hl-blue">TWO</span> letters <span class="hl-blue">A–E</span>.</p>
+        </div>
+
+        <div class="question-paper">
+            <h2 class="section-paper-title">Leisure club</h2>
+
+            <div class="mcq-block">
+                <p>Which <span class="hl-blue">TWO</span> facilities at the leisure club have recently been improved?</p>
+                <div class="multi-select-block">
+                    <label class="mcq-opt"><input type="checkbox" name="q11_12" value="A" onchange="handleMultiSelect('q11_12', 11, 12)"> A. the gym</label>
+                    <label class="mcq-opt"><input type="checkbox" name="q11_12" value="B" onchange="handleMultiSelect('q11_12', 11, 12)"> B. the tracks</label>
+                    <label class="mcq-opt"><input type="checkbox" name="q11_12" value="C" onchange="handleMultiSelect('q11_12', 11, 12)"> C. the indoor pool</label>
+                    <label class="mcq-opt"><input type="checkbox" name="q11_12" value="D" onchange="handleMultiSelect('q11_12', 11, 12)"> D. the outdoor pool</label>
+                    <label class="mcq-opt"><input type="checkbox" name="q11_12" value="E" onchange="handleMultiSelect('q11_12', 11, 12)"> E. the sports training for children</label>
+                </div>
+            </div>
+
+            <div class="instruction-box" style="margin:28px 0 18px;">
+                <p class="instruction-line"><em>Questions 13–20</em></p>
+                <p class="instruction-line"><em>Complete the notes below.</em></p>
+                <p class="instruction-line">Write <span class="hl-blue">NO MORE THAN TWO WORDS</span> for each answer.</p>
+            </div>
+
+            <h2 class="form-title">Joining the leisure club</h2>
+
+            <p class="notes-section-title">Personal Assessment</p>
+            <ul class="ielts-list">
+                <li class="q-line">New members should describe any <strong>13</strong> <input type="text" id="q13" class="cd-input" aria-label="Question 13"></li>
+                <li class="q-line">The <strong>14</strong> <input type="text" id="q14" class="cd-input" aria-label="Question 14"> will be explained to you before you use the equipment.</li>
+                <li class="q-line">You will be given a six-week <strong>15</strong> <input type="text" id="q15" class="cd-input" aria-label="Question 15"></li>
+            </ul>
+
+            <p class="notes-section-title">Types of membership</p>
+            <ul class="ielts-list">
+                <li class="q-line">There is a compulsory £90 <strong>16</strong> <input type="text" id="q16" class="cd-input" aria-label="Question 16"> fee for members.</li>
+                <li class="q-line">Gold members are given <strong>17</strong> <input type="text" id="q17" class="cd-input" aria-label="Question 17"> to all the LP clubs.</li>
+                <li class="q-line">Premier members are given priority during <strong>18</strong> <input type="text" id="q18" class="cd-input" aria-label="Question 18"> hours.</li>
+                <li class="q-line">Premier members can bring some <strong>19</strong> <input type="text" id="q19" class="cd-input" aria-label="Question 19"> every month.</li>
+                <li class="q-line">Members should always take their <strong>20</strong> <input type="text" id="q20" class="cd-input" aria-label="Question 20"> with them.</li>
+            </ul>
+        </div>
+
+        <div class="part-nav">
+            <button class="nav-btn prev" onclick="goToPart(1)">← Previous Part</button>
+            <button class="nav-btn next" onclick="goToPart(3)">Next Part →</button>
+        </div>
+    </section>
+
+    <!-- PART 3 -->
+    <section class="part-container" id="part-3">
+        <div class="blue-part-bar">Part 3</div>
+
+        <div class="instruction-box">
+            <p class="instruction-line"><em>Questions 21–25</em> &nbsp; Choose the correct letter, <span class="hl-blue">A</span>, <span class="hl-blue">B</span> or <span class="hl-blue">C</span>.</p>
+        </div>
+
+        <div class="question-paper">
+            <h2 class="form-title">Global Design Competition</h2>
+
+            <div class="mcq-block">
+                <p><span class="q-num">21</span> Students entering the design competition have to</p>
+                <div class="vertical-options">
+                    <label class="mcq-opt"><input type="radio" name="q21"> A. produce an energy-efficient design.</label>
+                    <label class="mcq-opt"><input type="radio" name="q21"> B. adapt an existing energy-saving appliance.</label>
+                    <label class="mcq-opt"><input type="radio" name="q21"> C. develop a new use for current technology.</label>
+                </div>
+            </div>
+
+            <div class="mcq-block">
+                <p><span class="q-num">22</span> John chose a dishwasher because he wanted to make dishwashers</p>
+                <div class="vertical-options">
+                    <label class="mcq-opt"><input type="radio" name="q22"> A. more appealing.</label>
+                    <label class="mcq-opt"><input type="radio" name="q22"> B. more common.</label>
+                    <label class="mcq-opt"><input type="radio" name="q22"> C. more economical.</label>
+                </div>
+            </div>
+
+            <div class="mcq-block">
+                <p><span class="q-num">23</span> The stone in John's 'Rockpool' design is used</p>
+                <div class="vertical-options">
+                    <label class="mcq-opt"><input type="radio" name="q23"> A. for decoration.</label>
+                    <label class="mcq-opt"><input type="radio" name="q23"> B. to switch it on.</label>
+                    <label class="mcq-opt"><input type="radio" name="q23"> C. to stop water escaping.</label>
+                </div>
+            </div>
+
+            <div class="mcq-block">
+                <p><span class="q-num">24</span> In the holding chamber, the carbon dioxide</p>
+                <div class="vertical-options">
+                    <label class="mcq-opt"><input type="radio" name="q24"> A. changes back to a gas.</label>
+                    <label class="mcq-opt"><input type="radio" name="q24"> B. dries the dishes.</label>
+                    <label class="mcq-opt"><input type="radio" name="q24"> C. is allowed to cool.</label>
+                </div>
+            </div>
+
+            <div class="mcq-block">
+                <p><span class="q-num">25</span> At the end of the cleaning process, the carbon dioxide</p>
+                <div class="vertical-options">
+                    <label class="mcq-opt"><input type="radio" name="q25"> A. is released into the air.</label>
+                    <label class="mcq-opt"><input type="radio" name="q25"> B. is disposed of with the waste.</label>
+                    <label class="mcq-opt"><input type="radio" name="q25"> C. is collected ready to be re-used.</label>
+                </div>
+            </div>
+
+            <div class="instruction-box" style="margin-top:28px;">
+                <p class="instruction-line"><strong>Questions 26–30</strong></p>
+                <p class="instruction-line"><em>Complete the notes below.</em></p>
+                <p class="instruction-line">Write <span class="hl-blue">ONE WORD ONLY</span> for each answer.</p>
+            </div>
+
+            <div class="notes-inner-box">
+                <ul class="ielts-list" style="margin-left:18px;">
+                    <li class="q-line">John needs help preparing for his <strong>26</strong> <input type="text" id="q26" class="cd-input" aria-label="Question 26"></li>
+                    <li class="q-line">The professor advises John to make a <strong>27</strong> <input type="text" id="q27" class="cd-input" aria-label="Question 27"> of his design.</li>
+                    <li class="q-line">John’s main problem is getting good quality <strong>28</strong> <input type="text" id="q28" class="cd-input" aria-label="Question 28"></li>
+                    <li class="q-line">The professor suggests John apply for a <strong>29</strong> <input type="text" id="q29" class="cd-input" aria-label="Question 29"></li>
+                    <li class="q-line">The professor will check the <strong>30</strong> <input type="text" id="q30" class="cd-input" aria-label="Question 30"> information in John’s written report.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="part-nav">
+            <button class="nav-btn prev" onclick="goToPart(2)">← Previous Part</button>
+            <button class="nav-btn next" onclick="goToPart(4)">Next Part →</button>
+        </div>
+    </section>
+
+    <!-- PART 4 -->
+    <section class="part-container" id="part-4">
+        <div class="blue-part-bar">Part 4</div>
+
+        <div class="instruction-box">
+            <p class="instruction-line"><strong>Questions 31–40</strong></p>
+            <p class="instruction-line"><em>Complete the notes below.</em></p>
+            <p class="instruction-line">Write <span class="hl-blue">ONE WORD ONLY</span> for each answer.</p>
+        </div>
+
+        <div class="question-paper">
+            <h2 class="form-title">THE SPIRIT BEAR</h2>
+
+            <h3 class="sub-heading" style="color:#2a72ae;">General facts</h3>
+            <ul class="ielts-list">
+                <li>It is a white bear belonging to the black bear family.</li>
+                <li class="q-line">Its colour comes from an uncommon <strong>31</strong> <input type="text" id="q31" class="cd-input" aria-label="Question 31"></li>
+                <li class="q-line">Local people believe that it has unusual <strong>32</strong> <input type="text" id="q32" class="cd-input" aria-label="Question 32"></li>
+                <li class="q-line">They protect the bear from <strong>33</strong> <input type="text" id="q33" class="cd-input" aria-label="Question 33"></li>
+            </ul>
+
+            <h3 class="sub-heading" style="color:#2a72ae;">Habitat</h3>
+            <ul class="ielts-list">
+                <li>The bear's relationship with the forest is complex.</li>
+                <li class="q-line">Tree roots stop <strong>34</strong> <input type="text" id="q34" class="cd-input" aria-label="Question 34"> along salmon streams.</li>
+                <li>The bears' feeding habits provide nutrients for forest vegetation.</li>
+                <li class="q-line">It is currently found on a small number of <strong>35</strong> <input type="text" id="q35" class="cd-input" aria-label="Question 35"></li>
+            </ul>
+
+            <h3 class="sub-heading" style="color:#2a72ae;">Threats</h3>
+            <ul class="ielts-list">
+                <li class="q-line">Habitat is being lost due to deforestation and construction of <strong>36</strong> <input type="text" id="q36" class="cd-input" aria-label="Question 36"> by logging companies.</li>
+                <li class="q-line">Unrestricted <strong>37</strong> <input type="text" id="q37" class="cd-input" aria-label="Question 37"> is affecting the salmon supply.</li>
+                <li class="q-line">The bears' existence is also threatened by their low rate of <strong>38</strong> <input type="text" id="q38" class="cd-input" aria-label="Question 38"></li>
+            </ul>
+
+            <h3 class="sub-heading" style="color:#2a72ae;">Going forward</h3>
+            <ul class="ielts-list">
+                <li>Interested parties are working together.</li>
+                <li class="q-line">Logging companies must improve their <strong>39</strong> <input type="text" id="q39" class="cd-input" aria-label="Question 39"> of logging.</li>
+                <li class="q-line">Maintenance and <strong>40</strong> <input type="text" id="q40" class="cd-input" aria-label="Question 40"> of the spirit bears' territory is needed.</li>
+            </ul>
+        </div>
+
+        <div class="part-nav">
+            <button class="nav-btn prev" onclick="goToPart(3)">← Previous Part</button>
+            <button class="nav-btn finish" onclick="finishTest()">Finish Test</button>
+        </div>
+    </section>
+
+</main>
+
+<footer class="exam-footer">
+    <div class="number-grid" id="numberGrid"></div>
+</footer>
+
+<div id="lockdownOverlay" class="lockdown-overlay hidden">
+    <div class="lockdown-card">
+        <h2>Exam Paused</h2>
+        <p id="lockdownMessage">This test must stay in fullscreen.</p>
+        <button id="resumeExamBtn" class="btn-green">Return to Exam</button>
+    </div>
+</div>
+
+<script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore-compat.js"></script>
+<script src="../jss/core.js"></script>
+<script src="../jss/firebase-init.js"></script>
+<script src="../jss/emerald-tracker.js"></script>
+<script src="../jss/emerald-firestore-store.js"></script>
+<script src="../jss/emerald-firebase-bridge.js"></script>
+<script src="../jss/listening-test2.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cambridge 18 - Test 5 - Listening</title>
+    <link rel="stylesheet" href="../csss/listening-test.css">
+    <link rel="stylesheet" href="../csss/listening-test5.css">
+</head>
+<body>
+
+<div id="rulesIntroOverlay" class="modal-overlay" style="display:flex;">
+    <div class="practice-card" style="max-width:540px;text-align:left;">
+        <div class="overlay-badge" style="
+            display:inline-flex;padding:7px 12px;border-radius:999px;
+            background:#e9faf3;color:#15543f;font-size:12px;font-weight:800;
+            letter-spacing:0.08em;text-transform:uppercase;margin-bottom:14px;">
+            Before You Start
+        </div>
+        <h2 class="practice-title" style="text-align:left;margin-bottom:6px;">Listening Test Rules</h2>
+        <p class="practice-subtitle" style="text-align:left;margin-bottom:18px;">Read the rules carefully before starting.</p>
+
+        <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px;">
+            <span style="padding:9px 14px;border-radius:999px;background:#e9faf3;color:#10342a;font-size:13px;font-weight:700;">35 minutes</span>
+            <span style="padding:9px 14px;border-radius:999px;background:#e9faf3;color:#10342a;font-size:13px;font-weight:700;">40 questions</span>
+            <span style="padding:9px 14px;border-radius:999px;background:#e9faf3;color:#10342a;font-size:13px;font-weight:700;">4 parts</span>
+        </div>
+
+        <ul style="margin:0 0 22px 18px;color:#425266;line-height:1.8;font-size:14px;">
+            <li>The test must stay in fullscreen at all times.</li>
+            <li>Do not switch tabs or leave the exam window.</li>
+            <li>You have only 3 violation warnings before the test ends.</li>
+            <li>The audio will play automatically when you start.</li>
+            <li>You can navigate between parts using the buttons.</li>
+            <li>Answers are saved automatically as you type.</li>
+        </ul>
+
+        <button id="finalStartBtn" class="btn-green-large" style="margin-top:4px;">
+            ▶ &nbsp; Start Test in Fullscreen
+        </button>
+    </div>
+</div>
+
+<header class="exam-header">
+    <div class="header-top-block">
+        <span class="test-name">Cambridge 18 - Listening Test 5</span>
+        <div class="timer-box">Time Left: <span id="timer">35:00</span></div>
+    </div>
+
+    <div class="audio-panel">
+        <div class="audio-block">
+            <span class="player-label">Audio Player</span>
+            <button id="startTestBtn" class="btn-green">Start Test</button>
+            <audio id="examAudio" class="hidden" controls>
+                <source src="../audio/listening-test5.mp3" type="audio/mpeg">
+            </audio>
+        </div>
+    </div>
+</header>
+
+<main class="exam-content" id="mainScroll">
+
+    <!-- PART 1 -->
+    <section class="part-container active" id="part-1">
+        <div class="blue-part-bar">Part 1</div>
+
+        <div class="instruction-box">
+            <p class="instruction-line"><strong>Questions 1–10</strong></p>
+            <p class="instruction-line"><em>Questions 1–6</em> &nbsp; Complete the notes below.</p>
+            <p class="instruction-line">Write <span class="hl-blue">ONE WORD ONLY</span> for each answer.</p>
+            <p class="instruction-line" style="margin-top:14px;"><em>Questions 7–10</em> &nbsp; Complete the table below.</p>
+            <p class="instruction-line">Write <span class="hl-blue">ONE WORD ONLY</span> for each answer.</p>
+        </div>
+
+        <div class="question-paper">
+            <h2 class="form-title">THORNDYKE'S BUILDERS</h2>
+
+            <p class="instruction-line" style="font-style:italic;">Example</p>
+            <div class="q-line">Customer heard about Thorndyke's from a <span style="letter-spacing:0.08em;">....................</span> <span class="example-hand">friend</span> <span style="letter-spacing:0.08em;">....................</span></div>
+
+            <div class="q-line"><strong>Name:</strong> Edith <strong>1</strong> <input type="text" id="q1" class="cd-input" aria-label="Question 1"></div>
+            <div class="q-line"><strong>Address:</strong> Flat 4,</div>
+            <div class="q-line"><strong>2</strong> <input type="text" id="q2" class="cd-input" aria-label="Question 2"> Park Flats</div>
+            <div class="q-line">(Behind the <strong>3</strong> <input type="text" id="q3" class="cd-input" aria-label="Question 3">)</div>
+            <div class="q-line"><strong>Phone number:</strong> 875934</div>
+            <div class="q-line"><strong>Best time to contact customer:</strong> during the <strong>4</strong> <input type="text" id="q4" class="cd-input" aria-label="Question 4"></div>
+            <div class="q-line"><strong>Where to park:</strong> opposite entrance next to the <strong>5</strong> <input type="text" id="q5" class="cd-input" aria-label="Question 5"></div>
+            <div class="q-line">Needs full quote showing all the jobs and the <strong>6</strong> <input type="text" id="q6" class="cd-input" aria-label="Question 6"></div>
+
+            <p class="instruction-line" style="margin-top:18px;"><strong>Questions 7–10</strong></p>
+            <table class="listening-data-table" aria-label="Questions 7 to 10">
+                <thead>
+                    <tr>
+                        <th>Area</th>
+                        <th>Work to be done</th>
+                        <th>Notes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="listening-area-cell" rowspan="2">Kitchen</td>
+                        <td>Replace the <strong>7</strong> <input type="text" id="q7" class="cd-input table-input table-input-wide" aria-label="Question 7"> in the door</td>
+                        <td>Fix tomorrow</td>
+                    </tr>
+                    <tr>
+                        <td>Paint wall above the <strong>8</strong> <input type="text" id="q8" class="cd-input table-input table-input-wide" aria-label="Question 8"></td>
+                        <td>Strip paint and plaster approximately one <strong>9</strong> <input type="text" id="q9" class="cd-input table-input" aria-label="Question 9"> in advance</td>
+                    </tr>
+                    <tr>
+                        <td class="listening-area-cell">Garden</td>
+                        <td>One <strong>10</strong> <input type="text" id="q10" class="cd-input table-input table-input-wide" aria-label="Question 10"> needs replacing (end of garden)</td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="part-nav">
+            <button class="nav-btn next" onclick="goToPart(2)">Next Part →</button>
+        </div>
+    </section>
+
+    <!-- PART 2 -->
+    <section class="part-container" id="part-2">
+        <div class="blue-part-bar">Part 2</div>
+
+        <div class="instruction-box">
+            <p class="instruction-line" style="font-weight:700;color:#2a72ae;">Questions 11–20</p>
+            <p class="instruction-line"><em>Questions 11–15</em> &nbsp; Choose the correct letter, <span class="hl-blue">A</span>, <span class="hl-blue">B</span> or <span class="hl-blue">C</span>.</p>
+        </div>
+
+        <div class="question-paper">
+            <h2 class="section-paper-title">MANHAM PORT</h2>
+
+            <div class="mcq-block">
+                <p><span class="q-num">11</span> Why did a port originally develop at Manham?</p>
+                <div class="vertical-options">
+                    <label class="mcq-opt"><input type="radio" name="q11"> A. It was safe from enemy attack.</label>
+                    <label class="mcq-opt"><input type="radio" name="q11"> B. It was convenient for river transport.</label>
+                    <label class="mcq-opt"><input type="radio" name="q11"> C. It had a good position on the sea coast.</label>
+                </div>
+            </div>
+
+            <div class="mcq-block">
+                <p><span class="q-num">12</span> What caused Manham's sudden expansion during the Industrial Revolution?</p>
+                <div class="vertical-options">
+                    <label class="mcq-opt"><input type="radio" name="q12"> A. the improvement in mining techniques</label>
+                    <label class="mcq-opt"><input type="radio" name="q12"> B. the increase in demand for metals</label>
+                    <label class="mcq-opt"><input type="radio" name="q12"> C. the discovery of tin in the area</label>
+                </div>
+            </div>
+
+            <div class="mcq-block">
+                <p><span class="q-num">13</span> Why did rocks have to be sent away from Manham to be processed?</p>
+                <div class="vertical-options">
+                    <label class="mcq-opt"><input type="radio" name="q13"> A. shortage of fuel</label>
+                    <label class="mcq-opt"><input type="radio" name="q13"> B. poor transport systems</label>
+                    <label class="mcq-opt"><input type="radio" name="q13"> C. lack of skills among local people</label>
+                </div>
+            </div>
+
+            <div class="mcq-block">
+                <p><span class="q-num">14</span> What happened when the port declined in the twentieth century?</p>
+                <div class="vertical-options">
+                    <label class="mcq-opt"><input type="radio" name="q14"> A. The workers went away.</label>
+                    <label class="mcq-opt"><input type="radio" name="q14"> B. Traditional skills were lost.</label>
+                    <label class="mcq-opt"><input type="radio" name="q14"> C. Buildings were used for new purposes.</label>
+                </div>
+            </div>
+
+            <div class="mcq-block">
+                <p><span class="q-num">15</span> What did the Manham Trust hope to do?</p>
+                <div class="vertical-options">
+                    <label class="mcq-opt"><input type="radio" name="q15"> A. discover the location of the original port</label>
+                    <label class="mcq-opt"><input type="radio" name="q15"> B. provide jobs for the unemployed</label>
+                    <label class="mcq-opt"><input type="radio" name="q15"> C. rebuild the port complex</label>
+                </div>
+            </div>
+
+            <div class="instruction-box" style="margin:28px 0 18px;">
+                <p class="instruction-line"><em>Questions 16–20</em></p>
+                <p class="instruction-line">Complete the table below.</p>
+                <p class="instruction-line">Write <span class="hl-blue">NO MORE THAN TWO WORDS</span> for each answer.</p>
+            </div>
+
+            <table class="listening-data-table" aria-label="Questions 16 to 20">
+                <thead>
+                    <tr>
+                        <th colspan="3" style="text-align:center;">Tourist attractions in Manham</th>
+                    </tr>
+                    <tr>
+                        <th>Place</th>
+                        <th>Features and activities</th>
+                        <th>Advice</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>copper mine</td>
+                        <td>specially adapted miners' <strong>16</strong> <input type="text" id="q16" class="cd-input table-input table-input-wide" aria-label="Question 16"> take visitors into the mountain</td>
+                        <td>the mine is <strong>17</strong> <input type="text" id="q17" class="cd-input table-input table-input-wide" aria-label="Question 17"> and enclosed – unsuitable for children and animals</td>
+                    </tr>
+                    <tr>
+                        <td>village school</td>
+                        <td>classrooms and a special exhibition of <strong>18</strong> <input type="text" id="q18" class="cd-input table-input table-input-wide" aria-label="Question 18"></td>
+                        <td>a <strong>19</strong> <input type="text" id="q19" class="cd-input table-input table-input-wide" aria-label="Question 19"> is recommended</td>
+                    </tr>
+                    <tr>
+                        <td>'The George' (old sailing ship)</td>
+                        <td>the ship's wheel (was lost but has now been restored)</td>
+                        <td>children shouldn't use the <strong>20</strong> <input type="text" id="q20" class="cd-input table-input table-input-wide" aria-label="Question 20"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="part-nav">
+            <button class="nav-btn prev" onclick="goToPart(1)">← Previous Part</button>
+            <button class="nav-btn next" onclick="goToPart(3)">Next Part →</button>
+        </div>
+    </section>
+
+    <!-- PART 3 -->
+    <section class="part-container" id="part-3">
+        <div class="blue-part-bar">Part 3</div>
+
+        <div class="instruction-box">
+            <p class="instruction-line" style="font-weight:700;color:#2a72ae;">Questions 21–30</p>
+        </div>
+
+        <div class="question-paper">
+            <div class="instruction-box" style="margin:0 0 18px;">
+                <p class="instruction-line"><em>Questions 21 and 22</em> &nbsp; Choose <span class="hl-blue">TWO</span> letters, <span class="hl-blue">A–E</span>.</p>
+            </div>
+
+            <div class="mcq-block">
+                <p>Which <span class="hl-blue">TWO</span> skills did Laura improve as a result of her work placement?</p>
+                <div class="multi-select-block">
+                    <label class="mcq-opt"><input type="checkbox" name="q21_22" value="A" onchange="handleMultiSelect('q21_22', 21, 22)"> A. communication</label>
+                    <label class="mcq-opt"><input type="checkbox" name="q21_22" value="B" onchange="handleMultiSelect('q21_22', 21, 22)"> B. design</label>
+                    <label class="mcq-opt"><input type="checkbox" name="q21_22" value="C" onchange="handleMultiSelect('q21_22', 21, 22)"> C. IT</label>
+                    <label class="mcq-opt"><input type="checkbox" name="q21_22" value="D" onchange="handleMultiSelect('q21_22', 21, 22)"> D. marketing</label>
+                    <label class="mcq-opt"><input type="checkbox" name="q21_22" value="E" onchange="handleMultiSelect('q21_22', 21, 22)"> E. organisation</label>
+                </div>
+            </div>
+
+            <div class="instruction-box" style="margin:28px 0 18px;">
+                <p class="instruction-line"><em>Questions 23 and 24</em> &nbsp; Choose <span class="hl-blue">TWO</span> letters, <span class="hl-blue">A–E</span>.</p>
+            </div>
+
+            <div class="mcq-block">
+                <p>Which <span class="hl-blue">TWO</span> immediate benefits did the company get from Laura's work placement?</p>
+                <div class="multi-select-block">
+                    <label class="mcq-opt"><input type="checkbox" name="q23_24" value="A" onchange="handleMultiSelect('q23_24', 23, 24)"> A. updates for its software</label>
+                    <label class="mcq-opt"><input type="checkbox" name="q23_24" value="B" onchange="handleMultiSelect('q23_24', 23, 24)"> B. cost savings</label>
+                    <label class="mcq-opt"><input type="checkbox" name="q23_24" value="C" onchange="handleMultiSelect('q23_24', 23, 24)"> C. an improved image</label>
+                    <label class="mcq-opt"><input type="checkbox" name="q23_24" value="D" onchange="handleMultiSelect('q23_24', 23, 24)"> D. new clients</label>
+                    <label class="mcq-opt"><input type="checkbox" name="q23_24" value="E" onchange="handleMultiSelect('q23_24', 23, 24)"> E. a growth in sales</label>
+                </div>
+            </div>
+
+            <div class="instruction-box" style="margin:28px 0 18px;">
+                <p class="instruction-line"><em>Questions 25–30</em></p>
+                <p class="instruction-line">What source of information should Tim use at each of the following stages of the work placement?</p>
+                <p class="instruction-line">Choose <span class="hl-blue">SIX</span> answers from the box and write the correct letter, <span class="hl-blue">A–G</span>, next to questions 25–30.</p>
+            </div>
+
+            <div class="matching-box">
+                <h4 style="margin-bottom:10px;text-align:center;color:#2a72ae;">Sources of information</h4>
+                <div class="options-grid">
+                    <span><strong>A</strong> company manager</span>
+                    <span><strong>B</strong> company's personnel department</span>
+                    <span><strong>C</strong> personal tutor</span>
+                    <span><strong>D</strong> psychology department</span>
+                    <span><strong>E</strong> mentor</span>
+                    <span><strong>F</strong> university careers officer</span>
+                    <span><strong>G</strong> internet</span>
+                </div>
+            </div>
+
+            <p class="instruction-line" style="font-weight:700;color:#2a72ae;">Stages of the work placement procedure</p>
+            <div class="q-line"><strong>25</strong> obtaining booklet <input type="text" maxlength="1" id="q25" class="cd-input matching-input" aria-label="Question 25"></div>
+            <div class="q-line"><strong>26</strong> discussing options <input type="text" maxlength="1" id="q26" class="cd-input matching-input" aria-label="Question 26"></div>
+            <div class="q-line"><strong>27</strong> getting updates <input type="text" maxlength="1" id="q27" class="cd-input matching-input" aria-label="Question 27"></div>
+            <div class="q-line"><strong>28</strong> responding to invitation for interview <input type="text" maxlength="1" id="q28" class="cd-input matching-input" aria-label="Question 28"></div>
+            <div class="q-line"><strong>29</strong> informing about outcome of interview <input type="text" maxlength="1" id="q29" class="cd-input matching-input" aria-label="Question 29"></div>
+            <div class="q-line"><strong>30</strong> requesting a reference <input type="text" maxlength="1" id="q30" class="cd-input matching-input" aria-label="Question 30"></div>
+        </div>
+
+        <div class="part-nav">
+            <button class="nav-btn prev" onclick="goToPart(2)">← Previous Part</button>
+            <button class="nav-btn next" onclick="goToPart(4)">Next Part →</button>
+        </div>
+    </section>
+
+    <!-- PART 4 -->
+    <section class="part-container" id="part-4">
+        <div class="blue-part-bar">Part 4</div>
+
+        <div class="instruction-box">
+            <p class="instruction-line" style="font-weight:700;color:#2a72ae;">Questions 31–40</p>
+            <p class="instruction-line"><em>Questions 31–33</em> &nbsp; Choose the correct letter, <span class="hl-blue">A</span>, <span class="hl-blue">B</span> or <span class="hl-blue">C</span>.</p>
+        </div>
+
+        <div class="question-paper">
+            <h2 class="section-paper-title">Nanotechnology: technology on a small scale</h2>
+
+            <div class="mcq-block">
+                <p><span class="q-num">31</span> The speaker says that one problem with nanotechnology is that</p>
+                <div class="vertical-options">
+                    <label class="mcq-opt"><input type="radio" name="q31"> A. it could threaten our way of life.</label>
+                    <label class="mcq-opt"><input type="radio" name="q31"> B. it could be used to spy on people.</label>
+                    <label class="mcq-opt"><input type="radio" name="q31"> C. it is misunderstood by the public.</label>
+                </div>
+            </div>
+
+            <div class="mcq-block">
+                <p><span class="q-num">32</span> According to the speaker, some scientists believe that nano-particles</p>
+                <div class="vertical-options">
+                    <label class="mcq-opt"><input type="radio" name="q32"> A. should be restricted to secure environments.</label>
+                    <label class="mcq-opt"><input type="radio" name="q32"> B. should be used with more caution.</label>
+                    <label class="mcq-opt"><input type="radio" name="q32"> C. should only be developed for essential products.</label>
+                </div>
+            </div>
+
+            <div class="mcq-block">
+                <p><span class="q-num">33</span> In the speaker's opinion, research into nanotechnology</p>
+                <div class="vertical-options">
+                    <label class="mcq-opt"><input type="radio" name="q33"> A. has yet to win popular support.</label>
+                    <label class="mcq-opt"><input type="radio" name="q33"> B. could be seen as unethical.</label>
+                    <label class="mcq-opt"><input type="radio" name="q33"> C. ought to be continued.</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="instruction-box" style="margin: 0 24px 16px;">
+            <p class="instruction-line"><em>Questions 34–40</em></p>
+            <p class="instruction-line"><em>Complete the notes below.</em></p>
+            <p class="instruction-line">Write <span class="hl-blue">ONE WORD ONLY</span> for each answer.</p>
+        </div>
+
+        <div class="question-paper">
+            <h2 class="form-title">Uses of Nanotechnology</h2>
+
+            <h3 class="sub-heading" style="color:#2a72ae;">Transport</h3>
+            <ul class="ielts-list">
+                <li class="q-line">Nanotechnology could allow the development of stronger <strong>34</strong> <input type="text" id="q34" class="cd-input" aria-label="Question 34"></li>
+                <li>Planes would be much lighter in weight.</li>
+                <li class="q-line"><strong>35</strong> <input type="text" id="q35" class="cd-input" aria-label="Question 35"> travel will be made available to the masses.</li>
+            </ul>
+
+            <h3 class="sub-heading" style="color:#2a72ae;">Technology</h3>
+            <ul class="ielts-list">
+                <li class="q-line">Computers will be even smaller, faster, and will have a greater <strong>36</strong> <input type="text" id="q36" class="cd-input" aria-label="Question 36"></li>
+                <li class="q-line"><strong>37</strong> <input type="text" id="q37" class="cd-input" aria-label="Question 37"> energy will become more affordable.</li>
+            </ul>
+
+            <h3 class="sub-heading" style="color:#2a72ae;">The Environment</h3>
+            <ul class="ielts-list">
+                <li>Nano-robots could rebuild the ozone layer.</li>
+                <li class="q-line">Pollutants such as <strong>38</strong> <input type="text" id="q38" class="cd-input" aria-label="Question 38"> could be removed from water more easily.</li>
+                <li class="q-line">There will be no <strong>39</strong> <input type="text" id="q39" class="cd-input" aria-label="Question 39"> from manufacturing.</li>
+            </ul>
+
+            <h3 class="sub-heading" style="color:#2a72ae;">Health and Medicine</h3>
+            <ul class="ielts-list">
+                <li>New methods of food production could eradicate famine.</li>
+                <li class="q-line">Analysis of medical <strong>40</strong> <input type="text" id="q40" class="cd-input" aria-label="Question 40"> will be speeded up.</li>
+                <li>Life expectancy could be increased.</li>
+            </ul>
+        </div>
+
+        <div class="part-nav">
+            <button class="nav-btn prev" onclick="goToPart(3)">← Previous Part</button>
+            <button class="nav-btn finish" onclick="finishTest()">Finish Test</button>
+        </div>
+    </section>
+
+</main>
+
+<footer class="exam-footer">
+    <div class="number-grid" id="numberGrid"></div>
+</footer>
+
+<div id="lockdownOverlay" class="lockdown-overlay hidden">
+    <div class="lockdown-card">
+        <h2>Exam Paused</h2>
+        <p id="lockdownMessage">This test must stay in fullscreen.</p>
+        <button id="resumeExamBtn" class="btn-green">Return to Exam</button>
+    </div>
+</div>
+
+<script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore-compat.js"></script>
+<script src="../jss/core.js"></script>
+<script src="../jss/firebase-init.js"></script>
+<script src="../jss/emerald-tracker.js"></script>
+<script src="../jss/emerald-firestore-store.js"></script>
+<script src="../jss/emerald-firebase-bridge.js"></script>
+<script src="../jss/listening-test5.js"></script>
+
+</body>
+</html>

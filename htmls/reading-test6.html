@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reading Test 6</title>
+    <link rel="stylesheet" href="../csss/reading-test.css">
+    <link rel="stylesheet" href="../csss/reading-test6.css">
+    <link rel="icon" href="../logo.jpg">
+</head>
+<body>
+
+<div class="top-bar">
+    <div>Reading Test 6</div>
+    <div class="time">Time Left: <span id="timer">60:00</span></div>
+</div>
+
+<div id="readingOverlay" class="fullscreen-overlay">
+    <div id="rulesCard" class="overlay-card" style="max-width:540px;text-align:left;padding:34px 30px;">
+        <div style="
+            display:inline-flex;padding:7px 12px;border-radius:999px;
+            background:#e9faf3;color:#15543f;font-size:12px;font-weight:800;
+            letter-spacing:0.08em;text-transform:uppercase;margin-bottom:14px;">
+            Before You Start
+        </div>
+        <h2 style="margin:0 0 6px;font-size:26px;color:#111827;">Reading Test Rules</h2>
+        <p style="margin:0 0 18px;font-size:14px;color:#6b7280;">Read the rules carefully before starting.</p>
+
+        <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px;">
+            <span style="padding:9px 14px;border-radius:999px;background:#e9faf3;color:#10342a;font-size:13px;font-weight:700;">60 minutes</span>
+            <span style="padding:9px 14px;border-radius:999px;background:#e9faf3;color:#10342a;font-size:13px;font-weight:700;">40 questions</span>
+            <span style="padding:9px 14px;border-radius:999px;background:#e9faf3;color:#10342a;font-size:13px;font-weight:700;">3 passages</span>
+        </div>
+
+        <ul style="margin:0 0 22px 18px;color:#425266;line-height:1.8;font-size:14px;">
+            <li>The test must stay in fullscreen at all times.</li>
+            <li>Do not switch tabs or leave the exam window.</li>
+            <li>You have only 3 violation warnings before the test ends.</li>
+            <li>Use the navigation buttons to move between passages.</li>
+            <li>Answers are saved automatically as you type.</li>
+            <li>Click Finish Test on the last passage when done.</li>
+        </ul>
+
+        <button id="overlayActionBtn" class="overlay-btn" style="width:100%;padding:15px;font-size:16px;">
+            Start Test in Fullscreen
+        </button>
+    </div>
+
+    <div id="lockdownCard" class="overlay-card" style="display:none;">
+        <div class="overlay-label" id="overlayTitle">Exam Paused</div>
+        <h2 style="margin:12px 0 10px;font-size:26px;color:#111827;">Return to Fullscreen</h2>
+        <p id="overlayMessage" style="margin:0 0 22px;font-size:15px;color:#4b5563;line-height:1.6;">
+            Stay in fullscreen to continue the test.
+        </p>
+        <button id="lockdownActionBtn" class="overlay-btn" style="width:100%;">Return to Test</button>
+    </div>
+</div>
+
+<main class="reading-stage">
+
+    <section class="reading-container passage-screen active" data-passage="1">
+        <div class="passage">
+            <h2>READING PASSAGE 1</h2>
+            <p><b>You should spend about 20 minutes on Questions 1-13, which are based on Reading Passage 1 below.</b></p>
+
+            <h3>Ancient Egypt</h3>
+
+            <p>The people of ancient Egypt emerged as one of the first Western civilizations. Sustained 
+by the River Nile and protected by vast deserts, the Egyptians lived in comparative 
+security, prosperity and peace for thousands of years. When such conditions exist, the 
+civilization and its arts usually flourish. To this day, many of the Egyptian artistic 
+creations display the wealth, splendor and talent of this great civilization. </p>
+            <p>Ancient Egypt has been called a land of temples and tombs, and for centuries people have been filled with wonder at the ingenuity of the Egyptians, whose impressive works have withstood the ravages of time so well.  Had it not been for the long-lasting nature 
+of their monuments and carved inscriptions in the form of hieroglyphics1, much 
+evidence of their activities would have vanished from ail historical records. In about 
+3000 BC.</p>
+            <p>Upper and Lower Egypt were united under the first pharaoh, and generally from that time until the invasion by Alexander the Great in 332 BC, Egypt prospered as a nation of skilful craftsmen and artists. The Egyptians were an industrious, highly civilized and deeply religious people, who obediently accepted the supreme authority of their pharaohs.  The people were content 
+to serve and work for the state in return for a secure livelihood. They considered this 
+earthly life to be a segment in a great cycle, at the end of which everything would be 
+returned to its original form. The richer and more important the person, the more careful 
+and elaborate would be his or her burial, and the stronger and safer the tomb in which 
+they would be buried.</p>
+            <p>The burial of the dead in the ground was not considered sufficiently safe for kings, queens and court officials, so sunken, sealed tombs were ingeniously constructed to protect personal treasures, food and instructions for the safe conduct of the soul after death. The design of these tombs developed into the stepped pyramid, and finally into the square pyramid that we know today.</p>
+            <p>There are about 80 ancient pyramids in Egypt. The Great Pyramid at Gizeh, which King Cheops built as his tomb 5000 years ago, holds most interest. It stands with two other 
+pyramids on a slight rise overlooking the River Nile. At the center of the pyramid is the 
+King's Chamber and leading down from there is a long narrow area known as the Grand 
+Gallery. The pyramid covers 13 acres and contains 2,300,000 blocks of limestone, each 
+weighing an average of 1.5 tons. Its pyramidal form has a perfectly square base with 
+sides of 756 feet and a height of 481 feet. Situated directly below the King's Chamber is 
+the Queen's Chamber and there are two air channels leading upwards from the center 
+of the pyramid to the outside.</p>
+<p> Originally the exterior was covered in highly polished limestone slabs, all of which have 
+been stolen over the years. It is estimated that a total of 100,000 men labored for 20 
+years to build this gigantic structure, and although architecturally unimportant in design, 
+it has aroused the curiosity of millions of people because of the uncanny accuracy of its 
+measurements and proportions. It reveals the remarkable ingenuity and the great 
+organizing ability of the ancient Egyptians. 
+</p>
+<p>Near these pyramids stands the Great Sphinx, the origin and purpose of which 
+constitute one of the world’s most famous puzzles. Shaped from an outcrop of stone in 
+the form of a human-headed lion, the face is possibly a portrait of King Khafra, the son 
+of Cheops, who was buried in the second largest pyramid. The Sphinx is one of the 
+biggest statues ever made.</p>
+<p>The Egyptian people showed reverence towards natural objects such as the lotus 
+flower, the scarab beetle, the falcon, the lion, the sun and the River Nile. AII these 
+subjects and many more were used symbolically and conventionally as motifs in low
+relief carving and painting. It was the custom of the Egyptians to depict the various parts 
+of the human figure, usually in the most characteristic positions. The head was shown in 
+profile except for the eye, which was represented from the front, the shoulders and a 
+portion of the arms wert portrayed from the front, while the hips and legs were side 
+views. Wall decoration showed little or no attempt to indicate depth or perspective, 
+except by placing distant objects above near things. It was essentially two-dimensional, 
+and relative size indicated the status of the person, so the pharaoh was the largest 
+figure in the composition.</p>
+<p>Egyptian art is characterized by a passion for permanence, a desire to impress by size, 
+and a determination to make each item serve its function without much regard for the 
+whole. It is obvious that art among these people reached a very high level and the 
+strong influence of Egyptian art can be seen in the work of nearby civilizations. </p>
+<p>The fortunate discovery and subsequent deciphering in 1822 of the Rosetta Stone, 
+which showed the same laws inscribed both in Egyptian hieroglyphics and the Egyptian 
+demotic, or popular version of their language, as well as the Greek language, eventually 
+gave the key to the meaning of Egyptian inscriptions, and therefore the significance of 
+much Egyptian art.</p>
+        </div>
+
+        <div class="questions">
+            <h3>Questions 1-3</h3>
+            <p><b>Complete the sentences below.</b></p>
+            <p>Choose <b>NO MORE THAN THREE WORDS</b> from the passage for each answer.</p>
+
+            <div class="question">1. Security and peace are two <input id="q1"> that are necessary for a civilization to be successful.</div>
+            <div class="question">2. Ancient Egyptians worked as both <input id="q2"></div>
+            <div class="question">3. Ordinary Egyptians expected to receive <input id="q3"> for their hard work.</div>
+
+            <h3>Questions 4-7</h3>
+            <p><b>Label the diagram below.</b></p>
+            <p>Choose <b>NO MORE THAN THREE WORDS AND/OR A NUMBER</b> from the passage for each answer.</p>
+
+            <div class="diagram-card">
+                <p class="diagram-title">Great Pyramid at Gizeh</p>
+                <svg class="pyramid-diagram" viewBox="0 0 360 250" role="img" aria-label="Pyramid diagram">
+                    <polygon class="outline" points="180,20 40,220 320,220"></polygon>
+                    <path class="inner" d="M100 220 L165 140 L165 108"></path>
+                    <path class="inner" d="M165 140 L240 170"></path>
+                    <path class="inner" d="M165 140 L250 140"></path>
+                    <rect class="accent" x="150" y="98" width="36" height="20" rx="2"></rect>
+                    <rect class="accent" x="157" y="150" width="45" height="18" rx="2"></rect>
+                    <line class="inner" x1="168" y1="110" x2="108" y2="74"></line>
+                    <line class="inner" x1="182" y1="110" x2="260" y2="82"></line>
+                    <line class="marker" x1="250" y1="140" x2="286" y2="140"></line>
+                    <line class="marker" x1="170" y1="178" x2="170" y2="204"></line>
+                    <line class="marker" x1="108" y1="74" x2="92" y2="74"></line>
+                    <line class="marker" x1="260" y1="82" x2="276" y2="82"></line>
+
+                    <text x="150" y="112">King's</text>
+                    <text x="146" y="126">Chamber</text>
+                    <text x="296" y="144">Entry</text>
+                    <text x="151" y="236">756 feet</text>
+
+                    <text x="18" y="123">5</text>
+                    <line class="label-line" x1="34" y1="120" x2="34" y2="220"></line>
+                    <line class="label-line" x1="30" y1="120" x2="38" y2="120"></line>
+                    <line class="label-line" x1="30" y1="220" x2="38" y2="220"></line>
+
+                    <text x="253" y="135">4</text>
+                    <line class="label-line" x1="266" y1="132" x2="305" y2="132"></line>
+
+                    <text x="154" y="214">6</text>
+                    <line class="label-line" x1="168" y1="211" x2="202" y2="211"></line>
+
+                    <text x="279" y="76">7</text>
+                    <line class="label-line" x1="292" y1="73" x2="334" y2="73"></line>
+                </svg>
+            </div>
+
+            <div class="question">4. <input id="q4"></div>
+            <div class="question">5. <input id="q5"></div>
+            <div class="question">6. <input id="q6"></div>
+            <div class="question">7. <input id="q7"></div>
+
+            <h3>Questions 8-12</h3>
+            <p><b>Do the following statements agree with the information given in Reading Passage 1?</b></p>
+            <p>Write <b>TRUE</b>, <b>FALSE</b> or <b>NOT GIVEN</b>.</p>
+
+            <div class="question">8. The surface of the Great Pyramid is covered in polished limestone slabs. <input id="q8"></div>
+            <div class="question">9. King Khafra died before King Cheops. <input id="q9"></div>
+            <div class="question">10. Egyptian carvings were often based on things found in nature. <input id="q10"></div>
+            <div class="question">11. Important characters in Egyptian carvings were bigger than less important characters. <input id="q11"></div>
+            <div class="question">12. Egyptian art was greatly influenced by the art of neighboring cultures. <input id="q12"></div>
+
+            <h3>Question 13</h3>
+            <p><b>Choose the correct letter, A, B, C or D.</b></p>
+
+            <div class="question">13. The writer's aim in this passage is to <input id="q13"></div>
+            <p><b>A</b> describe the construction methods of the pyramids</p>
+            <p><b>B</b> explain the benefits of the ancient Egyptians</p>
+            <p><b>C</b> offer an interpretation of Egyptian art and sculpture</p>
+            <p><b>D</b> provide an overview of early Egyptian society</p>
+        </div>
+    </section>
+
+    <section class="reading-container passage-screen" data-passage="2">
+        <div class="passage">
+            <h2>READING PASSAGE 2</h2>
+            <p><b>You should spend about 20 minutes on Questions 14-26, which are based on Reading Passage 2 below.</b></p>
+
+            <h3>Sticking power</h3>
+            <p><em>Want to walk on the ceiling? All it takes is a bit of fancy footwork</em></p>
+<p><b>A</b>If Keilar Autumn, an expert in Biomechanik at Clark College in Portland, Oregon, 
+has his way, the first footprints on Mars won't be human. They'll belong to a gecko. 
+Gecko toes have legendary sticking power - and the Clark College scientist would like to 
+see the next generation of Martian robots walking about on gecko-style feet. A gecko 
+can whiz up the smoothest wall and hang from the ceiling by one foot, with no fear of 
+falling.</p>
+<p><b>B</b>Autumn is one of a long line of researchers who have puzzled over the gecko's 
+gravity-defying footwork. Earlier this year, he and his colleagues discovered that the 
+gecko's toes don't just stick, they bond to the surface beneath them. Engineers are 
+already trying to copy the gecko's technique - but reptilian feet are not the only ones 
+they are interested in.</p>
+<p><b>C</b> Some of the most persistent 'hanging' creatures are insects. They can defy not 
+just gravity, but gusts of wind, raindrops and a predator’s attempt to prize them loose. 
+Recent discoveries about how they achieve this could lead to the development of quick
+release adhesives and miniature grippers, ideal for manipulating microscopic 
+components or holding tiny bits of tissue together during surgery. 'There are lots of 
+ways to make two surfaces stick together, but there are very few which provide precise 
+and reversible attachment,' says Stas Gorb, a biologist in Tübingen, Germany, working 
+on the problem.</p>
+<p><b>D</b> Geckos and insects have both perfected ways of doing this, and engineers and 
+scientists would dearly love to know how. Friction certainly plays a part in assisting 
+horizontal movement, but when the animal is running up a slope, climbing vertically or 
+travelling upside down, it needs a more powerful adhesive. Just what that adhesive is 
+has been hotly debated for years. Some people suggested that insects had micro
+suckers. Some reckoned they relied on electrostatic forces. Others thought that 
+intermolecular forces between pad and leaf might provide a firm foothold. </p>
+
+<p><b>E</b>Most of the evidence suggests that insects rely on 'wet adhesion', hanging on 
+with the help of a thin film of fluid on the bottom of the pad. Insects often leave tiny trails 
+of oily footprints. Some clearly secrete a fluid onto the 'soles' of their feet. And they tend 
+to lose their footing when they have their feet cleaned or dried.</p>
+
+
+
+<p><b>F</b>This year, Walter Federle, an entomologist at the University of Würzburg, showed 
+experimentally that an insect's sticking power depends on a thin film of liquid under its 
+feet. He placed an ant on a polished turntable inside the rotor of a centrifuge, and 
+switched it on. At slow speeds, the ant carried on walking unperturbed. But as the 
+scientist slowly increased the speed, the pulling forces grew stronger and the ant 
+stopped dead, legs spread out and all six feet planted firmly on the ground. At higher 
+speeds still, the ant's feet began to slide. 'This can only be explained by the presence of 
+a liquid,' says Federle. 'If the ant relied on some form of dry adhesion, its feet would pop 
+abruptly off the surface once the pull got too strong.'</p>
+
+
+<p><b>G</b>But the liquid isn't the whole story. What engineers really find exciting about 
+insect feet is the way they make almost perfect contact with the surface beneath. 
+'Sticking to a perfectly smooth surface is no big deal,' says Gorb. But in nature, even the 
+smoothest-looking surfaces have microscopic lumps and bumps. For a footpad to make 
+good contact, it must follow the contours of the landscape beneath it. Flies, beetles and 
+earwigs have solved the problem with hairy footpads, with hairs that bend like the 
+bristles of a toothbrush to accommodate the troughs below. </p>
+
+
+<p><b>H</b>Gorb has tested dozens of species with this sort of pad to see which had the best 
+stick. Flies resist a pull of three or four times their body weight - perfectly adequate for 
+crossing the ceiling. But beetles can do better and the champion is a small, blue beetle 
+with oversized yellow feet, found in the south-eastern parts of the US. </p>
+
+
+
+
+<p><b>I</b> Tom Eisner, a chemical ecologist at Cornell University in New York, has been 
+fascinated by this beetle for years. Almost 30 years ago, he suggested that the beetle 
+clung on tight to avoid being picked off by predators - ants in particular. When Eisher 
+measured the beetle’s sticking power earlier this year, he found that it can withstand 
+pulling forces of around 80 times its own weight for about two minutes and an 
+astonishing 200 times its own weight for shorter periods. 'The ants give up because the 
+beetle holds on longer than they can be bothered to attack it,' he says. </p>
+
+
+<p><b>J</b>Whatever liquid insects rely on, the gecko seems able to manage without it. No 
+one knows quite why the gecko needs so much sticking power. 'It seems overbuilt for 
+the job,' says Autumn. But whatever the gecko's needs are, its skills are in demand by 
+humans. Autumn and his colleagues in Oregon have already helped to create a robot 
+that walks like a gecko. Mecho-Gecko, a robot built by iRobot of Massachusetts, walks 
+like a lizard - rolling its toes down and peeling them up again. At the moment, though, it 
+has to make do with balls of glue to give it stick. The next step is to try to reproduce the 
+hairs on a gecko's toes and create a robot with the full set of gecko skills.  Then we 
+could build robots with feet that stick without glue, clean themselves and work just as 
+well underwater as in the vacuum of space, or crawling over the dusty landscape of 
+Mars.</p>
+        </div>
+
+        <div class="questions">
+            <h3>Questions 14-18</h3>
+            <p><b>Look at the following statements and the list of scientists below.</b></p>
+            <p>Match each statement with the correct scientist, <b>A, B, C or D</b>.</p>
+
+            <div class="question">14. Some insects use their ability to stick to surfaces as a way of defending themselves. <input id="q14"></div>
+            <div class="question">15. What makes sticky insect feet special is the fact that they can also detach themselves easily from a surface. <input id="q15"></div>
+            <div class="question">16. Gecko feet seem to be stickier than they need to be. <input id="q16"></div>
+            <div class="question">17. A robot with gecko-style feet would be ideal for exploring other planets. <input id="q17"></div>
+            <div class="question">18. Evidence shows that in order to stick, insect feet have to be wet. <input id="q18"></div>
+
+            <h4>List of Scientists</h4>
+            <p><b>A</b> Kellar Autumn</p>
+            <p><b>B</b> Stas Gorb</p>
+            <p><b>C</b> Walter Federle</p>
+            <p><b>D</b> Tom Eisner</p>
+
+            <h3>Questions 19-22</h3>
+            <p><b>Reading Passage 2 has ten paragraphs, A-J.</b></p>
+            <p>Which paragraph contains the following information?</p>
+
+            <div class="question">19. some of the practical things a gecko-style adhesive could be used for <input id="q19"></div>
+            <div class="question">20. a description of a test involving an insect in motion <input id="q20"></div>
+            <div class="question">21. three different theories scientists have had about how insect feet stick <input id="q21"></div>
+            <div class="question">22. examples of remarkable gecko movements <input id="q22"></div>
+
+            <h3>Questions 23-26</h3>
+            <p><b>Complete each sentence with the correct ending, A-G, below.</b></p>
+
+            <div class="question">23. Insect feet lose their sticking power when they <input id="q23"></div>
+            <div class="question">24. If you put ants on a rapidly rotating object, their feet <input id="q24"></div>
+            <div class="question">25. Beetles can stick to uneven surfaces because they <input id="q25"></div>
+            <div class="question">26. The toes on robots like Mecho-Gecko <input id="q26"></div>
+
+            <p><b>A</b> stick to surfaces in and out of water.</p>
+            <p><b>B</b> curl up and down</p>
+            <p><b>C</b> are washed and dried</p>
+            <p><b>D</b> resist a pull of three times their body weight</p>
+            <p><b>E</b> start to slip across the surface</p>
+            <p><b>F</b> leave yellow footprints</p>
+            <p><b>G</b> have hairy footpads</p>
+        </div>
+    </section>
+
+    <section class="reading-container passage-screen" data-passage="3">
+        <div class="passage">
+            <h2>READING PASSAGE 3</h2>
+            <p><b>You should spend about 20 minutes on Questions 27-40, which are based on Reading Passage 3 below.</b></p>
+
+            <h3>How Green is your PlanIT Valley?</h3>
+
+<p>The first thing to say about the people running new European company Living PlanIT is 
+that they are ambitious. Not only are they planning to build a smart green city from 
+scratch at a site in northern Portugal, but they also hope to establish their PlanIT Valley 
+development as both a genuine European alternative to the USA's Silicon Valley, and a 
+working model that will inspire the next generation of low carbon cities. These will 
+combine real environmental sustainability with a quality of IT-enhanced urban living 
+almost unrecognisable from the crowded, polluted and disorganised reality that is city 
+life for most people. </p>
+<p>Many are sceptical about the company's plans for a brand-new smart city packed with 
+cutting-edge green technology which can house 225,000 people while producing 
+'negligible' greenhouse gas emissions. To them, the technical challenges, combined 
+with the $10 billion that the company needs to raise to see the project through from 
+beginning to end, make Living PlanIT's plans sound more like an admirable experiment 
+rather than a viable construction project. Their scepticism is not helped by the 
+company's use of marketing language that, in order to understand it, requires a degree 
+in Public Relations. For example, the company's claim that its 'design and 
+manufacturing platforms enable the convergence of computing, network and sensing 
+technologies with the fabric of buildings and places, demonstrated at urban scale in the 
+development and operations of PlanIT Valley' does not really explain what it does.</p>
+
+
+
+<p>However, when you listen to chief executive Steve Lewis outline his plans for the 
+company, it becomes possible to believe that they might just deliver on their absurdly 
+ambitious promises. His rationale for the company is admirably simple. He argues that 
+the construction industry remains the last sector of the economy to resist the IT 
+revolution that has enhanced efficiencies across every other industry, from car              
+ manufacturing to food production. Their existing techniques are inadequate, he says, 
+for today's technology-rich and environmentally-aware requirements. Here, therefore, is 
+an opportunity to entirely update the building process. Taking lessons from other 
+manufacturing industries, including aerospace, automotive and shipbuilding, project 
+leaders identified a number of elements that feature in modern manufacturing 
+processes and which could be applied to modern buildings from the very start of the 
+construction process.  </p>
+
+<p>Living PlanIT plans to integrate IT into the fabric of the city. It is installing many 
+thousands of sensors that allow an urban operating system to deliver intelligent 
+buildings that are constantly optimised to enhance comfort, productivity and 
+environmental sustainability. Meanwhile, the latest renewable energy technologies and 
+green building techniques will allow the city to operate with a virtually non-existent 
+carbon footprint. Of course, such techniques are not new, but they are rarely put into practice. In fact, the IT industry has been 
+complaining for a long time that the construction sector has failed to make adequate (if any) use of IT in its 
+buildings. </p>
+<p>So, what makes PlanIT Valley different? For a start, the company has considerable 
+power and influence, both in terms of the team it has assembled and the financial 
+backing it has already been promised. Lewis and many on the senior management 
+team have served as senior executives with other major IT companies. This means that 
+they not only have the right experience, but also the essential 'anything is possible' 
+mentality that is a feature of such companies. In addition, Lewis claims that the 
+company has already invested $300 million in putting together its team of engineers and 
+developing its technology portfolio. As a result, the project is establishing a degree of 
+credibility that far exceeds that of other similar projects.</p>
+<p>More importantly, however, almost all of the technology the company is planning to 
+deploy in PlanIT Valley either already exists or is viable from a technical point of view. 
+Intelligent buildings that know to turn the air-conditioning on before you even realise you 
+are hot may sound like something out of a science-fiction novel, but we are increasingly 
+living in a science-fiction age. You do not need to invent anything new to develop a 
+zero-carbon smart city, you just have to put all the right technologies together in the 
+right place.  </p>
+<p>If Living PlanIT achieve this integration, it will hopefully be able to prove the final part of 
+Lewis' claim. Namely, that cost concerns surrounding green developments are ill
+founded. A more automated approach to construction coupled with long-term efficiency 
+gains delivered by intelligent infrastructure more than cancel out the extra money 
+required to build the development in the first place. And if it can win the economic 
+argument, future opportunities are enormous. As Lewis points out, projected world 
+population growth means that the world has to deliver between 9,500 and 10,000 new 
+cities over the next forty years to house everyone. There is no chance of avoiding 
+dangerous levels of climate change unless this expansion is delivered in an 
+environmentally-sustainable manner. That would provide quite a business opportunity 
+for the company that can deliver the solution. </p>
+<p>The PlanIT Valley project presents many problems in terms of project management and 
+coordination, and there is a huge amount of work to be done before the first residents 
+are able to move in. Whatever the outcome, it is hard not to admire a project that will put 
+so many theories about smart cities to the test all in one go. First, it is challenging 
+accepted assumptions on how cities should be designed and constructed. Secondly, it 
+will show what can be done if connectivity and intelligence are built into the design from 
+the beginning. Thirdly, it will be a pilot project for a whole range of new services and, 
+equally important, new types of collaboration. </p>
+        </div>
+
+        <div class="questions">
+            <h3>Questions 27-31</h3>
+            <p><b>Choose the correct letter, A, B, C or D.</b></p>
+
+            <div class="question">27. What do we learn about the people running the company Living PlanIT in the first paragraph? <input id="q27"></div>
+            <p><b>A</b> They are going to build the world's first green smart city.</p>
+            <p><b>B</b> They want to build a replica of Silicon Valley in Europe.</p>
+            <p><b>C</b> They want their new city to be the first of other similar cities.</p>
+            <p><b>D</b> They think that the quality of life in most other cities is unacceptable.</p>
+
+            <div class="question">28. Why are a lot of people sceptical about PlanIT Valley? <input id="q28"></div>
+            <p><b>A</b> They do not think that the plans are practical or possible.</p>
+            <p><b>B</b> They do not understand how the technology works.</p>
+            <p><b>C</b> They have misunderstood the reasons why Living PlanIT is building a new city.</p>
+            <p><b>D</b> They have not read the marketing information clearly enough.</p>
+
+            <div class="question">29. Who or what does <em>their</em> in line 25 refer to? <input id="q29"></div>
+            <p><b>A</b> Living PlanIT</p>
+            <p><b>B</b> The construction industry</p>
+            <p><b>C</b> Car manufacturers</p>
+            <p><b>D</b> Food producers</p>
+
+            <div class="question">30. The senior management team at Living PlanIT <input id="q30"></div>
+            <p><b>A</b> have more power and influence than teams working on other, similar projects.</p>
+            <p><b>B</b> have raised enough money to build PlanIT Valley.</p>
+            <p><b>C</b> work elsewhere when they are not working on the PlanIT Valley project.</p>
+            <p><b>D</b> possess the right attitude required to undertake such a major project.</p>
+
+            <div class="question">31. Why, according to the author, is the PlanIT Valley project so admirable? <input id="q31"></div>
+            <p><b>A</b> It shows how good working practices can have a successful outcome.</p>
+            <p><b>B</b> It presents such a challenge to its creators.</p>
+            <p><b>C</b> It is putting several theories into practice simultaneously.</p>
+            <p><b>D</b> It demonstrates why collaboration between builders and IT experts is so important.</p>
+
+            <h3>Questions 32-36</h3>
+            <p><b>Do the following statements agree with the claims of the writer in the Reading passage?</b></p>
+            <p>Write <b>YES</b>, <b>NO</b> or <b>NOT GIVEN</b>.</p>
+
+            <div class="question">32. Living PlanIT's marketing information is unclear and confusing for many people. <input id="q32"></div>
+            <div class="question">33. Steve Lewis presents a convincing argument that suggests PlanIT Valley might succeed. <input id="q33"></div>
+            <div class="question">34. Some of the buildings in PlanIT Valley have features that can be found in aircraft, cars or ships. <input id="q34"></div>
+            <div class="question">35. Living PlanIT's idea of building a smart, environmentally-friendly city is original and unique. <input id="q35"></div>
+            <div class="question">36. Some of the technology in PlanIT Valley was probably inspired by science fiction stories. <input id="q36"></div>
+
+            <h3>Questions 37-40</h3>
+            <p><b>Complete each sentence with the correct ending, A-G, below.</b></p>
+
+            <div class="question">37. The IT industry believes that, when it comes to putting up new buildings, IT is currently <input id="q37"></div>
+            <div class="question">38. Creating new technology for PlanIT Valley is <input id="q38"></div>
+            <div class="question">39. Steve Lewis believes that the economic arguments against green developments are <input id="q39"></div>
+            <div class="question">40. Some organisational aspects of the PlanIT Valley project are <input id="q40"></div>
+
+            <p><b>A</b> technically possible</p>
+            <p><b>B</b> underused</p>
+            <p><b>C</b> difficult to avoid</p>
+            <p><b>D</b> not valid</p>
+            <p><b>E</b> inefficient</p>
+            <p><b>F</b> too ambitious</p>
+            <p><b>G</b> extremely challenging</p>
+        </div>
+    </section>
+
+</main>
+
+<div class="reading-nav-bar">
+    <button id="toggleNumbersBtn" class="nav-btn-read toggle-numbers-btn" type="button">Hide Numbers</button>
+    <div class="nav-actions">
+        <button id="prevBtn" class="nav-btn-read" type="button">Previous Passage</button>
+        <button id="nextBtn" class="nav-btn-read" type="button">Next Passage</button>
+        <button id="finishBtn" class="nav-btn-read finish" type="button" style="display:none;">Finish Test</button>
+    </div>
+</div>
+
+<footer id="numbersFooter" class="exam-footer">
+    <div class="number-grid" id="numberGrid"></div>
+</footer>
+
+<script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore-compat.js"></script>
+<script src="../jss/core.js"></script>
+<script src="../jss/firebase-init.js"></script>
+<script src="../jss/emerald-tracker.js"></script>
+<script src="../jss/emerald-firestore-store.js"></script>
+<script src="../jss/emerald-firebase-bridge.js"></script>
+<script src="../jss/reading-test6.js"></script>
+
+</body>
+</html>

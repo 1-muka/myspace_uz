@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cambridge 18 - Test 3 - Listening</title>
+    <link rel="stylesheet" href="../csss/listening-test.css">
+    <link rel="stylesheet" href="../csss/listening-test3.css">
+</head>
+<body>
+
+<div id="rulesIntroOverlay" class="modal-overlay" style="display:flex;">
+    <div class="practice-card" style="max-width:540px;text-align:left;">
+        <div class="overlay-badge" style="
+            display:inline-flex;padding:7px 12px;border-radius:999px;
+            background:#e9faf3;color:#15543f;font-size:12px;font-weight:800;
+            letter-spacing:0.08em;text-transform:uppercase;margin-bottom:14px;">
+            Before You Start
+        </div>
+        <h2 class="practice-title" style="text-align:left;margin-bottom:6px;">Listening Test Rules</h2>
+        <p class="practice-subtitle" style="text-align:left;margin-bottom:18px;">Read the rules carefully before starting.</p>
+
+        <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px;">
+            <span style="padding:9px 14px;border-radius:999px;background:#e9faf3;color:#10342a;font-size:13px;font-weight:700;">35 minutes</span>
+            <span style="padding:9px 14px;border-radius:999px;background:#e9faf3;color:#10342a;font-size:13px;font-weight:700;">40 questions</span>
+            <span style="padding:9px 14px;border-radius:999px;background:#e9faf3;color:#10342a;font-size:13px;font-weight:700;">4 parts</span>
+        </div>
+
+        <ul style="margin:0 0 22px 18px;color:#425266;line-height:1.8;font-size:14px;">
+            <li>The test must stay in fullscreen at all times.</li>
+            <li>Do not switch tabs or leave the exam window.</li>
+            <li>You have only 3 violation warnings before the test ends.</li>
+            <li>The audio will play automatically when you start.</li>
+            <li>You can navigate between parts using the buttons.</li>
+            <li>Answers are saved automatically as you type.</li>
+        </ul>
+
+        <button id="finalStartBtn" class="btn-green-large" style="margin-top:4px;">
+            ▶ &nbsp; Start Test in Fullscreen
+        </button>
+    </div>
+</div>
+
+<header class="exam-header">
+    <div class="header-top-block">
+        <span class="test-name">Cambridge 18 - Listening Test 3</span>
+        <div class="timer-box">Time Left: <span id="timer">35:00</span></div>
+    </div>
+
+    <div class="audio-panel">
+        <div class="audio-block">
+            <span class="player-label">Audio Player</span>
+            <button id="startTestBtn" class="btn-green">Start Test</button>
+            <audio id="examAudio" class="hidden" controls>
+                <source src="../audio/listening-test3.mp3" type="audio/mpeg">
+            </audio>
+        </div>
+    </div>
+</header>
+
+<main class="exam-content" id="mainScroll">
+
+    <!-- PART 1 -->
+    <section class="part-container active" id="part-1">
+        <div class="blue-part-bar">Part 1</div>
+
+        <div class="instruction-box">
+            <p class="instruction-line"><strong>Questions 1–10</strong></p>
+            <p class="instruction-line"><em>Questions 1–6</em> &nbsp; Choose the correct letter, <span class="hl-blue">A</span>, <span class="hl-blue">B</span> or <span class="hl-blue">C</span>.</p>
+        </div>
+
+        <div class="question-paper">
+            <h2 class="form-title">Free activities in the Burnham area</h2>
+
+            <p class="instruction-line" style="font-style:italic;">Example</p>
+            <div class="mcq-block">
+                <p>The caller wants to find out about events on</p>
+                <div class="vertical-options">
+                    <label class="mcq-opt">A. 27 June.</label>
+                    <label class="mcq-opt">B. 28 June.</label>
+                    <label class="mcq-opt"><span class="example-hand">C. 29 June.</span></label>
+                </div>
+            </div>
+
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px 24px;align-items:start;margin-top:16px;">
+                <div>
+                    <div class="mcq-block">
+                        <p><span class="q-num">1</span> The ‘Family Welcome’ event in the art gallery begins at</p>
+                        <div class="vertical-options">
+                            <label class="mcq-opt"><input type="radio" name="q1"> A. 10 am.</label>
+                            <label class="mcq-opt"><input type="radio" name="q1"> B. 10.30 am.</label>
+                            <label class="mcq-opt"><input type="radio" name="q1"> C. 2 pm.</label>
+                        </div>
+                    </div>
+                    <div class="mcq-block">
+                        <p><span class="q-num">2</span> The film that is now shown in the ‘Family Welcome’ event is about</p>
+                        <div class="vertical-options">
+                            <label class="mcq-opt"><input type="radio" name="q2"> A. sculpture.</label>
+                            <label class="mcq-opt"><input type="radio" name="q2"> B. painting.</label>
+                            <label class="mcq-opt"><input type="radio" name="q2"> C. ceramics.</label>
+                        </div>
+                    </div>
+                    <div class="mcq-block">
+                        <p><span class="q-num">3</span> When do most of the free concerts take place?</p>
+                        <div class="vertical-options">
+                            <label class="mcq-opt"><input type="radio" name="q3"> A. in the morning</label>
+                            <label class="mcq-opt"><input type="radio" name="q3"> B. at lunchtime</label>
+                            <label class="mcq-opt"><input type="radio" name="q3"> C. in the evening</label>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="mcq-block">
+                        <p><span class="q-num">4</span> Where will the 4 pm concert of Latin American music take place?</p>
+                        <div class="vertical-options">
+                            <label class="mcq-opt"><input type="radio" name="q4"> A. in a museum</label>
+                            <label class="mcq-opt"><input type="radio" name="q4"> B. in a theatre</label>
+                            <label class="mcq-opt"><input type="radio" name="q4"> C. in a library</label>
+                        </div>
+                    </div>
+                    <div class="mcq-block">
+                        <p><span class="q-num">5</span> The boat race begins at</p>
+                        <div class="vertical-options">
+                            <label class="mcq-opt"><input type="radio" name="q5"> A. Summer Pool.</label>
+                            <label class="mcq-opt"><input type="radio" name="q5"> B. Charlesworth Bridge.</label>
+                            <label class="mcq-opt"><input type="radio" name="q5"> C. Offord Marina.</label>
+                        </div>
+                    </div>
+                    <div class="mcq-block">
+                        <p><span class="q-num">6</span> One of the boat race teams</p>
+                        <div class="vertical-options">
+                            <label class="mcq-opt"><input type="radio" name="q6"> A. won a regional competition earlier this year.</label>
+                            <label class="mcq-opt"><input type="radio" name="q6"> B. has represented the region in a national competition.</label>
+                            <label class="mcq-opt"><input type="radio" name="q6"> C. has won several regional competitions.</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="instruction-box" style="margin:28px 0 14px;">
+                <p class="instruction-line"><em>Questions 7–10</em></p>
+                <p class="instruction-line">Complete the sentences below.</p>
+                <p class="instruction-line">Write <span class="hl-blue">ONE WORD ONLY</span> for each answer.</p>
+            </div>
+
+            <h2 class="form-title">Paxton Nature Reserve</h2>
+            <div class="q-line">Paxton is a good place for seeing rare <strong>7</strong> <input type="text" id="q7" class="cd-input" aria-label="Question 7"> all year round.</div>
+            <div class="q-line">This is a particularly good time for seeing certain unusual <strong>8</strong> <input type="text" id="q8" class="cd-input" aria-label="Question 8">.</div>
+            <div class="q-line">Visitors will be able to learn about <strong>9</strong> <input type="text" id="q9" class="cd-input" aria-label="Question 9"> and then collect some.</div>
+            <div class="q-line">Part of the <strong>10</strong> <input type="text" id="q10" class="cd-input" aria-label="Question 10"> has been made suitable for swimming.</div>
+        </div>
+
+        <div class="part-nav">
+            <button class="nav-btn next" onclick="goToPart(2)">Next Part →</button>
+        </div>
+    </section>
+
+    <!-- PART 2 -->
+    <section class="part-container" id="part-2">
+        <div class="blue-part-bar">Part 2</div>
+
+        <div class="instruction-box">
+            <p class="instruction-line" style="font-weight:700;color:#2a72ae;">Questions 11–20</p>
+            <p class="instruction-line"><em>Questions 11–15</em> &nbsp; Choose the correct letter, <span class="hl-blue">A</span>, <span class="hl-blue">B</span> or <span class="hl-blue">C</span>.</p>
+        </div>
+
+        <div class="question-paper">
+            <h2 class="section-paper-title">Changes in Barford over the last 50 years</h2>
+
+            <div class="mcq-block">
+                <p><span class="q-num">11</span> In Shona's opinion, why do fewer people use buses in Barford these days?</p>
+                <div class="vertical-options">
+                    <label class="mcq-opt"><input type="radio" name="q11"> A. The buses are old and uncomfortable.</label>
+                    <label class="mcq-opt"><input type="radio" name="q11"> B. Fares have gone up too much.</label>
+                    <label class="mcq-opt"><input type="radio" name="q11"> C. There are not so many bus routes.</label>
+                </div>
+            </div>
+            <div class="mcq-block">
+                <p><span class="q-num">12</span> What change in the road network is known to have benefited the town most?</p>
+                <div class="vertical-options">
+                    <label class="mcq-opt"><input type="radio" name="q12"> A. the construction of a bypass</label>
+                    <label class="mcq-opt"><input type="radio" name="q12"> B. the development of cycle paths</label>
+                    <label class="mcq-opt"><input type="radio" name="q12"> C. the banning of cars from certain streets</label>
+                </div>
+            </div>
+            <div class="mcq-block">
+                <p><span class="q-num">13</span> What is the problem affecting shopping in the town centre?</p>
+                <div class="vertical-options">
+                    <label class="mcq-opt"><input type="radio" name="q13"> A. lack of parking spaces</label>
+                    <label class="mcq-opt"><input type="radio" name="q13"> B. lack of major retailers</label>
+                    <label class="mcq-opt"><input type="radio" name="q13"> C. lack of restaurants and cafés</label>
+                </div>
+            </div>
+            <div class="mcq-block">
+                <p><span class="q-num">14</span> What does Shona say about medical facilities in Barford?</p>
+                <div class="vertical-options">
+                    <label class="mcq-opt"><input type="radio" name="q14"> A. There is no hospital.</label>
+                    <label class="mcq-opt"><input type="radio" name="q14"> B. New medical practices are planned.</label>
+                    <label class="mcq-opt"><input type="radio" name="q14"> C. The number of dentists is too low.</label>
+                </div>
+            </div>
+            <div class="mcq-block">
+                <p><span class="q-num">15</span> The largest number of people are employed in</p>
+                <div class="vertical-options">
+                    <label class="mcq-opt"><input type="radio" name="q15"> A. manufacturing.</label>
+                    <label class="mcq-opt"><input type="radio" name="q15"> B. services.</label>
+                    <label class="mcq-opt"><input type="radio" name="q15"> C. education.</label>
+                </div>
+            </div>
+
+            <div class="instruction-box" style="margin:28px 0 16px;">
+                <p class="instruction-line"><em>Questions 16–20</em></p>
+                <p class="instruction-line">What is planned for each of the following facilities?</p>
+                <p class="instruction-line">Choose <span class="hl-blue">FIVE</span> answers from the box and write the correct letter, <span class="hl-blue">A–G</span>, next to Questions 16–20.</p>
+            </div>
+
+            <div class="matching-box">
+                <h4 style="margin-bottom:10px;text-align:center;color:#2a72ae;">Plans</h4>
+                <div class="options-grid">
+                    <span><strong>A</strong> It will move to a new location.</span>
+                    <span><strong>B</strong> It will have its opening hours extended.</span>
+                    <span><strong>C</strong> It will be refurbished.</span>
+                    <span><strong>D</strong> It will be used for a different purpose.</span>
+                    <span><strong>E</strong> It will have its opening hours reduced.</span>
+                    <span><strong>F</strong> It will have new management.</span>
+                    <span><strong>G</strong> It will be expanded.</span>
+                </div>
+            </div>
+
+            <p class="instruction-line" style="font-weight:700;color:#2a72ae;margin-top:18px;">Facilities</p>
+            <div class="q-line"><strong>16</strong> railway station car park <input type="text" maxlength="1" id="q16" class="cd-input matching-input" aria-label="Question 16" title="Letter A–G"></div>
+            <div class="q-line"><strong>17</strong> cinema <input type="text" maxlength="1" id="q17" class="cd-input matching-input" aria-label="Question 17" title="Letter A–G"></div>
+            <div class="q-line"><strong>18</strong> indoor market <input type="text" maxlength="1" id="q18" class="cd-input matching-input" aria-label="Question 18" title="Letter A–G"></div>
+            <div class="q-line"><strong>19</strong> library <input type="text" maxlength="1" id="q19" class="cd-input matching-input" aria-label="Question 19" title="Letter A–G"></div>
+            <div class="q-line"><strong>20</strong> nature reserve <input type="text" maxlength="1" id="q20" class="cd-input matching-input" aria-label="Question 20" title="Letter A–G"></div>
+        </div>
+
+        <div class="part-nav">
+            <button class="nav-btn prev" onclick="goToPart(1)">← Previous Part</button>
+            <button class="nav-btn next" onclick="goToPart(3)">Next Part →</button>
+        </div>
+    </section>
+
+    <!-- PART 3 -->
+    <section class="part-container" id="part-3">
+        <div class="blue-part-bar">Part 3</div>
+
+        <div class="instruction-box">
+            <p class="instruction-line" style="font-weight:700;color:#2a72ae;">Questions 21–30</p>
+            <p class="instruction-line"><em>Questions 21–26</em> &nbsp; Complete the table below.</p>
+            <p class="instruction-line">Write <span class="hl-blue">ONE WORD ONLY</span> for each answer.</p>
+        </div>
+
+        <div class="question-paper">
+            <table class="listening-data-table" style="margin-bottom:24px;">
+                <thead>
+                    <tr>
+                        <th>Subject of drawing</th>
+                        <th>Change to be made</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>A <input type="text" id="q21" class="cd-input table-input" aria-label="Question 21"> surrounded by trees</td>
+                        <td>Add Malcolm and a <input type="text" id="q22" class="cd-input table-input" aria-label="Question 22"> noticing him</td>
+                    </tr>
+                    <tr>
+                        <td>People who are <input type="text" id="q23" class="cd-input table-input" aria-label="Question 23"> outside the forest</td>
+                        <td>Add Malcolm sitting on a tree trunk and <input type="text" id="q24" class="cd-input table-input" aria-label="Question 24"></td>
+                    </tr>
+                    <tr>
+                        <td>Ice-skaters on <input type="text" id="q25" class="cd-input table-input" aria-label="Question 25"> covered with ice</td>
+                        <td>Add a <input type="text" id="q26" class="cd-input table-input" aria-label="Question 26"> for each person</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="instruction-box" style="margin:0 0 16px;">
+                <p class="instruction-line"><em>Questions 27–30</em></p>
+                <p class="instruction-line">Who is going to write each of the following parts of the report?</p>
+                <p class="instruction-line">Write the correct letter, <span class="hl-blue">A–D</span>, next to Questions 27–30.</p>
+            </div>
+
+            <div class="matching-box">
+                <div class="options-grid" style="grid-template-columns:1fr 1fr;">
+                    <span><strong>A</strong> Helen only</span>
+                    <span><strong>B</strong> Jeremy only</span>
+                    <span><strong>C</strong> both Helen and Jeremy</span>
+                    <span><strong>D</strong> neither Helen nor Jeremy</span>
+                </div>
+            </div>
+
+            <p class="instruction-line" style="font-weight:700;color:#2a72ae;margin-top:16px;">Parts of the report</p>
+            <div class="q-line"><strong>27</strong> how they planned the project <input type="text" maxlength="1" id="q27" class="cd-input matching-input" aria-label="Question 27" title="Letter A–D"></div>
+            <div class="q-line"><strong>28</strong> how they had ideas for their stories <input type="text" maxlength="1" id="q28" class="cd-input matching-input" aria-label="Question 28" title="Letter A–D"></div>
+            <div class="q-line"><strong>29</strong> an interpretation of their stories <input type="text" maxlength="1" id="q29" class="cd-input matching-input" aria-label="Question 29" title="Letter A–D"></div>
+            <div class="q-line"><strong>30</strong> comments on the illustrations <input type="text" maxlength="1" id="q30" class="cd-input matching-input" aria-label="Question 30" title="Letter A–D"></div>
+        </div>
+
+        <div class="part-nav">
+            <button class="nav-btn prev" onclick="goToPart(2)">← Previous Part</button>
+            <button class="nav-btn next" onclick="goToPart(4)">Next Part →</button>
+        </div>
+    </section>
+
+    <!-- PART 4 -->
+    <section class="part-container" id="part-4">
+        <div class="blue-part-bar">Part 4</div>
+
+        <div class="instruction-box">
+            <p class="instruction-line"><strong>Questions 31–40</strong></p>
+            <p class="instruction-line"><em>Complete the notes below.</em></p>
+            <p class="instruction-line">Write <span class="hl-blue">ONE WORD ONLY</span> for each answer.</p>
+        </div>
+
+        <div class="question-paper">
+            <h2 class="form-title">ETHNOGRAPHY IN BUSINESS</h2>
+
+            <p style="margin:0 0 10px;">Ethnography is research which explores human cultures.</p>
+            <p style="margin:0 0 10px;font-weight:600;">Usage in business</p>
+            <ul class="ielts-list">
+                <li class="q-line">To investigate customer needs and <strong>31</strong> <input type="text" id="q31" class="cd-input" aria-label="Question 31"></li>
+                <li>To help companies develop new designs.</li>
+            </ul>
+
+            <h3 class="sub-heading" style="color:#2a72ae;margin-top:18px;">Examples of ethnographic research in business</h3>
+            <p style="font-weight:600;margin:8px 0 4px;">Kitchen equipment</p>
+            <ul class="ielts-list">
+                <li class="q-line">Researchers found that cooks could not easily see the <strong>32</strong> <input type="text" id="q32" class="cd-input" aria-label="Question 32"> in measuring cups.</li>
+            </ul>
+            <p style="font-weight:600;margin:8px 0 4px;">Cell phones</p>
+            <ul class="ielts-list">
+                <li>In Uganda, customers paid to use the cell phones of entrepreneurs.</li>
+                <li class="q-line">These customers wanted to check the <strong>33</strong> <input type="text" id="q33" class="cd-input" aria-label="Question 33"> used.</li>
+            </ul>
+            <p style="font-weight:600;margin:8px 0 4px;">Computer companies</p>
+            <ul class="ielts-list">
+                <li class="q-line">There was a need to develop <strong>34</strong> <input type="text" id="q34" class="cd-input" aria-label="Question 34"> to improve communication between system administrators and colleagues.</li>
+            </ul>
+            <p style="font-weight:600;margin:8px 0 4px;">Hospitals</p>
+            <ul class="ielts-list">
+                <li class="q-line">Nurses needed to access information about <strong>35</strong> <input type="text" id="q35" class="cd-input" aria-label="Question 35"> in different parts of the hospital.</li>
+            </ul>
+            <p style="font-weight:600;margin:8px 0 4px;">Airlines</p>
+            <ul class="ielts-list">
+                <li class="q-line">Respondents recorded information about their <strong>36</strong> <input type="text" id="q36" class="cd-input" aria-label="Question 36"> while travelling.</li>
+            </ul>
+
+            <h3 class="sub-heading" style="color:#2a72ae;margin-top:20px;">Principles of ethnographic research in business</h3>
+            <ul class="ielts-list">
+                <li>The researcher does not start off with a hypothesis.</li>
+                <li class="q-line">Participants may be selected by criteria such as age, <strong>37</strong> <input type="text" id="q37" class="cd-input" aria-label="Question 37"> or product used.</li>
+                <li class="q-line">The participants must feel <strong>38</strong> <input type="text" id="q38" class="cd-input" aria-label="Question 38"> about taking part in the research.</li>
+                <li class="q-line">There is usually direct <strong>39</strong> <input type="text" id="q39" class="cd-input" aria-label="Question 39"> of the participants.</li>
+                <li>The interview is guided by the participant.</li>
+                <li class="q-line">A lot of time is needed for the <strong>40</strong> <input type="text" id="q40" class="cd-input" aria-label="Question 40"> of the data.</li>
+                <li>Researchers look for a meaningful pattern in the data.</li>
+            </ul>
+        </div>
+
+        <div class="part-nav">
+            <button class="nav-btn prev" onclick="goToPart(3)">← Previous Part</button>
+            <button class="nav-btn finish" onclick="finishTest()">Finish Test</button>
+        </div>
+    </section>
+
+</main>
+
+<footer class="exam-footer">
+    <div class="number-grid" id="numberGrid"></div>
+</footer>
+
+<div id="lockdownOverlay" class="lockdown-overlay hidden">
+    <div class="lockdown-card">
+        <h2>Exam Paused</h2>
+        <p id="lockdownMessage">This test must stay in fullscreen.</p>
+        <button id="resumeExamBtn" class="btn-green">Return to Exam</button>
+    </div>
+</div>
+
+<script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore-compat.js"></script>
+<script src="../jss/core.js"></script>
+<script src="../jss/firebase-init.js"></script>
+<script src="../jss/emerald-tracker.js"></script>
+<script src="../jss/emerald-firestore-store.js"></script>
+<script src="../jss/emerald-firebase-bridge.js"></script>
+<script src="../jss/listening-test3.js"></script>
+
+</body>
+</html>

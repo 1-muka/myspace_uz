@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cambridge 18 - Test 1 - Listening</title>
+    <link rel="stylesheet" href="../csss/listening-test.css">
+</head>
+<body>
+
+<!-- RULES INTRO OVERLAY -->
+<div id="rulesIntroOverlay" class="modal-overlay" style="display:flex;">
+    <div class="practice-card" style="max-width:540px;text-align:left;">
+        <div class="overlay-badge" style="
+            display:inline-flex;padding:7px 12px;border-radius:999px;
+            background:#e9faf3;color:#15543f;font-size:12px;font-weight:800;
+            letter-spacing:0.08em;text-transform:uppercase;margin-bottom:14px;">
+            Before You Start
+        </div>
+        <h2 class="practice-title" style="text-align:left;margin-bottom:6px;">Listening Test Rules</h2>
+        <p class="practice-subtitle" style="text-align:left;margin-bottom:18px;">Read the rules carefully before starting.</p>
+
+        <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px;">
+            <span style="padding:9px 14px;border-radius:999px;background:#e9faf3;color:#10342a;font-size:13px;font-weight:700;">35 minutes</span>
+            <span style="padding:9px 14px;border-radius:999px;background:#e9faf3;color:#10342a;font-size:13px;font-weight:700;">40 questions</span>
+            <span style="padding:9px 14px;border-radius:999px;background:#e9faf3;color:#10342a;font-size:13px;font-weight:700;">4 parts</span>
+        </div>
+
+        <ul style="margin:0 0 22px 18px;color:#425266;line-height:1.8;font-size:14px;">
+            <li>The test must stay in fullscreen at all times.</li>
+            <li>Do not switch tabs or leave the exam window.</li>
+            <li>You have only 3 violation warnings before the test ends.</li>
+            <li>The audio will play automatically when you start.</li>
+            <li>You can navigate between parts using the buttons.</li>
+            <li>Answers are saved automatically as you type.</li>
+        </ul>
+
+        <button id="finalStartBtn" class="btn-green-large" style="margin-top:4px;">
+            ▶ &nbsp; Start Test in Fullscreen
+        </button>
+    </div>
+</div>
+
+<!-- EXAM HEADER -->
+<header class="exam-header">
+    <div class="header-top-block">
+        <span class="test-name">Cambridge 18 - Listening Test 1</span>
+        <div class="timer-box">Time Left: <span id="timer">35:00</span></div>
+    </div>
+
+    <div class="audio-panel">
+        <div class="audio-block">
+            <span class="player-label">Audio Player</span>
+            <button id="startTestBtn" class="btn-green">Start Test</button>
+            <audio id="examAudio" class="hidden" controls>
+                <source src="../audio/listening-test1.mp3" type="audio/mpeg">
+            </audio>
+        </div>
+    </div>
+</header>
+
+<!-- EXAM CONTENT -->
+<main class="exam-content" id="mainScroll">
+
+    <!-- PART 1 -->
+    <section class="part-container active" id="part-1">
+        <div class="blue-part-bar">Part 1</div>
+        <div class="instruction-box">
+            Questions 1–10. Complete the notes below. Write <strong>ONE WORD AND/OR A NUMBER</strong> for each answer.
+        </div>
+
+        <div class="question-paper">
+            <h2 class="form-title">Transport survey</h2>
+            <div class="form-static-row">Name: <span>Sadie Jones</span></div>
+            <div class="form-static-row">Year of birth: <span>1991</span></div>
+
+            <div class="q-line">Postcode: <strong>1</strong> <input type="text" id="q1" class="cd-input"></div>
+
+            <h3 class="sub-heading">Travelling by bus</h3>
+            <div class="q-line">Date of bus journey: <strong>2</strong> <input type="text" id="q2" class="cd-input"></div>
+            <div class="q-line">Reason for trip: shopping and visit to the <strong>3</strong> <input type="text" id="q3" class="cd-input"></div>
+            <div class="q-line">Travelled by bus because cost of <strong>4</strong> <input type="text" id="q4" class="cd-input"> too high</div>
+            <div class="q-line">Got on bus at <strong>5</strong> <input type="text" id="q5" class="cd-input"> Street</div>
+
+            <p class="label-text">Complaints about bus service:</p>
+            <div class="q-line">- bus today was <strong>6</strong> <input type="text" id="q6" class="cd-input"></div>
+            <div class="q-line">- frequency of buses in the <strong>7</strong> <input type="text" id="q7" class="cd-input"></div>
+
+            <h3 class="sub-heading">Travelling by car</h3>
+            <div class="q-line">Goes to the <strong>8</strong> <input type="text" id="q8" class="cd-input"> by car</div>
+
+            <h3 class="sub-heading">Travelling by bicycle</h3>
+            <div class="q-line">Dislikes travelling by bike in the city centre because of the <strong>9</strong> <input type="text" id="q9" class="cd-input"></div>
+            <div class="q-line">Doesn't own a bike because of a lack of <strong>10</strong> <input type="text" id="q10" class="cd-input"></div>
+        </div>
+
+        <div class="part-nav">
+            <button class="nav-btn next" onclick="goToPart(2)">Next Part →</button>
+        </div>
+    </section>
+
+    <!-- PART 2 -->
+    <section class="part-container" id="part-2">
+        <div class="blue-part-bar">Part 2</div>
+
+        <div class="instruction-box">
+            Questions 11–13. Choose the correct letter, <strong>A, B or C</strong>.
+        </div>
+
+        <div class="question-paper">
+            <h2 class="form-title">Becoming a volunteer for ACE</h2>
+
+            <div class="mcq-block">
+                <p><strong>11</strong> Why does the speaker apologise about the seats?</p>
+                <div class="vertical-options">
+                    <label class="mcq-opt"><input type="radio" name="q11"> A. They are too small.</label>
+                    <label class="mcq-opt"><input type="radio" name="q11"> B. There are not enough of them.</label>
+                    <label class="mcq-opt"><input type="radio" name="q11"> C. Some of them are very close together.</label>
+                </div>
+            </div>
+
+            <div class="mcq-block">
+                <p><strong>12</strong> What does the speaker say about the age of volunteers?</p>
+                <div class="vertical-options">
+                    <label class="mcq-opt"><input type="radio" name="q12"> A. The age of volunteers is less important than other factors.</label>
+                    <label class="mcq-opt"><input type="radio" name="q12"> B. Young volunteers are less reliable than older ones.</label>
+                    <label class="mcq-opt"><input type="radio" name="q12"> C. Most volunteers are about 60 years old.</label>
+                </div>
+            </div>
+
+            <div class="mcq-block">
+                <p><strong>13</strong> What does the speaker say about training?</p>
+                <div class="vertical-options">
+                    <label class="mcq-opt"><input type="radio" name="q13"> A. It is continuous.</label>
+                    <label class="mcq-opt"><input type="radio" name="q13"> B. It is conducted by a manager.</label>
+                    <label class="mcq-opt"><input type="radio" name="q13"> C. It takes place online.</label>
+                </div>
+            </div>
+
+            <div class="instruction-box" style="margin: 30px 0;">
+                Questions 14–20. What does the speaker suggest would be helpful for each of the following areas of voluntary work?<br><br>
+                Choose <strong>SEVEN</strong> answers from the box and write the correct letter, <strong>A–G</strong>, next to Questions 14–20.
+            </div>
+
+            <div class="matching-box">
+                <h4 style="margin-bottom:10px;text-align:center;">Helpful things volunteers might offer</h4>
+                <div class="options-grid">
+                    <span><strong>A</strong> experience on stage</span>
+                    <span><strong>B</strong> original, new ideas</span>
+                    <span><strong>C</strong> parenting skills</span>
+                    <span><strong>D</strong> an understanding of food and diet</span>
+                    <span><strong>E</strong> retail experience</span>
+                    <span><strong>F</strong> a good memory</span>
+                    <span><strong>G</strong> a good level of fitness</span>
+                </div>
+            </div>
+
+            <div class="q-line"><strong>14</strong> Fundraising <input type="text" maxlength="1" id="q14" class="cd-input matching-input"></div>
+            <div class="q-line"><strong>15</strong> Litter collection <input type="text" maxlength="1" id="q15" class="cd-input matching-input"></div>
+            <div class="q-line"><strong>16</strong> 'Playmates' <input type="text" maxlength="1" id="q16" class="cd-input matching-input"></div>
+            <div class="q-line"><strong>17</strong> Story club <input type="text" maxlength="1" id="q17" class="cd-input matching-input"></div>
+            <div class="q-line"><strong>18</strong> First aid <input type="text" maxlength="1" id="q18" class="cd-input matching-input"></div>
+            <div class="q-line"><strong>19</strong> Healthy eating <input type="text" maxlength="1" id="q19" class="cd-input matching-input"></div>
+            <div class="q-line"><strong>20</strong> Drama <input type="text" maxlength="1" id="q20" class="cd-input matching-input"></div>
+        </div>
+
+        <div class="part-nav">
+            <button class="nav-btn prev" onclick="goToPart(1)">← Previous Part</button>
+            <button class="nav-btn next" onclick="goToPart(3)">Next Part →</button>
+        </div>
+    </section>
+
+    <!-- PART 3 -->
+    <section class="part-container" id="part-3">
+        <div class="blue-part-bar">Part 3</div>
+
+        <div class="instruction-box">
+            Questions 21–26. Choose the correct letter, <strong>A, B or C</strong>.
+        </div>
+
+        <div class="question-paper">
+            <h2 class="form-title">Talk on jobs in fashion design</h2>
+
+            <div class="mcq-block">
+                <p><strong>21</strong> What problem did Chantal have at the start of the talk?</p>
+                <div class="vertical-options">
+                    <label class="mcq-opt"><input type="radio" name="q21"> A. Her view of the speaker was blocked.</label>
+                    <label class="mcq-opt"><input type="radio" name="q21"> B. She was unable to find an empty seat.</label>
+                    <label class="mcq-opt"><input type="radio" name="q21"> C. The students next to her were talking.</label>
+                </div>
+            </div>
+
+            <div class="mcq-block">
+                <p><strong>22</strong> What were Hugo and Chantal surprised to hear about the job market?</p>
+                <div class="vertical-options">
+                    <label class="mcq-opt"><input type="radio" name="q22"> A. It has become more competitive than it used to be.</label>
+                    <label class="mcq-opt"><input type="radio" name="q22"> B. There is more variety in it than they had realised.</label>
+                    <label class="mcq-opt"><input type="radio" name="q22"> C. Some areas of it are more exciting than others.</label>
+                </div>
+            </div>
+
+            <div class="mcq-block">
+                <p><strong>23</strong> Hugo and Chantal agree that the speaker's message was</p>
+                <div class="vertical-options">
+                    <label class="mcq-opt"><input type="radio" name="q23"> A. unfair to them at times.</label>
+                    <label class="mcq-opt"><input type="radio" name="q23"> B. hard for them to follow.</label>
+                    <label class="mcq-opt"><input type="radio" name="q23"> C. critical of the industry.</label>
+                </div>
+            </div>
+
+            <div class="mcq-block">
+                <p><strong>24</strong> What do Hugo and Chantal criticise about their school careers advice?</p>
+                <div class="vertical-options">
+                    <label class="mcq-opt"><input type="radio" name="q24"> A. when they received the advice</label>
+                    <label class="mcq-opt"><input type="radio" name="q24"> B. how much advice was given</label>
+                    <label class="mcq-opt"><input type="radio" name="q24"> C. who gave the advice</label>
+                </div>
+            </div>
+
+            <div class="mcq-block">
+                <p><strong>25</strong> When discussing their future, Hugo and Chantal disagree on</p>
+                <div class="vertical-options">
+                    <label class="mcq-opt"><input type="radio" name="q25"> A. which is the best career in fashion.</label>
+                    <label class="mcq-opt"><input type="radio" name="q25"> B. when to choose a career in fashion.</label>
+                    <label class="mcq-opt"><input type="radio" name="q25"> C. why they would like a career in fashion.</label>
+                </div>
+            </div>
+
+            <div class="mcq-block">
+                <p><strong>26</strong> How does Hugo feel about being an unpaid assistant?</p>
+                <div class="vertical-options">
+                    <label class="mcq-opt"><input type="radio" name="q26"> A. He is realistic about the practice.</label>
+                    <label class="mcq-opt"><input type="radio" name="q26"> B. He feels the practice is dishonest.</label>
+                    <label class="mcq-opt"><input type="radio" name="q26"> C. He thinks others want to change the practice.</label>
+                </div>
+            </div>
+
+            <div class="instruction-box" style="margin-top:40px;">
+                Questions 27 and 28. Choose <strong>TWO</strong> letters, <strong>A–E</strong>.
+                Which <strong>TWO</strong> mistakes did the speaker admit she made in her first job?
+            </div>
+            <div class="multi-select-block">
+                <label class="mcq-opt"><input type="checkbox" name="q27_28" value="A" onchange="handleMultiSelect('q27_28', 27, 28)"> A. being dishonest to her employer</label>
+                <label class="mcq-opt"><input type="checkbox" name="q27_28" value="B" onchange="handleMultiSelect('q27_28', 27, 28)"> B. paying too much attention to how she looked</label>
+                <label class="mcq-opt"><input type="checkbox" name="q27_28" value="C" onchange="handleMultiSelect('q27_28', 27, 28)"> C. expecting to become well known</label>
+                <label class="mcq-opt"><input type="checkbox" name="q27_28" value="D" onchange="handleMultiSelect('q27_28', 27, 28)"> D. trying to earn a lot of money</label>
+                <label class="mcq-opt"><input type="checkbox" name="q27_28" value="E" onchange="handleMultiSelect('q27_28', 27, 28)"> E. openly disliking her client</label>
+            </div>
+
+            <div class="instruction-box" style="margin-top:40px;">
+                Questions 29 and 30. Choose <strong>TWO</strong> letters, <strong>A–E</strong>.
+                Which <strong>TWO</strong> pieces of retail information do Hugo and Chantal agree would be useful?
+            </div>
+            <div class="multi-select-block">
+                <label class="mcq-opt"><input type="checkbox" name="q29_30" value="A" onchange="handleMultiSelect('q29_30', 29, 30)"> A. the reasons people return fashion items</label>
+                <label class="mcq-opt"><input type="checkbox" name="q29_30" value="B" onchange="handleMultiSelect('q29_30', 29, 30)"> B. how much time people have to shop for clothes</label>
+                <label class="mcq-opt"><input type="checkbox" name="q29_30" value="C" onchange="handleMultiSelect('q29_30', 29, 30)"> C. fashion designs people want but can't find</label>
+                <label class="mcq-opt"><input type="checkbox" name="q29_30" value="D" onchange="handleMultiSelect('q29_30', 29, 30)"> D. the best time of year for fashion buying</label>
+                <label class="mcq-opt"><input type="checkbox" name="q29_30" value="E" onchange="handleMultiSelect('q29_30', 29, 30)"> E. the most popular fashion sizes</label>
+            </div>
+        </div>
+
+        <div class="part-nav">
+            <button class="nav-btn prev" onclick="goToPart(2)">← Previous Part</button>
+            <button class="nav-btn next" onclick="goToPart(4)">Next Part →</button>
+        </div>
+    </section>
+
+    <!-- PART 4 -->
+    <section class="part-container" id="part-4">
+        <div class="blue-part-bar">Part 4</div>
+
+        <div class="instruction-box">
+            Questions 31–40. Complete the notes below. Write <strong>ONE WORD ONLY</strong> for each answer.
+        </div>
+
+        <div class="question-paper">
+            <h2 class="form-title">Elephant translocation</h2>
+
+            <h3 class="sub-heading">Reasons for overpopulation at Majete National Park</h3>
+            <ul class="ielts-list">
+                <li>strict enforcement of anti-poaching laws</li>
+                <li>successful breeding</li>
+            </ul>
+
+            <h3 class="sub-heading">Problems caused by elephant overpopulation</h3>
+            <ul class="ielts-list">
+                <li>greater competition, causing hunger for elephants</li>
+                <li class="q-line">damage to <strong>31</strong> <input type="text" id="q31" class="cd-input"> in the park</li>
+            </ul>
+
+            <h3 class="sub-heading">The translocation process</h3>
+            <ul class="ielts-list">
+                <li class="q-line">a suitable group of elephants from the same <strong>32</strong> <input type="text" id="q32" class="cd-input"> was selected</li>
+                <li class="q-line">vets and park staff made use of <strong>33</strong> <input type="text" id="q33" class="cd-input"> to help guide the elephants into an open plain</li>
+                <li>elephants were immobilised with tranquillisers
+                    <ul class="ielts-sub-list">
+                        <li class="q-line">this process had to be completed quickly to reduce <strong>34</strong> <input type="text" id="q34" class="cd-input"></li>
+                        <li class="q-line">elephants had to be turned on their <strong>35</strong> <input type="text" id="q35" class="cd-input"> to avoid damage to their lungs</li>
+                        <li class="q-line">elephants' <strong>36</strong> <input type="text" id="q36" class="cd-input"> had to be monitored constantly</li>
+                        <li>tracking devices were fitted to the matriarchs</li>
+                        <li class="q-line">data including the size of their tusks and <strong>37</strong> <input type="text" id="q37" class="cd-input"> was taken</li>
+                    </ul>
+                </li>
+                <li>elephants were taken by truck to their new reserve</li>
+            </ul>
+
+            <h3 class="sub-heading">Advantages of translocation at Nkhotakota Wildlife Park</h3>
+            <ul class="ielts-list">
+                <li class="q-line"><strong>38</strong> <input type="text" id="q38" class="cd-input"> opportunities</li>
+                <li class="q-line">a reduction in the number of poachers and <strong>39</strong> <input type="text" id="q39" class="cd-input"></li>
+                <li>an example of conservation that other parks can follow</li>
+                <li class="q-line">an increase in <strong>40</strong> <input type="text" id="q40" class="cd-input"> as a contributor to GDP</li>
+            </ul>
+        </div>
+
+        <div class="part-nav">
+            <button class="nav-btn prev" onclick="goToPart(3)">← Previous Part</button>
+            <button class="nav-btn finish" onclick="finishTest()">Finish Test</button>
+        </div>
+    </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="exam-footer">
+    <div class="number-grid" id="numberGrid"></div>
+</footer>
+
+<!-- LOCKDOWN OVERLAY -->
+<div id="lockdownOverlay" class="lockdown-overlay hidden">
+    <div class="lockdown-card">
+        <h2>Exam Paused</h2>
+        <p id="lockdownMessage">This test must stay in fullscreen.</p>
+        <button id="resumeExamBtn" class="btn-green">Return to Exam</button>
+    </div>
+</div>
+
+<script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore-compat.js"></script>
+<script src="../jss/core.js"></script>
+<script src="../jss/firebase-init.js"></script>
+<script src="../jss/emerald-tracker.js"></script>
+<script src="../jss/emerald-firestore-store.js"></script>
+<script src="../jss/emerald-firebase-bridge.js"></script>
+<script src="../jss/listening-test1.js"></script>
+
+</body>
+</html>

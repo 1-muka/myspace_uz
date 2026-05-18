@@ -1,0 +1,511 @@
+@import url("full-mock.css");
+
+.mock-two-shell {
+    width: min(97vw, 1600px);
+    max-width: none;
+    margin: 0 auto;
+}
+
+.mock-two-placeholder {
+    padding: 24px;
+    border-radius: 18px;
+    background: linear-gradient(180deg, #f8fbfd 0%, #f2f8f5 100%);
+    border: 1px dashed rgba(66, 82, 102, 0.28);
+    color: var(--ink-700);
+    line-height: 1.7;
+}
+
+.mock-two-part-switcher {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 18px;
+}
+
+.mock-two-part-btn {
+    border: 1px solid var(--ink-200);
+    background: var(--paper);
+    color: var(--ink-700);
+    padding: 11px 16px;
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.18s ease, background 0.18s ease, border-color 0.18s ease;
+}
+
+.mock-two-part-btn:hover {
+    transform: translateY(-1px);
+}
+
+.mock-two-part-btn.active {
+    background: var(--emerald-100);
+    border-color: rgba(13, 138, 94, 0.28);
+    color: var(--emerald-900);
+}
+
+.mock-two-part {
+    display: none;
+    background: var(--paper);
+    border-radius: var(--radius-xl);
+    border: 1px solid rgba(13, 138, 94, 0.12);
+    box-shadow: var(--shadow-md);
+    overflow: hidden;
+}
+
+.mock-two-part.active {
+    display: block;
+}
+
+.mock-two-blue-bar {
+    background: linear-gradient(135deg, var(--emerald-800), var(--emerald-600));
+    color: var(--paper);
+    padding: 16px 24px;
+    font-size: 20px;
+    font-weight: 800;
+}
+
+.mock-two-instruction-box {
+    margin: 20px 24px;
+    padding: 18px 20px;
+    background: #eef6fb;
+    border-radius: var(--radius-lg);
+    border: 1px solid rgba(41, 128, 185, 0.16);
+    color: var(--ink-700);
+}
+
+.mock-two-instruction-line {
+    margin: 6px 0;
+    font-size: 14px;
+    line-height: 1.65;
+}
+
+.mock-two-hl {
+    color: #2a72ae;
+    font-weight: 700;
+}
+
+.mock-two-paper {
+    margin: 0 24px 24px;
+    padding: 20px;
+    background: linear-gradient(180deg, #ecf7fd 0%, #f8fdff 100%);
+    border: 2px solid rgba(70, 117, 150, 0.62);
+    border-radius: var(--radius-lg);
+}
+
+.mock-two-paper-title {
+    text-align: center;
+    margin: 0 0 18px;
+    color: #2a72ae;
+    font-size: 28px;
+    font-weight: 800;
+}
+
+.mock-two-section-title {
+    margin: 0 0 10px;
+    color: #18212c;
+    font-size: 16px;
+    font-weight: 800;
+}
+
+.mock-two-question-group-title {
+    text-align: center;
+    margin: 0 0 6px;
+    color: #18212c;
+    font-size: 22px;
+    font-weight: 800;
+}
+
+.mock-two-question-group-copy {
+    text-align: center;
+    margin: 0 0 8px;
+    color: var(--ink-700);
+    line-height: 1.65;
+}
+
+.mock-two-q-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 16px;
+    line-height: 1.85;
+}
+
+.mock-two-bullets {
+    margin: 12px 0 0 20px;
+    padding: 0;
+    line-height: 1.9;
+}
+
+.mock-two-bullets li {
+    margin-bottom: 8px;
+}
+
+.mock-two-note-box {
+    margin-top: 18px;
+    padding: 18px;
+    background: linear-gradient(180deg, #f2f9fd 0%, #fafdff 100%);
+    border: 1px solid rgba(70, 117, 150, 0.35);
+    border-radius: 14px;
+}
+
+.mock-two-label {
+    display: block;
+    margin: 18px 0 8px;
+    color: #18212c;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.mock-two-input {
+    min-width: 140px;
+    border: 1px solid var(--ink-200);
+    border-radius: 10px;
+    padding: 9px 11px;
+    font-size: 15px;
+    outline: none;
+    background: var(--paper);
+}
+
+.mock-two-input:focus {
+    border-color: rgba(13, 138, 94, 0.48);
+    box-shadow: 0 0 0 4px rgba(13, 138, 94, 0.1);
+}
+
+.mock-two-input.small {
+    min-width: 72px;
+    width: 72px;
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+}
+
+.mock-two-input.table {
+    min-width: 96px;
+    width: 96px;
+}
+
+.mock-two-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 18px 0 0;
+    font-size: 14px;
+}
+
+.mock-two-table th,
+.mock-two-table td {
+    border: 1px solid #1a1a1a;
+    padding: 10px 12px;
+    vertical-align: top;
+    background: #e8f4fc;
+}
+
+.mock-two-table th {
+    text-align: left;
+    color: #2a72ae;
+    font-weight: 700;
+}
+
+.mock-two-table td:first-child {
+    width: 24%;
+    font-weight: 700;
+    color: #2a72ae;
+}
+
+.mock-two-options,
+.mock-two-multi-options {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.mock-two-option {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 12px 14px;
+    border-radius: 12px;
+    border: 1px solid var(--ink-200);
+    background: var(--paper);
+    line-height: 1.6;
+}
+
+.mock-two-option:has(input:checked) {
+    border-color: rgba(13, 138, 94, 0.32);
+    background: var(--emerald-050);
+}
+
+.mock-two-option input {
+    margin-top: 4px;
+}
+
+.mock-two-legend-box {
+    margin-bottom: 18px;
+    padding: 18px;
+    border-radius: 14px;
+    background: #ffffff;
+    border: 1px solid rgba(70, 117, 150, 0.35);
+}
+
+.mock-two-legend-box p {
+    margin: 0 0 10px;
+    line-height: 1.7;
+}
+
+.mock-two-nav {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 20px 24px;
+    border-top: 1px solid var(--ink-100);
+}
+
+.mock-two-nav-spacer {
+    flex: 1;
+}
+
+.mock-two-correct {
+    border-color: var(--emerald-700) !important;
+    background: var(--emerald-050) !important;
+}
+
+.mock-two-wrong {
+    border-color: var(--warning) !important;
+    background: #fdeaea !important;
+}
+
+.mock-two-reading-screen {
+    display: none;
+    gap: 18px;
+    width: 100%;
+    margin: 0 auto;
+    padding-top: 0;
+}
+
+.mock-two-reading-screen.active {
+    display: flex;
+}
+
+.mock-two-reading-screen .passage,
+.mock-two-reading-screen .questions {
+    background: var(--paper);
+    border: 1px solid rgba(13, 138, 94, 0.12);
+    border-radius: 24px;
+    box-shadow: var(--shadow-md);
+}
+
+.mock-two-reading-screen .passage {
+    flex: 1.2;
+    padding: 24px;
+    line-height: 1.7;
+    font-size: 15px;
+}
+
+.mock-two-reading-screen .questions {
+    flex: 1;
+    padding: 24px;
+}
+
+.mock-two-reading-screen .question {
+    margin: 12px 0;
+    font-size: 14px;
+    color: var(--ink-900);
+    line-height: 1.75;
+}
+
+.mock-two-reading-screen .question input,
+.mock-two-reading-screen .questions input {
+    margin-left: 8px;
+    min-width: 110px;
+    padding: 8px 10px;
+    border-radius: 10px;
+    border: 1px solid var(--ink-200);
+    transition: 0.2s;
+    font-size: 14px;
+}
+
+.mock-two-reading-screen .question input:focus,
+.mock-two-reading-screen .questions input:focus {
+    border-color: rgba(13, 138, 94, 0.48);
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(13, 138, 94, 0.1);
+}
+
+.mock-two-reading-screen h2,
+.mock-two-reading-screen h3,
+.mock-two-reading-screen h4 {
+    color: var(--ink-900);
+}
+
+.mock-two-reading-nav {
+    margin-top: 14px;
+}
+
+#listeningStage,
+#readingStage,
+#writingStage {
+    max-width: none;
+    width: 100%;
+}
+
+#readingTemplateStore {
+    display: none;
+}
+
+#readingStage .stage-toolbar,
+#writingStage .stage-toolbar {
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+#readingStage .stage-kicker,
+#writingStage .stage-kicker {
+    margin-bottom: 2px;
+}
+
+#readingStage .stage-toolbar h2,
+#writingStage .stage-toolbar h2 {
+    margin-bottom: 2px;
+}
+
+#readingStage .stage-copy,
+#writingStage .stage-copy {
+    display: none;
+}
+
+#readingStage .reading-layout {
+    width: min(97vw, 1600px);
+    max-width: none;
+    grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+    align-items: stretch;
+}
+
+#readingStage .reading-pane {
+    height: calc(100vh - 255px);
+    min-height: 520px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+#readingStage .passage-pane,
+#readingStage .questions-pane {
+    padding: 20px;
+}
+
+#readingStage .questions-pane .question {
+    margin: 12px 0;
+    font-size: 14px;
+    color: var(--ink-900);
+    line-height: 1.75;
+}
+
+#readingStage .questions-pane input {
+    margin-left: 8px;
+    min-width: 110px;
+    padding: 8px 10px;
+    border-radius: 10px;
+    border: 1px solid var(--ink-200);
+    font-size: 14px;
+    transition: 0.2s;
+}
+
+#readingStage .questions-pane input:focus {
+    border-color: rgba(13, 138, 94, 0.48);
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(13, 138, 94, 0.1);
+}
+
+#writingStage .writing-layout {
+    width: min(97vw, 1600px);
+    max-width: none;
+    grid-template-columns: minmax(360px, 0.88fr) minmax(540px, 1.12fr);
+}
+
+#writingStage .writing-pane {
+    min-height: calc(100vh - 255px);
+    max-height: calc(100vh - 255px);
+}
+
+#writingStage .prompt-pane {
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+#writingStage .editor-pane {
+    overflow: hidden;
+}
+
+#writingStage .writing-textarea {
+    min-height: calc(100vh - 395px);
+}
+
+#writingStage .writing-footer,
+#readingStage .stage-footer {
+    width: min(97vw, 1600px);
+    max-width: none;
+}
+
+#writingStage .resource-alert {
+    margin: 18px 24px 24px;
+}
+
+#writingStage .prompt-card {
+    margin-bottom: 18px;
+}
+
+@media (max-width: 840px) {
+    .mock-two-nav {
+        flex-direction: column;
+    }
+
+    .mock-two-nav-spacer {
+        display: none;
+    }
+
+    #readingStage .reading-layout {
+        grid-template-columns: 1fr;
+    }
+
+    #readingStage .reading-pane,
+    #writingStage .writing-pane {
+        height: auto;
+        min-height: auto;
+        max-height: none;
+    }
+
+    #writingStage .writing-layout {
+        grid-template-columns: 1fr;
+    }
+
+    #writingStage .writing-textarea {
+        min-height: 360px;
+    }
+}
+
+@media (max-width: 640px) {
+    .mock-two-blue-bar,
+    .mock-two-instruction-box,
+    .mock-two-paper,
+    .mock-two-nav {
+        margin-left: 16px;
+        margin-right: 16px;
+    }
+
+    .mock-two-blue-bar {
+        margin-bottom: 20px;
+        border-radius: 18px 18px 0 0;
+    }
+
+    .mock-two-input {
+        width: 100%;
+        min-width: 0;
+    }
+
+    #readingStage .questions-pane input {
+        width: 100%;
+        min-width: 0;
+        margin: 8px 0 0;
+    }
+}

@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reading Test 2</title>
+    <link rel="stylesheet" href="../csss/reading-test.css">
+    <link rel="stylesheet" href="../csss/reading-test2.css">
+    <link rel="icon" href="../logo.jpg">
+</head>
+<body>
+
+<div class="top-bar">
+    <div>Reading Test 2</div>
+    <div class="time">Time Left: <span id="timer">60:00</span></div>
+</div>
+
+<div id="readingOverlay" class="fullscreen-overlay">
+    <div id="rulesCard" class="overlay-card" style="max-width:540px;text-align:left;padding:34px 30px;">
+        <div style="
+            display:inline-flex;padding:7px 12px;border-radius:999px;
+            background:#e9faf3;color:#15543f;font-size:12px;font-weight:800;
+            letter-spacing:0.08em;text-transform:uppercase;margin-bottom:14px;">
+            Before You Start
+        </div>
+        <h2 style="margin:0 0 6px;font-size:26px;color:#111827;">Reading Test Rules</h2>
+        <p style="margin:0 0 18px;font-size:14px;color:#6b7280;">Read the rules carefully before starting.</p>
+
+        <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px;">
+            <span style="padding:9px 14px;border-radius:999px;background:#e9faf3;color:#10342a;font-size:13px;font-weight:700;">60 minutes</span>
+            <span style="padding:9px 14px;border-radius:999px;background:#e9faf3;color:#10342a;font-size:13px;font-weight:700;">40 questions</span>
+            <span style="padding:9px 14px;border-radius:999px;background:#e9faf3;color:#10342a;font-size:13px;font-weight:700;">3 passages</span>
+        </div>
+
+        <ul style="margin:0 0 22px 18px;color:#425266;line-height:1.8;font-size:14px;">
+            <li>The test must stay in fullscreen at all times.</li>
+            <li>Do not switch tabs or leave the exam window.</li>
+            <li>You have only 3 violation warnings before the test ends.</li>
+            <li>Use the navigation buttons to move between passages.</li>
+            <li>Answers are saved automatically as you type.</li>
+            <li>Click Finish Test on the last passage when done.</li>
+        </ul>
+
+        <button id="overlayActionBtn" class="overlay-btn" style="width:100%;padding:15px;font-size:16px;">
+            Start Test in Fullscreen
+        </button>
+    </div>
+
+    <div id="lockdownCard" class="overlay-card" style="display:none;">
+        <div class="overlay-label" id="overlayTitle">Exam Paused</div>
+        <h2 style="margin:12px 0 10px;font-size:26px;color:#111827;">Return to Fullscreen</h2>
+        <p id="overlayMessage" style="margin:0 0 22px;font-size:15px;color:#4b5563;line-height:1.6;">
+            Stay in fullscreen to continue the test.
+        </p>
+        <button id="lockdownActionBtn" class="overlay-btn" style="width:100%;">Return to Test</button>
+    </div>
+</div>
+
+<main class="reading-stage">
+
+    <section class="reading-container passage-screen active" data-passage="1">
+        <div class="passage">
+            <h2>READING PASSAGE 1</h2>
+            <p><b>You should spend 20 minutes on Questions 1-13, which are based on Reading Passage 1 below.</b></p>
+
+            <h3>An early cultural tourist</h3>
+            <p><em>In the 15th century, the Italian merchant Cyriacus of Ancona journeyed in search of the Mediterranean's classical past. In doing so, he laid the groundwork for today's cultural holidays.</em></p>
+
+            <p>Today we take it for granted that we travel around the world to admire the monuments of the past. We prepare for such trips by reading about what we are going to see, set out on 
+the journey with a good idea of how we will get there and where we will stay and have a 
+sense of what we will encounter on location. Cyriacus of Ancona (1391-1452), the first 
+cultural tourist since antiquity, lacked these advantages when, in the first half of the 15th 
+century, he sailed around the Mediterranean in search of the remains of Greek and 
+Roman civilisations. </p>
+            <p>Cyriacus first became fascinated by ancient monuments while walking in his home city Ancona and looking at the marble arch, erected in AD 115, to the Roman Emperor Trajan. He suddenly saw the structure in a new light.  He no longer saw it as just a familiar and 
+generally overlooked landmark, but as a doorway to the wonders of ancient imperial 
+Rome. Not many people of Cyriacus’s time were interested in historical travel, they 
+generally ignored old buildings and structures, or worse, dismantled them for their building 
+materials.  </p>
+            <p>Cyriacus decided to see the world for himself and to record details of whatever other antiquities remained to be discovered.  His training as a merchant did not prepare him for 
+this vocation; he did not know ancient languages, history or art. However, he set out to 
+solve these failings, first by learning Latin at the age of 30 and then adding ancient Greek. 
+Having done this, he then set off on voyages around the Mediterranean to find, investigate 
+and understand ancient cultures from their buildings, sculptures and inscriptions. Thus he 
+became the first archaelogist and cultural tourist, predating other antiquarians by some 
+200 years. </p>
+            <p>Travel in the 15th century, however, was anything but simple or enjoyable.  Overland 
+journeys by foot or mule along bad roads, under constant threat from bandits, were bad; 
+voyages by seas were even worse. When the weather cooperated, sailing went relatively 
+smoothly, ships proceeded along coasts from one recognizable landmark to another. 
+However, when there was no wind the ship did not move. Strong winds were no friends 
+either, they drenched the ship with lashing waves and blew it off course. Water swamped 
+the desk, splashed into the cabins and soaked mattresses, clothes and food. Remarkably, 
+Cyriacus never complained about the miseries of travel. Optimistic by nature, he endured 
+such hardships unafraid and saw opportunities where other people saw setbacks.</p>
+            <p>Among many of the important records made by Cyriacus was his crucial documenting, in 1431, of the remains of Cyzicus, an ancient Roman city that had relied on commerce for its financial success. He hired a local person to take him to site and then had to work out 
+for himself the significance of the ruins he was looking at because there was no guidebook 
+on ancient architecture to help him. Indeed, his contemporary knowledge about the ruins. 
+Cyzicus had been a splendid city in its prime. Unfortunately, the area was highly seismic 
+and in AD 123 the city was so devastated by a major earthquake that, when the Roman 
+Emperor Hadrian visited it the following year, he was so saddened that he decided to 
+subsidise a campaign to reconstruct Cyzicus. He made a substantial donation for a new 
+temple to the Roman go Jupiter. Cyriacus thought the ruined city was awe-inspiring. He 
+found the remains of the temple and examined it in great detail, looking for clues in ancient 
+texts to help him understand what he was seeing. He sketched the great doorway 
+adorned with carved foliage and mythological characters. Cyriacu’s account of this temple 
+is the only record of this building as in the following centuries it was entirely stripped of all 
+its stonework and all that remains is its base. </p>
+            <p>Cyriacus also visited mainland Greece, in 1436, when no one went to Greece in order to see the country's ancient ruins. One of his destinations was the sanctuary of Delphi.  The 
+ancient Greeks considered Delphi as being situated in the most beautiful spot in Greece. 
+When Cyriacus arrived at the site of Delphi, however, he found war, earthquakes and 
+avalanches had all but obliterated its ruins. Determined to find any ancient traces, 
+Cyriacus  spent six days walking all over the areas, peering at odd stone blocks sticking 
+out of the ground, running his hands over inscriptions to trace fragments of words, and 
+trying to puzzle out the few surviving structural remains. Climbing uphill towards the rocks 
+that tower over the site, he came upon a theatre built into the slope. Soon after his visit, 
+the site was buried by a rockslide and was not seen again until archaelogists began to 
+excavate the area systematically in the late 19th century. </p>
+            <p>Cyriacus had hoped to visit Egypt and Ethiopia but he never got there. However, in his life he did record for posterity countless ancient monuments around the Mediterranean, paving the way for future archaelogists and cultural tourists.   </p>
+            
+        </div>
+
+        <div class="questions">
+            <h3>Questions 1-7</h3>
+            <p><b>Do the following statements agree with the information given in Reading Passage 1?</b></p>
+            <p>In boxes 1-7 on your answer sheet, write</p>
+            <p><b>TRUE</b> if the statement agrees with the information</p>
+            <p><b>FALSE</b> if the statement contradicts the information</p>
+            <p><b>NOT GIVEN</b> if there is no information on this</p>
+
+            <div class="question">1. Cyriacus was unable to research his journeys before he left. <input id="q1"></div>
+            <div class="question">2. The Roman Emperor Trajan built the city of Ancona. <input id="q2"></div>
+            <div class="question">3. Respect for ancient architecture was widespread in the 15th century. <input id="q3"></div>
+            <div class="question">4. Cyriacus's experience as a merchant gave him skills he needed to investigate the ancient world. <input id="q4"></div>
+            <div class="question">5. Before leaving on his journey, Cyriacus studied ancient languages. <input id="q5"></div>
+            <div class="question">6. Travelling by sea in the 15th century was easier than travelling on land. <input id="q6"></div>
+            <div class="question">7. Cyriacus tried to make his fellow sea travelers more comfortable. <input id="q7"></div>
+
+            <h3>Questions 8-13</h3>
+            <p><b>Complete the notes below.</b></p>
+            <p>Choose <b>ONE WORD ONLY</b> from the passage for each answer.</p>
+
+            <h4>Ancient Roman and Greek sites visited by Cyriacus</h4>
+            <h4>The city of Cyzicus</h4>
+            <div class="question">8. the wealth of the city had come from <input id="q8"></div>
+            <div class="question">9. <input id="q9"> to the ancient city ruins not available when visited by Cyriacus</div>
+            <div class="question">10. the city was destroyed by a powerful <input id="q10"> in AD 123</div>
+            <div class="question">11. a year later Emperor Hadrian supported a <input id="q11"> to rebuild the city</div>
+            <div class="question">12. Cyriacus found part of the temple and made drawings of the <input id="q12"> to the temple and its decorative carvings</div>
+
+            <h4>The sanctuary of Delphi</h4>
+            <div class="question">13. by the 15th century Delphi had almost disappeared due to natural disasters and <input id="q13"></div>
+        </div>
+    </section>
+
+    <section class="reading-container passage-screen" data-passage="2">
+        <div class="passage">
+            <h2>READING PASSAGE 2</h2>
+            <p><b>You should spend 20 minutes on Questions 14-26, which are based on Reading Passage 2 below.</b></p>
+
+            <h3>AUSTRALIAN ABORIGINAL ASTRONOMY</h3>
+            <p><em>Research is revealing a complex and functional astronomical knowledge used by Aboriginal people, Australia's indigenous people, to navigate, find food and mark seasonal changes.</em></p>
+
+            <p><b>A</b> Australia's Aboriginal people, living under a dazzling canopy of constellations, absorbed the night skies into their cultural, social and spiritual life. The position of the stars, the motion of the planets, and astronomical events such as comets, meteorites and eclipses have informed their cosmology and traditions. “Spirituality, sacred law, kinship, 
+cultural rules about who you can marry, where you can go, what you can do, how society 
+works…all of this social structure is written in the stars”, says Dr Duane Hamacher, a 
+lecturer at the Nura Gilli Indigenous Programs Unit at the University of New South Wales, 
+Australia. </p>
+            <p><b>B</b> Hamacher, working closely with Aboriginal elders, is uncovering a wealth of astronomical knowledge. He takes the example of the Pleiades, one of the closest star clusters to Earth.  He explains that the Pleiades rise early in the morning, just before the 
+sun comes up, and are visible for about 15 minutes. This signals the time at which flowers 
+appear on one type of tree, the start of winter, and the orca* migrating north. These 
+observations indicate that the early Aboriginal astronomers took an intellectual approach 
+that sought meaning in, and application of, astronomical phenomena. And no more is this 
+evidenced than in how they used this knowledge to navigate their vast, and sometimes 
+featureless, island continent.</p>
+            <p><b>C</b> Professor Ray Norris, an astrophysicist at the Australian Telescope National Facility and adjunct professor in Indigenous Astronomy at Macquarie University, Sydney, recounts an occasion while bushwalking with Bill Yidumduma Harney, an Aboriginal elder. Bill can name about 5000 stars.  Most Western astronomers can name only 20 or 
+30 on a good day …He looks up at the sky and knows how it charges with the seasons, 
+with the time, in ways I don’t actually quite understand. And for him it’s completely intuitive 
+…. he looks at the sky and knows it reflects what’s on the land.  </p>
+            <p>William Stevens, an Aboriginal astronomy guide who conducts the Dreamtime Astronomy tour at Sydney Observatory, explains how some Aboriginal people use the constellation of Scorpius for navigation. People use the stars to travel from one clan group to another.</p>
+            <p><b>D</b> Norris considers the study of Aboriginal astronomy an opportunity for Aboriginal communities to gain access to information that may have been lost after European colonization of Australia. This could promote community pride and provide educational material for young Aboriginal people. This could also provide an opportunity to help to foster a better understanding and appreciation as Aboriginal culture among the wider Australian society.</p>
+            <p><b>E</b> Perhaps the most beguiling application of astronomical observation is associated with the behavior of one of Australia's most iconic birds, the emu. "The Emu in the Sky", as it is called, describes a carving that is clearly visible on a rock located in Ku-ring-gai Chase National Park, north of Sydney. It depicts an emu is somewhat unnatural position for a 
+real emu, with the legs folded behind it. That is, until it is observed that there is a huge 
+and dark shape in one of the `dark` areas of the Milky Way that resembles an emu. This 
+`emu` swings around the sky each night, its starting point at dusk changing as the year 
+goes by and the season change. In April the body of the `Emu in the Sky` reaches a 
+certain angle, and people know it is the season to go and find fresh emu eggs, a rich 
+highly valued food source. When the angle of the representation of the emu on the rock 
+face matches the `Emu in the Sky`, the harvest might begin. The folded legs signify that 
+the emu is sitting on the nest. </p>
+            <p>The Emu in the Sky exemplifies one of the key principles of Aboriginal cultures: what is in the sky is of what is on Earth. Aboriginal people also apply this concept to construct annual calendars.  Often based on six seasons, Aboriginal calendars are relatively 
+complex and are generally constructed from the heliacal rising of stars (i.e when the star 
+first becomes visible above eastern horizon for a brief moment just before sunrise) </p>
+            <p><b>F</b> Dr Philip Clarke of Federation University Australia has documented how the Kaurna Aboriginal people of South Australia use the rising of what they call Parna. Its appearance just before sunrise indicates that the hot, dry summer is ending and the autumn rains will soon arrive.The lands of Kaurna include the 
+ADELAIDE Plains ,which are prone to flooding .Therefore ,knowledge of when the arrival 
+of autumn is imminent allows them time to build their large, waterproof huts ,which are 
+known as wurlies.</p>
+            <p>Not only were the positions and movements of individual stars used to predict seasonal changes, the scintillation of stars also informs Aboriginal astronomers of a change in the weather or season. They can tell by the degree of how much the star twinkles  or changes 
+colour to gauge the amount of moisture in the atmosphere”, explains Hamacher. “They 
+then know wheter a storm is approaching or the wet season is coming”.</p>
+            <p><b>G</b> It is clear that Aboriginal cultures contain a wealth of astronomical knowledge. This knowledge incorporates a deep and sophisticated understanding of celestial and terrestrial events  and should be viewed through the prism of an interconnected world-view:  a 
+paradigm in which the Aboriginal   people saw themselves not a separate external 
+observer, but integral component of nature and the universe. </p>
+        </div>
+
+        <div class="questions">
+            <h3>Questions 14-18</h3>
+            <p><b>Reading Passage 2 has seven sections, A-G.</b></p>
+            <p>Which section contains the following information?</p>
+            <p>Write the correct letter, <b>A-G</b>, in boxes 14-18 on your answer sheet.</p>
+
+            <div class="question">14. an example of an Aboriginal person who can identify many stars in the sky <input id="q14"></div>
+            <div class="question">15. a reference to an astronomical feature that predicts the movement of a particular animal <input id="q15"></div>
+            <div class="question">16. a mention of an Aboriginal system of dividing the year into several periods <input id="q16"></div>
+            <div class="question">17. an explanation of how the Aboriginal people viewed themselves as part of the environment <input id="q17"></div>
+            <div class="question">18. a reference to a chance for greater public insight into Aboriginal ways <input id="q18"></div>
+
+            <h3>Questions 19-23</h3>
+            <p><b>Look at the following statements (Questions 19-23) and the list of people below.</b></p>
+            <p>Match each statement with the correct person, <b>A, B, C or D</b>.</p>
+            <p><b>A</b> Dr Duane Hamacher</p>
+            <p><b>B</b> Professor Ray Norris</p>
+            <p><b>C</b> William Stevens</p>
+            <p><b>D</b> Dr Philip Clarke</p>
+
+            <div class="question">19. The way a star shines gives information about the weather <input id="q19"></div>
+            <div class="question">20. An Aboriginal person has an instinctive connection between earth and sky <input id="q20"></div>
+            <div class="question">21. Astronomy provides a guide for Aboriginals about the suitability of partners <input id="q21"></div>
+            <div class="question">22. Astronomy helps aboriginal people make practical preparations for a change in the weather <input id="q22"></div>
+            <div class="question">23. Current research may help aboriginal people today learn about what their ancestors knew <input id="q23"></div>
+
+            <h3>Questions 24-26</h3>
+            <p><b>Complete the summary below.</b></p>
+            <p>Choose <b>ONE WORD ONLY</b> from the passage for each answer.</p>
+
+            <h4>The Emu in the Sky</h4>
+            <div class="question">24. 'The Emu in the Sky' is a <input id="q24"> on a rock in Ku-ring-gai Chase National Park.</div>
+            <div class="question">25. This portrays an emu that appears to be sitting in odd way as its <input id="q25"> are in an unusual position.</div>
+            <div class="question">26. However, when <input id="q26"> comes, and emus lay their eggs, the rock art matches the shape of one of the dark areas in the Milky Way.</div>
+        </div>
+    </section>
+
+    <section class="reading-container passage-screen" data-passage="3">
+        <div class="passage">
+            <h2>READING PASSAGE 3</h2>
+            <p><b>You should spend 20 minutes on Questions 27-40, which are based on Reading Passage 3 below.</b></p>
+
+            <h3>Learning to be bilingual</h3>
+            <p><em>Dr Chisato Danjo, Lecturer in Japanese and Linguistics, examines the bilingual family home.</em></p>
+
+            <p>Few people would consider mastering more than one language a bad idea. Consequently, parents who speak different languages from each other are generally keen for their children to learn both. They understand that the family setting they create 
+is central to this, and seek ways to ensure their children thrive bilingually. One of the 
+best-known approaches is the 'one-parent-one-language' strategy (OPOL). Each parent 
+uses their native language when communicating with their children, so the children learn 
+both simultaneously. OPOL emphasises consistency - each parent sticking to one 
+language - as key to its approach. But this creates the myth that mixing languages 
+should always be avoided. My recent study, part of a new wave of multilingualism 
+studies, would suggest that this received wisdom is just that: a myth. My research 
+looked at Japanese-British families living in the UK with pre- and early school-age 
+children who were following a more-or-less strict OPOL language policy. I was 
+particularly interested in examining the impact of OPOL in the family home - how does 
+this unique language environment affect the way children use languages? </p>
+            <p>Most of the Japanese mothers who participated were fluent in Japanese and English, while the fathers possessed merely an elementary grasp of Japanese. This made English the primary language of communication between the parents and outside the home. For this reason, the mothers were careful to carve out additional space for more 
+sustained Japanese language learning with their children. In other words, this dedicated 
+space for communicating in Japanese was time the children spent exclusively with their 
+mother. This seemed to create a connection between `Japanese language' and 
+'motherhood' in the children's perception. This link became apparent in the way the 
+children used Japanese as a means of emotional bonding with their mother. In addition, 
+they adopted a broader behavioural repertoire than that which is usually associated with 
+a language. For example, switching to Japanese could sometimes serve as a method to 
+appease Mum when she seemed unhappy. At other times, refusing to communicate in 
+Japanese was a useful means of defiance, even when the dispute was not related to 
+language. </p>
+            <p>The OPOL approach emphasises the need for parents to monitor children's language closely and correct them if they mix the two languages. In practice, many parents speaking the minority language are bilingual themselves  - so they understand what their 
+children are saying even when they do mix the two. In addition, parents feel it's 
+problematic to keep correcting children when they mix languages. This is particularly the 
+case when children show annoyance at being corrected. The parents believe it is a lot 
+more important to have a meaningful conversation with their children. </p>
+            <p>But what if a child uses language that cannot readily be categorised as either one language or the other? An example from my study involved the use of English words adapted to accommodate Japanese pronunciation.  One of these borrowed words, `ice cream', is usually pronounced `aisukurimu'. The distinction between singular and plural 
+does not exist in Japanese nouns in the English language sense, so whether using 
+singular or plural, even in a borrowed word, `aisukurimu' is the form normally used. But 
+one of my child participants showed his mother a drawing of two cones of ice cream and 
+described them as `aisukurimuzu', with a Japanese pronunciation but in English plural 
+form. The child had created something in between. </p>
+            <p>Another example from my study focused on the interaction between Japanese-English bilingual siblings. In one case, a six-year-old girl was trying to convince her four-year-old brother to let her play with his toys. Following firm rejections by her brother, the girl drew 
+on her communicative repertoire to convince him. To start with, she shifted from an 
+authoritative demand to a softer and humbler appeal. She rephrased the question by 
+using various polite forms. Then, her voice became more nasal, suggesting she was 
+about to burst into tears. Even more interestingly, while the negotiation had begun in 
+English, in the middle she shifted to Japanese. Although this may give the impression of 
+language mixing, a considerably more complex process was taking place. The shift was 
+accompanied by the incorporation of Japanese cultural elements, such as honorific titles 
+that emphasise emotional attachment, a relationship of dependence between sister and 
+brother, and an assumed obligation to care on the part of the brother. She succeeded.  </p>
+            <p>These examples show how creatively and strategically human beings use language in their daily communication. Whether bilingual or not, we all constantly select from our repertoire anything that will best serve our purpose. For instance, imagine you want to 
+ask a neighbour a favour. You would use polite language in a friendly voice. But what 
+about your facial expression? Your body language? It is likely you would make 
+appropriate choices. For bilinguals, shifting between languages is all part of their 
+repertoire. </p>
+            <p>Our language repertoires are shaped by meaning, based on knowledge gathered throughout our lives, and the ways we use language also shape its meaning. The use of OPOL in the family brings specific meaning to language used at home, and children 
+make full use of emergent meaning in their own interactions. </p>
+            <p>The popularity of OPOL amongst parents rests on the simplicity of its message, which is that it should be applied consistently. But when we see a child actively using, adapting and negotiating their repertoire, it casts doubt on the belief that it's bad for children to mix languages. What they could actually be doing is demonstrating high-level flexibility 
+and interpersonal skills. </p>
+            <p>Being bilingual isn't simply about an ability to speak two languages. Rigidly policing consistency in the OPOL approach could actually inhibit bilingual children's linguistic ability and creativity. And in the same way, it could also limit their parents' ability to 
+reveal their own bilingual skills, using their own repertoires.</p>
+            
+        </div>
+
+        <div class="questions">
+            <h3>Questions 27-32</h3>
+            <p><b>Choose the correct letter, A, B, C or D.</b></p>
+
+            <div class="question">27. What does the writer say about families in which the parents speak different languages? <input id="q27"></div>
+            <div class="question">28. The writer uses the term 'received wisdom' in the first paragraph to illustrate that <input id="q28"></div>
+            <div class="question">29. The mothers who took part in the writer's research <input id="q29"></div>
+            <div class="question">30. The writer says that the children in her study <input id="q30"></div>
+            <div class="question">31. What does the writer suggest about correcting children who are learning to be bilingual? <input id="q31"></div>
+            <div class="question">32. The writer gives the 'ice cream' example to show that <input id="q32"></div>
+
+            <h3>Questions 33-36</h3>
+            <p><b>Complete the summary using the list of words, A-I, below.</b></p>
+            <h4>A bilingual child negotiates with her brother</h4>
+            <div class="question">33. Faced with her little brother's <input id="q33"> to let her play with his toys, a young bilingual child used all of her communicative skills to change his mind.</div>
+            <div class="question">34. She used all of her communicative <input id="q34"> to change his mind.</div>
+            <div class="question">35. First, she expressed her <input id="q35"> in gentler, more polite language.</div>
+            <div class="question">36. She reminded him of his <input id="q36"> to her as her brother.</div>
+
+            <p><b>Word list:</b> A request, B attempts, C strategies, D misunderstandings, E responsibility, F agreement, G judgement, H refusal, I behavior</p>
+
+            <h3>Questions 37-40</h3>
+            <p><b>Do the following statements agree with the claims of the writer in Reading Passage 3?</b></p>
+            <p>Write <b>YES</b>, <b>NO</b> or <b>NOT GIVEN</b>.</p>
+
+            <div class="question">37. Even people who speak only one language know how to adapt their way of communicating according to the situation. <input id="q37"></div>
+            <div class="question">38. People who grow up in OPOL families will go on to use this approach with their own children. <input id="q38"></div>
+            <div class="question">39. The reason the OPOL approach is favoured by many parents is that it encourages them to switch languages when necessary. <input id="q39"></div>
+            <div class="question">40. Bilingual children who mix languages eventually develop a preference for one of the languages. <input id="q40"></div>
+        </div>
+    </section>
+
+</main>
+
+<div class="reading-nav-bar">
+    <button id="toggleNumbersBtn" class="nav-btn-read toggle-numbers-btn" type="button">Hide Numbers</button>
+    <div class="nav-actions">
+        <button id="prevBtn" class="nav-btn-read" type="button">Previous Passage</button>
+        <button id="nextBtn" class="nav-btn-read" type="button">Next Passage</button>
+        <button id="finishBtn" class="nav-btn-read finish" type="button" style="display:none;">Finish Test</button>
+    </div>
+</div>
+
+<footer id="numbersFooter" class="exam-footer">
+    <div class="number-grid" id="numberGrid"></div>
+</footer>
+
+<script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore-compat.js"></script>
+<script src="../jss/core.js"></script>
+<script src="../jss/firebase-init.js"></script>
+<script src="../jss/emerald-tracker.js"></script>
+<script src="../jss/emerald-firestore-store.js"></script>
+<script src="../jss/emerald-firebase-bridge.js"></script>
+<script src="../jss/reading-test2.js"></script>
+
+</body>
+</html>

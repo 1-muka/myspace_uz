@@ -1,0 +1,27 @@
+
+@import url("listening-test1.css");
+@import url("listening-test2.css");
+@import url("listening-test3.css");
+@import url("listening-test4.css");
+@import url("listening-test5.css");
+
+.listening-map-wrap {
+    margin: 18px 0 22px;
+    text-align: center;
+}
+
+.listening-map-wrap img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+    border: 1px solid #1a1a1a;
+    border-radius: 10px;
+    background: #f8fbff;
+}
+
+.listening-map-caption {
+    font-size: 13px;
+    color: var(--ink-500);
+    margin-top: 8px;
+}

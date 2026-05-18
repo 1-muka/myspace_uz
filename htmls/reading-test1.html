@@ -1,0 +1,997 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reading Test 1</title>
+    <link rel="stylesheet" href="../csss/reading-test.css">
+    <link rel="icon" href="../logo.jpg">
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .reading-stage {
+            flex: 1;
+            min-height: 0;
+            overflow: hidden;
+        }
+
+        .passage-screen { display: none; }
+        .passage-screen.active {
+            display: flex;
+            height: 100%;
+        }
+
+        .reading-container { height: 100%; }
+
+        .passage,
+        .questions {
+            height: 100%;
+            overflow-y: auto;
+        }
+
+        .reading-nav-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 30px;
+            background: white;
+            border-top: 1px solid #e5e7eb;
+            box-shadow: 0 -4px 12px rgba(0,0,0,0.06);
+        }
+
+        .nav-actions {
+            display: flex;
+            gap: 12px;
+            margin-left: auto;
+        }
+
+        .nav-btn-read {
+            padding: 12px 22px;
+            border: none;
+            border-radius: 10px;
+            background: #2980b9;
+            color: white;
+            font-weight: 700;
+            cursor: pointer;
+            transition: 0.2s ease;
+        }
+
+        .nav-btn-read:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 10px 20px rgba(41,128,185,0.2);
+        }
+
+        .nav-btn-read.finish { background: #27ae60; }
+        .nav-btn-read.finish:hover { box-shadow: 0 10px 20px rgba(39,174,96,0.22); }
+
+        .nav-btn-read[disabled] {
+            opacity: 0.45;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+
+        .reading-nav-bar,
+        .exam-footer { flex-shrink: 0; }
+
+        .dot.current-passage {
+            background: #eaf2f8;
+            border-color: #2980b9;
+            color: #2980b9;
+            font-weight: 700;
+        }
+
+        .correct-input {
+            border-color: #27ae60 !important;
+            background: #eafaf1 !important;
+        }
+
+        .wrong-input {
+            border-color: #e74c3c !important;
+            background: #fdeaea !important;
+        }
+
+        .fullscreen-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.82);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 99999;
+            padding: 20px;
+        }
+
+        .overlay-card {
+            width: min(92vw, 420px);
+            background: white;
+            border-radius: 24px;
+            padding: 34px 28px;
+            text-align: center;
+            box-shadow: 0 24px 60px rgba(0,0,0,0.28);
+        }
+
+        .overlay-label {
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 0.08em;
+            color: #6b7280;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        .overlay-card h2 { margin: 0 0 12px; font-size: 28px; color: #111827; }
+        .overlay-card p  { margin: 0 0 22px; font-size: 15px; color: #4b5563; line-height: 1.6; }
+
+        .overlay-btn {
+            border: none;
+            border-radius: 12px;
+            padding: 14px 24px;
+            background: linear-gradient(135deg, #0d8a5e, #1dbf73);
+            color: white;
+            font-size: 15px;
+            font-weight: 700;
+            cursor: pointer;
+            box-shadow: 0 10px 25px rgba(13,138,94,0.25);
+        }
+
+        .question input { min-width: 120px; }
+    </style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="top-bar">
+    <div>Reading Test 1</div>
+    <div class="time">Time Left: <span id="timer">60:00</span></div>
+</div>
+
+<!-- RULES INTRO / LOCKDOWN OVERLAY -->
+<div id="readingOverlay" class="fullscreen-overlay">
+
+    <!-- Rules card (shown on first load) -->
+    <div id="rulesCard" class="overlay-card" style="max-width:540px;text-align:left;padding:34px 30px;">
+        <div style="
+            display:inline-flex;padding:7px 12px;border-radius:999px;
+            background:#e9faf3;color:#15543f;font-size:12px;font-weight:800;
+            letter-spacing:0.08em;text-transform:uppercase;margin-bottom:14px;">
+            Before You Start
+        </div>
+        <h2 style="margin:0 0 6px;font-size:26px;color:#111827;">Reading Test Rules</h2>
+        <p style="margin:0 0 18px;font-size:14px;color:#6b7280;">Read the rules carefully before starting.</p>
+
+        <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px;">
+            <span style="padding:9px 14px;border-radius:999px;background:#e9faf3;color:#10342a;font-size:13px;font-weight:700;">60 minutes</span>
+            <span style="padding:9px 14px;border-radius:999px;background:#e9faf3;color:#10342a;font-size:13px;font-weight:700;">40 questions</span>
+            <span style="padding:9px 14px;border-radius:999px;background:#e9faf3;color:#10342a;font-size:13px;font-weight:700;">3 passages</span>
+        </div>
+
+        <ul style="margin:0 0 22px 18px;color:#425266;line-height:1.8;font-size:14px;">
+            <li>The test must stay in fullscreen at all times.</li>
+            <li>Do not switch tabs or leave the exam window.</li>
+            <li>You have only 3 violation warnings before the test ends.</li>
+            <li>Use the navigation buttons to move between passages.</li>
+            <li>Answers are saved automatically as you type.</li>
+            <li>Click Finish Test on the last passage when done.</li>
+        </ul>
+
+        <button id="overlayActionBtn" class="overlay-btn" style="width:100%;padding:15px;font-size:16px;">
+            ▶ &nbsp; Start Test in Fullscreen
+        </button>
+    </div>
+
+    <!-- Lockdown / resume card (shown on violations) -->
+    <div id="lockdownCard" class="overlay-card" style="display:none;">
+        <div class="overlay-label" id="overlayTitle">Exam Paused</div>
+        <h2 style="margin:12px 0 10px;font-size:26px;color:#111827;">Return to Fullscreen</h2>
+        <p id="overlayMessage" style="margin:0 0 22px;font-size:15px;color:#4b5563;line-height:1.6;">
+            Stay in fullscreen to continue the test.
+        </p>
+        <button id="lockdownActionBtn" class="overlay-btn" style="width:100%;">Return to Test</button>
+    </div>
+
+</div>
+
+<!-- EXAM CONTENT -->
+<main class="reading-stage">
+
+    <!-- PASSAGE 1 -->
+    <section class="reading-container passage-screen active" data-passage="1">
+        <div class="passage">
+            <h2>READING PASSAGE 1</h2>
+            <p><b>You should spend 20 minutes on Questions 1–13.</b></p>
+
+            <h3>An Early Cultural Tourist</h3>
+
+            <p>In the 15th century, the Italian merchant Cyriacus of Ancona journeyed in search of the Mediterranean's classical past. In doing so, he laid the groundwork for today's cultural holidays.</p>
+            <p>Today we take it for granted that we travel around the world to admire the monuments of the past. We prepare for such trips by reading about what we are going to see, set out on the journey with a good idea of how we will get there and where we will stay, and have a sense of what we will encounter on location. Cyriacus of Ancona (1391–1452), the first cultural tourist since antiquity, lacked these advantages when, in the first half of the 15th century, he sailed around the Mediterranean in search of the remains of Greek and Roman civilisations.</p>
+            <p>Cyriacus first became fascinated by ancient monuments while walking in his home city Ancona and looking at the marble arch, erected in AD 115, to the Roman Emperor Trajan. He suddenly saw the structure in a new light. He no longer saw it as just a familiar and generally overlooked landmark, but as a doorway to the wonders of ancient imperial Rome. Not many people of Cyriacus's time were interested in historical travel. They generally ignored old buildings and structures, or worse, dismantled them for their building materials.</p>
+            <p>Cyriacus decided to see the world for himself and to record details of whatever other antiquities remained to be discovered. His training as a merchant did not prepare him for this vocation; he did not know ancient languages, history or art. However, he set out to solve these failings, first by learning Latin at the age of 30 and then adding ancient Greek. Having done this, he then set off on voyages around the Mediterranean to find, investigate and understand ancient cultures from their buildings, sculptures and inscriptions. Thus he became the first archaeologist and cultural tourist, predating other antiquarians by some 200 years.</p>
+            <p>Travel in the 15th century, however, was anything but simple or enjoyable. Overland journeys by foot or mule along bad roads, under constant threat from bandits, were bad; voyages by sea were even worse. When the weather cooperated, sailing went relatively smoothly, and ships proceeded along coasts from one recognizable landmark to another. However, when there was no wind the ship did not move. Strong winds were no friends either: they drenched the ship with lashing waves and blew it off course. Water swamped the deck, splashed into the cabins and soaked mattresses, clothes and food. Remarkably, Cyriacus never complained about the miseries of travel. Optimistic by nature, he endured such hardships unafraid and saw opportunities where other people saw setbacks.</p>
+            <p>Among many of the important records made by Cyriacus was his crucial documenting, in 1431, of the remains of Cyzicus, an ancient Roman city that had relied on commerce for its financial success. He hired a local person to take him to the site and then had to work out for himself the significance of the ruins he was looking at because there was no guidebook on ancient architecture to help him. Cyzicus had been a splendid city in its prime. Unfortunately, the area was highly seismic and in AD 123 the city was so devastated by a major earthquake that, when the Roman Emperor Hadrian visited it the following year, he was so saddened that he decided to subsidise a campaign to reconstruct Cyzicus. He made a substantial donation for a new temple to the Roman god Jupiter. Cyriacus thought the ruined city was awe-inspiring. He found the remains of the temple and examined it in great detail, looking for clues in ancient texts to help him understand what he was seeing. He sketched the great doorway adorned with carved foliage and mythological characters. Cyriacus's account of this temple is the only record of this building, as in the following centuries it was entirely stripped of all its stonework and all that remains is its base.</p>
+            <p>Cyriacus also visited mainland Greece, in 1436, when no one went to Greece in order to see the country's ancient ruins. One of his destinations was the sanctuary of Delphi. The ancient Greeks considered Delphi as being situated in the most beautiful spot in Greece. When Cyriacus arrived at the site of Delphi, however, he found war, earthquakes and avalanches had all but obliterated its ruins. Determined to find any ancient traces, Cyriacus spent six days walking all over the area, peering at odd stone blocks sticking out of the ground, running his hands over inscriptions to trace fragments of words, and trying to puzzle out the few surviving structural remains. Climbing uphill towards the rocks that tower over the site, he came upon a theatre built into the slope. Soon after his visit, the site was buried by a rockslide and was not seen again until archaeologists began to excavate the area systematically in the late 19th century.</p>
+            <p>Cyriacus had hoped to visit Egypt and Ethiopia but he never got there. However, in his life he did record for posterity countless ancient monuments around the Mediterranean, paving the way for future archaeologists and cultural tourists.</p>
+        </div>
+
+        <div class="questions">
+            <h3>Questions 1–6</h3>
+            <p><b>Do the following statements agree with the information given in Reading Passage 1?</b></p>
+            <p>Write <b>TRUE</b>, <b>FALSE</b> or <b>NOT GIVEN</b>.</p>
+
+            <div class="question">1. Cyriacus was unable to research his journeys before he left. <input id="q1"></div>
+            <div class="question">2. The Roman Emperor Trajan built the city of Ancona. <input id="q2"></div>
+            <div class="question">3. Respect for ancient architecture was widespread in the 15th century. <input id="q3"></div>
+            <div class="question">4. Cyriacus's experience as a merchant gave him skills he needed to investigate the ancient world. <input id="q4"></div>
+            <div class="question">5. Before leaving on his journey, Cyriacus studied ancient languages. <input id="q5"></div>
+            <div class="question">6. Travelling by sea in the 15th century was easier than travelling on land. <input id="q6"></div>
+
+            <h3>Questions 7–13</h3>
+            <p><b>Complete the notes below. Choose ONE WORD ONLY from the passage.</b></p>
+
+            <h4>The city of Cyzicus</h4>
+            <div class="question">7. the wealth of the city had come from <input id="q7"></div>
+            <div class="question">8. ______ to the ancient city ruins not available <input id="q8"></div>
+            <div class="question">9. the city was destroyed by a powerful <input id="q9"></div>
+            <div class="question">10. Emperor Hadrian supported a <input id="q10"></div>
+            <div class="question">11. drawings of the <input id="q11"></div>
+
+            <h4>The sanctuary of Delphi</h4>
+            <div class="question">12. natural disasters and <input id="q12"></div>
+            <div class="question">13. ______ destroyed the site <input id="q13"></div>
+        </div>
+    </section>
+
+    <!-- PASSAGE 2 -->
+    <section class="reading-container passage-screen" data-passage="2">
+        <div class="passage">
+            <h2>READING PASSAGE 2</h2>
+            <p><b>You should spend 20 minutes on Questions 14–26.</b></p>
+
+            <h3>Australian Aboriginal Astronomy</h3>
+
+            <p><b>A</b> Australia's Aboriginal people, living under a dazzling canopy of constellations, absorbed the night skies into their cultural, social and spiritual life. The position of the stars, the motion of the planets, and astronomical events such as comets, meteorites and eclipses have informed their cosmology and traditions. "Spirituality, sacred law, kinship, cultural rules about who you can marry, where you can go, what you can do, how society works... all of this social structure is written in the stars," says Dr Duane Hamacher, a lecturer at the Nura Gilli Indigenous Programs Unit at the University of New South Wales, Australia.</p>
+            <p><b>B</b> Hamacher, working closely with Aboriginal elders, is uncovering a wealth of astronomical knowledge. He takes the example of the Pleiades, one of the closest star clusters to Earth. He explains that the Pleiades rise early in the morning, just before the sun comes up, and are visible for about 15 minutes. This signals the time at which flowers appear on one type of tree, the start of winter, and the orca migrating north. These observations indicate that the early Aboriginal astronomers took an intellectual approach that sought meaning in, and application of, astronomical phenomena. And no more is this evidenced than in how they used this knowledge to navigate their vast, and sometimes featureless, island continent.</p>
+            <p><b>C</b> Professor Ray Norris, an astrophysicist at the Australian Telescope National Facility and adjunct professor in Indigenous Astronomy at Macquarie University, Sydney, recounts an occasion while bushwalking with Bill Yidumduma Harney, an Aboriginal elder: "Bill can name about 5000 stars. Most Western astronomers can name only 20 or 30 on a good day. He looks up at the sky and knows how it changes with the seasons, with the time, in ways I don't actually quite understand. And for him it's completely intuitive. He looks at the sky and knows it reflects what's on the land."</p>
+            <p>William Stevens, an Aboriginal astronomy guide who conducts the Dreamtime Astronomy tour at Sydney Observatory, explains how some Aboriginal people use the constellation of Scorpius for navigation: "We don't see a scorpion; it's actually a map for us," says Stevens, adding that people use the stars to travel from one clan group to another.</p>
+            <p><b>D</b> Norris considers the study of Aboriginal astronomy an opportunity for Aboriginal communities to gain access to information that may have been lost after European colonization of Australia. This "giving back of knowledge", as Norris describes it, could promote community pride and provide educational material for young Aboriginal people. This could also provide an opportunity to help foster a better understanding and appreciation of Aboriginal culture among the wider Australian society.</p>
+            <p><b>E</b> Perhaps the most beguiling application of astronomical observation is associated with the behavior of one of Australia's most iconic birds, the emu. "The Emu in the Sky", as it is called, describes a carving that is clearly visible on a rock located in Ku-ring-gai Chase National Park, north of Sydney. It depicts an emu in a somewhat unnatural position for a real emu, with the legs folded behind it. That is, until it is observed that there is a huge and dark shape in one of the dark areas of the Milky Way that resembles an emu. This "emu" swings around the sky each night, its starting point at dusk changing as the year goes by and the seasons change. In April the body of the "Emu in the Sky" reaches a certain angle, and people know it is the season to go and find fresh emu eggs, a rich highly valued food source. When the angle of the representation of the emu on the rock face matches the "Emu in the Sky", the harvest might begin. The folded legs signify that the emu is sitting on the nest.</p>
+            <p>The Emu in the Sky exemplifies one of the key principles of Aboriginal cultures: what is in the sky is of what is on Earth. Aboriginal people also apply this concept to construct annual calendars. Often based on six seasons, Aboriginal calendars are relatively complex and are generally constructed from the heliacal rising of stars, that is when the star first becomes visible above the eastern horizon for a brief moment just before sunrise.</p>
+            <p><b>F</b> Dr Philip Clarke of Federation University Australia has documented how the Kaurna Aboriginal people of South Australia use the rising of what they call Parna, one of the brightest stars in the night sky. Its appearance just before sunrise indicates that the hot, dry summer is ending and the autumn rains will soon arrive. The lands of the Kaurna include the Adelaide Plains, which are prone to flooding. Therefore, knowledge of when the arrival of autumn is imminent allows them time to build their large, waterproof huts, which are known as wurlies.</p>
+            <p>Not only were the positions and movements of individual stars used to predict seasonal changes, the scintillation of stars also informs Aboriginal astronomers of a change in the weather or season. "They can tell by the degree of how much the star twinkles or changes colour to gauge the amount of moisture in the atmosphere," explains Hamacher. "They then know whether a storm is approaching or the wet season is coming."</p>
+            <p><b>G</b> It is clear that Aboriginal cultures contain a wealth of astronomical knowledge. This knowledge incorporates a deep and sophisticated understanding of celestial and terrestrial events and should be viewed through the prism of an interconnected world-view: a paradigm in which Aboriginal people saw themselves not as separate external observers, but as an integral component of nature and the universe.</p>
+        </div>
+
+        <div class="questions">
+            <h3>Questions 14–18</h3>
+            <p>Which section contains the following information? Write the correct letter <b>A–G</b>.</p>
+
+            <div class="question">14. <input id="q14" placeholder="A–G"></div>
+            <div class="question">15. <input id="q15" placeholder="A–G"></div>
+            <div class="question">16. <input id="q16" placeholder="A–G"></div>
+            <div class="question">17. <input id="q17" placeholder="A–G"></div>
+            <div class="question">18. <input id="q18" placeholder="A–G"></div>
+
+            <h3>Questions 19–23</h3>
+            <p>Match each statement with the correct person.</p>
+            <p><b>A</b> Dr Duane Hamacher &nbsp; <b>B</b> Professor Ray Norris &nbsp; <b>C</b> William Stevens &nbsp; <b>D</b> Dr Philip Clarke</p>
+
+            <div class="question">19. <input id="q19"></div>
+            <div class="question">20. <input id="q20"></div>
+            <div class="question">21. <input id="q21"></div>
+            <div class="question">22. <input id="q22"></div>
+            <div class="question">23. <input id="q23"></div>
+
+            <h3>Questions 24–26</h3>
+            <p>Complete the summary. Choose ONE WORD ONLY from the passage.</p>
+
+            <div class="question">24. <input id="q24"></div>
+            <div class="question">25. <input id="q25"></div>
+            <div class="question">26. <input id="q26"></div>
+        </div>
+    </section>
+
+    <!-- PASSAGE 3 -->
+    <section class="reading-container passage-screen" data-passage="3">
+        <div class="passage">
+            <h2>READING PASSAGE 3</h2>
+            <p><b>You should spend 20 minutes on Questions 27–40.</b></p>
+
+            <h3>Learning to Be Bilingual</h3>
+
+            <p>Dr Chisato Danjo, Lecturer in Japanese and Linguistics, examines the bilingual family home.</p>
+            <p>Few people would consider mastering more than one language a bad idea. Consequently, parents who speak different languages from each other are generally keen for their children to learn both. They understand that the family setting they create is central to this, and seek ways to ensure their children thrive bilingually. One of the best-known approaches is the 'one-parent-one-language' strategy (OPOL). Each parent uses their native language when communicating with their children, so the children learn both simultaneously. OPOL emphasises consistency — each parent sticking to one language — as key to its approach. But this creates the myth that mixing languages should always be avoided. My recent study, part of a new wave of multilingualism studies, would suggest that this received wisdom is just that: a myth. My research looked at Japanese-British families living in the UK with pre- and early school-age children who were following a more-or-less strict OPOL language policy. I was particularly interested in examining the impact of OPOL in the family home — how does this unique language environment affect the way children use languages?</p>
+            <p>Most of the Japanese mothers who participated were fluent in Japanese and English, while the fathers possessed merely an elementary grasp of Japanese. This made English the primary language of communication between the parents and outside the home. For this reason, the mothers were careful to carve out additional space for more sustained Japanese language learning with their children. In other words, this dedicated space for communicating in Japanese was time the children spent exclusively with their mother. This seemed to create a connection between 'Japanese language' and 'motherhood' in the children's perception. This link became apparent in the way the children used Japanese as a means of emotional bonding with their mother. In addition, they adopted a broader behavioural repertoire than that which is usually associated with a language. For example, switching to Japanese could sometimes serve as a method to appease Mum when she seemed unhappy. At other times, refusing to communicate in Japanese was a useful means of defiance, even when the dispute was not related to language.</p>
+            <p>The OPOL approach emphasises the need for parents to monitor children's language closely and correct them if they mix the two languages. In practice, many parents speaking the minority language are bilingual themselves — so they understand what their children are saying even when they do mix the two. In addition, parents feel it's problematic to keep correcting children when they mix languages. This is particularly the case when children show annoyance at being corrected. The parents believe it is a lot more important to have a meaningful conversation with their children.</p>
+            <p>But what if a child uses language that cannot readily be categorised as either one language or the other? An example from my study involved the use of English words adapted to accommodate Japanese pronunciation. One of these borrowed words, 'ice cream', is usually pronounced 'aisukurimu'. The distinction between singular and plural does not exist in Japanese nouns in the English language sense, so whether using singular or plural, even in a borrowed word, 'aisukurimu' is the form normally used. But one of my child participants showed his mother a drawing of two cones of ice cream and described them as 'aisukurimuzu', with a Japanese pronunciation but in English plural form. The child had created something in between.</p>
+            <p>Another example from my study focused on the interaction between Japanese-English bilingual siblings. In one case, a six-year-old girl was trying to convince her four-year-old brother to let her play with his toys. Following firm rejections by her brother, the girl drew on her communicative repertoire to convince him. To start with, she shifted from an authoritative demand to a softer and humbler appeal. She rephrased the question by using various polite forms. Then, her voice became more nasal, suggesting she was about to burst into tears. Even more interestingly, while the negotiation had begun in English, in the middle she shifted to Japanese. Although this may give the impression of language mixing, a considerably more complex process was taking place. The shift was accompanied by the incorporation of Japanese cultural elements, such as honorific titles that emphasise emotional attachment, a relationship of dependence between sister and brother, and an assumed obligation to care on the part of the brother. She succeeded.</p>
+            <p>These examples show how creatively and strategically human beings use language in their daily communication. Whether bilingual or not, we all constantly select from our repertoire anything that will best serve our purpose. For instance, imagine you want to ask a neighbour a favour. You would use polite language in a friendly voice. But what about your facial expression? Your body language? It is likely you would make appropriate choices. For bilinguals, shifting between languages is all part of their repertoire.</p>
+            <p>Our language repertoires are shaped by meaning, based on knowledge gathered throughout our lives, and the ways we use language also shape its meaning. The use of OPOL in the family brings specific meaning to language used at home, and children make full use of emergent meaning in their own interactions.</p>
+            <p>The popularity of OPOL amongst parents rests on the simplicity of its message, which is that it should be applied consistently. But when we see a child actively using, adapting and negotiating their repertoire, it casts doubt on the belief that it's bad for children to mix languages. What they could actually be doing is demonstrating high-level flexibility and interpersonal skills.</p>
+            <p>Being bilingual isn't simply about an ability to speak two languages. Rigidly policing consistency in the OPOL approach could actually inhibit bilingual children's linguistic ability and creativity. And in the same way, it could also limit their parents' ability to reveal their own bilingual skills, using their own repertoires.</p>
+        </div>
+
+        <div class="questions">
+            <h3>Questions 27–29</h3>
+            <p><b>Choose the correct letter, A, B, C or D.</b></p>
+
+            <div class="question">
+                27. The writer says that the children in her study
+                <div style="margin:8px 0 0 0;line-height:1.9;">
+                    <div><b>A</b> preferred to use Japanese exclusively for communicating with their mothers.</div>
+                    <div><b>B</b> understood their mothers better as their knowledge of Japanese increased.</div>
+                    <div><b>C</b> argued about things that would be unimportant for monolingual children.</div>
+                    <div><b>D</b> used language in a way that is uncommon.</div>
+                </div>
+                <input id="q27" placeholder="A-D" style="margin-top:10px;">
+            </div>
+
+            <div class="question">
+                28. What does the writer suggest about correcting children who are learning to be bilingual?
+                <div style="margin:8px 0 0 0;line-height:1.9;">
+                    <div><b>A</b> It is usually avoided if it causes bad feeling.</div>
+                    <div><b>B</b> Parents tend to prioritise it over maintaining a conversation.</div>
+                    <div><b>C</b> It is unnecessary with the OPOL method of learning.</div>
+                    <div><b>D</b> Parents are less likely to do it if they speak both languages.</div>
+                </div>
+                <input id="q28" placeholder="A-D" style="margin-top:10px;">
+            </div>
+
+            <div class="question">
+                29. The writer gives the ‘ice cream’ example to show that
+                <div style="margin:8px 0 0 0;line-height:1.9;">
+                    <div><b>A</b> bilingual children find the use of borrowed words less confusing than other children.</div>
+                    <div><b>B</b> bilingual children like to test their parents with words they know to be wrong.</div>
+                    <div><b>C</b> knowledge of two languages leads bilingual children to invent new word forms.</div>
+                    <div><b>D</b> it may be difficult to distinguish which language a bilingual child is using.</div>
+                </div>
+                <input id="q29" placeholder="A-D" style="margin-top:10px;">
+            </div>
+
+            <h3>Questions 30–35</h3>
+            <p><b>Complete the summary using the list of words, A–J, below.</b></p>
+
+            <h4 style="text-align:center;margin-bottom:10px;">A bilingual child negotiates with her brother</h4>
+
+            <div style="background:#f8fafc;border:1px solid #e5e7eb;border-radius:12px;padding:12px 14px;margin:10px 0 16px;line-height:1.9;">
+                <div style="font-weight:800;margin-bottom:6px;">Words</div>
+                <div><b>A</b> request &nbsp; <b>B</b> attempts &nbsp; <b>C</b> strategies &nbsp; <b>D</b> misunderstandings &nbsp; <b>E</b> responsibility</div>
+                <div><b>F</b> agreement &nbsp; <b>G</b> judgement &nbsp; <b>H</b> refusal &nbsp; <b>I</b> behavior &nbsp; <b>J</b> aspects</div>
+            </div>
+
+            <p style="line-height:1.9;">
+                Faced with her little brother’s 30
+                <input id="q30" placeholder="A-J" style="width:90px;display:inline-block;margin:0 6px;">
+                to let her play with his toys, a young bilingual child used all of her communication 31
+                <input id="q31" placeholder="A-J" style="width:90px;display:inline-block;margin:0 6px;">
+                to change his mind. First, she expressed her 32
+                <input id="q32" placeholder="A-J" style="width:90px;display:inline-block;margin:0 6px;">
+                in gentler, more polite language, and pretended to be about to cry. Having switched from English to Japanese, she exploited 33
+                <input id="q33" placeholder="A-J" style="width:90px;display:inline-block;margin:0 6px;">
+                of Japanese culture, such as reminding him of his 34
+                <input id="q34" placeholder="A-J" style="width:90px;display:inline-block;margin:0 6px;">
+                to her as her brother. She succeeded in her 35
+                <input id="q35" placeholder="A-J" style="width:90px;display:inline-block;margin:0 6px;">
+                to convince him.
+            </p>
+
+            <h3>Questions 36–40</h3>
+            <p><b>Do the following statements agree with the claims of the writer in Reading Passage 3?</b></p>
+            <p>Write <b>YES</b> if the statement agrees with the claims of the writer</p>
+            <p>Write <b>NO</b> if the statement contradicts the claims of the writer</p>
+            <p>Write <b>NOT GIVEN</b> if it is impossible to say what the writer thinks about this</p>
+
+            <div class="question">36. Even people who speak only one language know how to adapt their way of communicating according to the situation. <input id="q36" placeholder="YES/NO/NOT GIVEN"></div>
+            <div class="question">37. People who grow up in OPOL families will go on to use this approach with their own children. <input id="q37" placeholder="YES/NO/NOT GIVEN"></div>
+            <div class="question">38. The reason the OPOL approach is favoured by many parents is that it encourages them to switch languages when necessary. <input id="q38" placeholder="YES/NO/NOT GIVEN"></div>
+            <div class="question">39. Bilingual children who mix languages eventually develop a preference for one of the languages. <input id="q39" placeholder="YES/NO/NOT GIVEN"></div>
+            <div class="question">40. The OPOL approach may restrict people’s capacity to be resourceful in their use of language. <input id="q40" placeholder="YES/NO/NOT GIVEN"></div>
+        </div>
+    </section>
+
+</main>
+
+<!-- NAVIGATION BAR -->
+<div class="reading-nav-bar">
+    <button id="prevBtn" class="nav-btn-read">← Previous Passage</button>
+    <div class="nav-actions">
+        <button id="toggleNumbersBtn" class="nav-btn-read toggle-numbers-btn">Hide Numbers</button>
+        <button id="nextBtn" class="nav-btn-read">Next Passage →</button>
+        <button id="finishBtn" class="nav-btn-read finish" style="display:none">Finish Test</button>
+    </div>
+</div>
+
+<!-- ANSWER TRACKER -->
+<footer id="numbersFooter" class="exam-footer">
+    <div class="number-grid" id="numberGrid"></div>
+</footer>
+
+<script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore-compat.js"></script>
+<script src="../jss/core.js"></script>
+<script src="../jss/firebase-init.js"></script>
+<script src="../jss/emerald-tracker.js"></script>
+<script src="../jss/emerald-firestore-store.js"></script>
+<script src="../jss/emerald-firebase-bridge.js"></script>
+<script>
+
+// ─── CONFIG ──────────────────────────────────────────────────────────────────
+
+const TEST_DURATION_SECONDS = 60 * 60;
+const MAX_VIOLATIONS        = 3;
+const ANSWERS_KEY           = "reading_test1_answers";
+const STATE_KEY             = "reading_test1_state";
+const REVIEW_ATTEMPT_ID     = new URLSearchParams(window.location.search).get("review");
+
+const correctAnswers = {
+    q1: "true",     q2: "false",    q3: "false",    q4: "false",
+    q5: "true",     q6: "false",    q7: "commerce", q8: "guidebook",
+    q9: "earthquake", q10: "campaign", q11: "doorway", q12: "avalanches",
+    q13: "war",
+
+    q14: "C", q15: "B", q16: "E", q17: "G", q18: "D",
+    q19: "A", q20: "B", q21: "A", q22: "D", q23: "B",
+    q24: "carving", q25: "legs", q26: "april",
+
+    q27: "C", q28: "B", q29: "A", q30: "D", q31: "A", q32: "D",
+    q33: "F", q34: "H", q35: "B", q36: "C",
+    q37: "YES", q38: "YES", q39: "NO", q40: "NOT GIVEN"
+};
+
+// ─── STATE ───────────────────────────────────────────────────────────────────
+
+function hydratePassageTwoQuestions() {
+    const container = document.querySelector('.passage-screen[data-passage="2"] .questions');
+    if (!container) return;
+
+    // Keep the existing 13-slot structure so the rest of Reading Test 1 still works.
+    container.innerHTML = `
+        <h3>Questions 14-18</h3>
+        <p><i>Reading Passage 2 has seven sections, A-G.</i></p>
+        <p><b>Which section contains the following information?</b></p>
+        <p>Write the correct letter, <b>A-G</b>, in boxes 14-18 on your answer sheet.</p>
+        <p><b>NB</b> You may use any letter more than once.</p>
+
+        <div class="question">14. an example of an Aboriginal person who can identify many stars in the sky <input id="q14" placeholder="A-G"></div>
+        <div class="question">15. a reference to an astronomical feature that predicts the movement of a particular animal <input id="q15" placeholder="A-G"></div>
+        <div class="question">16. a mention of an Aboriginal system of dividing the year into several periods <input id="q16" placeholder="A-G"></div>
+        <div class="question">17. an explanation of how the Aboriginal people viewed themselves as part of the environment <input id="q17" placeholder="A-G"></div>
+        <div class="question">18. an example of an Aboriginal artwork that may seem strange at first <input id="q18" placeholder="A-G"></div>
+
+        <h3>Questions 19-23</h3>
+        <p><i>Look at the following statements (Questions 19-23) and the list of people below.</i></p>
+        <p><b>Match each statement with the correct person, A, B, C or D.</b></p>
+        <p>Write the correct letter, <b>A, B, C or D</b>, in boxes 19-23 on your answer sheet.</p>
+        <p><b>NB</b> You may use any letter more than once.</p>
+        <p><b>A</b> Dr Duane Hamacher<br><b>B</b> Professor Ray Norris<br><b>C</b> William Stevens<br><b>D</b> Dr Philip Clarke</p>
+
+        <div class="question">19. The way a star shines gives information about the weather. <input id="q19" placeholder="A-D"></div>
+        <div class="question">20. An Aboriginal person makes an instinctive connection between earth and sky. <input id="q20" placeholder="A-D"></div>
+        <div class="question">21. Astronomy provides a guide for Aboriginal people about the suitability of partners. <input id="q21" placeholder="A-D"></div>
+        <div class="question">22. Astronomy helps Aboriginal people make practical preparations for a change in the weather. <input id="q22" placeholder="A-D"></div>
+        <div class="question">23. Current research may help Aboriginal people today learn about what their ancestors knew. <input id="q23" placeholder="A-D"></div>
+
+        <h3>Questions 24-26</h3>
+        <p><b>Complete the summary below.</b></p>
+        <p>Choose <b>ONE WORD ONLY</b> from the passage for each answer.</p>
+        <h4 style="text-align:center;margin-bottom:10px;">The Emu in the Sky</h4>
+        <p style="line-height:1.8;">
+            'The Emu in the Sky' is a
+            <input id="q24" style="width:120px;display:inline-block;margin:0 6px;" placeholder="24">
+            on a rock in Ku-ring-gai Chase National Park. This portrays an emu that appears to be sitting in an odd way as its
+            <input id="q25" style="width:120px;display:inline-block;margin:0 6px;" placeholder="25">
+            are in an unusual position. However, when
+            <input id="q26" style="width:120px;display:inline-block;margin:0 6px;" placeholder="26">
+            comes, and emus lay their eggs, the rock art matches the shape of one of the dark areas in the Milky Way.
+        </p>
+    `;
+}
+
+function defaultState() {
+    return {
+        started:        false,
+        finished:       false,
+        paused:         true,
+        timeLeft:       TEST_DURATION_SECONDS,
+        violationCount: 0,
+        currentPassage: 1,
+        numbersVisible: true
+    };
+}
+
+function loadState() {
+    try {
+        const saved = JSON.parse(sessionStorage.getItem(STATE_KEY));
+        return saved ? { ...defaultState(), ...saved } : defaultState();
+    } catch { return defaultState(); }
+}
+
+const state = loadState();
+let timerInterval = null;
+
+function saveState() {
+    sessionStorage.setItem(STATE_KEY, JSON.stringify(state));
+}
+
+// ─── UTILS ───────────────────────────────────────────────────────────────────
+
+function byId(id) { return document.getElementById(id); }
+function normalize(v) { return String(v || "").trim().toLowerCase(); }
+
+function formatTime(s) {
+    return `${String(Math.floor(s / 60)).padStart(2,"0")}:${String(s % 60).padStart(2,"0")}`;
+}
+
+// ─── ANSWERS ─────────────────────────────────────────────────────────────────
+
+function loadAnswers() {
+    try { return JSON.parse(localStorage.getItem(ANSWERS_KEY)) || {}; }
+    catch { return {}; }
+}
+
+function saveAnswer(id, value) {
+    const answers = loadAnswers();
+    answers[id] = value;
+    localStorage.setItem(ANSWERS_KEY, JSON.stringify(answers));
+}
+
+function restoreAnswers() {
+    const answers = loadAnswers();
+    for (let i = 1; i <= 40; i++) {
+        const input = byId(`q${i}`);
+        if (input && answers[`q${i}`] !== undefined) {
+            input.value = answers[`q${i}`];
+        }
+    }
+}
+
+function clearExamStorage() {
+    localStorage.removeItem(ANSWERS_KEY);
+    sessionStorage.removeItem(STATE_KEY);
+}
+
+function collectAllAnswers() {
+    const answers = {};
+    for (let i = 1; i <= 40; i++) {
+        const input = byId(`q${i}`);
+        answers[`q${i}`] = input ? String(input.value || "") : "";
+    }
+    return answers;
+}
+
+async function loadReviewAttemptById(attemptId) {
+    const attempt = await EmeraldTracker.getAttemptById(attemptId);
+    return attempt && attempt.section === "reading" ? attempt : null;
+}
+
+function applyReviewAttempt(attempt) {
+    const answers = attempt && attempt.answers ? attempt.answers : {};
+    for (let i = 1; i <= 40; i++) {
+        const input = byId(`q${i}`);
+        if (!input) continue;
+        input.value = String(answers[`q${i}`] || "");
+        input.disabled = true;
+        input.classList.remove("correct-input", "wrong-input");
+        const userValue = normalize(input.value);
+        const expected  = normalize(correctAnswers[`q${i}`]);
+        if (input.value.trim() && userValue === expected) input.classList.add("correct-input");
+        if (input.value.trim() && userValue !== expected) input.classList.add("wrong-input");
+        markDot(i, input.value.trim() !== "");
+    }
+
+    byId("readingOverlay").style.display = "none";
+    byId("toggleNumbersBtn").disabled = false;
+    byId("finishBtn").textContent = "Finish Review";
+    byId("finishBtn").style.display = "inline-block";
+    byId("finishBtn").onclick = () => { window.location.href = "dashboard.html"; };
+    byId("nextBtn").style.display = "inline-block";
+    byId("prevBtn").disabled = state.currentPassage === 1;
+
+    const navBar = document.querySelector(".reading-nav-bar");
+    if (navBar) {
+        const banner = document.createElement("div");
+        banner.style.cssText = "padding:10px 14px;border-radius:10px;background:#e9faf3;color:#15543f;font-weight:700;font-size:13px;margin-right:auto;";
+        banner.textContent = `Review mode: Band ${attempt.band ?? "?"} (${attempt.correctAnswers ?? 0}/40)`;
+        navBar.prepend(banner);
+    }
+}
+
+// ─── TIMER ───────────────────────────────────────────────────────────────────
+
+function renderTimer() {
+    const el = byId("timer");
+    if (el) el.textContent = formatTime(state.timeLeft);
+}
+
+function startTimer() {
+    clearInterval(timerInterval);
+    timerInterval = setInterval(() => {
+        if (!state.started || state.finished || state.paused) return;
+        state.timeLeft = Math.max(0, state.timeLeft - 1);
+        saveState();
+        renderTimer();
+        if (state.timeLeft === 0) finishReading("Time is up.");
+    }, 1000);
+}
+
+// ─── PASSAGES ────────────────────────────────────────────────────────────────
+
+function getPassageForQuestion(n) {
+    if (n <= 13) return 1;
+    if (n <= 26) return 2;
+    return 3;
+}
+
+function showPassage(n) {
+    state.currentPassage = n;
+    saveState();
+
+    document.querySelectorAll(".passage-screen").forEach(s => {
+        s.classList.toggle("active", Number(s.dataset.passage) === n);
+    });
+
+    const active = document.querySelector(`.passage-screen[data-passage="${n}"]`);
+    if (active) {
+        active.querySelector(".passage")?.scrollTo(0, 0);
+        active.querySelector(".questions")?.scrollTo(0, 0);
+    }
+
+    updateNavButtons();
+    updatePassageDots();
+}
+
+function updateNavButtons() {
+    byId("prevBtn").disabled            = state.currentPassage === 1;
+    byId("nextBtn").style.display       = state.currentPassage === 3 ? "none"         : "inline-block";
+    byId("finishBtn").style.display     = state.currentPassage === 3 ? "inline-block" : "none";
+}
+
+// ─── DOT GRID ────────────────────────────────────────────────────────────────
+
+function buildNumberGrid() {
+    const grid = byId("numberGrid");
+    grid.innerHTML = "";
+    for (let i = 1; i <= 40; i++) {
+        const dot = document.createElement("div");
+        dot.className = "dot";
+        dot.id        = `dot-${i}`;
+        dot.textContent = i;
+        dot.addEventListener("click", () => showPassage(getPassageForQuestion(i)));
+        grid.appendChild(dot);
+    }
+}
+
+function markDot(n, filled) {
+    byId(`dot-${n}`)?.classList.toggle("answered", filled);
+}
+
+function updatePassageDots() {
+    document.querySelectorAll(".dot").forEach(d => d.classList.remove("current-passage"));
+    for (let i = 1; i <= 40; i++) {
+        if (getPassageForQuestion(i) === state.currentPassage) {
+            byId(`dot-${i}`)?.classList.add("current-passage");
+        }
+    }
+}
+
+function syncAllDots() {
+    for (let i = 1; i <= 40; i++) {
+        const input = byId(`q${i}`);
+        markDot(i, input && input.value.trim() !== "");
+    }
+}
+
+// ─── INPUTS ──────────────────────────────────────────────────────────────────
+
+function setupInputs() {
+    document.querySelectorAll('input[id^="q"]').forEach(input => {
+        input.addEventListener("input", () => {
+            saveAnswer(input.id, input.value);
+            markDot(Number(input.id.replace("q", "")), input.value.trim() !== "");
+        });
+    });
+}
+
+// ─── NUMBERS TOGGLE ──────────────────────────────────────────────────────────
+
+function applyNumbersVisibility() {
+    const footer    = byId("numbersFooter");
+    const toggleBtn = byId("toggleNumbersBtn");
+    if (!footer || !toggleBtn) return;
+    footer.classList.toggle("is-hidden", !state.numbersVisible);
+    toggleBtn.textContent = state.numbersVisible ? "Hide Numbers" : "Show Numbers";
+}
+
+// ─── OVERLAY ─────────────────────────────────────────────────────────────────
+
+function showOverlay(title, message, buttonText, handler) {
+    // Show lockdown card (not rules card) for violations/resume
+    byId("rulesCard").style.display    = "none";
+    byId("lockdownCard").style.display = "";
+    byId("overlayTitle").textContent   = title;
+    byId("overlayMessage").textContent = message;
+    const btn = byId("lockdownActionBtn");
+    btn.textContent = buttonText;
+    btn.onclick     = handler;
+    byId("readingOverlay").style.display = "flex";
+}
+
+function hideOverlay() {
+    byId("readingOverlay").style.display = "none";
+    byId("rulesCard").style.display      = "";
+    byId("lockdownCard").style.display   = "none";
+}
+
+// ─── FULLSCREEN ──────────────────────────────────────────────────────────────
+
+async function requestFullscreen() {
+    if (document.fullscreenElement || !document.documentElement.requestFullscreen) return true;
+    try { await document.documentElement.requestFullscreen(); return true; }
+    catch (e) { console.warn("Fullscreen failed:", e); return false; }
+}
+
+async function startReading() {
+    state.started        = true;
+    state.finished       = false;
+    state.paused         = true;
+    state.currentPassage = 1;
+    saveState();
+    showPassage(1);
+
+    const ok = await requestFullscreen();
+    if (!ok && !document.fullscreenElement) {
+        showOverlay("Start Reading Test", "Fullscreen is required. Click the button to try again.", "Start Test", startReading);
+        return;
+    }
+
+    state.paused = false;
+    saveState();
+    hideOverlay();
+    startTimer();
+}
+
+async function resumeReading() {
+    const ok = await requestFullscreen();
+    if (!ok && !document.fullscreenElement) {
+        showOverlay("Exam Paused", "Fullscreen was not granted. Click to try again.", "Return to Test", resumeReading);
+        return;
+    }
+    state.paused = false;
+    saveState();
+    hideOverlay();
+}
+
+function setupFullscreenSecurity() {
+    document.addEventListener("fullscreenchange", () => {
+        if (!state.started || state.finished) return;
+
+        if (!document.fullscreenElement) {
+            state.violationCount++;
+            if (state.violationCount >= MAX_VIOLATIONS) {
+                saveState();
+                finishReading(`Reading test ended after ${MAX_VIOLATIONS} fullscreen violations.`);
+                return;
+            }
+            state.paused = true;
+            saveState();
+            showOverlay(
+                "Exam Paused",
+                `Stay in fullscreen. Warning ${state.violationCount}/${MAX_VIOLATIONS}.`,
+                "Return to Test",
+                resumeReading
+            );
+        } else if (!state.finished) {
+            state.paused = false;
+            saveState();
+            hideOverlay();
+        }
+    });
+}
+
+// ─── GRADING ─────────────────────────────────────────────────────────────────
+
+function grade() {
+    let score = 0;
+    for (let i = 1; i <= 40; i++) {
+        const input = byId(`q${i}`);
+        if (!input) continue;
+        const correct = normalize(input.value) === normalize(correctAnswers[`q${i}`]);
+        input.classList.remove("correct-input", "wrong-input");
+        if (input.value.trim()) input.classList.add(correct ? "correct-input" : "wrong-input");
+        if (correct) score++;
+    }
+    return score;
+}
+
+function getBand(score) {
+    if (score >= 39) return 9.0;
+    if (score >= 37) return 8.5;
+    if (score >= 35) return 8.0;
+    if (score >= 32) return 7.5;
+    if (score >= 30) return 7.0;
+    if (score >= 26) return 6.5;
+    if (score >= 23) return 6.0;
+    if (score >= 18) return 5.5;
+    if (score >= 16) return 5.0;
+    if (score >= 13) return 4.5;
+    if (score >= 11) return 4.0;
+    if (score >= 8)  return 3.5;
+    if (score >= 6)  return 3.0;
+    if (score >= 4)  return 2.5;
+    return 0.0;
+}
+
+
+
+function showResult(message, score, band) {
+    byId("readingResultOverlay")?.remove();
+
+    const overlay = document.createElement("div");
+    overlay.id = "readingResultOverlay";
+    overlay.style.cssText = `
+        position:fixed; inset:0;
+        background:rgba(0,0,0,0.82);
+        display:flex; justify-content:center; align-items:center;
+        z-index:100000; padding:20px;
+    `;
+
+    overlay.innerHTML = `
+        <div style="
+            width:min(92vw,380px);
+            background:white; border-radius:24px;
+            padding:34px 28px; text-align:center;
+            box-shadow:0 24px 60px rgba(0,0,0,0.28);
+        ">
+            <div style="font-size:12px;font-weight:800;letter-spacing:0.08em;color:#6b7280;text-transform:uppercase;margin-bottom:10px;">
+                Reading Test 1 Result
+            </div>
+            <div style="font-size:52px;font-weight:800;color:#0d8a5e;margin-bottom:10px;">
+                Band ${band}
+            </div>
+            <div style="font-size:20px;color:#111827;margin-bottom:8px;">
+                Score: <strong>${score}/40</strong>
+            </div>
+            <div style="font-size:14px;color:#6b7280;margin-bottom:24px;line-height:1.5;">
+                ${message}
+            </div>
+            <button id="backToDashboardBtn" style="
+                border:none; border-radius:12px; padding:14px 24px;
+                background:linear-gradient(135deg,#0d8a5e,#1dbf73);
+                color:white; font-size:15px; font-weight:700;
+                cursor:pointer; box-shadow:0 10px 25px rgba(13,138,94,0.25);
+            ">Back to Dashboard</button>
+        </div>
+    `;
+
+    document.body.appendChild(overlay);
+    byId("backToDashboardBtn").addEventListener("click", () => {
+        window.location.href = "dashboard.html";
+    });
+}
+
+
+function finishReading(message = "Test finished.") {
+    if (state.finished) return;
+
+    state.finished = true;
+    state.paused   = true;
+    saveState();
+
+    clearInterval(timerInterval);
+
+    const score = grade();
+    const band  = getBand(score);
+
+    if (document.fullscreenElement && document.exitFullscreen) {
+        document.exitFullscreen().catch(() => {});
+    }
+
+    // Save result to tracker
+    EmeraldTracker.recordSectionResult({
+        section:        "reading",
+        testId:         "test1",
+        correctAnswers: score,
+        totalQuestions: 40,
+        band:           band,
+        answers:        collectAllAnswers()
+    }).catch(console.error);
+
+    showResult(message, score, band);
+}
+
+// ─── INIT ────────────────────────────────────────────────────────────────────
+
+document.addEventListener("DOMContentLoaded", async () => {
+    hydratePassageTwoQuestions();
+    App.requireAuth();
+
+    if (window.EmeraldFirebaseBridge) {
+        await EmeraldFirebaseBridge.ready();
+    }
+
+    if (REVIEW_ATTEMPT_ID) {
+        buildNumberGrid();
+        showPassage(1);
+        const attempt = await loadReviewAttemptById(REVIEW_ATTEMPT_ID);
+        if (attempt) {
+            applyReviewAttempt(attempt);
+            updatePassageDots();
+        } else {
+            alert("Review attempt not found.");
+            window.location.href = "dashboard.html";
+        }
+        byId("prevBtn").addEventListener("click", () => {
+            if (state.currentPassage > 1) showPassage(state.currentPassage - 1);
+        });
+        byId("nextBtn").addEventListener("click", () => {
+            if (state.currentPassage < 3) showPassage(state.currentPassage + 1);
+        });
+        byId("toggleNumbersBtn").addEventListener("click", () => {
+            state.numbersVisible = !state.numbersVisible;
+            applyNumbersVisibility();
+        });
+        applyNumbersVisibility();
+        return;
+    }
+
+  
+    if (state.finished) {
+        Object.assign(state, defaultState());
+        saveState();
+    }
+
+    buildNumberGrid();
+    restoreAnswers();
+    syncAllDots();
+    showPassage(state.currentPassage || 1);
+    renderTimer();
+    setupInputs();
+    setupFullscreenSecurity();
+    startTimer();
+
+    byId("prevBtn").addEventListener("click", () => {
+        if (state.currentPassage > 1) showPassage(state.currentPassage - 1);
+    });
+
+    byId("nextBtn").addEventListener("click", () => {
+        if (state.currentPassage < 3) showPassage(state.currentPassage + 1);
+    });
+
+    byId("finishBtn").addEventListener("click", () => finishReading("Test finished."));
+
+    byId("toggleNumbersBtn").addEventListener("click", () => {
+        state.numbersVisible = !state.numbersVisible;
+        saveState();
+        applyNumbersVisibility();
+    });
+
+    applyNumbersVisibility();
+
+   
+    byId("overlayActionBtn").addEventListener("click", startReading);
+
+   
+    if (state.started && !state.finished) {
+        showOverlay(
+            "Exam Paused",
+            `Continue the test in fullscreen. You have ${MAX_VIOLATIONS - state.violationCount} chance(s) left.`,
+            "Continue Test",
+            resumeReading
+        );
+    } else {
+        
+        byId("readingOverlay").style.display = "flex";
+        byId("rulesCard").style.display      = "";
+        byId("lockdownCard").style.display   = "none";
+    }
+});
+</script>
+
+</body>
+</html>
