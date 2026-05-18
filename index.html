@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Emerald Login</title>
+    <link rel="stylesheet" href="csss/styles.css">
+    <link rel="icon" type="image/png" href="logo.jpg">
+</head>
+<body>
+
+<div class="auth-container">
+<div class="auth-card">
+    <img src="logo.jpg" class="logo" alt="Emerald logo" />
+
+    <p class="auth-eyebrow" style="text-transform: uppercase;">Emerald Learning Centre</p>
+    <h2>Welcome Back</h2>
+    <p class="auth-subtitle">Sign in to continue your IELTS practice.</p>
+
+    <div class="auth-form">
+        <input type="text" id="nameInput" placeholder="Username" autocomplete="off" autocorrect="off" autocapitalize="none" spellcheck="false" />
+
+        <input
+            type="password"
+            id="passwordInput"
+            placeholder="Password"
+            autocomplete="current-password"
+            autocorrect="off"
+            autocapitalize="none"
+            spellcheck="false"
+        />
+
+        <div class="auth-row" style="display: flex; justify-content: space-between; align-items: center; margin-top: -5px; margin-bottom: 20px;">
+            <label style="display: flex; align-items: center; gap: 8px; color: #fff; font-size: 0.85rem; cursor: pointer; white-space: nowrap;">
+                <input type="checkbox" id="showPasswordBtn" onchange="document.getElementById('passwordInput').type = this.checked ? 'text' : 'password'"> 
+                Show password
+            </label>
+            <a href="#" id="forgotPasswordLink" class="auth-inline-link" style="color: #4ade80; font-size: 0.85rem; text-decoration: none; font-weight: bold;">Forgot password?</a>
+        </div>
+
+        <p id="errorText" class="error"></p>
+
+        <button id="loginBtn">Login</button>
+
+        <button id="createAccountBtn" class="auth-secondary-btn" type="button" onclick="alert('Please ask your teacher or admin to create an account for you.')">
+            Create Account
+        </button>
+
+        <p class="auth-switch-text" style="text-align: center; margin-top: 15px; color: #e0e0e0; font-size: 0.9rem;">
+            Don't have an account?<br>
+            <span class="auth-inline-note" style="display: block; margin-top: 5px;">Ask your teacher or admin to create one for you.</span>
+        </p>
+
+    </div>
+</div>
+</div>
+
+<script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore-compat.js"></script>
+<script src="jss/core.js"></script>
+<script src="jss/firebase-init.js"></script>
+<script src="jss/emerald-tracker.js"></script>
+<script src="jss/emerald-firestore-store.js"></script>
+<script src="jss/emerald-firebase-bridge.js"></script>
+<script src="jss/auth-config.js"></script>
+<script src="jss/auth.js"></script>
+
+</body>
+</html>
