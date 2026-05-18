@@ -5,6 +5,77 @@
     <title>Emerald Login</title>
     <link rel="stylesheet" href="csss/styles.css">
     <link rel="icon" type="image/png" href="logo.jpg">
+    
+    <style>
+        /* Custom Checkbox Styling */
+        .checkbox-container {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #fff;
+            font-size: 0.85rem;
+            cursor: pointer;
+            white-space: nowrap;
+            position: relative;
+            user-select: none;
+            line-height: 1; /* Ensures perfect vertical centering with the text */
+        }
+
+        /* Hide the default browser checkbox */
+        .checkbox-container input {
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+            height: 0;
+            width: 0;
+        }
+
+        /* Create a custom beautiful square */
+        .checkmark {
+            height: 16px;
+            width: 16px;
+            background-color: transparent;
+            border: 1.5px solid #4ade80; /* Matches your accent green */
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s ease-in-out;
+        }
+
+        /* Add a subtle hover effect */
+        .checkbox-container:hover input ~ .checkmark {
+            background-color: rgba(74, 222, 128, 0.15);
+        }
+
+        /* When the checkbox is checked, fill it with the theme green */
+        .checkbox-container input:checked ~ .checkmark {
+            background-color: #4ade80;
+            border-color: #4ade80;
+        }
+
+        /* Create the checkmark icon (hidden when not checked) */
+        .checkmark:after {
+            content: "";
+            position: absolute;
+            display: none;
+        }
+
+        /* Show the checkmark when checked */
+        .checkbox-container input:checked ~ .checkmark:after {
+            display: block;
+        }
+
+        /* Style the checkmark icon */
+        .checkbox-container .checkmark:after {
+            width: 4px;
+            height: 8px;
+            border: solid #11422a; /* Dark green contrast for the tick */
+            border-width: 0 2px 2px 0;
+            transform: rotate(45deg);
+            margin-bottom: 2px; /* Optical adjustment to center the tick */
+        }
+    </style>
 </head>
 <body>
 
@@ -30,8 +101,9 @@
         />
 
         <div class="auth-row" style="display: flex; justify-content: space-between; align-items: center; margin-top: -5px; margin-bottom: 20px;">
-            <label style="display: flex; align-items: center; gap: 8px; color: #fff; font-size: 0.85rem; cursor: pointer; white-space: nowrap;">
+            <label class="checkbox-container">
                 <input type="checkbox" id="showPasswordBtn" onchange="document.getElementById('passwordInput').type = this.checked ? 'text' : 'password'"> 
+                <span class="checkmark"></span>
                 Show password
             </label>
             <a href="#" id="forgotPasswordLink" class="auth-inline-link" style="color: #4ade80; font-size: 0.85rem; text-decoration: none; font-weight: bold;">Forgot password?</a>
