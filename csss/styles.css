@@ -1537,3 +1537,195 @@ body.dashboard-shell-body {
     opacity: 1;
     transform: translateY(0);
 }
+
+
+
+
+
+
+
+
+
+
+html, body {
+    width: 100%;
+    overflow-x: hidden;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+* {
+    max-width: 100%;
+}
+
+
+@media (max-width: 1200px) {
+
+    .dashboard-shell {
+        grid-template-columns: 240px 1fr;
+    }
+
+    .dashboard-panel {
+        padding: 24px;
+    }
+
+    .overview-hero,
+    .dashboard-hero-card {
+        grid-template-columns: 1fr;
+    }
+
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+@media (max-width: 900px) {
+
+    
+    .dashboard-shell {
+        grid-template-columns: 1fr;
+    }
+
+    .dashboard-sidebar {
+        border-right: none;
+        border-bottom: 1px solid var(--dash-line);
+    }
+
+    .dashboard-panel {
+        padding: 20px;
+    }
+
+    
+    .dashboard-topbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .dashboard-top-actions {
+        width: 100%;
+        flex-wrap: wrap;
+    }
+
+    .panel-action-btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    
+    .dashboard-card-grid,
+    .quick-grid,
+    .exam-grid,
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-stats,
+    .overview-badges {
+        grid-template-columns: 1fr;
+    }
+
+    .buttons-grid {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .main-btn {
+        width: 100%;
+    }
+}
+
+@media (max-width: 600px) {
+
+    body {
+        font-size: 14px;
+    }
+
+    .auth-container {
+        padding: 16px;
+    }
+
+    .auth-card {
+        width: 100%;
+        padding: 28px 20px;
+        border-radius: 18px;
+    }
+
+    .auth-card h2 {
+        font-size: 28px;
+    }
+
+    .dashboard-panel {
+        padding: 14px;
+    }
+
+    .dashboard-topbar {
+        padding: 18px;
+        border-radius: 18px;
+    }
+
+    .dashboard-topbar h2 {
+        font-size: 22px;
+    }
+
+    .overview-hero,
+    .section-panel,
+    .coming-card {
+        padding: 20px;
+        border-radius: 20px;
+    }
+
+    .overview-hero h3,
+    .section-head h3,
+    .coming-card h3 {
+        font-size: 24px;
+    }
+
+    .quick-link-card,
+    .feature-card,
+    .exam-card {
+        padding: 18px;
+        border-radius: 18px;
+    }
+
+    .feature-icon,
+    .quick-link-icon {
+        width: 48px;
+        height: 48px;
+        font-size: 20px;
+    }
+
+    .modal-card {
+        width: 95%;
+    }
+
+    .top-bar {
+        width: 95%;
+        flex-direction: column;
+        gap: 14px;
+    }
+
+    .top-actions {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .top-btn {
+        width: 100%;
+    }
+
+    /* Watermark smaller */
+    body::after {
+        width: 300px;
+        height: 300px;
+    }
+}
+
+
+
+
+
+
