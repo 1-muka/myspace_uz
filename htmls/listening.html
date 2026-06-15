@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listening - Emerald</title>
+    <link rel="stylesheet" href="../csss/styles.css">
+    <link rel="icon" href="../logo.jpg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+<div class="top-bar">
+    <div class="welcome-text">Listening Practice</div>
+    <div class="top-actions">
+        <button class="top-btn" onclick="goBack()">⬅ Back</button>
+        <button class="top-btn" id="logoutBtn">🚪 Logout</button>
+    </div>
+</div>
+
+<div class="dashboard-main">
+    <div class="buttons-grid">
+        <button class="main-btn" onclick="openModal('test1')">🎧 EXAM 1</button>
+        <button class="main-btn" onclick="openModal('test2')">🎧 EXAM 2</button>
+        <button class="main-btn" onclick="openModal('test3')">🎧 EXAM 3</button>
+        <button class="main-btn" onclick="openModal('test4')">🎧 EXAM 4</button>
+        <button class="main-btn" onclick="openModal('test5')">🎧 EXAM 5</button>
+        <button class="main-btn" onclick="openModal('test6')">🎧 EXAM 6</button>
+        <button class="main-btn" onclick="openModal('test7')">🎧 EXAM 7</button>
+        <button class="main-btn" onclick="openModal('test8')">🎧 EXAM 8</button>
+        <button class="main-btn" onclick="openModal('test9')">🎧 EXAM 9</button>
+        <button class="main-btn" onclick="openModal('test10')">🎧 EXAM 10</button>
+    </div>
+</div>
+
+<div id="modal" class="modal hidden">
+    <div class="modal-card">
+        <h2>Start Listening Test</h2>
+
+        <input type="text" id="nameInput" placeholder="Your Name">
+        <input type="password" id="accessCodeInput" placeholder="Access Code">
+
+        <p class="agreement-text">
+            By starting this test, I agree to take the exam honestly.
+            I will not cheat, copy, or share any materials.
+        </p>
+
+        <p class="type-instruction">Type this exactly:</p>
+        <div class="required-phrase" id="requiredPhrase">
+            I agree to take the test honestly and will not cheat or share materials.
+        </div>
+        <input type="text" id="agreementInput" placeholder="Type the sentence exactly">
+
+        <p id="modalError" class="error"></p>
+
+        <button onclick="startTest()">Start Test</button>
+    </div>
+</div>
+
+<script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore-compat.js"></script>
+<script src="../jss/core.js"></script>
+<script src="../jss/firebase-init.js"></script>
+<script src="../jss/emerald-tracker.js"></script>
+<script src="../jss/emerald-firestore-store.js"></script>
+<script src="../jss/emerald-firebase-bridge.js"></script>
+<script src="../jss/listening-entry.js"></script>
+
+</body>
+</html>
