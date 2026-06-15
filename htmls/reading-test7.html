@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reading Test 7</title>
+    <link rel="stylesheet" href="../csss/reading-test.css">
+    <link rel="stylesheet" href="../csss/reading-test7.css">
+    <link rel="icon" href="../logo.jpg">
+</head>
+<body>
+
+<div class="top-bar">
+    <div>Reading Test 7</div>
+    <div class="time">Time Left: <span id="timer">60:00</span></div>
+</div>
+
+<div id="readingOverlay" class="fullscreen-overlay">
+    <div id="rulesCard" class="overlay-card" style="max-width:540px;text-align:left;padding:34px 30px;">
+        <div style="
+            display:inline-flex;padding:7px 12px;border-radius:999px;
+            background:#e9faf3;color:#15543f;font-size:12px;font-weight:800;
+            letter-spacing:0.08em;text-transform:uppercase;margin-bottom:14px;">
+            Before You Start
+        </div>
+        <h2 style="margin:0 0 6px;font-size:26px;color:#111827;">Reading Test Rules</h2>
+        <p style="margin:0 0 18px;font-size:14px;color:#6b7280;">Read the rules carefully before starting.</p>
+
+        <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px;">
+            <span style="padding:9px 14px;border-radius:999px;background:#e9faf3;color:#10342a;font-size:13px;font-weight:700;">60 minutes</span>
+            <span style="padding:9px 14px;border-radius:999px;background:#e9faf3;color:#10342a;font-size:13px;font-weight:700;">40 questions</span>
+            <span style="padding:9px 14px;border-radius:999px;background:#e9faf3;color:#10342a;font-size:13px;font-weight:700;">3 passages</span>
+        </div>
+
+        <ul style="margin:0 0 22px 18px;color:#425266;line-height:1.8;font-size:14px;">
+            <li>The test must stay in fullscreen at all times.</li>
+            <li>Do not switch tabs or leave the exam window.</li>
+            <li>You have only 3 violation warnings before the test ends.</li>
+            <li>Use the navigation buttons to move between passages.</li>
+            <li>Answers are saved automatically as you type.</li>
+            <li>Click Finish Test on the last passage when done.</li>
+        </ul>
+
+        <button id="overlayActionBtn" class="overlay-btn" style="width:100%;padding:15px;font-size:16px;">
+            Start Test in Fullscreen
+        </button>
+    </div>
+
+    <div id="lockdownCard" class="overlay-card" style="display:none;">
+        <div class="overlay-label" id="overlayTitle">Exam Paused</div>
+        <h2 style="margin:12px 0 10px;font-size:26px;color:#111827;">Return to Fullscreen</h2>
+        <p id="overlayMessage" style="margin:0 0 22px;font-size:15px;color:#4b5563;line-height:1.6;">
+            Stay in fullscreen to continue the test.
+        </p>
+        <button id="lockdownActionBtn" class="overlay-btn" style="width:100%;">Return to Test</button>
+    </div>
+</div>
+
+<main class="reading-stage">
+
+    <section class="reading-container passage-screen active" data-passage="1">
+        <div class="passage">
+            <h2>READING PASSAGE 1</h2>
+            <p><b>You should spend about 20 minutes on Questions 1-13, which are based on Reading Passage 1 below.</b></p>
+
+            <h3>Book review: <em>Triumph of the City</em></h3>
+
+            <p><em>Triumph of the City</em>, by Edward Glaeser, is a readable hymn of praise to an invention as vast and strange as the city. More than half the global population already lives in urban areas, and Glaeser says congestion and poverty can be signs of growth, energy and aspiration.Cities are our best and brightest hope. </p>
+<p>This idea has had more than two hundred years of resistance. Not long after the Industrial 
+Revolution began in Britain, the Romantic poets turned away from the smoke and factories 
+of their cities to celebrate the air and light of untouched nature. In 19th-century America, the 
+writer Henry David Thoreau retreated to the wilderness of Walden Pond to live the solitary, 
+simple life, and convinced generations of Americans that cities were bad and nature was 
+good. </p>
+<p>They had, Glaeser admits, a point. The early industrial cities were dirty, since they lacked 
+efficient waste disposal systems, and disease spread rapidly among the population. But 
+more importantly they were profitable, and there were enormous commercial incentives to 
+make them work, as well as political ones. Their transformation could be achieved at a 
+stroke: in the second half of the 19th century, the French Emperor Napoleon III gave Baron 
+Haussmann unrestricted power to turn the slum-infested city of Paris into one of the wonders 
+and delights of the modern world. Or the transformation could be done by trial and error. 
+Glaeser gives a brilliant account of the stop-start progression of New York to its late 20th
+century position as the cultural and economic centre of the world. Either way, Paris, New 
+York and other cities developed because they were truly effective markets of ideas and 
+innovation.</p>
+<p>For these and many other reasons, we should not be so upset by the spectacle of urban 
+poverty. The poor flock to cities in the hope of becoming richer (which, by and large, they 
+do). They also reinvigorate the economy of the city. It is folly to drive them away by forcing 
+property prices to soar with unreasonable planning regulations. Instead, cities should build 
+more houses and thereby hold property prices in check. </p>
+<P>It can go wrong, of course. In Glaeser's view, this is primarily because municipal authorities 
+fail to understand the principal virtues of their cities. The heart of Paris, as many Parisians 
+say, is turning into a museum because of the desire to preserve Baron Haussmann's 19th
+century boulevards. Glaeser defends their preservation, but argues that in the 1950s the 
+French made a mistake in establishing a huge high-rise commercial development  - La Défense - on the outskirts of the city. Far better, he says, to have turned the central area 
+of Montparnasse into a new commercial district. This would have revitalised much of the city 
+centre without destroying its fabric. In India, Mumbai could save itself from ever-more 
+inefficient sprawl over the surrounding area simply by relaxing the rules presently imposed 
+on the height of new constructions.</P>
+
+<p>In America, it is the suburbs that have proved to be the real disaster. Glaeser is repentant on 
+this subject himself. He moved to the suburbs when he had children. His entirely legitimate 
+excuse is that the government made him (and millions like him) do it. By under-taxing petrol 
+and imposing tight planning restrictions on inner cities that drove up the cost of property, it 
+made flight to the suburbs more or less inevitable for the middle classes.</p>
+
+<p>This is a disaster because nothing is more inefficient than a suburb. Suburbanites mingle 
+less, and lose the face-to-face contact that makes being an urbanite so much more creative. 
+Moreover, houses are costlier to heat and cool than flats, and suburbanites drive thousands 
+more miles per year than city dwellers. Every aspect of life involves more consumption. This 
+leads to the strongest and newest argument in favour of cities — they are good for the 
+environment. To live in the country or the suburbs is to have a vastly larger carbon footprint 
+than any urbanite.</p>
+<p>Full of characters and accessible information, this is a tremendous book, not least because, 
+like me, you will find yourself constantly seeking reasons to disagree. Like the poor in the 
+city, this is a sign of success. If you hate the city and get moist-eyed at the thought of the 
+country then, one way or another, Glaeser is the man you will have to take on. 
+</p>
+</div>
+
+        <div class="questions">
+            <h3>Questions 1-8</h3>
+            <p><b>Complete the notes below.</b></p>
+            <p>Choose <b>ONE WORD ONLY</b> from the passage for each answer.</p>
+
+            <h3 class="center-title">Cities</h3>
+            <div class="question">Problems with early cities: dirt and <input id="q1"></div>
+            <div class="question">There were commercial and <input id="q2"> reasons for improving them.</div>
+            <div class="question">Urban poverty is not a major problem because poor people generally get <input id="q3"></div>
+            <div class="question">Poor people help to develop the urban <input id="q4"></div>
+            <div class="question">The centre of Paris is becoming a <input id="q5"></div>
+            <div class="question">In the US, the middle classes moved to suburbs partly because of high <input id="q6"> prices in inner cities.</div>
+            <div class="question">One disadvantage of suburbs is less personal <input id="q7"></div>
+            <div class="question">Another disadvantage is increased <input id="q8"> of resources, which damages the environment.</div>
+
+            <h3>Questions 9-13</h3>
+            <p><b>Do the following statements agree with the information given in Reading Passage 1?</b></p>
+            <p>Write <b>TRUE</b>, <b>FALSE</b> or <b>NOT GIVEN</b>.</p>
+
+            <div class="question">9. Glaeser believes that congestion and poverty in some modern cities indicate serious problems. <input id="q9"></div>
+            <div class="question">10. Henry David Thoreau discussed the ideas of the Romantic poets in his work. <input id="q10"></div>
+            <div class="question">11. Emperor Napoleon III was influenced by the complaints of poor people living in Paris. <input id="q11"></div>
+            <div class="question">12. Strict planning regulations may be beneficial for a city's development. <input id="q12"></div>
+            <div class="question">13. Glaeser argues that the location of commercial development at La Defense was a bad idea. <input id="q13"></div>
+        </div>
+    </section>
+
+    <section class="reading-container passage-screen" data-passage="2">
+        <div class="passage">
+            <h2>READING PASSAGE 2</h2>
+            <p><b>You should spend about 20 minutes on Questions 14-26, which are based on Reading Passage 2 below.</b></p>
+
+            <h3>Skyscraper Farming</h3>
+            <p><em>With a global food crisis predicted, some scientists argue that vertical farming could radically transform food production.</em></p>
+<p><b>A</b>Today’s environment scietists are in no doubt that world’s resources of fertile soil are 
+rapidly deteriorating, and new land for agriculture is becoming ever more sparse Intensive 
+farming urbanization, desertification and sea-level rises are all putting growing pressure on the 
+planers agricultural land and therefore o food supplies. Currently 24 per cent of the world’s 
+11.5 million hectares of cultivated land has already undergone human-induced soil degradation 
+particularly through erosion, according to a recent study by the UK Government Office for 
+Science.  </p>
+<p><b>B</b> The global population is expected to exceed nine billion by 2050 – up a third from 
+today’s level and studies suggest that food production will have to go up by 70  per cent if we 
+are to feed all of those new mouths. This means that scientists will have to develop new ways 
+of growing crops if we are to avoid a humanitarian crisis. Indeed, UK food and Agriculture 
+Organization figures suggest that the number of undernourished people is already growing. And 
+with escalating climate change, crop yields in many areas have been protected. </p>
+<p><b>C</b>With this in mind, some scientists and agricultural experts are advocating an innovative 
+alternative to traditional farming whereby skyscrapers packed with shelf-based systems for 
+growing vegetables on each story – known as ‘ vertical farms’ – could hold the key to 
+revolutionizing agriculture. Columbia University professor Dickson Despommier claims that 
+vertical farming could boost crop yields many times over. A single 20-storey vertical farm could 
+theoretically feed 50 000 people, according to Despommier. And if the theory translates into 
+reality as proposed, 160 skyscraper-sized vertical farms could feed the entire population of New 
+York City, while 180 would be needed to feed London, 289 to feed Cairo and 302 to feed 
+Kolkata  </p>
+<p><b>D</b>It’s a compelling vision, and one that has already bee put into practice in Asia, Albeit on a 
+smaller scale ‘But there are problems such as initial investment and operating costs are too 
+great.’ says a spokesman for Japan’s Ministry of Agriculture. Forestry and Fisheries 
+Nevertheless Tokyo-based mushroom producer Hokulo Corporation is a model example of how 
+a vertical farm can be profitable. With 28 vertical mushroom farms operating across the 
+country, it produces some 68,000 tons of mushrooms annually. Vertical mushroom farms have 
+more advantages than ground-level farms, ‘says Hokuto’s Ted Yamanoko. Yamanoko goes on to 
+highlight the relative cost-effectiveness of his organization’s farming practices together with 
+reduced emissions of greenhouse gases.  
+</p>
+<p><b>E</b>And the impact vertical farms could extend beyond feeding established urban 
+populations. Despommier sees them as being capable of helping centers of displaced persons – 
+such as refugee camps – in much the same way that Mobile Army Surgical Hospital (MASH) 
+units are deployed in emergency situations. “Developing a emergency-response system for 
+crop production inside specially constructed modular and highly transportable greenhouses 
+would allow for humanitarian interventions, at least for refuges that are forced out of their 
+countries by political turmoil’, he says. ‘If you have three or four storeys of food already growing 
+some place, they could become mobile units that could be picked up by helicopters and 
+dropped into the middle of a crisis zone. The food would be ready to pick and eat. It could be 
+designed to supply people with all the nutrition they need to make it through the crisis.’ </p>
+<p><b>F</b>But it isn’t only about increasing food production. Despommier is concerned about the harm which farm has done to the world’s landscape over a relatively short time span, particularly the elimination of hardwood forests. ‘Farming is only 12,000 years old.’ He points out ‘We have been a species for over 200,000 years. Producing food in tall, buildings will allow us for the first time to feed everyone on earth and still return land to its original ecological function.’ Natalie Jeremijenko, associate professor at New York University, agrees. ‘The challenge that we have now is how we can design urban agriculture systems that not only reduce food miles, but also improve the world’s ecosystems.’ she says. By significantly reducing the amount of land required for food production, vertical farms could help to enrich biodiversity. And according to Jeremijenko, this can, in turn, help to improve the productivity of conventional farms, as the health of agricultural land is often tied to the health of the surrounding ecosystems. Furthermore, vertical farming could dramatically cut the utilization of fossil fuels. And also reduce geopolitical tensions in countries where poor farming conditions cause conflict and malnutrition.   </p>
+</div>
+
+        <div class="questions">
+            <h3>Questions 14-19</h3>
+            <p><b>Reading Passage 2 has six paragraphs, A-F.</b></p>
+            <p>Choose the correct heading for each paragraph from the list of headings below.</p>
+
+            <div class="heading-list">
+                <h4>List of Headings</h4>
+                <p><b>i</b> Potential production capacities of vertical farms</p>
+                <p><b>ii</b> Opposition to new ideas about food production</p>
+                <p><b>iii</b> A successful application of vertical farming technology</p>
+                <p><b>iv</b> The potential to provide urgent relief</p>
+                <p><b>v</b> The original inspiration for vertical farming</p>
+                <p><b>vi</b> Various environmental benefits of vertical farming</p>
+                <p><b>vii</b> An increasing problem for farmers worldwide</p>
+                <p><b>viii</b> A return to traditional farming methods</p>
+                <p><b>ix</b> A rising demand for food</p>
+            </div>
+
+            <div class="question">14. Paragraph A <input id="q14"></div>
+            <div class="question">15. Paragraph B <input id="q15"></div>
+            <div class="question">16. Paragraph C <input id="q16"></div>
+            <div class="question">17. Paragraph D <input id="q17"></div>
+            <div class="question">18. Paragraph E <input id="q18"></div>
+            <div class="question">19. Paragraph F <input id="q19"></div>
+
+            <h3>Questions 20-22</h3>
+            <p><b>Complete the sentences below.</b></p>
+            <p>Choose <b>NO MORE THAN TWO WORDS</b> from the passage for each answer.</p>
+
+            <div class="question">20. A UK government study found that <input id="q20"> is a significant factor contributing to worldwide levels of soil degradation.</div>
+            <div class="question">21. Disadvantages of vertical farming projects include the expense of setting them up, as well as their high <input id="q21"></div>
+            <div class="question">22. <input id="q22"> could potentially be used to take vertical farming facilities to areas where there is a critical food shortage.</div>
+
+            <h3>Questions 23-26</h3>
+            <p><b>Look at the following statements and the list of people below.</b></p>
+            <p>Match each statement with the correct person, A, B or C.</p>
+
+            <div class="question">23. Vertical farming can have financial benefits. <input id="q23"></div>
+            <div class="question">24. Traditional farming has had a negative effect on the natural world. <input id="q24"></div>
+            <div class="question">25. Vertical farming could dramatically increase world food production. <input id="q25"></div>
+            <div class="question">26. Traditional farms may benefit from wider use of vertical farming. <input id="q26"></div>
+
+            <div class="people-list">
+                <h4>List of people</h4>
+                <p><b>A</b> Dickson Despommier</p>
+                <p><b>B</b> Ted Yamanoko</p>
+                <p><b>C</b> Natalie Jeremijenko</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="reading-container passage-screen" data-passage="3">
+        <div class="passage">
+            <h2>READING PASSAGE 3</h2>
+            <p><b>You should spend about 20 minutes on Questions 27-40, which are based on Reading Passage 3 below.</b></p>
+
+            <div class="whale-title" aria-label="Whale culture">
+                <div class="whale-mark"></div>
+                <h3>WHALE CULTURE</h3>
+            </div>
+
+            <p><b>A</b>Most social scientists stubbornly resist the idea that animals have culture. Even such advanced cetacean mammals as whales and dolphins clearly don’t have art, literature, or architecture. But patient observation over many years has begun to reveal behaviours that can only been learnt from other whales. And that, say whale biologists, constitutes culture.</p>
+<p><b>B</b> So far, humpback and killer whales provide the best evidence of culture in cetaceans, and the song of male humpback is among the most striking examples. Humpback populations in different oceans sing different songs, but within the same ocean they all stick to the same one. However, during the breeding season the sounds change, as it appears that females are drawn to novel songs. One male might add an extra set groans; another might drop a series of grunts. Soon all the other males have altered their own rendition to incorporate the changes until they are once again singing the same song. Since this occurs among thousands of whales spread across a vast part of the planet, the change cannot be in response to any factor in the animals’s environment. The latest version of the song can be learnt only from other whales – almost certainly by imitation.</p>
+<p><b>C</b>Culture plays an even bigger part in the life of killer whales. Nowhere is this more obvious than along the north-west coast of America, where killer whales are split into two distinct populations – ‘residents’ and ‘transients’. They live in the same stretch of water, but they don’t mingle. In effect, they belong to two quite separate cultures. Residents live in stable groups, or ‘pods’, made up of two or three mothers and their offspring – perhaps 20 whales in all. Calves stay with their mothers throughout adulthood, and in many years of observation no one has ever seen a whale switch pods. Transients travel in smaller, more changeable groups of between three and six.</p>
+<p><b>D</b>One of the most obvious distinctions between the transient and resident societies is the way they impart information. Killer whales detect prey with a range of echo-locating clicks, but converse with a vocabulary of squeaks, whistles and whines. Transients have only a few such calls, and all transient societies share the same ones. Residents have a much more extensive repertoire, and each family group has its own unique and distinctive set of calls. Despite regular interaction between them, each resident pod sticks firmly to its own dialect. Research shows these dialects are maintained for at least 40 years.</p>
+<p><b>E</b>To qualify as part of killer whale culture, dialects must be learnt from other members of the pod. Animals with different dialects share the same waters, so the variation can’t be a product of physical environment. ‘And we can throw out the notion that dialects are inherited,’ says Lance Barrett Lennard of the University of British Columbia. He has spent the past seven years analysing DNA from 270 whales. His paternity tests reveal the female killer whales invariably attract mates from outside their own pod – males with a very different dialect. If dialects were programmed by genetics, call patterns from both father and mother would be passed on to the calf. ‘A calf uses the calls of its maternal pod very precisely. There’s no input from the father,’ says Barrett Lennard.</p>
+<p><b>F</b>The question still remains – is this culture? It is, according to Frans de Waal of Emory University in Atlanta, who argues that culture is just another biological adaptation that has evolved in many creatures. One benefit of viewing culture in this way is that you can start to understand how and why it might have arisen in these creatures. Whales have several biological attributes that give them an advantage in social learning. Apart from their advanced mental abilities, they are adept at recognising sounds: ideal for communicating in the marine environment. Many species spend years rearing their offspring, and live in small, stable, multi-generational societies, a social system that provides ample opportunity for teaching and learning.</p>
+<p><b>G</b>But why have cetaceans evolved the ability to learn from other group members? Experts in whale biology believe that ecological factors and the need to adapt to sudden changes in the environment played a large part in the emergence of culture. Although the ocean is a relatively stable habitat in many ways, it is highly changeable in one crucial respect – the availability of food. One moment there might be a plentiful supply of fish, the next they’ve disappeared. When that happens, the past experience of senior members of the group – and the ability to share this knowledge – is a huge asset. The dialects of killer whales allow members of the group to identify each other, enabling them to share information about food hot spots. Among resident killer whales, it is also allow females to avoid inbreeding by picking out a mate with a strange dialect from outside their pod, says Barrett – Lennard.</p>
+<p><b>H</b>The importance of sharing information seems to have led to biological changes in at least some species of whale. Female killer whales, like humans, are very unusual in that they live up to quarter of century after they have had their last descendants. And what whale matriarchs offer is the most important thing of all – cultural knowledge, vital for the group’s survival, passed directly from one generation to the next.</p>
+</div>
+
+        <div class="questions">
+            <h3>Questions 27-31</h3>
+            <p><b>Do the following statements agree with the views of the writer in Reading Passage 3?</b></p>
+            <p>Write <b>YES</b>, <b>NO</b> or <b>NOT GIVEN</b>.</p>
+
+            <div class="question">27. Resident killer whales appear to remain with their maternal group for life. <input id="q27"></div>
+            <div class="question">28. Resident killer whales have a more restricted range of calls than transients. <input id="q28"></div>
+            <div class="question">29. There is a vocabulary of sounds which is common to all transient killer whales. <input id="q29"></div>
+            <div class="question">30. Resident killer whales share the dialects of other resident communities living in the same waters. <input id="q30"></div>
+            <div class="question">31. The dialects of transient killer whales remain constant over time. <input id="q31"></div>
+
+            <h3>Questions 32-34</h3>
+            <p><b>Complete the summary below.</b></p>
+            <p>Choose <b>NO MORE THAN TWO WORDS</b> from the passage for each answer.</p>
+
+            <div class="question">Resident killer whales live in fixed family groups, known as <input id="q32">. The same areas of ocean contain many groups with varying dialects, so calls could not have emerged as a result of the whales' <input id="q33">. Barrett-Lennard's tests reveal that a calf communicates with the dialect of the group to which its <input id="q34"> belongs.</div>
+
+            <h3>Questions 35-37</h3>
+            <p><b>Choose THREE letters, A-F.</b></p>
+            <p>Which THREE of the following features of whales are mentioned in the passage?</p>
+
+            <p><b>A</b> intelligence</p>
+            <p><b>B</b> physical strength</p>
+            <p><b>C</b> sensitivity to sound</p>
+            <p><b>D</b> prolonged life span</p>
+            <p><b>E</b> lengthy period of fertility</p>
+            <p><b>F</b> adaptability to variety of foods</p>
+
+            <div class="question">35. <input id="q35"></div>
+            <div class="question">36. <input id="q36"></div>
+            <div class="question">37. <input id="q37"></div>
+
+            <h3>Questions 38-40</h3>
+            <p><b>Reading Passage 3 has eight paragraphs, A-H.</b></p>
+            <p>Which paragraph contains the following information?</p>
+
+            <div class="question">38. An example of the kind of information passed by whales to each other. <input id="q38"></div>
+            <div class="question">39. A reference to variations in communication styles between different cultures within one species. <input id="q39"></div>
+            <div class="question">40. Ways in which the skills of whales are favourable for development of culture. <input id="q40"></div>
+        </div>
+    </section>
+
+</main>
+
+<div class="reading-nav-bar">
+    <button id="toggleNumbersBtn" class="nav-btn-read toggle-numbers-btn" type="button">Hide Numbers</button>
+    <div class="nav-actions">
+        <button id="prevBtn" class="nav-btn-read" type="button">Previous Passage</button>
+        <button id="nextBtn" class="nav-btn-read" type="button">Next Passage</button>
+        <button id="finishBtn" class="nav-btn-read finish" type="button" style="display:none;">Finish Test</button>
+    </div>
+</div>
+
+<footer id="numbersFooter" class="exam-footer">
+    <div class="number-grid" id="numberGrid"></div>
+</footer>
+
+<script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore-compat.js"></script>
+<script src="../jss/core.js"></script>
+<script src="../jss/firebase-init.js"></script>
+<script src="../jss/emerald-tracker.js"></script>
+<script src="../jss/emerald-firestore-store.js"></script>
+<script src="../jss/emerald-firebase-bridge.js"></script>
+<script src="../jss/reading-test7.js"></script>
+
+</body>
+</html>

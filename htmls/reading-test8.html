@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reading Test 8</title>
+    <link rel="stylesheet" href="../csss/reading-test.css">
+    <link rel="stylesheet" href="../csss/reading-test8.css">
+    <link rel="icon" href="../logo.jpg">
+</head>
+<body>
+
+<div class="top-bar">
+    <div>Reading Test 8</div>
+    <div class="time">Time Left: <span id="timer">60:00</span></div>
+</div>
+
+<div id="readingOverlay" class="fullscreen-overlay">
+    <div id="rulesCard" class="overlay-card" style="max-width:540px;text-align:left;padding:34px 30px;">
+        <div style="
+            display:inline-flex;padding:7px 12px;border-radius:999px;
+            background:#e9faf3;color:#15543f;font-size:12px;font-weight:800;
+            letter-spacing:0.08em;text-transform:uppercase;margin-bottom:14px;">
+            Before You Start
+        </div>
+        <h2 style="margin:0 0 6px;font-size:26px;color:#111827;">Reading Test Rules</h2>
+        <p style="margin:0 0 18px;font-size:14px;color:#6b7280;">Read the rules carefully before starting.</p>
+
+        <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px;">
+            <span style="padding:9px 14px;border-radius:999px;background:#e9faf3;color:#10342a;font-size:13px;font-weight:700;">60 minutes</span>
+            <span style="padding:9px 14px;border-radius:999px;background:#e9faf3;color:#10342a;font-size:13px;font-weight:700;">40 questions</span>
+            <span style="padding:9px 14px;border-radius:999px;background:#e9faf3;color:#10342a;font-size:13px;font-weight:700;">3 passages</span>
+        </div>
+
+        <ul style="margin:0 0 22px 18px;color:#425266;line-height:1.8;font-size:14px;">
+            <li>The test must stay in fullscreen at all times.</li>
+            <li>Do not switch tabs or leave the exam window.</li>
+            <li>You have only 3 violation warnings before the test ends.</li>
+            <li>Use the navigation buttons to move between passages.</li>
+            <li>Answers are saved automatically as you type.</li>
+            <li>Click Finish Test on the last passage when done.</li>
+        </ul>
+
+        <button id="overlayActionBtn" class="overlay-btn" style="width:100%;padding:15px;font-size:16px;">
+            Start Test in Fullscreen
+        </button>
+    </div>
+
+    <div id="lockdownCard" class="overlay-card" style="display:none;">
+        <div class="overlay-label" id="overlayTitle">Exam Paused</div>
+        <h2 style="margin:12px 0 10px;font-size:26px;color:#111827;">Return to Fullscreen</h2>
+        <p id="overlayMessage" style="margin:0 0 22px;font-size:15px;color:#4b5563;line-height:1.6;">
+            Stay in fullscreen to continue the test.
+        </p>
+        <button id="lockdownActionBtn" class="overlay-btn" style="width:100%;">Return to Test</button>
+    </div>
+</div>
+
+<main class="reading-stage">
+
+    <section class="reading-container passage-screen active" data-passage="1">
+        <div class="passage">
+            <h2>READING PASSAGE 1</h2>
+            <p><b>You should spend about 20 minutes on Questions 1-13, which are based on Reading Passage 1 below.</b></p>
+
+            <h3>The development of the silk industry</h3>
+            <p><em>Silk, a natural fibre produced by silkworms, has been used in clothing for many centuries.</em></p>
+
+<p>When silk was first discovered in China over 
+4,500 years ago, it was reserved exclusively 
+for the use of the emperor, his close relations 
+and the very highest of his dignitaries. Within 
+the palace, the emperor is believed to have 
+worn a robe of white silk; outside, he, his 
+principal wife, and the heir to the throne wore 
+yellow, the colour of the earth. </p>
+<p>Gradually silk came into more general use, 
+and the various classes of Chinese society 
+began wearing tunics of silk. As well as being 
+used for clothing and decoration, silk was 
+quite quickly put to industrial use, and rapidly 
+became one of the principal elements of the 
+Chinese economy. It was used in the 
+production of musical instruments, as string 
+for fishing, and even as the world's first luxury 
+paper. Eventually even the common people 
+were able to wear garments of silk. </p>
+<p>During the Han dynasty (206 BC-220 AD), 
+silk ceased to be a mere fabric and became 
+a form of currency. Farmers paid their taxes 
+in grain and silk, and silk was used to pay civil 
+servants and to reward subjects for 
+outstanding services. Values were calculated 
+in lengths of silk as they had previously been 
+calculated in weight of gold. Before long, silk 
+became a currency used in trade with foreign 
+countries, which continued into the Tang 
+dynasty (616-907 AD). It is possible that this 
+added importance was the result of a major 
+increase in production. Silk also found its way 
+so thoroughly into the Chinese language that 
+230 of the 5,000 most common characters of 
+Mandarin·have 'silk' as their key component. 
+Silk became a precious commodity, highly 
+sought after by other countries from an early 
+date, and it is believed that the silk trade actually existed before the Silk Roadt was 
+officially opened in the second century BC. 
+An Egyptian mummy with a silk thread in her 
+hair, dating from 1070 BC, has been 
+discovered in the village of Deir el Medina 
+near the Valley of the Kings, and is probably 
+the earliest evidence of the silk trade. During 
+the second century BC, the Chinese emperor 
+Han Wu Di's ambassadors travelled as far 
+west as Persia and Mesopotamis, bearing 
+gifts including silks. A range of important finds 
+of Chinese silks have also been made along 
+the Silk Road. One of the most dramatic of 
+these finds was some Tang silk discovered in 
+1900. It is believed that around 1015 AD 
+Buddhist monks, possibly alarmed by the 
+threat of invasion by Tibetan people, had 
+sealed more than ten thousand manuscripts 
+and silk paintings, silk banners and textiles in 
+caves near Dunhuang, a trading station on 
+the Silk Road in north-west China.  </p>
+
+<p>Some historians believe the first Europeans 
+to set eyes upon the fabulous fabric were the 
+Roman legions of Marcus Licinius Crassus, 
+Governor of Syria. According to certain 
+accounts of the period, at an important battle 
+near the Euphrates River in 53 BC, the 
+Roman soldiers were so startled by the 
+bright silken banners of the enemy that they 
+fled in panic. Yet, within decades Chinese 
+silks were widely worn by the rich and noble 
+families of Rome. The Roman Emperor 
+Heliogabalus (218-222 AD) wore nothing 
+but silk. By 380 AD, the Roman historian 
+Marcellinnus Ammianus reported that. The 
+use of silk, which was one confined to the nobility, has now spread to all 
+classes without distinction - even to the lowest. The 
+desire for silk continued to increase over the 
+centuries. Despite this demand, the price of silk 
+remained very high. </p>
+<p>In spite of their secrecy about production methods, 
+the Chinese eventually lost their monopoly on silk 
+production. Knowledge of silk production methods 
+reached Korea around 200 BC, when waves of 
+Chinese immigrants arrived there. Shortly after 300 
+AD, it travelled westward, and the cultivation of the 
+silkworm was established in India. </p>
+<p>Around 550 AD silk production reached the 
+Middle East. Records indicate that two monks from 
+Constantinople (modern-day Istanbul), capital of 
+the Byzantine Empire, appeared at their emperor's 
+court with silkworm eggs which they had obtained 
+secretly, and hidden in their hollow bamboo walking 
+sticks. Under their supervision the eggs hatched 
+into worms, and the worms spun silk threads. 
+Byzantium was in the silk business at last. The 
+Byzantine church and state created imperial 
+workshops, monopolising production and keeping 
+the secret to themselves. This allowed a silk 
+industry to be established, undercutting the market 
+for ordinary-grade Chinese silk. However, high 
+quality silk textiles, woven in China especially for 
+the Middle Eastern market, continued to achieve 
+high prices in the West, and trade along the Silk 
+Road continued as before. By the sixth century the 
+Persians, too, had mastered the art of silk weaving, 
+developing their own rich patterns and techniques. 
+But it wasn't until the 13th century that Italy began 
+silk production, with the introduction of 2,000 skilled 
+silk weavers from Constantinople. Eventually, silk 
+production 
+Europe. </p>
+
+<p>World silk production has approximately 
+doubled during the last 30 years in spite of man
+made fibres replacing certain uses of silk. Before 
+this period, China and Japan were the two main 
+producers, together manufacturing mo「e than 50 
+per cent of world production each year. After the 
+late 1970s, however, China dramatically increased 
+its silk production, and once again became the 
+world's leading producer.</p>
+        </div>
+
+        <div class="questions">
+            <h3>Questions 1-7</h3>
+            <p><b>Complete the notes below.</b></p>
+            <p>Choose <b>ONE WORD ONLY</b> from the passage for each answer.</p>
+
+            <h3 class="center-title">Chinese silk</h3>
+            <h4>Early Uses</h4>
+            <div class="question">At first, silk was only available to Chinese of high rank.</div>
+            <div class="question">The emperor wore <input id="q1"> silk indoors.</div>
+            <div class="question">Silk items included parts of musical instruments, fishing strings and <input id="q2"></div>
+            <div class="question">Silk was used as payment of <input id="q3"> as well as for wages and rewards.</div>
+            <div class="question">Silk replaced <input id="q4"> as a unit of value.</div>
+            <div class="question">Silk soon used as payment in <input id="q5"> trade.</div>
+
+            <h4>Evidence of silk trade</h4>
+            <div class="question">1070 BC, Egypt: hair of a <input id="q6"> contained silk.</div>
+            <div class="question">1015 AD, north-west China: silk objects were hidden inside <input id="q7"></div>
+
+            <h3>Questions 8-13</h3>
+            <p><b>Do the following statements agree with the information given in Reading Passage 1?</b></p>
+            <p>Write <b>TRUE</b>, <b>FALSE</b> or <b>NOT GIVEN</b>.</p>
+
+            <div class="question">8. Their first sight of silk created fear among Roman soldiers. <input id="q8"></div>
+            <div class="question">9. The quality of Chinese silk imported by the early Romans varied widely. <input id="q9"></div>
+            <div class="question">10. The Byzantine emperor first acquired silkworm eggs from the Chinese emperor. <input id="q10"></div>
+            <div class="question">11. The price of high-grade Chinese silk fell due to competition from Middle-Eastern producers. <input id="q11"></div>
+            <div class="question">12. Silk was produced in the Middle East several centuries before it was produced in Europe. <input id="q12"></div>
+            <div class="question">13. Global silk production has declined in recent years. <input id="q13"></div>
+        </div>
+    </section>
+
+    <section class="reading-container passage-screen" data-passage="2">
+        <div class="passage">
+            <h2>READING PASSAGE 2</h2>
+            <p><b>You should spend about 20 minutes on Questions 14-26, which are based on Reading Passage 2 below.</b></p>
+
+            <h3>The discovery of a baby mammoth</h3>
+            <p><em>A near-perfect frozen mammoth offers clues to a vanished species.</em></p>
+<p><b>A</b>On a May morning in 2007, on the Yamal Peninsula in northwestern Siberia, a Nenets 
+reindeer herder named Yuri Khudi stood on a sandbar on the Yuribey River, looking 
+carefully at a diminutive corpse. Although he'd never seen such an animal before, Khudi 
+had seen many mammoth tusks, the thick corkscrew shafts that his people found each 
+summer, and this persuaded him the corpse was a baby mammoth. It was eerily well 
+preserved. Apart from its missing hair and toenails, it was perfectly intact. Khudi realised 
+the find might be significant and he knew he couldn't just return home and forget all about 
+it. He therefore decided to travel to the small town of Yar Sale to consult an old friend 
+named Kirill Serotetto. His friend took him to meet the director of the local museum, who 
+persuaded the local authorities to fly Khudi and Serotetto back to the Yuribey River to 
+collect the baby mammoth. </p>
+
+<p><b>B</b>Mammoths became extinct between 14,000 and 10,000 years ago and since the extinctions 
+coincided with the end of the most recent Ice age, many researchers believe that the 
+primary cause of the great die-off was the sharp rise in temperature, which dramatically 
+altered the vegetation.'We have strong evidence that the temperature rise played a 
+significant part in their extinction.'says Adrian Lister, a palaeontologist and mammoth 
+expert at London's Natural History Museum.'In Eurasia, the timing of the two events 
+matches closely.'The extinctions also coincided, however, with the arrival of modern 
+humans. In addition to exploiting mammoths for food, they used their bones and tusks to 
+make weapons, tools, and even dwellings. Some scientists believe humans were as much 
+to blame as the temperature rise for the great die-off. Some say they caused it. </p>
+
+<p><b>C</b>The body of the baby mammoth was eventually sent to the St Petersburg Zoological 
+Museum in Russia. Alexei Tikhonov, the museum's director, was one of the first scientists 
+to view the baby, a female. According to Tikhonov, Khudi had rescued 'the best preserved 
+mammoth to come down to US from the Ice Age', and he gratefully named her Lyuba, after 
+Khudi's wife. Tikhonov knew that no-one would be more excited by the find than Dan 
+Fisher, an American colleague at the University of Michigan who had spent 30 years 
+researching the lives of mammoths. Tikhonov invited Fisher, along with Bernard Buigues, 
+a French mammoth hunter, to come and view the baby mammoth. Fisher and Buigues had 
+examined other specimens together, including infants, but these had been in a relatively 
+poor state. Lyuba was another story entirely. Other than the missing hair and toenails, the 
+only flaw in her pristine appearance was a curious dent above the trunk. </p>
+
+<p><b>D</b>Fisher was particularly excited about one specific part of Lyuba's anatomy: her milk tusks. 
+Through his career, Fisher has taken hundreds of tusk samples. Most of these came from 
+the Great Lakes region of North America, and his research showed that these animals 
+continued to thrive, despite the late Pleistocene·temperature change. On the other hand,to Fisher the tusks often revealed telltale evidence of human hunting. His samples 
+frequently came from animals that had died in the autumn, when they should have been at 
+their peak after summer grazing, and less likely to die of natural causes, but also when 
+humans would have been most eager to stockpile meat for the coming winter. He has done 
+limited work in Siberia, but his analysis of tusks from Wrangel Island, off the coast of 
+Siberia, suggests the same conclusion. </p>
+
+<p><b>E</b>In December 2007, Buigues arranged for the specimen to be transported to Japan to 
+undergo a CT scan by Naoki Suzuki of the Jikei University School of Medicine. The test 
+confirmed her skeleton was undamaged, and her internal organs seemed largely intact. It 
+also showed that the end of her trunk, and her throat, mouth, and windpipe were filled with 
+dense sediment. Six months later, in a laboratory in St Petersburg, Fisher, Buigues, 
+Suzuki, Tikhonov and other colleagues began a three-day series of tests on Lyuba. During 
+these, Fisher noted a dense mix of clay and sand in her trunk, mouth and throat, which 
+had been indicated earlier by the scan. In fact, the sediment in Lyuba's trunk was packed 
+so tightly that Fisher saw it as a possible explanation for the dent above her trunk. If she 
+was frantically fighting for breath and inhaled convulsively, perhaps a partial vacuum was 
+created in the base of her trunk, which would have flattened surrounding soft tissue. To 
+Fisher, the circumstances of Lyuba's death were clear: she had asphyxiated. Suzuki, 
+however, proposed a different interpretation, seeing more evidence for drowning than 
+asphyxiation. </p>
+
+<p><b>F</b>Studies are ongoing, but Lyuba has begun to shed the secrets of her short life and some 
+clues to the fate of her kind. Her good general health was shown in the record of her dental 
+development, a confirmation for Fisher that dental research is useful for evaluating health 
+and thus key to investigating the causes of mammoth extinction. Analysis of her well
+preserved DNA has revealed that she belonged to a distinct population of Mammuthus 
+primigenius and that, soon after her time, another population migrating to Siberia from 
+North America would take their place. Finally, Lyuba's premolars and tusks revealed that 
+she had been born in late spring and was only a month old when she died.</p>
+
+        </div>
+
+        <div class="questions">
+            <h3>Questions 14-18</h3>
+            <p><b>Reading Passage 2 has six paragraphs, A-F.</b></p>
+            <p>Which paragraph contains the following information?</p>
+            <p>Write the correct letter, <b>A-F</b>.</p>
+
+            <div class="question">14. Similarities between studies of mammoth remains from different parts of the world. <input id="q14"></div>
+            <div class="question">15. Details of the uses to which mammoth body parts were put. <input id="q15"></div>
+            <div class="question">16. A theory that accounts for the damage to Lyuba's face. <input id="q16"></div>
+            <div class="question">17. An explanation of how an individual was able to identify a small corpse. <input id="q17"></div>
+            <div class="question">18. A comparison between Lyuba and other young mammoth corpses. <input id="q18"></div>
+
+            <h3>Questions 19-23</h3>
+            <p><b>Look at the following statements and the list of people below.</b></p>
+            <p>Match each statement with the correct person, <b>A-G</b>.</p>
+
+            <div class="question">19. The indications are that mammoths died as a result of climate change. <input id="q19"></div>
+            <div class="question">20. Teeth analysis is important in discovering why mammoths died out. <input id="q20"></div>
+            <div class="question">21. The corpse of the baby mammoth is in better condition than any other that has been discovered. <input id="q21"></div>
+            <div class="question">22. It would be a mistake to ignore the baby mammoth's discovery, because of its potential importance. <input id="q22"></div>
+            <div class="question">23. Mammoths often died at a time of year when they should have been in good physical condition. <input id="q23"></div>
+
+            <div class="people-list">
+                <h4>List of People</h4>
+                <p><b>A</b> Yuri Khudi</p>
+                <p><b>B</b> Kirill Serotetto</p>
+                <p><b>C</b> Adrian Lister</p>
+                <p><b>D</b> Alexei Tikhonov</p>
+                <p><b>E</b> Dan Fisher</p>
+                <p><b>F</b> Bernard Buigues</p>
+                <p><b>G</b> Naoki Suzuki</p>
+            </div>
+
+            <h3>Questions 24-26</h3>
+            <p><b>Complete the sentences below.</b></p>
+            <p>Choose <b>NO MORE THAN TWO WORDS</b> from the passage for each answer.</p>
+
+            <div class="question">24. Some researchers say that a marked rise in temperature impacted on mammoths by changing the type of <input id="q24"> available.</div>
+            <div class="question">25. Fisher concluded that many of the mammoth tusks he looked at displayed signs of <input id="q25"></div>
+            <div class="question">26. Not long after Lyuba's death, the <em>Mammuthus primigenius</em> group she belonged to was replaced by another group that came from <input id="q26"></div>
+        </div>
+    </section>
+
+    <section class="reading-container passage-screen" data-passage="3">
+        <div class="passage">
+            <h2>READING PASSAGE 3</h2>
+            <p><b>You should spend about 20 minutes on Questions 27-40, which are based on Reading Passage 3 below.</b></p>
+
+            <h3>What makes a musical expert?</h3>
+            <p><em>How does someone become expert in music? And is it really possible to have a talent for music?</em></p>
+
+<p>Does that class of people acknowledged to be musical experts just have more of the same 
+basic skills we are all endowed with, or do they have a set of abilities - or neural structures 
+that are totally different from those of the rest of US? Are high levels of musical achievement 
+simply the result of training and practice, or are they based on innate brain structure - what we 
+refer to as'talent'? Talent can be defined as something that originates in genetic structures 
+and that is identifiable by trained people who can recognize its existence before a person has 
+achieved exceptional levels of performance. The emphasis on early identification means that 
+to investigate it, we study the development of skills in children.</p>
+
+<p>It is evident that some children acquire skills more rapidly than others: the age of onset for 
+walking and talking varies widely, even between children in the same household. There may 
+be genetic factors at work, but these are closely linked with other factors - with a presumably 
+environmental component - such as motivation and family dynamics. Similar factors can 
+influence musical development and can mask the contribution of genetics to musical ability. </p>
+<p>Brain studies, so far, haven't been of much use in sorting out the issues. Gottfried Schlaug at 
+Harvard collected brain scans of individuals with absolute pitch·(AP) and showed that a region 
+in the brain called the planum temporale is larger in these people than in others. This suggests 
+that the planum is involved in AP, but it's not clear if it starts out larger in people who eventually 
+acquire AP, or if the acquisition of AP makes the planum increase in size.</p>
+
+<p>Results of research into the areas of the brain involved in skilled motor movement are more 
+conclusive. Studies of violin players have shown that the region of the brain responsible for 
+controlling the movement of the left hand (the hand that requires greater precision in violin 
+playing) increases in size as a result of practice. We do not know yet if the propensity for 
+increase pre-exists in some-peopled not others</p>
+
+<p>The evidence against talent comes from research on how much training the experts do. Like 
+experts in mathematics, chess, or sports, experts in music require lengthy periods of instruction 
+and practice. In several studies, the very best music students 
+Were found to have practiced more than twice as much as the others. In another study, 
+students were secretly divided into two groups based on teachers' perceptions of their talent. 
+Several years later, it was found that the students who achieved the highest performance 
+ratings had practiced the most, irrespective of which'talent' group they had been assigned to,suggesting that practice does not merely correlate with achievement, but causes it.</p>
+
+<p>Anders Ericsson, at Florida State University, approaches the topic of musical expertise as a 
+general problem in cognitive psychology. He takes as a starting point the assumption that there 
+are certain issues involved in becoming an expert at anything; that we can learn about musical 
+expertise by studying expert chess players, athletes, artists, mathematicians, as well as the 
+musicians themselves. The emerging picture from such studies is that ten thousand hours of 
+practice is required to achieve the level of mastery associated with being a world-class expert - in anything. In study after study, of composers, ice skaters, concert pianists, chess players 
+and master criminals, this number comes up again and again. Someone would do this amount 
+of practice if they practiced, for example, roughly 20 hours a week for ten years. Of course, 
+this does not address why some people do not seem to get anywhere when they practice, and 
+why some people get more out of their practice sessions than others. But no-one has yet found 
+a case in which true world-class expertise was accomplished in less time. It seems that it takes 
+the brain this long to assimilate all that it needs to know to achieve true mastery.</p>
+
+<p>The ten-thousand-hour theory is consistent with what we know about how the brain learns. 
+Learning requires the assimilation and consolidation of information in neural tissue. The more 
+experiences we have with something, the stronger the memory/learning trace for that 
+experience becomes. Although people differ in how long it takes them to consolidate 
+information neutrally, it remains true that increased practice leads to a greater number of neural 
+traces, which create stronger memory representation. </p>
+<p>The classic rebuttal to this theory goes something like this:'What about Mozart? I hear that he 
+composed his first symphony at the age of four!'First, there is a factual error here: Mozart did 
+not write it until he was eight. Still, this is unusual, to say the least. However, this early work 
+received little acclaim and was not performed very often. In fact, the only reason we know 
+about it is because the child who wrote it grew up to become Mozart. And Mozart had an expert 
+teacher in his father, who was renowned as a teacher of musicians all over Europe. We do not 
+know how much Mozart practiced, but if he started at age two and worked thirty- two hours a 
+week (quite possible, given that his father was a stern taskmaster) he would have made his 
+ten thousand hours by the time he composed his first symphony. This does not mean that 
+there are no genetic factors involved in Mozart's greatness, but that inborn traits may not be 
+the only cause.</p>
+
+</div>
+
+        <div class="questions">
+            <h3>Questions 27-30</h3>
+            <p><b>Choose the correct letter, A, B, C or D.</b></p>
+
+            <div class="question">
+                27. In the first paragraph, the writer suggests that a musician who IS talented is someone
+                <p><b>A</b> who is aware of being set apart from other people.</p>
+                <p><b>B</b> whose brain structure is unlike that of other people.</p>
+                <p><b>C</b> who can perform extremely well in early childhood.</p>
+                <p><b>D</b> whose essential skills are more varied than those of ordinary people.</p>
+                <input id="q27">
+            </div>
+            <div class="question">
+                28. According to the writer, what is unclear about the findings of Gottfried Schlaug?
+                <p><b>A</b> which part of the brain is linked to a particular musical skill.</p>
+                <p><b>B</b> which type of musical skill leads to the greatest change in the brain.</p>
+                <p><b>C</b> whether a feature of the brain is a cause or an effect of a musical skill.</p>
+                <p><b>D</b> whether the acquisition of a musical skill is easier for some people than others.</p>
+                <input id="q28">
+            </div>
+            <div class="question">
+                29. According to the writer, what has been established by studies of violin players?
+                <p><b>A</b> Changes may occur in the brain following violin practice.</p>
+                <p><b>B</b> Left-handed violinists have a different brain structure from other people.</p>
+                <p><b>C</b> A violinist's hand size is not due to practice but to genetic factors.</p>
+                <p><b>D</b> Violinists are born with brains that have a particular structure.</p>
+                <input id="q29">
+            </div>
+            <div class="question">
+                30. According to the writer, findings on the amount of practice done by expert musicians suggest that
+                <p><b>A</b> talent may have little to do with expertise.</p>
+                <p><b>B</b> practice may actually prevent the development of talent.</p>
+                <p><b>C</b> talent may not be recognised by teachers.</p>
+                <p><b>D</b> expertise may be related to quality of instruction.</p>
+                <input id="q30">
+            </div>
+
+            <h3>Questions 31-36</h3>
+            <p><b>Do the following statements agree with the claims of the writer in Reading Passage 3?</b></p>
+            <p>Write <b>YES</b>, <b>NO</b> or <b>NOT GIVEN</b>.</p>
+
+            <div class="question">31. Anders Ericsson's work with cognitive psychology has influenced other researchers. <input id="q31"></div>
+            <div class="question">32. Different areas of expertise seem to have one specific thing in common. <input id="q32"></div>
+            <div class="question">33. In order to be useful, practice must be carried out regularly every day. <input id="q33"></div>
+            <div class="question">34. Anyone who practices for long enough can reach the level of a world-class expert. <input id="q34"></div>
+            <div class="question">35. Occasionally, someone can become an expert at global level with fewer than 10,000 hours' practice. <input id="q35"></div>
+            <div class="question">36. Existing knowledge of learning and cognitive skills supports the importance of practice. <input id="q36"></div>
+
+            <h3>Questions 37-40</h3>
+            <p><b>Complete the summary using the list of words, A-J, below.</b></p>
+            <p>Write the correct letter, <b>A-J</b>.</p>
+
+            <h3 class="center-title">Mozart</h3>
+            <div class="question">The case of Mozart could be quoted as evidence against the 10,000-hour-practice theory. However, the writer points out that the young Mozart received a lot of <input id="q37"> from his father, and that the symphony he wrote at the age of <input id="q38"> was not <input id="q39"> and may be of only academic interest. The case therefore supports the view that expertise is not solely the result of <input id="q40"> characteristics.</div>
+
+            <div class="word-list">
+                <p><b>A</b> popular</p>
+                <p><b>B</b> artistic</p>
+                <p><b>C</b> completed</p>
+                <p><b>D</b> eight</p>
+                <p><b>E</b> tuition</p>
+                <p><b>F</b> encouragement</p>
+                <p><b>G</b> inherited</p>
+                <p><b>H</b> four</p>
+                <p><b>I</b> practice</p>
+                <p><b>J</b> two</p>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<div class="reading-nav-bar">
+    <button id="toggleNumbersBtn" class="nav-btn-read toggle-numbers-btn" type="button">Hide Numbers</button>
+    <div class="nav-actions">
+        <button id="prevBtn" class="nav-btn-read" type="button">Previous Passage</button>
+        <button id="nextBtn" class="nav-btn-read" type="button">Next Passage</button>
+        <button id="finishBtn" class="nav-btn-read finish" type="button" style="display:none;">Finish Test</button>
+    </div>
+</div>
+
+<footer id="numbersFooter" class="exam-footer">
+    <div class="number-grid" id="numberGrid"></div>
+</footer>
+
+<script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore-compat.js"></script>
+<script src="../jss/core.js"></script>
+<script src="../jss/firebase-init.js"></script>
+<script src="../jss/emerald-tracker.js"></script>
+<script src="../jss/emerald-firestore-store.js"></script>
+<script src="../jss/emerald-firebase-bridge.js"></script>
+<script src="../jss/reading-test8.js"></script>
+
+</body>
+</html>
