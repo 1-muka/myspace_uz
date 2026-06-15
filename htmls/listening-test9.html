@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test 9</title>
+    <link rel="stylesheet" href="../csss/listening-test.css">
+    <link rel="stylesheet" href="../csss/listening-test9.css">
+</head>
+<body>
+
+<div id="rulesIntroOverlay" class="modal-overlay" style="display:flex;">
+    <div class="practice-card" style="max-width:540px;text-align:left;">
+        <div class="overlay-badge" style="
+            display:inline-flex;padding:7px 12px;border-radius:999px;
+            background:#e9faf3;color:#15543f;font-size:12px;font-weight:800;
+            letter-spacing:0.08em;text-transform:uppercase;margin-bottom:14px;">
+            Before You Start
+        </div>
+        <h2 class="practice-title" style="text-align:left;margin-bottom:6px;">Listening Test Rules</h2>
+        <p class="practice-subtitle" style="text-align:left;margin-bottom:18px;">Read the rules carefully before starting.</p>
+
+        <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px;">
+            <span style="padding:9px 14px;border-radius:999px;background:#e9faf3;color:#10342a;font-size:13px;font-weight:700;">35 minutes</span>
+            <span style="padding:9px 14px;border-radius:999px;background:#e9faf3;color:#10342a;font-size:13px;font-weight:700;">40 questions</span>
+            <span style="padding:9px 14px;border-radius:999px;background:#e9faf3;color:#10342a;font-size:13px;font-weight:700;">4 parts</span>
+        </div>
+
+        <ul style="margin:0 0 22px 18px;color:#425266;line-height:1.8;font-size:14px;">
+            <li>The test must stay in fullscreen at all times.</li>
+            <li>Do not switch tabs or leave the exam window.</li>
+            <li>You have only 3 violation warnings before the test ends.</li>
+            <li>The audio will play automatically when you start.</li>
+            <li>You can navigate between parts using the buttons.</li>
+            <li>Answers are saved automatically as you type.</li>
+        </ul>
+
+        <button id="finalStartBtn" class="btn-green-large" style="margin-top:4px;">
+            Start Test in Fullscreen
+        </button>
+    </div>
+</div>
+
+<header class="exam-header">
+    <div class="header-top-block">
+        <span class="test-name">Listening Test 9</span>
+        <div class="timer-box">Time Left: <span id="timer">35:00</span></div>
+    </div>
+
+    <div class="audio-panel">
+        <div class="audio-block">
+            <span class="player-label">Audio Player</span>
+            <button id="startTestBtn" class="btn-green">Start Test</button>
+            <audio id="examAudio" class="hidden" controls>
+                <source src="../audio/listening-test9.mp3" type="audio/mpeg">
+            </audio>
+        </div>
+    </div>
+</header>
+
+<main class="exam-content" id="mainScroll">
+
+    <section class="part-container active" id="part-1">
+        <div class="blue-part-bar">Part 1</div>
+
+        <div class="instruction-box">
+            <p class="instruction-line"><strong>Questions 1-10</strong></p>
+            <p class="instruction-line"><em>Complete the notes below.</em></p>
+            <p class="instruction-line">Write <span class="hl-blue">ONE WORD AND/OR A NUMBER</span> for each answer.</p>
+        </div>
+
+        <div class="question-paper">
+            <div class="restaurant-table-wrap">
+                <table class="restaurant-table">
+                    <thead>
+                        <tr>
+                            <th class="name-col">Name of restaurant</th>
+                            <th class="location-col">Location</th>
+                            <th class="reason-col">Reason for recommendation</th>
+                            <th class="comments-col">Other comments</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>The Junction</td>
+                            <td>Greyson Street, near the station</td>
+                            <td>Good for people who are especially keen on <strong>1</strong><input type="text" id="q1" class="blank-input medium" aria-label="Question 1"></td>
+                            <td>Quite expensive<br>The <strong>2</strong><input type="text" id="q2" class="blank-input medium" aria-label="Question 2"> is a good place for a drink</td>
+                        </tr>
+                        <tr>
+                            <td>Paloma</td>
+                            <td>In Bow Street next to the cinema</td>
+                            <td><strong>3</strong><input type="text" id="q3" class="blank-input medium" aria-label="Question 3"> food, good for sharing</td>
+                            <td>Staff are very friendly<br>Need to pay 50 deposit<br>A limited selection of <strong>4</strong><input type="text" id="q4" class="blank-input medium" aria-label="Question 4"> food on the menu</td>
+                        </tr>
+                        <tr>
+                            <td>The <strong>5</strong><input type="text" id="q5" class="blank-input medium" aria-label="Question 5"></td>
+                            <td>At the top of a <strong>6</strong><input type="text" id="q6" class="blank-input medium" aria-label="Question 6"></td>
+                            <td>A famous chef<br>All the <strong>7</strong><input type="text" id="q7" class="blank-input medium" aria-label="Question 7"> are very good<br>Only uses <strong>8</strong><input type="text" id="q8" class="blank-input medium" aria-label="Question 8"> ingredients</td>
+                            <td>Set lunch costs <strong>9</strong><input type="text" id="q9" class="blank-input short" aria-label="Question 9"> per person<br>Portions probably of <strong>10</strong><input type="text" id="q10" class="blank-input medium" aria-label="Question 10"> size</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="part-nav">
+            <button class="nav-btn next" onclick="goToPart(2)">Next Part -&gt;</button>
+        </div>
+    </section>
+
+    <section class="part-container" id="part-2">
+        <div class="blue-part-bar">Part 2</div>
+
+        <div class="instruction-box">
+            <p class="instruction-line" style="font-weight:700;color:#2a72ae;">Questions 11-20</p>
+        </div>
+
+        <div class="question-paper">
+            <h2 class="section-paper-title">Edelman Pottery</h2>
+
+            <div class="instruction-box" style="margin:0 0 16px;">
+                <p class="instruction-line"><em>Questions 11-16</em></p>
+                <p class="instruction-line">Choose the correct letter, <span class="hl-blue">A</span>, <span class="hl-blue">B</span> or <span class="hl-blue">C</span>.</p>
+            </div>
+
+            <div class="mcq-block">
+                <p><span class="q-num">11</span> Heather says pottery differs from other art forms because</p>
+                <div class="vertical-options">
+                    <label class="mcq-opt"><input type="radio" name="q11"> A. it lasts longer in the ground.</label>
+                    <label class="mcq-opt"><input type="radio" name="q11"> B. it is practised by more people.</label>
+                    <label class="mcq-opt"><input type="radio" name="q11"> C. it can be repaired more easily.</label>
+                </div>
+            </div>
+
+            <div class="mcq-block">
+                <p><span class="q-num">12</span> Archaeologists sometimes identify the use of ancient pottery from</p>
+                <div class="vertical-options">
+                    <label class="mcq-opt"><input type="radio" name="q12"> A. the clay it was made with.</label>
+                    <label class="mcq-opt"><input type="radio" name="q12"> B. the marks that are on it.</label>
+                    <label class="mcq-opt"><input type="radio" name="q12"> C. the basic shape of it.</label>
+                </div>
+            </div>
+
+            <div class="mcq-block">
+                <p><span class="q-num">13</span> Some people join Heather's pottery class because they want to</p>
+                <div class="vertical-options">
+                    <label class="mcq-opt"><input type="radio" name="q13"> A. create an item that looks very old.</label>
+                    <label class="mcq-opt"><input type="radio" name="q13"> B. find something that they are good at.</label>
+                    <label class="mcq-opt"><input type="radio" name="q13"> C. make something that will outlive them.</label>
+                </div>
+            </div>
+
+            <div class="mcq-block">
+                <p><span class="q-num">14</span> What does Heather value most about being a potter?</p>
+                <div class="vertical-options">
+                    <label class="mcq-opt"><input type="radio" name="q14"> A. its calming effect</label>
+                    <label class="mcq-opt"><input type="radio" name="q14"> B. its messy nature</label>
+                    <label class="mcq-opt"><input type="radio" name="q14"> C. its physical benefits</label>
+                </div>
+            </div>
+
+            <div class="mcq-block">
+                <p><span class="q-num">15</span> Most of the visitors to Edelman Pottery</p>
+                <div class="vertical-options">
+                    <label class="mcq-opt"><input type="radio" name="q15"> A. bring friends to join courses.</label>
+                    <label class="mcq-opt"><input type="radio" name="q15"> B. have never made a pot before.</label>
+                    <label class="mcq-opt"><input type="radio" name="q15"> C. try to learn techniques too quickly.</label>
+                </div>
+            </div>
+
+            <div class="mcq-block">
+                <p><span class="q-num">16</span> Heather reminds her visitors that they should</p>
+                <div class="vertical-options">
+                    <label class="mcq-opt"><input type="radio" name="q16"> A. put on their aprons.</label>
+                    <label class="mcq-opt"><input type="radio" name="q16"> B. change their clothes.</label>
+                    <label class="mcq-opt"><input type="radio" name="q16"> C. take off their jewellery.</label>
+                </div>
+            </div>
+
+            <div class="instruction-box" style="margin:28px 0 16px;">
+                <p class="instruction-line"><em>Questions 17 and 18</em></p>
+                <p class="instruction-line">Choose <span class="hl-blue">TWO</span> letters, <span class="hl-blue">A-E</span>.</p>
+            </div>
+            <div class="mcq-block">
+                <p><strong>17-18</strong> Which <span class="hl-blue">TWO</span> things does Heather explain about kilns?</p>
+                <div class="multi-select-block">
+                    <label class="mcq-opt"><input type="checkbox" name="q17_18" value="A" onchange="handleMultiSelect('q17_18', 17, 18)"> A. what their function is</label>
+                    <label class="mcq-opt"><input type="checkbox" name="q17_18" value="B" onchange="handleMultiSelect('q17_18', 17, 18)"> B. when they were invented</label>
+                    <label class="mcq-opt"><input type="checkbox" name="q17_18" value="C" onchange="handleMultiSelect('q17_18', 17, 18)"> C. ways of keeping them safe</label>
+                    <label class="mcq-opt"><input type="checkbox" name="q17_18" value="D" onchange="handleMultiSelect('q17_18', 17, 18)"> D. where to put one in your home</label>
+                    <label class="mcq-opt"><input type="checkbox" name="q17_18" value="E" onchange="handleMultiSelect('q17_18', 17, 18)"> E. what some people use instead of one</label>
+                </div>
+            </div>
+
+            <div class="instruction-box" style="margin:28px 0 16px;">
+                <p class="instruction-line"><em>Questions 19 and 20</em></p>
+                <p class="instruction-line">Choose <span class="hl-blue">TWO</span> letters, <span class="hl-blue">A-E</span>.</p>
+            </div>
+            <div class="mcq-block">
+                <p><strong>19-20</strong> Which <span class="hl-blue">TWO</span> points does Heather make about a potter's tools?</p>
+                <div class="multi-select-block">
+                    <label class="mcq-opt"><input type="checkbox" name="q19_20" value="A" onchange="handleMultiSelect('q19_20', 19, 20)"> A. Some are hard to hold.</label>
+                    <label class="mcq-opt"><input type="checkbox" name="q19_20" value="B" onchange="handleMultiSelect('q19_20', 19, 20)"> B. Some are worth buying.</label>
+                    <label class="mcq-opt"><input type="checkbox" name="q19_20" value="C" onchange="handleMultiSelect('q19_20', 19, 20)"> C. Some are essential items.</label>
+                    <label class="mcq-opt"><input type="checkbox" name="q19_20" value="D" onchange="handleMultiSelect('q19_20', 19, 20)"> D. Some have memorable names.</label>
+                    <label class="mcq-opt"><input type="checkbox" name="q19_20" value="E" onchange="handleMultiSelect('q19_20', 19, 20)"> E. Some are available for use by participants.</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="part-nav">
+            <button class="nav-btn prev" onclick="goToPart(1)">&lt;- Previous Part</button>
+            <button class="nav-btn next" onclick="goToPart(3)">Next Part -&gt;</button>
+        </div>
+    </section>
+
+    <section class="part-container" id="part-3">
+        <div class="blue-part-bar">Part 3</div>
+
+        <div class="instruction-box">
+            <p class="instruction-line" style="font-weight:700;color:#2a72ae;">Questions 21-30</p>
+        </div>
+
+        <div class="question-paper">
+            <h2 class="section-paper-title">Loneliness</h2>
+
+            <div class="instruction-box" style="margin:0 0 16px;">
+                <p class="instruction-line"><em>Questions 21 and 22</em></p>
+                <p class="instruction-line">Choose <span class="hl-blue">TWO</span> letters, <span class="hl-blue">A-E</span>.</p>
+            </div>
+            <div class="mcq-block">
+                <p><strong>21-22</strong> Which <span class="hl-blue">TWO</span> things do the students both believe are responsible for the increase in loneliness?</p>
+                <div class="multi-select-block">
+                    <label class="mcq-opt"><input type="checkbox" name="q21_22" value="A" onchange="handleMultiSelect('q21_22', 21, 22)"> A. social media</label>
+                    <label class="mcq-opt"><input type="checkbox" name="q21_22" value="B" onchange="handleMultiSelect('q21_22', 21, 22)"> B. smaller nuclear families</label>
+                    <label class="mcq-opt"><input type="checkbox" name="q21_22" value="C" onchange="handleMultiSelect('q21_22', 21, 22)"> C. urban design</label>
+                    <label class="mcq-opt"><input type="checkbox" name="q21_22" value="D" onchange="handleMultiSelect('q21_22', 21, 22)"> D. longer lifespans</label>
+                    <label class="mcq-opt"><input type="checkbox" name="q21_22" value="E" onchange="handleMultiSelect('q21_22', 21, 22)"> E. a mobile workforce</label>
+                </div>
+            </div>
+
+            <div class="instruction-box" style="margin:28px 0 16px;">
+                <p class="instruction-line"><em>Questions 23 and 24</em></p>
+                <p class="instruction-line">Choose <span class="hl-blue">TWO</span> letters, <span class="hl-blue">A-E</span>.</p>
+            </div>
+            <div class="mcq-block">
+                <p><strong>23-24</strong> Which <span class="hl-blue">TWO</span> health risks associated with loneliness do the students agree are based on solid evidence?</p>
+                <div class="multi-select-block">
+                    <label class="mcq-opt"><input type="checkbox" name="q23_24" value="A" onchange="handleMultiSelect('q23_24', 23, 24)"> A. a weakened immune system</label>
+                    <label class="mcq-opt"><input type="checkbox" name="q23_24" value="B" onchange="handleMultiSelect('q23_24', 23, 24)"> B. dementia</label>
+                    <label class="mcq-opt"><input type="checkbox" name="q23_24" value="C" onchange="handleMultiSelect('q23_24', 23, 24)"> C. cancer</label>
+                    <label class="mcq-opt"><input type="checkbox" name="q23_24" value="D" onchange="handleMultiSelect('q23_24', 23, 24)"> D. obesity</label>
+                    <label class="mcq-opt"><input type="checkbox" name="q23_24" value="E" onchange="handleMultiSelect('q23_24', 23, 24)"> E. cardiovascular disease</label>
+                </div>
+            </div>
+
+            <div class="instruction-box" style="margin:28px 0 16px;">
+                <p class="instruction-line"><em>Questions 25 and 26</em></p>
+                <p class="instruction-line">Choose <span class="hl-blue">TWO</span> letters, <span class="hl-blue">A-E</span>.</p>
+            </div>
+            <div class="mcq-block">
+                <p><strong>25-26</strong> Which <span class="hl-blue">TWO</span> opinions do both the students express about the evolutionary theory of loneliness?</p>
+                <div class="multi-select-block">
+                    <label class="mcq-opt"><input type="checkbox" name="q25_26" value="A" onchange="handleMultiSelect('q25_26', 25, 26)"> A. It has little practical relevance.</label>
+                    <label class="mcq-opt"><input type="checkbox" name="q25_26" value="B" onchange="handleMultiSelect('q25_26', 25, 26)"> B. It needs further investigation.</label>
+                    <label class="mcq-opt"><input type="checkbox" name="q25_26" value="C" onchange="handleMultiSelect('q25_26', 25, 26)"> C. It is misleading.</label>
+                    <label class="mcq-opt"><input type="checkbox" name="q25_26" value="D" onchange="handleMultiSelect('q25_26', 25, 26)"> D. It should be more widely accepted.</label>
+                    <label class="mcq-opt"><input type="checkbox" name="q25_26" value="E" onchange="handleMultiSelect('q25_26', 25, 26)"> E. It is difficult to understand.</label>
+                </div>
+            </div>
+
+            <div class="instruction-box" style="margin:28px 0 16px;">
+                <p class="instruction-line"><em>Questions 27-30</em></p>
+                <p class="instruction-line">Choose the correct letter, <span class="hl-blue">A</span>, <span class="hl-blue">B</span> or <span class="hl-blue">C</span>.</p>
+            </div>
+            <h3 class="section-paper-title">Loneliness and mental health</h3>
+
+            <div class="mcq-block">
+                <p><span class="q-num">27</span> When comparing loneliness to depression, the students</p>
+                <div class="vertical-options">
+                    <label class="mcq-opt"><input type="radio" name="q27"> A. doubt that there will ever be a medical cure for loneliness.</label>
+                    <label class="mcq-opt"><input type="radio" name="q27"> B. claim that the link between loneliness and mental health is overstated.</label>
+                    <label class="mcq-opt"><input type="radio" name="q27"> C. express frustration that loneliness is not taken more seriously.</label>
+                </div>
+            </div>
+
+            <div class="mcq-block">
+                <p><span class="q-num">28</span> Why do the students decide to start their presentation with an example from their own experience?</p>
+                <div class="vertical-options">
+                    <label class="mcq-opt"><input type="radio" name="q28"> A. to explain how difficult loneliness can be</label>
+                    <label class="mcq-opt"><input type="radio" name="q28"> B. to highlight a situation that most students will recognise</label>
+                    <label class="mcq-opt"><input type="radio" name="q28"> C. to emphasise that feeling lonely is more common for men than women</label>
+                </div>
+            </div>
+
+            <div class="mcq-block">
+                <p><span class="q-num">29</span> The students agree that talking to strangers is a good strategy for dealing with loneliness because</p>
+                <div class="vertical-options">
+                    <label class="mcq-opt"><input type="radio" name="q29"> A. it creates a sense of belonging.</label>
+                    <label class="mcq-opt"><input type="radio" name="q29"> B. it builds self-confidence.</label>
+                    <label class="mcq-opt"><input type="radio" name="q29"> C. it makes people feel more positive.</label>
+                </div>
+            </div>
+
+            <div class="mcq-block">
+                <p><span class="q-num">30</span> The students find it difficult to understand why solitude is considered to be</p>
+                <div class="vertical-options">
+                    <label class="mcq-opt"><input type="radio" name="q30"> A. similar to loneliness.</label>
+                    <label class="mcq-opt"><input type="radio" name="q30"> B. necessary for mental health.</label>
+                    <label class="mcq-opt"><input type="radio" name="q30"> C. an enjoyable experience.</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="part-nav">
+            <button class="nav-btn prev" onclick="goToPart(2)">&lt;- Previous Part</button>
+            <button class="nav-btn next" onclick="goToPart(4)">Next Part -&gt;</button>
+        </div>
+    </section>
+
+    <section class="part-container" id="part-4">
+        <div class="blue-part-bar">Part 4</div>
+
+        <div class="instruction-box">
+            <p class="instruction-line"><strong>Questions 31-40</strong></p>
+            <p class="instruction-line"><em>Complete the notes below.</em></p>
+            <p class="instruction-line">Write <span class="hl-blue">ONE WORD ONLY</span> for each answer.</p>
+        </div>
+
+        <div class="question-paper">
+            <h2 class="section-paper-title">Reclaiming urban rivers</h2>
+
+            <div class="notes-card">
+                <h3>Historical background</h3>
+                <ul>
+                    <li>Nearly all major cities were built on a river.</li>
+                    <li>Rivers were traditionally used by city dwellers for transport, fishing and recreation.</li>
+                    <li>Industrial development and rising populations later led to:</li>
+                </ul>
+                <ul class="dash-list">
+                    <li>more sewage from houses being discharged into the river</li>
+                    <li>pollution from <strong>31</strong><input type="text" id="q31" class="blank-input medium" aria-label="Question 31"> on the river bank.</li>
+                </ul>
+                <ul>
+                    <li>In 1957, the River Thames in London was declared biologically <strong>32</strong><input type="text" id="q32" class="blank-input medium" aria-label="Question 32">.</li>
+                </ul>
+
+                <h3>Recent improvements</h3>
+                <ul>
+                    <li>Seals and even a <strong>33</strong><input type="text" id="q33" class="blank-input medium" aria-label="Question 33"> have been seen in the River Thames.</li>
+                    <li>Riverside warehouses are converted to restaurants and <strong>34</strong><input type="text" id="q34" class="blank-input medium" aria-label="Question 34">.</li>
+                    <li>In Los Angeles, there are plans to:</li>
+                </ul>
+                <ul class="dash-list">
+                    <li>build a riverside <strong>35</strong><input type="text" id="q35" class="blank-input medium" aria-label="Question 35">.</li>
+                    <li>display <strong>36</strong><input type="text" id="q36" class="blank-input medium" aria-label="Question 36"> projects.</li>
+                </ul>
+                <ul>
+                    <li>In Paris, <strong>37</strong><input type="text" id="q37" class="blank-input medium" aria-label="Question 37"> are created on the sides of the river every summer.</li>
+                </ul>
+
+                <h3>Transport possibilities</h3>
+                <ul>
+                    <li>Over 2 billion passengers already travel by <strong>38</strong><input type="text" id="q38" class="blank-input medium" aria-label="Question 38"> in cities round the world.</li>
+                    <li>Changes in shopping habits mean the number of deliveries that are made is increasing.</li>
+                    <li>Instead of road transport, goods could be transported by large freight barges and electric <strong>39</strong><input type="text" id="q39" class="blank-input medium" aria-label="Question 39"> or, in future, by <strong>40</strong><input type="text" id="q40" class="blank-input medium" aria-label="Question 40">.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="part-nav">
+            <button class="nav-btn prev" onclick="goToPart(3)">&lt;- Previous Part</button>
+            <button class="nav-btn finish" onclick="finishTest()">Finish Test</button>
+        </div>
+    </section>
+
+</main>
+
+<footer class="exam-footer">
+    <div class="number-grid" id="numberGrid"></div>
+</footer>
+
+<div id="lockdownOverlay" class="lockdown-overlay hidden">
+    <div class="lockdown-card">
+        <h2>Exam Paused</h2>
+        <p id="lockdownMessage">This test must stay in fullscreen.</p>
+        <button id="resumeExamBtn" class="btn-green">Return to Exam</button>
+    </div>
+</div>
+
+<script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore-compat.js"></script>
+<script src="../jss/core.js"></script>
+<script src="../jss/firebase-init.js"></script>
+<script src="../jss/emerald-tracker.js"></script>
+<script src="../jss/emerald-firestore-store.js"></script>
+<script src="../jss/emerald-firebase-bridge.js"></script>
+<script src="../jss/listening-test9.js"></script>
+
+</body>
+</html>
