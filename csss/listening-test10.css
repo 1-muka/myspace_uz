@@ -1,0 +1,153 @@
+.instruction-line {
+    margin: 6px 0;
+    font-size: 14px;
+    color: var(--ink-700);
+}
+
+.instruction-line .hl-blue,
+.hl-blue {
+    color: #2a72ae;
+    font-weight: 800;
+}
+
+.section-paper-title {
+    text-align: center;
+    margin: 0 0 18px;
+    font-size: 19px;
+    color: #2a72ae;
+    font-weight: 800;
+}
+
+.blank-input {
+    width: 150px;
+    min-width: 120px;
+    margin: 0 4px;
+    padding: 6px 8px;
+    border: 1px solid var(--ink-200);
+    border-radius: 8px;
+    background: white;
+    font-size: 14px;
+}
+
+.blank-input:focus,
+.matching-input:focus {
+    outline: none;
+    border-color: rgba(13,138,94,0.48);
+    box-shadow: 0 0 0 3px rgba(13,138,94,0.10);
+}
+
+.blank-input.medium {
+    width: 135px;
+    min-width: 110px;
+}
+
+.notes-card {
+    padding: 18px;
+    border: 1px solid rgba(31,41,51,0.7);
+    background: #f7fbfd;
+    border-radius: 10px;
+}
+
+.compact-notes {
+    line-height: 1.9;
+}
+
+.notes-card h3 {
+    margin: 18px 0 8px;
+    font-size: 16px;
+    color: #111827;
+}
+
+.notes-card h3:first-child {
+    margin-top: 0;
+}
+
+.notes-card p {
+    margin: 0 0 12px;
+}
+
+.notes-card ul {
+    margin: 0 0 12px 20px;
+    padding: 0;
+}
+
+.notes-card li {
+    margin-bottom: 8px;
+}
+
+.notes-card .dash-list {
+    list-style: none;
+    margin-left: 12px;
+}
+
+.notes-card .dash-list li::before {
+    content: "- ";
+}
+
+.matching-layout {
+    display: grid;
+    grid-template-columns: minmax(240px, 0.9fr) minmax(300px, 1.1fr);
+    gap: 20px;
+    align-items: start;
+}
+
+.matching-questions h3 {
+    margin: 0 0 14px;
+    font-size: 16px;
+}
+
+.matching-questions p {
+    margin: 0 0 16px;
+    line-height: 1.8;
+}
+
+.matching-input {
+    width: 58px;
+    min-width: 58px;
+    margin-left: 8px;
+    padding: 7px 8px;
+    border: 1px solid var(--ink-200);
+    border-radius: 8px;
+    background: white;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 800;
+}
+
+.letter-options {
+    margin-bottom: 0;
+}
+
+.letter-options p {
+    margin: 0 0 9px;
+    line-height: 1.55;
+}
+
+.mcq-block {
+    margin-bottom: 24px;
+}
+
+.mcq-block p {
+    margin: 0 0 8px;
+    line-height: 1.7;
+}
+
+.mcq-block .q-num {
+    display: inline-block;
+    min-width: 34px;
+    font-weight: 800;
+}
+
+@media (max-width: 760px) {
+    .matching-layout {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 640px) {
+    .blank-input {
+        width: 130px;
+        min-width: 110px;
+    }
+}

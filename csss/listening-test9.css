@@ -1,0 +1,163 @@
+.instruction-line {
+    margin: 6px 0;
+    font-size: 14px;
+    color: var(--ink-700);
+}
+
+.instruction-line .hl-blue,
+.hl-blue {
+    color: #2a72ae;
+    font-weight: 800;
+}
+
+.section-paper-title {
+    text-align: center;
+    margin: 0 0 18px;
+    font-size: 19px;
+    color: #2a72ae;
+    font-weight: 800;
+}
+
+.mcq-block {
+    margin-bottom: 24px;
+}
+
+.mcq-block p {
+    margin: 0 0 8px;
+    line-height: 1.7;
+}
+
+.mcq-block .q-num {
+    display: inline-block;
+    min-width: 34px;
+    font-weight: 800;
+}
+
+.multi-select-block {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-top: 10px;
+}
+
+.restaurant-table-wrap {
+    overflow-x: auto;
+}
+
+.restaurant-table {
+    width: 100%;
+    min-width: 700px;
+    border-collapse: collapse;
+    background: #f9fdff;
+    font-size: 14px;
+}
+
+.restaurant-table th,
+.restaurant-table td {
+    border: 1px solid #1f2933;
+    padding: 10px 8px;
+    vertical-align: top;
+    line-height: 1.65;
+}
+
+.restaurant-table th {
+    text-align: center;
+    background: #eef6fb;
+    color: #111827;
+    font-weight: 800;
+}
+
+.restaurant-table .name-col {
+    width: 16%;
+}
+
+.restaurant-table .location-col {
+    width: 20%;
+}
+
+.restaurant-table .reason-col {
+    width: 34%;
+}
+
+.restaurant-table .comments-col {
+    width: 30%;
+}
+
+.blank-input {
+    width: 150px;
+    min-width: 120px;
+    margin: 0 4px;
+    padding: 6px 8px;
+    border: 1px solid var(--ink-200);
+    border-radius: 8px;
+    background: white;
+    font-size: 14px;
+}
+
+.blank-input:focus {
+    outline: none;
+    border-color: rgba(13,138,94,0.48);
+    box-shadow: 0 0 0 3px rgba(13,138,94,0.10);
+}
+
+.blank-input.short {
+    width: 90px;
+    min-width: 80px;
+}
+
+.blank-input.medium {
+    width: 120px;
+    min-width: 100px;
+}
+
+.blank-input.long {
+    width: 170px;
+}
+
+.notes-card {
+    padding: 18px;
+    border: 1px solid rgba(31,41,51,0.7);
+    background: #f7fbfd;
+    border-radius: 10px;
+}
+
+.notes-card h3 {
+    margin: 16px 0 8px;
+    font-size: 16px;
+    color: #111827;
+}
+
+.notes-card h3:first-child {
+    margin-top: 0;
+}
+
+.notes-card ul {
+    margin: 0 0 12px 20px;
+    padding: 0;
+    line-height: 1.9;
+}
+
+.notes-card li {
+    margin-bottom: 8px;
+}
+
+.notes-card .dash-list {
+    list-style: none;
+    margin-left: 24px;
+}
+
+.notes-card .dash-list li::before {
+    content: "- ";
+}
+
+@media (max-width: 640px) {
+    .blank-input,
+    .blank-input.long {
+        width: 130px;
+        min-width: 110px;
+    }
+
+    .restaurant-table {
+        font-size: 13px;
+    }
+}
