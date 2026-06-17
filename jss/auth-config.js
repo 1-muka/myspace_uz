@@ -30,5 +30,6 @@ window.EMERALD_AUTH = {
         Yaxshilikova_Nargiza: "3891775",
         Yorqulov_Suhrob: "5909627",
         Abdurashidova_Jasmina: "2451143",
+        Dilfuza: "5478654",    
     }
 };
