@@ -29,7 +29,6 @@ window.EMERALD_AUTH = {
         Usmonova_Kamola: "8692365",
         Yaxshilikova_Nargiza: "3891775",
         Yorqulov_Suhrob: "5909627",
-        Abdurashidova_Jasmina: "2451143",
         Dilfuza: "5478654",    
 
 
@@ -53,6 +52,11 @@ window.EMERALD_AUTH = {
         Israilova_Gozal: "998060735",
         Hayrullayeva_Kumush: "330600422",
 
+        user1: "123456789",
+        user2: "987654321",
+        user3: "545454545",
+        user4: "888888888",
+        user5: "987987987",
 
     }
 };
