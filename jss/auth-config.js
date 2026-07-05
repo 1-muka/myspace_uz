@@ -31,5 +31,28 @@ window.EMERALD_AUTH = {
         Yorqulov_Suhrob: "5909627",
         Abdurashidova_Jasmina: "2451143",
         Dilfuza: "5478654",    
+
+
+
+        Karimberganova_Oynura: "997139951",
+        Tastanbekov_Adilet: "502224122",
+        Bahromov_Muhammadaziz: "996224699",
+        Ismatullayeva_Sevinch: "990553778",
+        Yaxshilikova_Nargiza: "773460302",
+        Saidova_Hayotxon: "931300444",
+        Jamolliddinova_Mubina: "700747722",
+        Obloqulov_Jahongir: "330063886",
+        Usmonova_Kamola: "900151693",
+        Turgunboyeva_Muhabbat: "701318196",
+        Abduvaliyeva_Ruxsora: "881862507",
+        Abdurashidova_Jasmina: "934513742",
+        Rahimberganova_Rayhona: "931249901",
+        Turdiboyeva_Zuhra: "999270515",
+        Nilufar_Halbayeva: "975980803",
+        Madaminova_Maftuna: "990670880",
+        Israilova_Gozal: "998060735",
+        Hayrullayeva_Kumush: "330600422",
+
+
     }
 };
