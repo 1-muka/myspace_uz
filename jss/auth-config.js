@@ -23,5 +23,7 @@ window.EMERALD_AUTH = {
         Maftuna: "5287081",
         Xayotxon: "6340100",
         Rahima: "9409915",
+
+        user6: "7777777",
     }
 };
