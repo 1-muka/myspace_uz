@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emerald Full Mock</title>
+    <link rel="icon" href="../logo.jpg">
+    <link rel="stylesheet" href="../csss/full-mock.css">
+</head>
+<body>
+    <section id="mockLobby" class="lobby-screen hidden">
+        <header class="page-header">
+            <div class="header-content">
+                <p class="eyebrow">Emerald Centre</p>
+                <h1>IELTS Full Mock Test</h1>
+                <p>
+                    One secure flow for Listening, Reading, and Writing with section timers,
+                    fullscreen protection, and automatic stage progression.
+                </p>
+            </div>
+        </header>
+
+        <div class="layout-container">
+            <main class="content-area">
+                <section class="test-group">
+                    <h2 class="group-title">Full Mock Package</h2>
+
+                    <article class="test-card featured-card">
+                        <div class="card-badge">Connected Exam Mode</div>
+                        <h3>Full Mock Test 1</h3>
+                        <p>
+                            Starts with Listening, then moves to Reading, then Writing.
+                            The security rules match the exam pages: fullscreen lock, window-switch warnings,
+                            restricted copy and paste, and timed sections.
+                        </p>
+                        <div class="card-meta">
+                            <span>Listening: 30 min</span>
+                            <span>Reading: 60 min</span>
+                            <span>Writing: 60 min</span>
+                        </div>
+                        <button id="openMockAccessBtn" class="start-btn" type="button">Start Full Mock</button>
+                    </article>
+                </section>
+            </main>
+        </div>
+    </section>
+
+    <div id="mockAccessModal" class="modal-overlay hidden">
+        <div class="access-card">
+            <div class="access-badge">Secure Start</div>
+            <h2>Start Full Mock Test 1</h2>
+            <p class="access-subtitle">Enter the candidate details once to open the full exam flow.</p>
+
+            <div class="access-field">
+                <input type="text" id="candidateNameInput" class="access-input" placeholder="Candidate name">
+            </div>
+
+            <div class="access-field">
+               <input 
+  type="text" 
+  id="accessCodeInput" 
+  class="access-input" 
+  placeholder="Access code"
+  autocomplete="one-time-code"
+  autocorrect="off"
+  autocapitalize="none"
+  spellcheck="false"
+>
+            </div>
+
+            <div class="agreement-box">
+                <p class="agreement-text">
+                    By starting this full mock, I agree to take the exam honestly.
+                    I will not cheat, record, copy, share, or steal any test materials or resources.
+                </p>
+
+                <label class="policy-check">
+                    <input type="checkbox" id="policyAgreeCheckbox">
+                    I agree with the test policy.
+                </label>
+
+                <p class="type-instruction">Type this exactly:</p>
+                <div class="required-phrase" id="requiredPhraseText">
+                    I agree to take the test honestly and will not cheat or share materials.
+                </div>
+
+                <input
+                    type="text"
+                    id="agreementTypingInput"
+                    class="access-input"
+                    placeholder="Type the sentence exactly"
+                >
+            </div>
+
+            <p id="accessErrorText" class="modal-error"></p>
+
+            <div class="access-actions">
+                <button id="closeMockAccessBtn" class="secondary-btn" type="button">Cancel</button>
+                <button id="confirmMockAccessBtn" class="primary-btn" type="button">Enter Full Mock</button>
+            </div>
+        </div>
+    </div>
+
+    <section id="mockExam" class="mock-exam hidden">
+        <header class="exam-topbar">
+            <div class="topbar-block">
+                <div class="topbar-label">Candidate</div>
+                <div id="candidateDisplay" class="topbar-value">Candidate</div>
+            </div>
+
+            <div class="topbar-center">
+                <div class="topbar-chip">Emerald Full Mock</div>
+                <div class="topbar-chip topbar-chip-accent">Section: <span id="sectionTitleDisplay">Listening</span></div>
+                <div class="topbar-timer">Time Left: <span id="timerDisplay">30:00</span></div>
+            </div>
+
+            <div class="topbar-block topbar-block-right">
+                <div class="topbar-label">Violations</div>
+                <div id="violationDisplay" class="topbar-value">0 / 3</div>
+            </div>
+        </header>
+
+        <div class="section-progress" id="sectionProgress"></div>
+
+        <main class="exam-shell">
+            <section id="listeningStage" class="exam-stage active" data-stage="listening">
+                <div class="stage-toolbar">
+                    <div>
+                        <p class="stage-kicker">Stage 1</p>
+                        <h2>Listening</h2>
+                        <p class="stage-copy">
+                           
+                        </p>
+                    </div>
+
+                    <button id="finishListeningBtn" class="stage-action-btn" type="button">Finish Listening</button>
+                </div>
+
+                <div class="audio-panel">
+                    <div class="audio-card">
+                        <div class="audio-copy">
+                            <p class="audio-title">Listening audio</p>
+                            <p id="audioStatusText" class="audio-status"></p>
+                        </div>
+
+                        <audio id="mockAudio" class="mock-audio" controls>
+                            <source id="mockAudioSource" src="" type="audio/mpeg">
+                        </audio>
+                    </div>
+                </div>
+
+                <div class="part-switcher" id="listeningPartSwitcher"></div>
+
+                <div id="listeningParts" class="listening-parts"></div>
+
+                <footer class="stage-footer">
+                    <div class="number-grid" id="listeningNumberGrid"></div>
+                </footer>
+            </section>
+
+            <section id="readingStage" class="exam-stage" data-stage="reading">
+                <div class="stage-toolbar">
+                    <div>
+                        <p class="stage-kicker">Stage 2</p>
+                        <h2>Reading</h2>
+                        <p class="stage-copy">
+                           
+                        </p>
+                    </div>
+
+                    <button id="finishReadingBtn" class="stage-action-btn" type="button">Finish Reading</button>
+                </div>
+
+                <div class="reading-layout">
+                    <section id="readingPassagePane" class="reading-pane passage-pane"></section>
+                    <section id="readingQuestionsPane" class="reading-pane questions-pane"></section>
+                </div>
+
+                <div class="reading-nav-bar">
+                    <button id="readingPrevBtn" class="nav-btn" type="button">Previous Passage</button>
+                    <button id="readingNextBtn" class="nav-btn" type="button">Next Passage</button>
+                </div>
+
+                <footer class="stage-footer">
+                    <div class="number-grid" id="readingNumberGrid"></div>
+                </footer>
+            </section>
+
+            <section id="writingStage" class="exam-stage" data-stage="writing">
+                <div class="stage-toolbar">
+                    <div>
+                        <p class="stage-kicker">Stage 3</p>
+                        <h2>Writing</h2>
+                        <p class="stage-copy">
+                           
+                        </p>
+                    </div>
+
+                    <button id="submitWritingBtn" class="stage-action-btn" type="button">Submit Full Mock</button>
+                </div>
+
+                <div class="writing-layout">
+                    <section class="writing-pane prompt-pane">
+                        <div class="pane-heading">
+                            <span class="pane-kicker" id="writingTaskKicker">Task 1</span>
+                            <h3 id="writingTaskHeading">Academic Writing Task 1</h3>
+                            <p id="writingTaskSubheading"></p>
+                        </div>
+
+                        <div id="writingPromptCard" class="prompt-card"></div>
+                    </section>
+
+                    <section class="writing-pane editor-pane">
+                        <div class="editor-toolbar">
+                            <div>
+                                <span class="editor-label" id="writingAnswerLabel">Task 1 Answer</span>
+                                <span class="editor-hint" id="writingTargetHint">Write at least 150 words.</span>
+                            </div>
+                        </div>
+
+                        <textarea
+                            id="writingAnswerInput"
+                            class="writing-textarea"
+                            placeholder="Start writing your answer here..."
+                        ></textarea>
+                    </section>
+                </div>
+
+                <footer class="writing-footer">
+                    <div class="footer-metric-row">
+                        <span>Task 1 words: <strong id="taskOneWordCount">0</strong></span>
+                        <span>Task 2 words: <strong id="taskTwoWordCount">0</strong></span>
+                        <span>Current task words: <strong id="currentTaskWordCount">0</strong></span>
+                    </div>
+
+                    <div class="task-switcher" id="writingTaskSwitcher"></div>
+                </footer>
+            </section>
+        </main>
+    </section>
+
+
+    <div id="examIntroOverlay" class="overlay-screen hidden">
+    <div class="overlay-card exam-intro-card">
+        <div class="overlay-badge">Before You Start</div>
+        <h2>Full Mock Rules</h2>
+        <p>Please read the rules carefully before starting the exam.</p>
+
+        <div class="exam-intro-times">
+            <span class="intro-time-pill">Listening: 30 min</span>
+            <span class="intro-time-pill">Reading: 60 min</span>
+            <span class="intro-time-pill">Writing: 60 min</span>
+        </div>
+
+        <ul class="exam-intro-rules">
+            <li>The test must stay in fullscreen during the exam.</li>
+            <li>You must not switch tabs or leave the exam window.</li>
+            <li>You have only 3 violation warnings.</li>
+            <li>Listening starts first, then Reading, then Writing.</li>
+            <li>When you finish one section, you move to the next section.</li>
+        </ul>
+
+        <button id="startExamFromIntroBtn" class="primary-btn" type="button">
+            Start Test in Fullscreen
+        </button>
+    </div>
+</div>
+
+
+    <div id="lockdownOverlay" class="overlay-screen hidden">
+        <div class="overlay-card">
+            <div class="overlay-badge">Exam Paused</div>
+            <h2>Return to fullscreen</h2>
+            <p id="lockdownMessage">
+                This full mock must remain in fullscreen. Return to the exam to continue.
+            </p>
+            <button id="resumeExamBtn" class="primary-btn" type="button">Return to Exam</button>
+        </div>
+    </div>
+
+<div id="sectionModal" class="overlay-screen hidden">
+    <div class="overlay-card">
+        <button
+            id="sectionModalCloseBtn"
+            class="section-close-btn hidden"
+            type="button"
+            aria-label="Close and return to current section"
+        >
+            ×
+        </button>
+
+        <div class="overlay-badge">Section Complete</div>
+        <h2 id="sectionModalTitle">Listening complete</h2>
+        <p id="sectionModalMessage">You can continue to the next stage.</p>
+        <button id="sectionModalActionBtn" class="primary-btn" type="button">Continue</button>
+    </div>
+</div>
+
+
+    <script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore-compat.js"></script>
+    <script src="../jss/core.js"></script>
+    <script src="../jss/firebase-init.js"></script>
+    <script src="../jss/emerald-tracker.js"></script>
+    <script src="../jss/emerald-firestore-store.js"></script>
+    <script src="../jss/emerald-firebase-bridge.js"></script>
+    <script src="../jss/writing-ai.js"></script>
+    <script src="../jss/emerald-sheets-bridge.js"></script>
+    <script src="../jss/emerald-writing-docs-bridge.js"></script>
+    <script src="../jss/full-mock.js"></script>
+</body>
+</html>
